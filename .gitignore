@@ -6,3 +6,4 @@
 *.toc
 *.gz
 *.fdb_latexmk
+.DS_store
