@@ -78,7 +78,7 @@ where $D$ is the Euclidean distance between the vectors. This can be implemented
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.05\textwidth]{Ch4/Figs/workflow.png}
+\includegraphics[width=1.05\textwidth]{Chapters/Ch4/Figs/workflow.png}
 \caption[workflow]{An overview of the workflow for interpreting the Molecular Transformer.}
 \label{fig:workflow}
 \end{figure}
@@ -90,14 +90,14 @@ The Diels-Alder reactions transform a conjugated diene and an alkene (called die
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.9\textwidth]{Ch4/Figs/da1.png}
+\includegraphics[width=0.9\textwidth]{Chapters/Ch4/Figs/da1.png}
 \caption[Diels-Alder]{A typical example of a Diels-Alder reaction with challenging selectivity.}
 \label{fig:da1}
 \end{figure}
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.8\textwidth]{Ch4/Figs/da1_preds.png}
+\includegraphics[width=0.8\textwidth]{Chapters/Ch4/Figs/da1_preds.png}
 \caption[Diels-Alder]{The USPTO transformer makes a completely incorrect prediction, while the Pistachio model correctly predicts the product and recognises the importance of the nitrile group. For the Pistachio model the IG attributions are shown together with the corresponding uniform attribution (ua) values. }
 \label{fig:da1_preds}
 \end{figure}
@@ -106,7 +106,7 @@ Fig~\ref{fig:da1_preds} shows the Top-1 prediction of the USPTO and Pistachio mo
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.0\textwidth]{Ch4/Figs/da1_uspto_dat.png}
+\includegraphics[width=1.0\textwidth]{Chapters/Ch4/Figs/da1_uspto_dat.png}
 \caption[Diels-Alder]{Attribution to the USPTO training data shows that the USPTO transformer either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reactions exist in the dataset. }
 \label{fig:da1_uspto_dat}
 \end{figure}
@@ -115,7 +115,7 @@ To check this we devised a simple reaction template of Diels-Alder reactions and
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.0\textwidth]{Ch4/Figs/da1_adv.png}
+\includegraphics[width=1.0\textwidth]{Chapters/Ch4/Figs/da1_adv.png}
 \caption[Diels-Alder]{Further test reactions correctly predicted by the Pistachio model, validate that Pistachio correctly understands Diels-Alder reactions. \cite{Husinec2011AnnulationsDerivatives, Tiamas2018AsymmetricChalcones}}
 \label{fig:da1_adv}
 \end{figure}
@@ -128,14 +128,14 @@ Friedel-Crafts acylation reactions are an example of electrophilic aromatic subs
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.9\textwidth]{Ch4/Figs/sear.png}
+\includegraphics[width=0.9\textwidth]{Chapters/Ch4/Figs/sear.png}
 \caption[FC]{Friedel-Crafts acylation reaction taken from the USPTO training set showing para selectivity.}
 \label{fig:sear}
 \end{figure}
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.8\textwidth]{Ch4/Figs/sear_pred.png}
+\includegraphics[width=0.8\textwidth]{Chapters/Ch4/Figs/sear_pred.png}
 \caption[FC IG]{Both models predict the correct Friedel-Crafts acylation product but only the Pistachio model recognizes the importance of the -F atom in determining selectivity. The Integrated Gradients attributions are also shown along with the uniform attribution (ua) values. }
 \label{fig:sear_pred}
 \end{figure}
@@ -146,7 +146,7 @@ Guided by the attributions we designed a number of adversarial examples where we
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.0\textwidth]{Ch4/Figs/sear_adv.png}
+\includegraphics[width=1.0\textwidth]{Chapters/Ch4/Figs/sear_adv.png}
 \caption[FC IG]{Adversarial examples designed using Fig~\ref{fig:sear_pred} reveal that both models can easily fail to predict the correct meta product. The uniform attribution (ua) values for the IGs are also shown. }
 \label{fig:sear_adv}
 \end{figure}
@@ -157,7 +157,7 @@ A suggestive observation is that in the second example the attributions on the m
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.65\textwidth]{Ch4/Figs/sear_directing.png}
+\includegraphics[width=0.65\textwidth]{Chapters/Ch4/Figs/sear_directing.png}
 \caption[FC IG]{Counting the number Friedel-Crafts acylation reactions in the training sets with ortho, meta and para selectivities reveals an alarming bias -- the number of para reactions far outweigh those of meta or ortho reactions.}
 \label{fig:sear_dir}
 \end{figure}
@@ -173,7 +173,7 @@ Reduction of esters and aldehydes follow very well defined selectivity that is d
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.9\textwidth]{Ch4/Figs/reduction.png}
+\includegraphics[width=0.9\textwidth]{Chapters/Ch4/Figs/reduction.png}
 \caption{An example of a reaction showing how NaBH\textsubscript{4} reduces the aldehydes selectively in the presence of an ester.}
 \label{fig:redu}
 \end{figure}
@@ -184,7 +184,7 @@ To better understand the reliability of the predictions we attribute the reactio
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.9\textwidth]{Ch4/Figs/reduction_dat.png}
+\includegraphics[width=0.9\textwidth]{Chapters/Ch4/Figs/reduction_dat.png}
 \caption{Data attribution to the reaction in Fig~\ref{fig:redu} suggests that both models have correctly learnt the selectivity of reduction.}
 \label{fig:redu_dat}
 \end{figure}
@@ -193,7 +193,7 @@ To investigate further if the models have learnt the importance of the cation in
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.9\textwidth]{Ch4/Figs/redu_adv.png}
+\includegraphics[width=0.9\textwidth]{Chapters/Ch4/Figs/redu_adv.png}
 \caption{Adversarial example for the borohydride reduction in Fig~\ref{fig:redu} where the Na\textsuperscript{+} ion was replaced by Li\textsuperscript{+} ion. The USPTO model continues predicting the selective reduction of the aldehyde wrongly whereas the Pistachio model predicts the correct product -- the understanding of the models is reflecting in the IG attribution on the Li\textsuperscript{+} ion.}
 \label{fig:redu_adv}
 \end{figure}
@@ -210,7 +210,7 @@ In the first experiment we test whether the transformer model is able to learn s
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=0.6\textwidth]{Ch4/Figs/redu_templates.png}
+\includegraphics[width=0.6\textwidth]{Chapters/Ch4/Figs/redu_templates.png}
 \caption[epoxide IG]{Three uniquely selective reduction templates are chosen to challenge the transformer's ability to learn selectivities if given enough data.}
 \label{fig:redu_templates}
 \end{figure}
@@ -234,7 +234,7 @@ When training the transformer on this dataset we found that the only limiting fa
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.00\textwidth]{Ch4/Figs/toy_attr.png}
+\includegraphics[width=1.00\textwidth]{Chapters/Ch4/Figs/toy_attr.png}
 \caption{The model trained on artificial reduction data correctly attributes importance to the Al\textsuperscript{3+} ion.}
 \label{fig:toy_attr}
 \end{figure}
@@ -262,7 +262,7 @@ The USPTO and Pistachio transformers were trained for $\sim$300 and $\sim$100 ep
 
 \begin{figure}[htbp!] 
 \centering    
-\includegraphics[width=1.0\textwidth]{Ch4/Figs/synth_conv.png}
+\includegraphics[width=1.0\textwidth]{Chapters/Ch4/Figs/synth_conv.png}
 \caption{Dataset bias is reflected in the model predictions. The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. }
 \label{fig:synth_conv}
 \end{figure}
