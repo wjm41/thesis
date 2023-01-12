@@ -1,0 +1,120 @@
+\documentclass[12pt,aps,showpacs,superscriptaddress,footinbib,preprint,noshowpacs]{revtex4-1}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\newcommand{\angstrom}{\textup{\AA}}
+\usepackage{subfigure}
+\usepackage{soul}
+%\usepackage[normalem]{ulem}
+
+\begin{document}
+
+%def\fixFloatSize#1{}
+\title{Electronic Supplementary Material: Discovery of SARS-CoV-2 main protease inhibitors using a synthesis-directed \emph{de novo} design model}
+%\title{Forecasting battery health with machine learning and impedance spectroscopy}
+
+\author{Aaron Morris}
+\thanks{AM and WJM contributed equally.} 
+\affiliation{PostEra Inc, 2 Embarcadero Centre, San Franciso, CA 94111, United States of America}
+
+\author{William McCorkindale}
+\thanks{AM and WJM contributed equally.} 
+\affiliation{Department of Physics, University of Cambridge, CB3 0HE, United Kingdom}
+
+\author{The COVID Moonshot Consortium}
+\affiliation{The COVID Moonshot Consortium, \url{www.postera.ai/covid}}
+
+\author{Nir Drayman}
+\affiliation{The Pritzker School for Molecular Engineering, The University of Chicago, Chicago, IL, USA}
+
+\author{John D. Chodera}
+\affiliation{Computational and Systems Biology Program Sloan Kettering Institute, Memorial Sloan Kettering Cancer Center, New York, NY 10065, USA}
+
+\author{Sava\c{s} Tay}
+\affiliation{The Pritzker School for Molecular Engineering, The University of Chicago, Chicago, IL, USA}
+
+\author{Nir London}
+\affiliation{Department of Organic Chemistry, The Weizmann Institute of Science, 76100, Rehovot, Israel }
+
+\author{Alpha A. Lee}
+\email{alpha.lee@postera.ai}
+\affiliation{PostEra Inc, 2 Embarcadero Centre, San Franciso, CA 94111, United States of America}
+%\affiliation{The Faraday Institution, Quad One, Becquerel Avenue, Harwell Campus, Didcot, OX11 0RA, UK}
+
+
+\maketitle
+
+\section{Fluorescence MPro inhibition assay}
+
+Compounds were seeded into assay-ready plates (Greiner 384 low volume 784900) using an Echo 555 acoustic dispenser, and DMSO was back-filled for a uniform concentration in assay plates (maximum 1\%). Screening assays were performed in duplicate at 20 $\mu$M and 50 $\mu$M. Hits of greater than 50 \% inhibition at 50 $\mu$M were confirmed by dose response assays. Reagents for Mpro assay reagents were dispensed into the assay plate in 10 µl volumes for a final volume of 20 $\mu$L. 
+Final reaction concentrations were 20 mM HEPES pH 7.3, 1 mM TCEP, 50 mM NaCl, 0.01\% Tween-20, 10\% glycerol, 5nM Mpro, 375nM fluorogenic peptide substrate ([5-FAM]-AVLQSGFR-[Lys(Dabcyl)]-K-amide). 
+Mpro was pre-incubated for 15 minutes at room temperature with compound before addition of substrate. Protease reaction was measured continuously in a BMG Pherastar FS with a 480/520 ex/em filter set. Data analysis was performed with Collaborative Drug Discovery (CDD).
+
+\section{OC43 antiviral assay}
+
+A549 expressing H2B-mRuby were seeded in 384 well plates (4,000 cells per well) in DMEM+2\% FCS in a total volume of 30ul. One day later, 20ul of OC43 were added to the wells for a final MOI of 0.3. one hour after viral addition, the drug (or DMSO as control) was added to the cells. Drugs were added at a volume of 50nl, in a final dose range of 0.3-20mM. Cells were incubated at 33C, 5\% CO2 for 2 days, fixed with paraformaldehyde and stained for the presence of the viral nucleoprotein. Images were captured and quantified using the Incucyte machine and software. 3 biological repeated were performed.
+
+\section{Compound Synthesis}
+
+Compounds 1-5 were sourced from Wuxi AppTec and used as received. Synthesis routes reported by Wuxi AppTec is appended in the ESI. 
+
+
+\section{Learning-to-rank} 
+
+Our learning-to-rank methods converts ranking into binary classification of whether a compound is more/less active than another compound. This allows us to assimilate both coarse (active/inactive) and fine (quantitative potency measurements) into a single model. All inactive compounds are less active than active compounds, and compounds with potency measurements are ranked by their potency.  
+
+To represent a molecule, we concatenate 3 fingerprint representations implemented in \texttt{rdkit}, all 512 bits each into one 1536 representation: Morgan, Atom, TopologicalTorsion. The fingerprint is projected onto 20 dimensions using Principal Component Analysis. The input to the model is the difference in fingerprint between two molecules, $f_A - f_B$, and the output is the whether the molecule $A$ is more or less potent that molecule $B$ -- i.e. a classification problem. Note that this creates a balanced classification dataset.  
+
+The classifier we employ is the FastAI tabular model, a general machine learning package for processing classification problems. 
+
+Source code of our method can be found in: \url{https://github.com/wjm41/mpro-rank-gen/tree/main/rank_model}.  
+\section{Compound generation} 
+To generate new compounds, we: (a)introduce linker and chemotype swaps, e.g. amide to retroamide, amide to urea, swapping N-aryl groups; (b) fragment compounds along synthetically accessible bonds into building blocks, e.g. amide to carboxylic acid and amine; (c) reconnect the fragments to form a library of virtual compounds. These operations are defined using SMARTS rules. 
+
+The virtual library of compounds is then scored against the top 4 compound in the training set using the learning-to-rank framework. Compounds predicted to have higher activity is then fed into our synthetic route predictor \cite{schwaller2019molecular,yang2019molecular}. 5 molecules with $<$4 predicted steps were synthesised and assayed. 
+
+
+\section{Docking workflow} 
+
+As a baseline comparison, we docked the training and test sets of our machine learning model against x2908 structure reported by Diamond XChem \cite{douangamath2020crystallographic}.  We use the ``Classic OEDocking'' floe v0.7.2 as implemented in the Orion 2020.3.1 Academic Stack (OpenEye Scientific). Omega was used to enumerate conformations (and expand stereochemistry) with up to 500 conformations. \texttt{FRED} was used for docking in \texttt{HYBRID} mode using the x2908 bound ligand. 
+
+
+\section{Retrospective performance analysis} 
+
+We compare the performance of our model in predicting the pairwise ranking of compounds against the baseline model of simply training a regression model on bioactivities. As a baseline model, we trained a random forest model with the package \texttt{scikit-learn} \cite{scikit-learn}, \texttt{RandomForestRegressor} function, with default hyperparameters. Likewise, for the learning-to-rank model we take the FastAI tabular model with default hyperparameters, as discussed in the main text. 
+
+    
+%\begin{table}[]
+%\begin{tabular}{|l|l|l|}
+%\hline
+%\textbf{Dataset} & \textbf{RF Baseline AUC} & \textbf{Model AUC}  \\ \hline
+%LCK              & 0.94              & 0.91          \\ \hline
+%opioid           & 0.92                & \textbf{0.94} \\ \hline
+%Cannabinoid      & 0.97               & 0.87          \\ \hline
+%Estrogen         & 0.96               & \textbf{0.98} \\ \hline
+%B-raf            & 0.95              & \textbf{0.96} \\ \hline
+%Ephrin           & 0.83               & \textbf{0.85} \\ \hline
+%Glycogen         & 0.89             & 0.88         \\ \hline
+%Vanilloid        & 0.93              & 0.90          \\ \hline
+%JAK2             & 0.97              & \textbf{0.98} \\ \hline
+%Dopamine         & 0.97               & \textbf{0.98} \\ \hline
+%ABL1             & 0.81               & \textbf{0.84} \\ \hline
+%A2a              & 0.58              & \textbf{0.91} \\ \hline
+%Coagulation      & 0.82                & \textbf{0.85}  \\ \hline
+%Glucocorticoid   & 0.96             & \textbf{0.98} \\ \hline
+%Dihydrofolate    & 0.90               & 0.86          \\ \hline
+%Carbonic         & 0.97              & \textbf{0.996} \\ \hline
+%Aurora-A         & 0.89               & \textbf{0.93} \\ \hline
+%\end{tabular}
+%\caption{Comparing learning-to-rank with direct potency prediction in prioritising compounds.}
+%\label{table1}
+%\end{table}
+
+
+\bibliography{rsc}
+
+\end{document}    
