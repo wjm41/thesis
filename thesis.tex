@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered, draft]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper, 12pt, times, numbered, chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -101,6 +101,10 @@
 % Title, Contents, Frontmatter are disabled by default
 % Useful option to review a particular chapter or to send it to supervisior.
 % To use choose `chapter' option in the document class
+
+\ifdefineChapter
+ 	\includeonly{Chapters/Preface/preface}
+\fi
 
 % ******************************** Front Matter ********************************
 \begin{document}
