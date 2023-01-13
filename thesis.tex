@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper, 12pt, times, numbered, chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -102,6 +102,10 @@
 % Useful option to review a particular chapter or to send it to supervisior.
 % To use choose `chapter' option in the document class
 
+\ifdefineChapter
+ 	\includeonly{Chapters/Preface/preface}
+\fi
+
 % ******************************** Front Matter ********************************
 \begin{document}
 
@@ -132,16 +136,13 @@
 
 % TODO - update chapter names
 \include{Chapters/Preface/preface}
-\include{Chapters/Ch1/intro}
-\include{Chapters/Ch2/fresco}
-\include{Chapters/Ch3/ranking}
-\include{Chapters/Ch4/transformer}
-\include{Chapters/Ch5/test}
-\include{Chapters/Ch6/outlook}
-%\include{Chapter6/chapter6}
-%\include{Chapter7/chapter7}
-
-
+\include{Chapters/Intro/intro}
+\include{Chapters/Background/background}
+\include{Chapters/Fresco/fresco}
+\include{Chapters/Ranking/ranking}
+\include{Chapters/Transformer/transformer}
+\include{Chapters/Crude/test}
+\include{Chapters/Outlook/outlook}
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
@@ -154,11 +155,10 @@
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
-% \bibliographystyle{apalike}
-\bibliographystyle{unsrt} % Use for unsorted references  
+\bibliographystyle{apalike}
+% \bibliographystyle{unsrt} % Use for unsorted references  
 % \bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
-% TODO - get references working
 \bibliography{References/references} % Path to your References.bib file
 
 

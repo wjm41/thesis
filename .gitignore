@@ -7,3 +7,5 @@
 *.gz
 *.fdb_latexmk
 .DS_store
+*.bbl
+*.blg
