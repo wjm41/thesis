@@ -1,26 +1,28 @@
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
-\hyperref[ch:intro]{Chapter 1} talks about ...
-\hyperref[ch:background]{Chapter 2} talks about ...
+\hyperref[ch:intro]{Chapter 1} introduces the design-make-test cycle in drug discovery and the promise of machine learning for accelerating the process.
 
-In \hyperref[ch:fresco]{Chapter 3} we discuss ... This work resulted in the publication of the following article:
+\hyperref[ch:background]{Chapter 2} gives an overview of molecular featurisation and methods in machine learning which are used in this thesis.
+
+In \hyperref[ch:fresco]{Chapter 3} starts at the hit-finding stage of drug discovery, and we discuss the usage of unsupervised learning for modelling the 3D distribution of pharmacophores in fragment-protein complexes. This work resulted in the following preprint (manuscript under review):
 \begin{quote}
 William McCorkindale, Ivan Ahel, Haim Barr, Galen J. Correy, James S. Fraser, Nir London, Marion Schuller, Khriesto Shurrush, Alpha A. Lee. Fragment-Based Hit Discovery via Unsupervised Learning of Fragment-Protein Complexes.
 \end{quote}
-Specify who did what
+In this work, I implemented the model and conducted the computational validation and virtual screening. Dr Ivan Ahel, Dr Haim Barr, Dr Khriesto Shurrush, and Prof Nir London performed bioactivity assays of ligands against SARS-CoV-2 Mpro. Dr Galen Correy and Prof James Fraser obtained X-ray crystallographic structures of ligand-bound structures to SARS-CoV-2 nsp3-Mac1. Dr Marion Schuller performed bioactivity assays of ligands against nsp3-Mac1. Dr Alpha A. Lee supervised the work. I was the principal author of the article.
 
-\hyperref[ch:ranking]{Chapter 4}
+\hyperref[ch:ranking]{Chapter 4} brings us to the hit-to-lead stage where we can use machine learning to rank the activity of molecules. This work resulted in the following publication:
 \begin{quote}
 Aaron Morris, William McCorkindale, The COVID Moonshot Consortium, Nir Drayman, John D. Chodera, Savaş Tay, Nir London and Alpha A. Lee. Discovery of SARS-CoV-2 main protease inhibitors using a synthesis-directed de novo design model, \textit{Chem. Commun.}, 2021,57, 5909-5912 
 \end{quote}
+In this work, I developed the ranking model and constructed the screening library. Aaron Morris evaluated the model and generated compound synthesis routes. Dr John D. Chodera performed docking calculations. Prof Nir London performed bioactivity assays of ligands against SARS-CoV-2 Mpro. Dr Nir Drayman and Prof Savaş Tay performed OC43 live virus assays.  Dr Alpha A. Lee supervised the work.
 
 \hyperref[ch:transformer]{Chapter 5}
 \begin{quote}
 Dávid Péter Kovács, William McCorkindale and Alpha A. Lee. Quantitative interpretation explains machine learning models for chemical reaction prediction and uncovers bias. \textit{Nature Communications} volume 12, Article number: 1695 (2021)
 \end{quote}
-
-D.P.K. and W.M. implemented the algorithms, D.P.K. trained the models, designed the experiments and analysed the model attributions for the various reaction classes. W.M. implemented Tanimoto splitting and applied reaction templates for counting statistics and artificial dataset generation. A.A.L. supervised and directed the project. All authors discussed the results and approved the manuscript. D.P.K. and W.M. contributed equally to this study.
+I worked jointly with Dávid Kovács on this work which he completed as part of his MPhil research project under Dr Alpha A. Lee. We contributed equally to model development. Dávid Kovács trained the models, and analysed the model attributions for various reaction classes. I applied reaction templates for data analysis and artificial dataset generation, and investigated model performance under Tanimoto splitting.  Dr Alpha A. Lee supervised the work.
 
 \hyperref[ch:testing]{Chapter 6}
+In this work, I implemented the random forest model and constructed the screening library. Dr Emma King-Smith implemented the gaussian process model and cleaned the experimental data. Mihajlo Filep performed bioactivity assays of ligands against SARS-CoV-2 Mpro. Dr Alpha A. Lee and Prof Nir London supervised the work.
 
 The final chapter ...
