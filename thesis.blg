@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Declaration/declaration.aux
+A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Chapters/Preface/preface.aux
+A level-1 auxiliary file: Chapters/Intro/intro.aux
+A level-1 auxiliary file: Chapters/Background/background.aux
+A level-1 auxiliary file: Chapters/Fresco/fresco.aux
+A level-1 auxiliary file: Chapters/Ranking/ranking.aux
+A level-1 auxiliary file: Chapters/Transformer/transformer.aux
+A level-1 auxiliary file: Chapters/Crude/test.aux
+A level-1 auxiliary file: Chapters/Outlook/outlook.aux
+The style file: apalike.bst
+Database file #1: References/references.bib
+Warning--I didn't find a database entry for "?"
+Warning--to sort, need author or key in ChemSpace
+Warning--empty year in ChemSpace
+Warning--empty journal in Alvarez-Melis2018OnMethods
+Warning--empty year in ElsevierReaxysDatabase
+Warning--empty year in Kovacs2020MolecularExplainer
+Warning--empty year in rdkit
+Warning--empty year in moonshot2020
+You've used 83 entries,
+            1935 wiz_defined-function locations,
+            996 strings with 29724 characters,
+and the built_in function-call counts, 49666 in all, are:
+= -- 4375
+> -- 3960
+< -- 25
++ -- 1510
+- -- 1489
+* -- 5067
+:= -- 8948
+add.period$ -- 248
+call.type$ -- 83
+change.case$ -- 1152
+chr.to.int$ -- 78
+cite$ -- 91
+duplicate$ -- 1167
+empty$ -- 2334
+format.name$ -- 1588
+if$ -- 9093
+int.to.chr$ -- 6
+int.to.str$ -- 0
+missing$ -- 73
+newline$ -- 416
+num.names$ -- 248
+pop$ -- 1017
+preamble$ -- 1
+purify$ -- 1152
+quote$ -- 0
+skip$ -- 876
+stack$ -- 0
+substring$ -- 2708
+swap$ -- 119
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 496
+warning$ -- 7
+while$ -- 275
+width$ -- 0
+write$ -- 1058
+(There were 8 warnings)
