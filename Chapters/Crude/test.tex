@@ -8,11 +8,23 @@ Figure 1 - schematic
 
 Thus, we separately trained a GP and RF on the crude inhibition data, identifying 5 compounds which had predicted activity from both the GP and RF but no crude activity. We suspected that these were false negatives and re-synthesized, purified, and re-tested them with full dose-response curves to obtain IC50 inhibition values. This revealed that one of them was active with IC50 = 0.113\uM (ASAP-0000204). (needs a nice sentence to round it off).
 
-Figure 2 - leave-one-out
-
+\begin{figure}
+    \centering
+             \includegraphics[width=0.45\textwidth]{Chapters/Crude/Figs/rf.pdf}
+        \caption{Leave one out regression. }
+        \label{fig:leave-one-out}
+    \end{figure}
+    
 Looking forward, we test the ability of the trained models to extrapolate to novel compounds by prospectively screening an external library of amides. We virtually enumerate primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from the crude activity screening. This results in a library of ~62,800 amides which were scored by the trained GP and RF models, and we select the top 20 compounds with high predicted activity for both the GP and RF for synthesis and assaying to obtain IC50 values. Gratifyingly, the top 2 ML compounds showed promising average IC50 values of 0.0525\uM (ASAP-0000169) and 0.075\uM (ASAP-0000211), respectively. The top 2 most potent molecules based off of the crude inhibition values were compounds that, whilst active at IC50 = 0.034\uM (ASAP-0000221) and IC50 = 0.064\uM (ASAP-0000164), contained the toxic benzene-1,4-diamine motif that is generally avoided.13 The top 2 compounds without the aforementioned motif derived from only crude inhibition values had similar pure compound IC50 values to our framework's identified compounds, 0.046\uM (ASAP-0000155) and 0.064\uM (ASAP-0000225), respectively. This result highlights ML's ability to identify promising yet overlooked scaffolds without compromising potency. 
 
-Figure 3 - top 2 crude, false negative, overall strip plot?
+\begin{figure}
+    \centering
+             \includegraphics[width=0.45\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+        \caption{Plot of mean IC50 values.}
+        \label{fig:strip}
+    \end{figure}
+
+Figure 4 - top 2 crude, false negative?
 
 References:
 
