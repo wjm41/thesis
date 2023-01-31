@@ -1,25 +1,41 @@
 \chapter{Augmenting Nanomolar High-Throughput Screening with Machine Learning for Lead Optimisation}\label{ch:testing}
 
-Typically, testing a drug candidate involves obtaining a pure sample of the molecule, and then mixing it in solution with the protein target under study to measure its bioactivity via an assay. While necessary for maximum accuracy, compound purification can be time-consuming and costly, particularly for chiral molecules. In collaboration with the London Lab at The Weizmann Institute of Science, we investigated whether we needed compound purification at all for training machine learning bioactivity models by using non-purified compound assays. Focusing on a particular scaffold synthesised with an amide coupling as the final step, we added the acid and amine reactants directly in solution with the protein to obtain an assay reading from the crude reaction mixture. By skipping the purification step, this allowed us to quickly screen a library of < 300 > amines with the same acid in high-throughput which we used to train RF and GP models. Leave-one-out validation on the training data correctly identified false negatives, and a prospective virtual screen of EnamineREAL with the trained models returned top hits with similar potency and better pharmacokinetic properties.
+Testing a drug candidate requires compound synthesis and purification followed by preparation of a solution of known concentration to measure compound activity via an assay. While necessary for maximum accuracy, compound purification can be time-consuming and costly, bottlenecking the throughput of compound screening. This is a challenge particularly when exploring large and diverse sets of analogues for an intermediate hit or lead compound in order to derive its structure-activity relationship (SAR).
 
-Machine learning (ML) has seen great advances over the past two decades in drug discovery and development, from protein-ligand interactions to novel scaffold generation to virtual screening of pharmacokinetic properties and toxicity.1-5 Generally, ML algorithms are tasked with prediction of specific target(s) with the endeavor that the faster predictions in silico will lead to faster pharmaceutical development. Hastening drug development is a key factor in reducing the overall cost of pharmaceutics, where it can reach up to \$2 billion to bring a compound to market.1 However, one overlooked area in this development cycle is ML applied as a filtering protocol for initial lead discovery, despite reports that ML methods often implicitly identify false positives and false negatives.6,7 Crude activity screening (assuming some level of introduction by Mihajlo is given previously) is a logical area to apply such techniques as noise and false hits/misses play a substantial role in obscuring valuable data. We hypothesized that combining two robust ML methodologies, Gaussian Processes (GPs) and Random Forests (RFs), could be used to identify hidden gems (false negatives) and overlooked molecules (low activity positives). Both GPs and RFs have been utilized in numerous chemoinformatics tasks, with several precedents in pharmaceutics development, making both ideal for predicting activity of novel compounds.8-12 Given the difference in approach to modeling for GPs and RFs, it was hypothesized that a combination of the two would lead to a highly robust framework; a compound predicted to have low activity from both a GP and a RF is likely to be inactive and likewise a compound with high predicted activity from both the GP and RF is likely potent.
+Recent work in developing nanomolar-scale high-throughput chemistry seeks to address this issue \cite{Santarilla2015MerckNanomolar, Perera2018PfizerNanomolar, Gehrtz2022nanomolar}. (TODO - not quite connected to the first paragraph). Adopting techniques from plate-based biological-assay screening, reacting one reagent with a different second reagent in each well of the plate, these approaches enable commonplace medicinal chemistry reactions (e.g., amide couplings and Suzuki reactions) to be conducted in a high-throughput manner with minimal starting material (<300 nmol). Utilising this method at the end of the synthesis route allows high-throughput generation of analogues for SAR exploration. In addition to higher throughput, nanomolar-scale chemistry also reduces costs by lowering solvent usage and conserving advance intermediates in the synthesis route. The drawback, however, is that it is rarely possible to perform purification for reactions conducted at the nanomole scale. 
+
+A related approach for synthesizing large and diverse combinatorial libraries are DNA-encoded libraries (DEL) \cite{GirondaMartinez2021DNALibrary}. DEL workflows also do not require purification of every compound, and there has been recent success in training ML models on DEL bioactivity screen for hit-finding \cite{McCloskey2020DNALibrary}. The success of this approach despite the inherent uncertainty in compound yields suggest that a similar approach with nanomolar screening data 
+
+% Such derivatization is preferably achieved toward the end of the synthesis route, to maximize the utility of a single intermediate. This approach can be readily scaled to plate-based format, where the starting material is reacted with a different second reagent in each well of the plate. Provided there is no interference from the other reagents in the reaction, this significantly increases the speed, reduces chemical waste and lowers the cost of initial SAR exploration. The plate-based format allows closer integration of chemical and biological experiments but also comes with the limitation that reactions conducted at the nanomole scale are rarely appropriate for purification.
+
+Typically, testing a drug candidate involves obtaining a pure sample of the molecule, and then mixing it in solution with the protein target under study to measure its bioactivity via an assay. While necessary for maximum accuracy, compound purification can be time-consuming and costly, particularly for chiral molecules. In collaboration with the London Lab at The Weizmann Institute of Science, we investigated whether we needed compound purification at all for training machine learning bioactivity models by using non-purified compound assays. Focusing on a particular scaffold synthesised with an peptide coupling as the final step, we added the acid and amine reactants directly in solution with the protein to obtain an assay reading from the crude reaction mixture. By skipping the purification step, this allowed us to quickly screen a library of 300 amines with the same acid in high-throughput which we used to train RF and GP models. Leave-one-out validation on the training data correctly identified false negatives, and a prospective virtual screen of EnamineREAL with the trained models returned top hits with similar potency and better pharmacokinetic properties.
+
+However, one overlooked area in this development cycle is ML applied as a filtering protocol for initial lead discovery, despite reports that ML methods often implicitly identify false positives and false negatives.6,7 Crude activity screening (assuming some level of introduction by Mihajlo is given previously) is a logical area to apply such techniques as noise and false hits/misses play a substantial role in obscuring valuable data. We hypothesized that combining two robust ML methodologies, Gaussian Processes (GPs) and Random Forests (RFs), could be used to identify hidden gems (false negatives) and overlooked molecules (low activity positives). Both GPs and RFs have been utilized in numerous chemoinformatics tasks, with several precedents in pharmaceutics development, making both ideal for predicting activity of novel compounds.8-12 Given the difference in approach to modeling for GPs and RFs, it was hypothesized that a combination of the two would lead to a highly robust framework; a compound predicted to have low activity from both a GP and a RF is likely to be inactive and likewise a compound with high predicted activity from both the GP and RF is likely potent.
+
+Mixture of reactants and products from crude assay.
 
 \begin{figure}
     \centering
              \includegraphics[width=\textwidth]{Chapters/Crude/Figs/schematic.pdf}
         \caption{Schmeatic of workflow.}
-        \label{fig:leave-one-out}
+        \label{fig:schematic}
     \end{figure}
 
-Thus, we separately trained a GP and RF on the crude inhibition data, identifying 5 compounds which had predicted activity from both the GP and RF but no crude activity. We suspected that these were false negatives and re-synthesized, purified, and re-tested them with full dose-response curves to obtain IC50 inhibition values. This revealed that one of them was active with IC50 = 0.113\uM (ASAP-0000204). (needs a nice sentence to round it off).
-
+\section{Identifying False Negatives in Experimental Data}
 \begin{figure}
     \centering
              \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
         \caption{Leave one out regression. }
         \label{fig:leave-one-out}
     \end{figure}
-    
+
+Thus, we separately trained a GP and RF on the crude inhibition data, identifying 5 compounds which had predicted activity from both the GP and RF but no crude activity. We suspected that these were false negatives and re-synthesized, purified, and re-tested them with full dose-response curves to obtain IC50 inhibition values. This revealed that one of them was active with IC50 = 0.113\uM (ASAP-0000204). (needs a nice sentence to round it off).
+
+TODO - broad discussion of model predictions, correlation with yield?
+yields determind by integration of the UV spectra of each reaction.
+
+\section{Scaffold Exploration via Virtual Screening}
+
 Looking forward, we test the ability of the trained models to extrapolate to novel compounds by prospectively screening an external library of amides. We virtually enumerate primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from the crude activity screening. This results in a library of ~62,800 amides which were scored by the trained GP and RF models, and we select the top 20 compounds with high predicted activity for both the GP and RF for synthesis and assaying to obtain IC50 values. Gratifyingly, the top 2 ML compounds showed promising average IC50 values of 0.0525\uM (ASAP-0000169) and 0.075\uM (ASAP-0000211), respectively. The top 2 most potent molecules based off of the crude inhibition values were compounds that, whilst active at IC50 = 0.034\uM (ASAP-0000221) and IC50 = 0.064\uM (ASAP-0000164), contained the toxic benzene-1,4-diamine motif that is generally avoided.13 The top 2 compounds without the aforementioned motif derived from only crude inhibition values had similar pure compound IC50 values to our framework's identified compounds, 0.046\uM (ASAP-0000155) and 0.064\uM (ASAP-0000225), respectively. This result highlights ML's ability to identify promising yet overlooked scaffolds without compromising potency. 
 
 \begin{figure}
@@ -30,6 +46,8 @@ Looking forward, we test the ability of the trained models to extrapolate to nov
     \end{figure}
 
 Figure 4 - top 2 crude, false negative?
+
+\section{Discussion}
 
 References:
 
