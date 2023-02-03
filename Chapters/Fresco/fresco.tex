@@ -49,6 +49,7 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 
 \section{Unsupervised Learning of Pharmacophore Distributions} \label{sec:model}
 
+%TODO - subfigures
 \begin{figure}[!th]
     \centering
     \begin{subfigure}{\textwidth}
@@ -65,6 +66,14 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 \caption{(a) A visual illustration of how FRESCO differs from traditional fragment linking approaches. (b) A visual illustration of how we apply unsupervised learning to fragment ensembles and perform virtual screening of unseen molecules.}
 \label{fig:fresco_vs_linking}
 \end{figure}
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/pharmacophores.png}
+    \caption{The pharmacophores of the fragment ensemble shown in the 3D binding sites of (a) Mpro, and (b) nsp3-Mac1. The red, blue, and green spheres depict hydrogen bond donors, acceptors, and aromatic pharmacophores respectively. Several of the Mpro fragments are drawn to illustrate the ‘origin’ of some pharmacophores. None are drawn for nsp3-Mac1 due to the density of pharmacophores in the binding site.}
+    \label{fig:pharmacophores}
+\end{figure}
+
 
 To turn fragment hits into a model that predicts whether an unknown ligand will bind potently to the binding site, we employ an interpretation inspired by statistical physics. There are multiple chemical motifs that can engage residues on the binding site. These different modes of engagement can be considered as a statistical distribution. Each interaction between a chemical motif on the fragment and a binding site residue corresponds to an instance of this statistical distribution. We assume that the fragment library broadly covers chemical space, and anticipate that stronger interactions will be sampled and therefore observed more often amongst fragment hits than weaker interactions. Note that an individual fragment is a weak binder -- fragment screens are done at a high concentration which forces the equilibrium towards forming fragment-protein complexes enabling detection via crystallography. Therefore, we analyse the statistical distribution of fragment-protein interactions formed by the dense fragment hits, rather than any individual fragment (Figure \ref{fig:fresco_vs_linking}a).
 
@@ -140,6 +149,12 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
     \caption{Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
     \label{fig:mpro_hit}
 \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
+    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown.}
+    \label{fig:mpro_ligands}
+\end{figure}
 
 
 % TODO - further elaboration of the workflow
@@ -170,6 +185,12 @@ As with Mpro, 11 close analogues to Z5551425673 were ordered to explore the stru
     \label{fig:mac1_rounds}
 \end{figure}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
+    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on nsp3-Mac1. The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a hetrocyclic motif. This mimics adenosine, a core in the natural substrate.This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
+    \label{fig:mac1_ligands}
+\end{figure}
 \section{Discussion} \label{sec:discussion}
 
 Here we show that the combination of computational statistics with high-throughput structural biology and large libraries of purchasable fragment-like molecules unlocks a powerful tool in hit discovery. Going beyond classical fragment-based drug design, which involves merging or expanding a small set of fragments, we derived a statistical framework that leverages dense fragment hits to build potent inhibitors. Whilst individual fragments are weak binders, our key insight is that a fragment-protein interaction is likely to be significant if there are multiple fragments making similar interactions. Therefore, by picking out these persistent interactions, we can discern the salient chemical motifs which make favourable interactions with the binding site. Specifically, we coarse-grained fragments into pharmacophores, and infer the distribution of pairwise distances between pharmacophores using Kernel Density Estimation. We then screen large libraries of purchasable compounds against this fragment-derived pharmacophore distribution. We retrospectively validated our method using data from The COVID Moonshot, an open science drug discovery campaign against the SARS-CoV-2 main protease, and prospectively discovered new hits against SARS-CoV-2 main protease and nsp3-Mac1.
