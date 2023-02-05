@@ -13,54 +13,52 @@ A level-1 auxiliary file: Chapters/Transformer/transformer.aux
 A level-1 auxiliary file: Chapters/Crude/test.aux
 A level-1 auxiliary file: Chapters/Outlook/outlook.aux
 The style file: apalike.bst
+A level-1 auxiliary file: Appendix/Appendix1/appendix1.aux
+A level-1 auxiliary file: Appendix/Appendix2/appendix2.aux
 Database file #1: References/references.bib
-Warning--I didn't find a database entry for "?"
 Warning--to sort, need author or key in ChemSpace
 Warning--empty year in ChemSpace
-Warning--empty journal in Alvarez-Melis2018OnMethods
-Warning--empty year in ElsevierReaxysDatabase
-Warning--empty year in Kovacs2020MolecularExplainer
 Warning--empty year in rdkit
 Warning--empty year in moonshot2020
-You've used 83 entries,
+You've used 60 entries,
             1935 wiz_defined-function locations,
-            996 strings with 29724 characters,
-and the built_in function-call counts, 49666 in all, are:
-= -- 4375
-> -- 3960
-< -- 25
-+ -- 1510
-- -- 1489
-* -- 5067
-:= -- 8948
-add.period$ -- 248
-call.type$ -- 83
-change.case$ -- 1152
-chr.to.int$ -- 78
-cite$ -- 91
-duplicate$ -- 1167
-empty$ -- 2334
-format.name$ -- 1588
-if$ -- 9093
-int.to.chr$ -- 6
+            869 strings with 26153 characters,
+and the built_in function-call counts, 41232 in all, are:
+= -- 3523
+> -- 3629
+< -- 18
++ -- 1402
+- -- 1383
+* -- 4348
+:= -- 7450
+add.period$ -- 181
+call.type$ -- 60
+change.case$ -- 983
+chr.to.int$ -- 59
+cite$ -- 65
+duplicate$ -- 861
+empty$ -- 1756
+format.name$ -- 1453
+if$ -- 7482
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 73
-newline$ -- 416
-num.names$ -- 248
-pop$ -- 1017
+missing$ -- 55
+newline$ -- 303
+num.names$ -- 179
+pop$ -- 876
 preamble$ -- 1
-purify$ -- 1152
+purify$ -- 983
 quote$ -- 0
-skip$ -- 876
+skip$ -- 656
 stack$ -- 0
-substring$ -- 2708
-swap$ -- 119
-text.length$ -- 6
+substring$ -- 2084
+swap$ -- 97
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 496
-warning$ -- 7
-while$ -- 275
+type$ -- 360
+warning$ -- 4
+while$ -- 202
 width$ -- 0
-write$ -- 1058
-(There were 8 warnings)
+write$ -- 772
+(There were 4 warnings)

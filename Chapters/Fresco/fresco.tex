@@ -46,11 +46,7 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 % The only comparable methods that the authors are aware of is recent work in using deep generative models for proposing merges between two fragments (DeLinker \cite{Imrie2020DeLinker}, SyntaLinker \cite{Yang2020SyntaLinker}, and Develop \cite{Imrie2021Develop}). These approaches differ for ours in several ways: Firstly, these models all require human intervention from an expert in choosing which fragments to merge, or what pharmacophoric constraints need to obeyed, whereas our model is fully end-to-end. Secondly, these methods utilise neural network-based generative models which are very sensitive to training hyperparameter choice in general (citation about mode collapse \cite{?}), and for molecular generation in particular known to propose invalid and/or unsynthesizable molecules \cite{Gao2020Synthesizability}. In contrast, our method relies on kernel density estimation which is simple, robust and free from hyperparametear tuning, and we we explicitly only screen purchasable, easily-synthesised molecules. Lastly, the proposed models have only been studied computationally and lack validation in the real world.
 
 % Our results are the first experimentally validated demonstration of hit detection via a fully computational workflow starting directly from an experimental fragment screen. This work opens the door for bridging fragment-based drug discovery with virtual screening.
-
-\section{Unsupervised Learning of Pharmacophore Distributions} \label{sec:model}
-
-%TODO - subfigures
-\begin{figure}[!th]
+\begin{figure}[!bh]
     \centering
     \begin{subfigure}{\textwidth}
     \centering
@@ -67,6 +63,8 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 \label{fig:fresco_vs_linking}
 \end{figure}
 
+\section{Unsupervised Learning of Pharmacophore Distributions} \label{sec:model}
+
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/pharmacophores.png}
@@ -77,12 +75,11 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 
 To turn fragment hits into a model that predicts whether an unknown ligand will bind potently to the binding site, we employ an interpretation inspired by statistical physics. There are multiple chemical motifs that can engage residues on the binding site. These different modes of engagement can be considered as a statistical distribution. Each interaction between a chemical motif on the fragment and a binding site residue corresponds to an instance of this statistical distribution. We assume that the fragment library broadly covers chemical space, and anticipate that stronger interactions will be sampled and therefore observed more often amongst fragment hits than weaker interactions. Note that an individual fragment is a weak binder -- fragment screens are done at a high concentration which forces the equilibrium towards forming fragment-protein complexes enabling detection via crystallography. Therefore, we analyse the statistical distribution of fragment-protein interactions formed by the dense fragment hits, rather than any individual fragment (Figure \ref{fig:fresco_vs_linking}a).
 
-%TODO - remove figure S1
-To numerically approximate this distribution, we quantify binding interactions by coarse-graining the fragment molecules into hydrogen-bond donor, hydrogen-bond acceptor, and aromatic ring ``pharmacophores'' (Figure S1). These are a simple abstractions of molecular features that can make potent interactions with binding site residues, and is a commonly used tool to interpret the biological activity of ligands \cite{Kaserer2015PharmacophoreReview}. The distribution which we then choose to approximate is the pair-wise distance between these pharmacophores. Computational screening of compounds based on pharmacophore distances is a commonly used technique in medicinal chemistry, though here we are extending this concept to enable a statistical interpretation of fragment hit. We consider pharmacophore features, rather than specific protein-ligand interactions, so that the downstream model takes the ligand as the input rather than having to perform the additional step of computationally placing the ligand in the binding site. 
+To numerically approximate this distribution, we quantify binding interactions by coarse-graining the fragment molecules into hydrogen-bond donor, hydrogen-bond acceptor, and aromatic ring ``pharmacophores'' (Figure \ref{fig:pharmacophores}). These are a simple abstractions of molecular features that can make potent interactions with binding site residues, and is a commonly used tool to interpret the biological activity of ligands \cite{Kaserer2015PharmacophoreReview}. The distribution which we then choose to approximate is the pair-wise distance between these pharmacophores. Computational screening of compounds based on pharmacophore distances is a commonly used technique in medicinal chemistry, though here we are extending this concept to enable a statistical interpretation of fragment hit. We consider pharmacophore features, rather than specific protein-ligand interactions, so that the downstream model takes the ligand as the input rather than having to perform the additional step of computationally placing the ligand in the binding site. 
 
 %in fragment-based hit dis intention of replicating the intuition of a medicinal chemist deducing spatial correlations between pharmacophores from different fragments.
 
-We utilise kernel density estimation (KDE) \cite{Parzen1962KDE} to estimate this spatial distribution of pair-wise pharmacophore distances (Figure S2). We then score unseen molecules by evaluating pharmacophore distances within that molecule against the probability distribution of pharmacophore distances derived from the fragment ensemble (Figure \ref{fig:fresco_vs_linking}b). We take the mean probability over all of the distances between all possible pharmacophore-pharmacophore pairs as the score for the molecule. This is an unsupervised approach -- starting from the results of a crystallographic fragment screen, without any bioactivity data, we can build a model that computationally screens unseen molecules. We term our approach Fragment Ensemble Scoring (FRESCO). 
+We utilise kernel density estimation (KDE) \cite{Parzen1962KDE} to estimate this spatial distribution of pair-wise pharmacophore distances. We then score unseen molecules by evaluating pharmacophore distances within that molecule against the probability distribution of pharmacophore distances derived from the fragment ensemble (Figure \ref{fig:fresco_vs_linking}b). We take the mean probability over all of the distances between all possible pharmacophore-pharmacophore pairs as the score for the molecule. This is an unsupervised approach -- starting from the results of a crystallographic fragment screen, without any bioactivity data, we can build a model that computationally screens unseen molecules. We term our approach Fragment Ensemble Scoring (FRESCO). 
 
 FRESCO conceptually departs from machine learning approaches in the literature for fragment-based hit discovery. These approaches, such as DeLinker \cite{Imrie2020DeLinker},  SyntaLinker \cite{Yang2020SyntaLinker}, and Develop \cite{Imrie2021Develop}), as well as data-mining methods such as Fragment Network \cite{Hall2017FragNet}, attempt to grow single fragments or merge only a pair of fragments. They all require expert insights in choosing which fragments to merge, or what pharmacophoric constraints need to obeyed, instead of leveraging all of the information from an ensemble of fragment hits in a data-driven manner.
 
@@ -112,7 +109,7 @@ The Moonshot activity data for the retrospective study was accessed in Mar 22nd 
 
 In addition, molecular docking studies have also been done extensively on molecules from the Moonshot campaign \cite{Morris2021Rank, Saar2021biorxiv}. For our analysis we utilise the same docking protocols as those reported previously for consistency, the details of which can be found in the methods section.
 
-In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''. This threshold is relatively arbitrary and we also repeat the analysis for both lower and higher IC50 thresholds (Figure S3).
+In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''. This threshold is relatively arbitrary and repeated analysis for both lower and higher IC50 thresholds (1-15\uM) show similar results.
 
 The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 $<$ 5\uM, is 6.0\%. This represents the hit rate of medicinal chemists using traditional and computational tools at their disposal to design compounds for the Moonshot drug discovery campaign. The hit rate for docking is computed by choosing the top-$N$ molecules with the best score. To calculate the hit rate for FRESCO, we first fit a FRESCO model on 23 publicly reported crystallographic structures of non-covalent fragments bound to the SARS-CoV-2 Mpro protein \cite{Douangamath2020XChem} and score the whole dataset using the fitted FRESCO model.
 
@@ -123,11 +120,22 @@ The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 
     \label{fig:moonshot_enrichment_vs_docking}
 \end{figure}
 
+Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves higher hit rates compared to both computational docking and the medicinal chemists. Looking at the top-5\% of the molecules ($N<50$), FRESCO has a hit rate of 12-30\%, roughly 2-5 times that of the medicinal chemists. Hit rates are also higher than baseline for both lower and higher IC50 thresholds (Figure S3). This shows that it is possible to correlate bioactivity with unsupervised learning of fragment pharmacophore distributions, and that FRESCO could accelerate hit detection in a real-world drug discovery campaign. In this retrospective study, FRESCO is standing on the shoulders of medicinal chemists -- it is used to rescore compounds that are designed by chemists. Therefore, we next turn to interrogate the performance of FRESCO in a real-world context when it is used to score a large unbiased library of compounds via a series of prospective studies. 
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/flowchart_screening.pdf}
+    \caption{A schematic of the FRESCO screening workflow.}
+    \label{fig:screening_workflow}
+\end{figure}
+
 \section{Prospective hit finding} \label{sec:prospective}
 
 Building on the results of the retrospective evaluation, we performed a prospective study on Mpro. Rather than rescreening Moonshot compounds, we instead deploy the model to virtually screen a library of commercially available compounds. By synthesising and assaying the top-ranked compounds, we can evaluate the performance of FRESCO in a real-life use case of hit discovery.
 
 The computational workflow we follow to perform the virtual screening is shown in Figure \ref{fig:screening_workflow}. Using a FRESCO model trained on the fragment-protein complexes, we score the library and rank the compounds by score. The top-ranked compounds are then filtered by their physical properties to maximise ``drug-likeness'', and selected diverse compounds by clustered hit by structural similarity and picking centroids of the most populous clusters.
+
 
 The library we screen is VirtualFlow, a published dataset of more than 1.4 billion commercially available molecules from EnamineREAL \& ZINC15 with pre-generated molecular conformers in a ready-to-dock format \cite{Gorgulla2020VirtualFlow}. The top-500k predictions were selected and filtered to remove undesirable properties. A series of successive filtering steps were performed: first, only molecules with physical properties in well-understood ``lead-like'' chemical space \cite{ChemSpace} were kept. Secondly, the sum of the number of hydrogen bond donors and hydrogen bond acceptors were constrained to an upper limit of 8. Then, we remove molecules that match known filters for pan-assay interference compounds (PAINS) \cite{Baell2010Pains} as well as filters for moieties that are undesirable for medicinal chemistry (eg furan, thiophene, nitro groups). Duplicate tautomers for each molecule are also removed. Finally, for ease of synthetic accessibility, we only consider molecules with less than two chiral centers.
 
@@ -135,46 +143,63 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
 
 % This resulted in 24748 and 22358 clusters for Mpro and Mac1, respectively. For both targets the centroids of the 50 most populous clusters (or the closest purchasable analogue if it wasn't available) were chosen as the candidate compounds. These compounds were ordered for synthesis from Enamine which resulted in 38 and 52 successfully made molecules for Mpro and Mac1, respectively.
 
-
- \begin{figure}[th!]
+\begin{figure}[!ph]
     \centering
-    \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/flowchart_screening.pdf}
-    \caption{A schematic of the FRESCO screening workflow.}
-    \label{fig:screening_workflow}
+
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
+        \label{fig:mpro_ligands}
+        \end{subfigure}
+    \hfill
+
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_hit_IC50.pdf}
+        \label{fig:mpro_hit}
+    \end{subfigure}
+    \caption{(a) Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown. (b) Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
+
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/mpro_hit_IC50.pdf}
-    \caption{Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
-    \label{fig:mpro_hit}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
-    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown.}
-    \label{fig:mpro_ligands}
-\end{figure}
+% \begin{figure}[!hbtp]
+%     \centering
+%     \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
+%     \label{fig:mpro_ligands}
+%     \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown.}
+% \end{figure}
 
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_hit_IC50.pdf}
+%     \label{fig:mpro_hit}
+%     \caption{Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
+% \end{figure}
 
-% TODO - further elaboration of the workflow
-
-Inspecting the cluster centroids favored by FRESCO, we observe typically 2 aromatic moieties connected via an amide or amide isostere. This scaffold is exhibited by three of the initial fragment hits (x0434, x0678, x1093), with the most of the other fragment hits possessing an aromatic group bound at similar locations (Figure S4). We successfully synthesised and assayed 38 of the compounds identified by FRESCO (see SI for the whole library). The most promising compound, WIL-UNI-d4749f31-37, has an IC50 of 25.8\uM measured via fluorescence assay while the remaining compounds were found to be weak-to-negligible activity.
+Inspecting the cluster centroids favored by FRESCO, we observe typically 2 aromatic moieties connected via an amide or amide isostere. This scaffold is exhibited by three of the initial fragment hits (x0434, x0678, x1093), with the most of the other fragment hits possessing an aromatic group bound at similar locations (Figure \ref{fig:mpro_ligands}). The most promising compound, WIL-UNI-d4749f31-37, has an IC50 of 25.8\uM measured via fluorescence assay while the remaining compounds were found to be weak-to-negligible activity.
 
 To validate compound activity, we synthesized 8 close analogues to demonstrate the existence of responsive Structure-Activity Relationship  \cite{Hermann2013ZincImpurity, Morreale2017ZincImpurity} (Figure \ref{fig:mpro_hit}). 3 of those compounds, which contained modifications to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37, retained relatively high potency of IC50 $<$ 100\uM with one of them (ALP-UNI-ed5cdfd2-1) exhibiting a lower IC50 of 19.4\uM. The remaining 5 compounds which perturbed the benzimidazole functional group of WIL-UNI-d4749f31-3 exhibit decreased potency, with only 20-50\% inhibition at a concentration of 99.5\uM.
 
-\begin{figure}
+
+We then turn to SARS-CoV-2 nsp3-Mac1, a structurally unrelated protein target, to demonstrate generalisability of FRESCO in performing hit detection. nsp3-Mac1 is a viral ADP-ribosylhydrolase which counteracts host immune response by cleaving ADP-ribose that is transferred to viral proteins by host ADP-ribosyltransferases. Unlike Mpro, there is no potent chemical matter against nsp3-Mac1. As such, this is a novel first-in-class biological target. 
+
+\begin{figure}[!b]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
+    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on nsp3-Mac1. The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a hetrocyclic motif. This mimics adenosine, a core in the natural substrate.This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
+    \label{fig:mac1_ligands}
+\end{figure}
+
+Repeating the FRESCO workflow on a fragment screen against Mac1 \cite{Schuller2021Mac1Frag}, we obtained 22358 clusters of top-ranked compounds and successfully made 52 molecules. We find that the molecules favored by FRESCO tend to contain a HBA-HBD pair that is spatially proximal within a hetrocyclic motif. This mimics adenosine, a core in the natural substrate, and this motif is shared in many of the initial fragment hits (Figure \ref{fig:mac1_ligands}). We successfully ordered and assayed 52 of the compounds identified by FRESCO (see SI for the whole library).  Two of the compounds show non-negligible activity at high concentration - at 250\uM, compound Z5551425673 (as a racemic mixture) has an inhibition of 30.1\%, while compound Z1102995175 has 24.8\%.
+
+In addition, an X-ray crystallographic screen was also run on the compounds revealing the structure of Z5551425673 (as the S-stereoisomer) bound to the active site (Figure \ref{fig:mac1_hit}). Crystal structures of 9 other compounds chosen via the FRESCO workflow were also obtained though they did not show notable inhibition via HTRF assay. The orthogonal experimental assay and crystal structure results confirm that Z5551425673 is a hit. 
+
+\begin{figure}[!b]
     \centering
     \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_fig.pdf}
     \caption{(a) Compound Z5551425673 is identified as a hit against Mac1 via HTRF assay, with (b) hit confirmation via resolution of a crystal structure of Z5551425673 (colored in cyan) bound to the Mac1 active site. (c) The pharmacophores of Z5551425673 match those exhibited by the fragment hits as highlighted by overlaying the bound structure of Z5551425673 (PDB 7FR2) on the distribution of pharmacophores from the fragment ensemble. Note that some functional groups can be regarded as both hydrogen-bond acceptor (blue) and hydrogen-bond donor (red) pharmacophores and hence they are illustrated as purple.}
     \label{fig:mac1_hit}
 \end{figure}
-
-We then turn to SARS-CoV-2 nsp3-Mac1, a structurally unrelated protein target, to demonstrate generalisability of FRESCO in performing hit detection. nsp3-Mac1 is a viral ADP-ribosylhydrolase which counteracts host immune response by cleaving ADP-ribose that is transferred to viral proteins by host ADP-ribosyltransferases. Unlike Mpro, there is no potent chemical matter against nsp3-Mac1. As such, this is a novel first-in-class biological target. 
-
-Repeating the FRESCO workflow on a fragment screen against Mac1 \cite{Schuller2021Mac1Frag}, we obtained 22358 clusters of top-ranked compounds and successfully made 52 molecules. We find that the molecules favored by FRESCO tend to contain a HBA-HBD pair that is spatially proximal within a hetrocyclic motif. This mimics adenosine, a core in the natural substrate, and this motif is shared in many of the initial fragment hits (Figure S5). We successfully ordered and assayed 52 of the compounds identified by FRESCO (see SI for the whole library).  Two of the compounds show non-negligible activity at high concentration - at 250\uM, compound Z5551425673 (as a racemic mixture) has an inhibition of 30.1\%, while compound Z1102995175 has 24.8\%.
-
-In addition, an X-ray crystallographic screen was also run on the compounds revealing the structure of Z5551425673 (as the S-stereoisomer) bound to the active site (Figure \ref{fig:mac1_hit}). Crystal structures of 9 other compounds chosen via the FRESCO workflow were also obtained though they did not show notable inhibition via HTRF assay (Figure S6). The orthogonal experimental assay and crystal structure results confirm that Z5551425673 is a hit. 
 
 As with Mpro, 11 close analogues to Z5551425673 were ordered to explore the structure-activity relationship of the hit and ensure that the compound is not a singleton. 4 compounds perturbing the aliphatic tail substructure had relatively negligible effect while the remaining compounds perturbing the purine group led to a large drop in activity (Figure \ref{fig:mac1_rounds}). These sets of molecules, still weak in potency, are potentially promising starting points for a hit expansion campaign. 
 
@@ -185,12 +210,7 @@ As with Mpro, 11 close analogues to Z5551425673 were ordered to explore the stru
     \label{fig:mac1_rounds}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
-    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on nsp3-Mac1. The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a hetrocyclic motif. This mimics adenosine, a core in the natural substrate.This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
-    \label{fig:mac1_ligands}
-\end{figure}
+
 \section{Discussion} \label{sec:discussion}
 
 Here we show that the combination of computational statistics with high-throughput structural biology and large libraries of purchasable fragment-like molecules unlocks a powerful tool in hit discovery. Going beyond classical fragment-based drug design, which involves merging or expanding a small set of fragments, we derived a statistical framework that leverages dense fragment hits to build potent inhibitors. Whilst individual fragments are weak binders, our key insight is that a fragment-protein interaction is likely to be significant if there are multiple fragments making similar interactions. Therefore, by picking out these persistent interactions, we can discern the salient chemical motifs which make favourable interactions with the binding site. Specifically, we coarse-grained fragments into pharmacophores, and infer the distribution of pairwise distances between pharmacophores using Kernel Density Estimation. We then screen large libraries of purchasable compounds against this fragment-derived pharmacophore distribution. We retrospectively validated our method using data from The COVID Moonshot, an open science drug discovery campaign against the SARS-CoV-2 main protease, and prospectively discovered new hits against SARS-CoV-2 main protease and nsp3-Mac1.
@@ -202,5 +222,3 @@ More generally, we note that our method does not require the observation of affi
 Finally, although prospective studies demonstrated FRESCO's ability to identify hits, we note that the hit rate and potency of the identified hits are both lower than the retrospective experiments. This highlights the importance of prospective validation in machine learning -- retrospective studies are biased by the fact that the model is rescoring ``reasonable'' design from medicinal chemists, whereas in prospective evaluations, the model is used to score the large chemical space without further inductive biases. Future efforts to improve FRESCO should seek to include further inductive biases, for example incorporating physics-based constrains such as docking to filter FRESCO outputs, as well as solidifying a human-in-the-loop approach to select top hits. 
 
 % TODO - more discussion on the failures of the model? Could include PNAS paper
-
-% TODO - include figures and discussion from SI

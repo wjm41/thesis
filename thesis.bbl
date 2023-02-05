@@ -9,34 +9,14 @@ Agarwal, S., Dugar, D., and Sengupta, S. (2010).
   learning approach.
 \newblock {\em Journal of chemical information and modeling}, 50(5):716--731.
 
-\bibitem[Allen et~al., 2020]{Allen2020}
-Allen, T. E.~H., Wedlake, A.~J., Gelžinytė, E., Gong, C., Goodman, J.~M.,
-  Gutsell, S., and Russell, P.~J. (2020).
-\newblock Neural network activation similarity: a new measure to assist
-  decision making in chemical toxicology.
-\newblock {\em Chem. Sci.}, 11:7335--7348.
-
-\bibitem[Alon et~al., 2021a]{Alon2021SigmaTwo}
+\bibitem[Alon et~al., 2021]{Alon2021sigma}
 Alon, A., Lyu, J., Braz, J.~M., Tummino, T.~A., Craik, V., O'Meara, M.~J.,
   Webb, C.~M., Radchenko, D.~S., Moroz, Y.~S., Huang, X.-P., Liu, Y., Roth,
   B.~L., Irwin, J.~J., Basbaum, A.~I., Shoichet, B.~K., and Kruse, A.~C.
-  (2021a).
+  (2021).
 \newblock Structures of the $$\sigma$$2 receptor enable docking for bioactive
   ligand discovery.
 \newblock {\em Nature}, 600(7890):759--764.
-
-\bibitem[Alon et~al., 2021b]{Alon2021sigma}
-Alon, A., Lyu, J., Braz, J.~M., Tummino, T.~A., Craik, V., O'Meara, M.~J.,
-  Webb, C.~M., Radchenko, D.~S., Moroz, Y.~S., Huang, X.-P., Liu, Y., Roth,
-  B.~L., Irwin, J.~J., Basbaum, A.~I., Shoichet, B.~K., and Kruse, A.~C.
-  (2021b).
-\newblock Structures of the $$\sigma$$2 receptor enable docking for bioactive
-  ligand discovery.
-\newblock {\em Nature}, 600(7890):759--764.
-
-\bibitem[Alvarez-Melis and Jaakkola, 2018]{Alvarez-Melis2018OnMethods}
-Alvarez-Melis, D. and Jaakkola, T.~S. (2018).
-\newblock {On the Robustness of Interpretability Methods}.
 
 \bibitem[Baell and Holloway, 2010]{Baell2010Pains}
 Baell, J.~B. and Holloway, G.~A. (2010).
@@ -78,25 +58,10 @@ Chodera, J., Lee, A.~A., London, N., and von Delft, F. (2020).
 \newblock Crowdsourcing drug discovery for pandemics.
 \newblock {\em Nature Chemistry}, 12(7):581--581.
 
-\bibitem[Clayden et~al., 2012]{Clayden2012}
-Clayden, J., Greeves, N., and Warren, S. (2012).
-\newblock {\em {Organic Chemistry}}.
-\newblock Oxford University Press, 2nd edition.
-
-\bibitem[Coley et~al., 2019a]{Coley2019AutonomousProgress}
-Coley, C.~W., Eyke, N.~S., and Jensen, K.~F. (2019a).
+\bibitem[Coley et~al., 2019]{Coley2019AutonomousProgress}
+Coley, C.~W., Eyke, N.~S., and Jensen, K.~F. (2019).
 \newblock {Autonomous Discovery in the Chemical Sciences Part I: Progress}.
 \newblock {\em Angewandte Chemie - International Edition}, pages 2--38.
-
-\bibitem[Coley et~al., 2019b]{Coley2019AutonomousOutlook}
-Coley, C.~W., Eyke, N.~S., and Jensen, K.~F. (2019b).
-\newblock {Autonomous Discovery in the Chemical Sciences Part II: Outlook}.
-\newblock {\em Angewandte Chemie - International Edition}, pages 2--25.
-
-\bibitem[Coley et~al., 2018]{Coley2018}
-Coley, C.~W., Green, W.~H., and Jensen, K.~F. (2018).
-\newblock {Machine Learning in Computer-Aided Synthesis Planning}.
-\newblock {\em Accounts of Chemical Research}, 51(5):1281--1289.
 
 \bibitem[Davis and Roughley, 2017]{David2017FBLD}
 Davis, B.~J. and Roughley, S.~D. (2017).
@@ -105,35 +70,30 @@ Davis, B.~J. and Roughley, S.~D. (2017).
   Discovery and Validation}, volume~50 of {\em Annual Reports in Medicinal
   Chemistry}, pages 371--439. Academic Press.
 
-\bibitem[de~Souza~Neto et~al., 2020]{deSouza2020InSilicoFBDD}
-de~Souza~Neto, L.~R., Moreira-Filho, J.~T., Neves, B.~J., Maidana, R. L. B.~R.,
-  Guimar{\~a}es, A. C.~R., Furnham, N., Andrade, C.~H., and Silva, F.~P.
-  (2020).
-\newblock In silico strategies to support fragment-to-lead optimization in drug
-  discovery.
-\newblock {\em Frontiers in Chemistry}, 8.
-
-\bibitem[Douangamath et~al., 2020]{Douangamath2020XChem}
+\bibitem[Douangamath et~al., 2020a]{Douangamath2020XChem}
 Douangamath, A., Fearon, D., Gehrtz, P., Krojer, T., Lukacik, P., Owen, C.~D.,
   Resnick, E., Strain-Damerell, C., Aimon, A., {\'A}br{\'a}nyi-Balogh, P.,
   Brand{\~a}o-Neto, J., Carbery, A., Davison, G., Dias, A., Downes, T.~D.,
   Dunnett, L., Fairhead, M., Firth, J.~D., Jones, S.~P., Keeley, A.,
   Keser{\"u}, G.~M., Klein, H.~F., Martin, M.~P., Noble, M. E.~M., O'Brien, P.,
   Powell, A., Reddi, R.~N., Skyner, R., Snee, M., Waring, M.~J., Wild, C.,
-  London, N., von Delft, F., and Walsh, M.~A. (2020).
+  London, N., von Delft, F., and Walsh, M.~A. (2020a).
 \newblock Crystallographic and electrophilic fragment screening of the
   sars-cov-2 main protease.
 \newblock {\em Nature Communications}, 11(1):5047.
+
+\bibitem[Douangamath et~al., 2020b]{douangamath2020crystallographic}
+Douangamath, A., Fearon, D., Gehrtz, P., Krojer, T., Lukacik, P., Owen, C.~D.,
+  Resnick, E., Strain-Damerell, C., Aimon, A., {\'A}br{\'a}nyi-Balogh, P.,
+  et~al. (2020b).
+\newblock Crystallographic and electrophilic fragment screening of the
+  sars-cov-2 main protease.
+\newblock {\em Nature communications}, 11(1):1--11.
 
 \bibitem[Duffy, 2010]{duffy2010molecular}
 Duffy, N.~P. (2010).
 \newblock Molecular property modeling using ranking.
 \newblock US Patent 7,702,467.
-
-\bibitem[{Elsevier}, ]{ElsevierReaxysDatabase}
-{Elsevier}.
-\newblock {Reaxys Database}.
-\newblock \url{https://www.reaxys.com/}.
 
 \bibitem[Fink et~al., 2022]{Fink2022Alpha}
 Fink, E.~A., Xu, J., H{\"u}bner, H., Braz, J.~M., Seemann, P., Avet, C., Craik,
@@ -145,16 +105,20 @@ Fink, E.~A., Xu, J., H{\"u}bner, H., Braz, J.~M., Seemann, P., Avet, C., Craik,
   $$\alpha_{2A}$$-adrenergic receptor.
 \newblock {\em Science}, 377(6614):eabn7065.
 
-\bibitem[Friedel and Crafts, 1877]{Friedel1877SurEtc.}
-Friedel, C. and Crafts, J. (1877).
-\newblock {Sur une nouvelle m{\'{e}}thode g{\'{e}}n{\'{e}}rale de
-  synth{\`{e}}se d’hydrocarbures, d’ac{\'{e}}tones, etc.}
-
 \bibitem[Gao and Coley, 2020]{Gao2020Synthesizability}
 Gao, W. and Coley, C.~W. (2020).
 \newblock The synthesizability of molecules proposed by generative models.
 \newblock {\em Journal of Chemical Information and Modeling},
   60(12):5714--5723.
+
+\bibitem[Gehrtz et~al., 2022]{Gehrtz2022nanomolar}
+Gehrtz, P., Marom, S., B{\"u}hrmann, M., Hardick, J., Kleinb{\"o}lting, S.,
+  Shraga, A., Dubiella, C., Gabizon, R., Wiese, J.~N., M{\"u}ller, M.~P.,
+  Cohen, G., Babaev, I., Shurrush, K., Avram, L., Resnick, E., Barr, H., Rauh,
+  D., and London, N. (2022).
+\newblock Optimization of covalent mkk7 inhibitors via crude nanomole-scale
+  libraries.
+\newblock {\em Journal of Medicinal Chemistry}, 65(15):10341--10356.
 
 \bibitem[Gironda-Mart{\'\i}nez et~al., 2021]{GirondaMartinez2021DNALibrary}
 Gironda-Mart{\'\i}nez, A., Donckele, E.~J., Samain, F., and Neri, D. (2021).
@@ -217,12 +181,6 @@ Hughes, J.~P., Rees, S., Kalindjian, S.~B., and Philpott, K.~L. (2011).
 \newblock Principles of early drug discovery.
 \newblock {\em British journal of pharmacology}, 162(6):1239--1249.
 
-\bibitem[Husinec et~al., 2011]{Husinec2011AnnulationsDerivatives}
-Husinec, S., Savic, V., Simic, M., Tesevic, V., and Vidovic, D. (2011).
-\newblock {Annulations of isoquinoline and {$\beta$}-carboline ring systems:
-  Synthesis of 8-oxoprotoberberine derivatives}.
-\newblock {\em Tetrahedron Letters}, 52:2733--2736.
-
 \bibitem[Ichihara et~al., 2011]{Ichihara2011FragLinking}
 Ichihara, O., Barker, J., Law, R.~J., and Whittaker, M. (2011).
 \newblock Compound design by fragment-linking.
@@ -238,23 +196,10 @@ Imrie, F., Hadfield, T.~E., Bradley, A.~R., and Deane, C.~M. (2021).
 \newblock Deep generative design with 3d pharmacophoric constraints.
 \newblock {\em Chem. Sci.}, 12:14577--14589.
 
-\bibitem[Irwin and Shoichet, 2005]{Irwin2005ZINCScreening}
-Irwin, J.~J. and Shoichet, B.~K. (2005).
-\newblock {ZINC - A free database of commercially available compounds for
-  virtual screening}.
-\newblock {\em Journal of Chemical Information and Modeling}, 45(1):177--182.
-
-\bibitem[Jin et~al., 2017]{Jin2017}
-Jin, W., Coley, C.~W., Barzilay, R., and Jaakkola, T. (2017).
-\newblock {Predicting organic reaction outcomes with weisfeiler-lehman
-  network}.
-\newblock {\em Advances in Neural Information Processing Systems},
-  2017-Decem(Nips):2608--2617.
-
 \bibitem[Jin et~al., 2020]{jin2020structure}
 Jin, Z., Du, X., Xu, Y., Deng, Y., Liu, M., Zhao, Y., Zhang, B., Li, X., Zhang,
   L., Peng, C., et~al. (2020).
-\newblock Structure of m pro from sars-cov-2 and discovery of its inhibitors.
+\newblock Structure of mpro from sars-cov-2 and discovery of its inhibitors.
 \newblock {\em Nature}, 582(7811):289--293.
 
 \bibitem[Kaserer et~al., 2015]{Kaserer2015PharmacophoreReview}
@@ -267,15 +212,6 @@ Kaserer, T., Beck, K.~R., Akram, M., Odermatt, A., and Schuster, D. (2015).
 Kearnes, S. (2021).
 \newblock Pursuing a prospective perspective.
 \newblock {\em Trends in Chemistry}, 3(2):77--79.
-
-\bibitem[Klein et~al., 2017]{Klein2017}
-Klein, G., Kim, Y., Senellart, J., and Rush, A.~M. (2017).
-\newblock {OpenNMT}.
-
-\bibitem[Kovacs et~al., ]{Kovacs2020MolecularExplainer}
-Kovacs, D.~P., McCorkindale, W., and Lee, A.~A.
-\newblock {Molecular Transformer Explainer}.
-\newblock \url{https://github.com/davkovacs/MTExplainer.git}.
 
 \bibitem[Landrum, ]{rdkit}
 Landrum, G.
@@ -296,59 +232,21 @@ Liu, Y., Liang, C., Xin, L., Ren, X., Tian, L., Ju, X., Li, H., Wang, Y., Zhao,
   from 2010 to 2020.
 \newblock {\em European journal of medicinal chemistry}, page 112711.
 
-\bibitem[Llanos et~al., 2021]{Llanos2021StrengthsAndWeaknesses}
-Llanos, M.~A., Gantner, M.~E., Rodriguez, S., Alberca, L.~N., Bellera, C.~L.,
-  Talevi, A., and Gavernet, L. (2021).
-\newblock Strengths and weaknesses of docking simulations in the sars-cov-2
-  era: the main protease (mpro) case study.
-\newblock {\em Journal of Chemical Information and Modeling}, 61(8):3758--3770.
-\newblock PMID: 34313128.
-
-\bibitem[Lowe, 2012]{Lowe2012}
-Lowe, D.~M. (2012).
-\newblock {\em {Extraction of chemical structures and reactions from the
-  literature}}.
-\newblock Phd, University of Cambridge.
-
-\bibitem[Lyu et~al., 2019a]{Lyu2019UltraLargeDocking}
+\bibitem[Lyu et~al., 2019]{Lyu2019ultra}
 Lyu, J., Wang, S., Balius, T.~E., Singh, I., Levit, A., Moroz, Y.~S., O'Meara,
   M.~J., Che, T., Algaa, E., Tolmachova, K., Tolmachev, A.~A., Shoichet, B.~K.,
-  Roth, B.~L., and Irwin, J.~J. (2019a).
+  Roth, B.~L., and Irwin, J.~J. (2019).
 \newblock Ultra-large library docking for discovering new chemotypes.
 \newblock {\em Nature}, 566(7743):224--229.
 
-\bibitem[Lyu et~al., 2019b]{Lyu2019ultra}
-Lyu, J., Wang, S., Balius, T.~E., Singh, I., Levit, A., Moroz, Y.~S., O'Meara,
-  M.~J., Che, T., Algaa, E., Tolmachova, K., Tolmachev, A.~A., Shoichet, B.~K.,
-  Roth, B.~L., and Irwin, J.~J. (2019b).
-\newblock Ultra-large library docking for discovering new chemotypes.
-\newblock {\em Nature}, 566(7743):224--229.
-
-\bibitem[Macip et~al., 2022]{Macip2022HasteMakesWaste}
-Macip, G., Garcia-Segura, P., Mestres-Truyol, J., Saldivar-Espinoza, B.,
-  Ojeda-Montes, M.~J., Gimeno, A., Cereto-Massagu{\'e}, A., Garcia-Vallv{\'e},
-  S., and Pujadas, G. (2022).
-\newblock Haste makes waste: A critical review of docking-based virtual
-  screening in drug repurposing for sars-cov-2 main protease (m-pro)
-  inhibition.
-\newblock {\em Medicinal research reviews}, 42(2):744--769.
-
-\bibitem[Mayfield et~al., 2018]{Mayfield2018Pistachio2.0}
-Mayfield, J., Lowe, D., and Sayle, R. (2018).
-\newblock {Pistachio 2.0}.
-
-\bibitem[McCloskey et~al., 2019]{McCloskey2019UsingChemistry}
-McCloskey, K., Taly, A., Monti, F., Brenner, M.~P., and Colwell, L.~J. (2019).
-\newblock {Using attribution to decode binding mechanism in neural network
-  models for chemistry}.
-\newblock {\em Proceedings of the National Academy of Sciences of the United
-  States of America}, 116(24):11624--11629.
-
-\bibitem[McCorkindale et~al., 2020]{Kovacs20unpack}
-McCorkindale, W., Kov\'{a}cs, P., and Lee, A. (2020).
-\newblock Unpacking chemical reaction prediction models using integrated
-  gradients.
-\newblock In {\em ML Interpretability for Scientific Discovery}, ICML’20.
+\bibitem[McCloskey et~al., 2020]{McCloskey2020DNALibrary}
+McCloskey, K., Sigel, E.~A., Kearnes, S., Xue, L., Tian, X., Moccia, D.,
+  Gikunju, D., Bazzaz, S., Chan, B., Clark, M.~A., Cuozzo, J.~W., Gui{\'e},
+  M.-A., Guilinger, J.~P., Huguet, C., Hupp, C.~D., Keefe, A.~D., Mulhern,
+  C.~J., Zhang, Y., and Riley, P. (2020).
+\newblock Machine learning on dna-encoded libraries: A new paradigm for hit
+  finding.
+\newblock {\em Journal of Medicinal Chemistry}, 63(16):8857--8866.
 
 \bibitem[Morreale et~al., 2017]{Morreale2017ZincImpurity}
 Morreale, F.~E., Testa, A., Chaugule, V.~K., Bortoluzzi, A., Ciulli, A., and
@@ -394,6 +292,21 @@ Patel, H., Bodkin, M.~J., Chen, B., and Gillet, V.~J. (2009).
 \newblock Knowledge-based approach to de novo design using reaction vectors.
 \newblock {\em Journal of chemical information and modeling}, 49(5):1163--1184.
 
+\bibitem[Pedregosa et~al., 2011]{scikit-learn}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
+  Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, E.
+  (2011).
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
+
+\bibitem[Perera et~al., 2018]{Perera2018PfizerNanomolar}
+Perera, D., Tucker, J.~W., Brahmbhatt, S., Helal, C.~J., Chong, A., Farrell,
+  W., Richardson, P., and Sach, N.~W. (2018).
+\newblock A platform for automated nanomole-scale reaction screening and
+  micromole-scale synthesis in flow.
+\newblock {\em Science}, 359(6374):429--434.
+
 \bibitem[Pillaiyar et~al., 2016]{pillaiyar2016overview}
 Pillaiyar, T., Manickam, M., Namasivayam, V., Hayashi, Y., and Jung, S.-H.
   (2016).
@@ -413,6 +326,15 @@ Saar, K.~L., Fearon, D., Consortium, T. C.~M., von Delft, F., Chodera, J.~D.,
 \newblock Turning high-throughput structural biology into predictive inhibitor
   design.
 \newblock {\em bioRxiv}.
+
+\bibitem[Santanilla et~al., 2015]{Santarilla2015MerckNanomolar}
+Santanilla, A.~B., Regalado, E.~L., Pereira, T., Shevlin, M., Bateman, K.,
+  Campeau, L.-C., Schneeweis, J., Berritt, S., Shi, Z.-C., Nantermet, P., Liu,
+  Y., Helmy, R., Welch, C.~J., Vachal, P., Davies, I.~W., Cernak, T., and
+  Dreher, S.~D. (2015).
+\newblock Nanomole-scale high-throughput chemistry for the synthesis of complex
+  molecules.
+\newblock {\em Science}, 347(6217):49--53.
 
 \bibitem[Schiebel et~al., 2016]{Schiebel2016HighThroughput}
 Schiebel, J., Krimmer, S.~G., R{\"o}wer, K., Kn{\"o}rlein, A., Wang, X., Park,
@@ -442,43 +364,18 @@ Schuller, M., Correy, G.~J., Gahbauer, S., Fearon, D., Wu, T., D{\'\i}az,
   through crystallographic screening and computational docking.
 \newblock {\em Science Advances}, 7(16):eabf8711.
 
-\bibitem[Schwaller et~al., 2019a]{Schwaller2019MolecularPrediction}
-Schwaller, P., Laino, T., Gaudin, T., Bolgar, P., Bekas, C., and Lee, A.~A.
-  (2019a).
-\newblock {Molecular Transformer - A Model for Uncertainty-Calibrated Chemical
-  Reaction Prediction}.
-\newblock {\em ACS Central Science}, 5(9):1572--1583.
-
-\bibitem[Schwaller et~al., 2019b]{schwaller2019molecular}
+\bibitem[Schwaller et~al., 2019]{schwaller2019molecular}
 Schwaller, P., Laino, T., Gaudin, T., Bolgar, P., Hunter, C.~A., Bekas, C., and
-  Lee, A.~A. (2019b).
+  Lee, A.~A. (2019).
 \newblock Molecular transformer: A model for uncertainty-calibrated chemical
   reaction prediction.
 \newblock {\em ACS central science}, 5(9):1572--1583.
 
-\bibitem[Segler et~al., 2018a]{segler2018generating}
-Segler, M.~H., Kogej, T., Tyrchan, C., and Waller, M.~P. (2018a).
+\bibitem[Segler et~al., 2018]{segler2018generating}
+Segler, M.~H., Kogej, T., Tyrchan, C., and Waller, M.~P. (2018).
 \newblock Generating focused molecule libraries for drug discovery with
   recurrent neural networks.
 \newblock {\em ACS central science}, 4(1):120--131.
-
-\bibitem[Segler et~al., 2018b]{Segler2018PlanningAIb}
-Segler, M.~H., Preuss, M., and Waller, M.~P. (2018b).
-\newblock {Planning chemical syntheses with deep neural networks and symbolic
-  AI}.
-\newblock {\em Nature}, 555(7698):604--610.
-
-\bibitem[Sturmfels et~al., 2020]{sturmfels2020visualizing}
-Sturmfels, P., Lundberg, S., and Lee, S.-I. (2020).
-\newblock Visualizing the impact of feature attribution baselines.
-\newblock {\em Distill}.
-\newblock https://distill.pub/2020/attribution-baselines.
-
-\bibitem[Sundararajan et~al., 2017]{Sundararajan2017AxiomaticNetworks}
-Sundararajan, M., Taly, A., and Yan, Q. (2017).
-\newblock {Axiomatic attribution for deep networks}.
-\newblock {\em 34th International Conference on Machine Learning, ICML 2017},
-  7:5109--5118.
 
 \bibitem[{The COVID Moonshot Consortium}, 2020]{moonshot2020covid}
 {The COVID Moonshot Consortium} (2020).
@@ -525,13 +422,6 @@ Sundararajan, M., Taly, A., and Yan, Q. (2017).
   inhibitor therapeutics.
 \newblock {\em bioRxiv}.
 
-\bibitem[Tiamas et~al., 2018]{Tiamas2018AsymmetricChalcones}
-Tiamas, S.~G., Audet, F., Samra, A.~A., Bignon, J., Litaudon, M., Fourneau, C.,
-  Ariffin, A., Awang, K., Desrat, S., and Roussi, F. (2018).
-\newblock {Asymmetric Total Synthesis and Biological Evaluation of Proapoptotic
-  Natural Myrcene-Derived Cyclohexenyl Chalcones}.
-\newblock {\em European Journal of Organic Chemistry}, 2018(42):5830--5835.
-
 \bibitem[Ullrich and Nitsche, 2020]{ullrich2020sars}
 Ullrich, S. and Nitsche, C. (2020).
 \newblock The sars-cov-2 main protease as drug target.
@@ -543,26 +433,6 @@ Unoh, Y., Uehara, S., Nakahara, K., Nobori, H., Yamatsu, Y., Yamamoto, S.,
 \newblock Discovery of s-217622, a noncovalent oral sars-cov-2 3cl protease
   inhibitor clinical candidate for treating covid-19.
 \newblock {\em Journal of Medicinal Chemistry}, 65(9):6499--6512.
-
-\bibitem[Vaswani et~al., 2017]{Vaswani2017}
-Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.~N.,
-  Kaiser, {\L}., and Polosukhin, I. (2017).
-\newblock {Attention is all you need}.
-\newblock {\em Advances in Neural Information Processing Systems},
-  2017-Decem(Nips):5999--6009.
-
-\bibitem[Weininger, 1988]{Weininger1988}
-Weininger, D. (1988).
-\newblock {SMILES, a Chemical Language and Information System: 1: Introduction
-  to Methodology and Encoding Rules}.
-\newblock {\em Journal of Chemical Information and Computer Sciences},
-  28(1):31--36.
-
-\bibitem[Weininger et~al., 1989]{Weininger1989}
-Weininger, D., Weininger, A., and Weininger, J.~L. (1989).
-\newblock {SMILES. 2. Algorithm for Generation of Unique SMILES Notation}.
-\newblock {\em Journal of Chemical Information and Computer Sciences},
-  29(2):97--101.
 
 \bibitem[Yang et~al., 2020]{Yang2020SyntaLinker}
 Yang, Y., Zheng, S., Su, S., Zhao, C., Xu, J., and Chen, H. (2020).
