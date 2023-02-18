@@ -8,10 +8,7 @@
 
 \noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
 
-
-% \begin{abstract}
 Organic synthesis remains a a major challenge in drug discovery. Although a plethora of machine learning models have been proposed as solutions in the literature, they suffer from being opaque black-boxes. It is neither clear if the models are making correct predictions because they inferred the salient chemistry, nor is it clear which training data they are relying on to reach a prediction. This opaqueness hinders both model developers and users. In this paper, we quantitatively interpret the Molecular Transformer, the state-of-the-art model for reaction prediction. We develop a framework to attribute predicted reaction outcomes both to specific parts of reactants, and to reactions in the training set. Furthermore, we demonstrate how to retrieve evidence for predicted reaction outcomes, and understand counterintuitive predictions by scrutinising the data. Additionally, we identify Clever Hans predictions where the correct prediction is reached for the wrong reason due to dataset bias. We present a new debiased dataset that provides a more realistic assessment of model performance, which we propose as the new standard benchmark for comparing reaction prediction models.
-% \end{abstract}
 
 \section*{\label{sec:intro}Introduction}
 
@@ -19,9 +16,9 @@ Organic synthesis remains a challenge in small molecule drug design, sinking tim
 
 The current state-of-the-art in reaction prediction is the Molecular Transformer \cite{Schwaller2019}, which employs the transformer neural network architecture that was first introduced for neural machine translation \cite{Vaswani2017}. The input to the model is a text representation of the chemical structures of the reactant and reagent, and the model performs machine translation to predict most likely output molecule with a probability score. The Molecular Transformer achieves a 90\% Top-1 accuracy on the USPTO dataset of organic reactions that was text mined from US patents \cite{Lowe2012} and filtered \cite{Jin2017}. Recent work shows that thorough dataset augmentation improves model performance by allowing it to consider different equivalent SMILES representations \cite{tetko2020state}.
 
-However, a key stumbling block in the Molecular Transformer is the lack of interpretability. Why the Molecular Transformer predicts one reaction outcome over another, and which training set reactions it finds most similar when reaching a particular prediction, are both unclear. Quantitative interpretability is crucial to both model users and model developers. 
+However, a key stumbling block in the Molecular Transformer is the lack of interpretability. Why the Molecular Transformer predicts one reaction outcome over another, and which training set reactions it finds most similar when reaching a particular prediction, are both unclear. Quantitative interpretability is crucial to both model users and model developers.
 
-For model users, interpretability is important because chemical reactions are highly contextual, with important anthropomorphic metadata that the model overlooks. For example, reactants, reagents and products are only a part of the reaction. The reaction conditions, the scale of a particular reaction (e.g. discovery chemistry or scale up), and scientific focus of the project (e.g. total synthesis, medicinal chemistry or methods development) are some of the context that a skilled chemist can employ to interpret and understand the reaction. 
+For model users, interpretability is important because chemical reactions are highly contextual, with important anthropomorphic metadata that the model overlooks. For example, reactants, reagents and products are only a part of the reaction. The reaction conditions, the scale of a particular reaction (e.g. discovery chemistry or scale up), and scientific focus of the project (e.g. total synthesis, medicinal chemistry or methods development) are some of the context that a skilled chemist can employ to interpret and understand the reaction.
 
 For model developers, physical organic chemistry principles explain chemical reactivity and selectivity. As such, probing whether rationales outputted by the Molecular Transformer are congruent with physics allows developers to interrogate whether the Molecular Transformer is getting the correct prediction for the right reasons, and design model improvements based on those insights. 
 
@@ -260,12 +257,6 @@ We have also shown that incorrect predictions can be the result of erroneous tra
 Finally we have shown that scaffold bias is a phenomena present in the published literature on reaction prediction. Many of the reactions in the test set have almost identical twins in the training set. This leads to an overestimation of the generalization performance of the models as reported in the literature. We have re-trained two of the leading models the Molecular Transformer and the graph-based WLDN5 model on our new Tanimoto-split dataset and found that the Top-1 accuracy of the models dropped significantly.
 
 Our work highlights the importance of understanding and evaluating scientific machine learning models beyond looking at their accuracy on standard benchmark datasets. By rigorously applying interpretability techniques, we reveal how systematic weaknesses of the models can be uncovered, proving insights that facilitate the work of model developers. We believe further work into the use of input attribution and interpretability tools to critically analyse machine learning models for retrosynthesis, as well as other areas of computational science, is vital and necessary for continued refinement of predictive models.
-
-\subsection{Data Availability}
-The USPTO dataset used to train the machine learning models is publicly available \cite{Lowe2012, Jin2017}, and Tanimoto similarity-based train/test splits of USPTO can found in the GitHub repo \href{https://github.com/davkovacs/MTExplainer.git}{MTExplainer}.\\
-
-\subsection{Code Availability}
-All code used for implementing the attribution tools for the Molecular Transformer, generating the artificial Friedel-Crafts dataset, and Tanimoto-splitting USPTO can be accessed in the GitHub repo \href{https://github.com/davkovacs/MTExplainer.git}{MTExplainer}. The transformer implementation was built on top of the OpenNMT-py package.  \\
 
 % % TODO - add SI figs
 
