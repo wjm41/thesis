@@ -47,7 +47,7 @@ An important aspect of the training data is that since it was extracted from pat
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{Chapters/Transformer/Figs/workflow.pdf}
-    \caption{\label{fig:workflow} \textbf{Schematic illustration of the attribution workflow} (a) Overview of our workflow to interpret the Molecular Transformer. (b) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (c) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.}
+    \caption{\label{fig:workflow} \textbf{Schematic illustration of the attribution workflow.} (\textbf{a}) Overview of our workflow to interpret the Molecular Transformer. (\textbf{b}) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (\textbf{c}) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.}
 \end{figure}
 
 There are three key factors determining the prediction of a machine learning model: the architecture, the training data and the input. Neural network models are often considered as black-boxes because of the complex ways these three factors interact to yield a prediction. 
@@ -108,7 +108,7 @@ Finally we consider the Friedel-Crafts acylation reactions of substituted benzen
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\textwidth]{Chapters/Transformer/Figs/epoxidation.pdf}
-    \caption{\label{fig:epoxide} \textbf{IG attributions highlighting correct reasoning} (a) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (b) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature~\cite{Lluch1993}}
+    \caption{\label{fig:epoxide} \textbf{IG attributions highlight correct model reasoning.} (\textbf{a}) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (\textbf{b}) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature~\cite{Lluch1993}}
 \end{figure}
 
 The oxidation of alkenes to form epoxides is an important intermediate reaction in many synthesis plans \cite{Clayden2012}. The common oxidant in these reactions are peroxy compounds. The most widely used example of them is mCPBA, which is a versatile reagent appearing 2052 times in the USPTO dataset. This is in the high data regime where we would expect the model to do well due to the large number of different training examples available. 
@@ -126,7 +126,7 @@ To validate the interpretation that the model has learnt this selectivity we gen
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\textwidth]{Chapters/Transformer/Figs/diels_alder.pdf}
-    \caption{\label{fig:diels_alder} \textbf{Data attribution explains erroneous prediction} (a) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (b) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.}
+    \caption{\label{fig:diels_alder} \textbf{Data attribution explains erroneous predictions.} (\textbf{a}) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (\textbf{b}) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.}
 \end{figure}
 
 The Diels-Alder reaction transforms a conjugated diene and an alkene (called dienophile) to a six membered ring with a double bond \cite{Clayden2012}. There are very few limitations on the character of the diene. It only has to be flexible enough to take up an s-cis conformation. The dienophile, on the other hand, should have carbon-carbon double bonds conjugated preferably with an electron withdrawing group. A typical example of a Diels-Alder reaction used as a test-case is shown on Figure~\ref{fig:diels_alder}(a). 
@@ -142,7 +142,7 @@ To investigate if the cause of this was a lack of training data we devised a rea
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\textwidth]{Chapters/Transformer/Figs/sear.pdf}
-    \caption{\label{fig:sear} \textbf{IG attributions revealing incorrect reasoning and guiding the design of adversarial examples} (a) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (b) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.}
+    \caption{\label{fig:sear} \textbf{IG attributions reveal incorrect reasoning and guide the design of adversarial examples.} (\textbf{a}) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (\textbf{b}) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.}
 \end{figure}
 
 Friedel-Crafts acylation reactions are an example of electrophilic aromatic substitution \cite{Friedel1877}. In these reactions a hydrogen on an aromatic ring is substituted by an acyl group. In the case of a benzene ring with a single substituent, there are three different hydrogen positions where this substitution can happen. The electronic and steric character of the substituent on the ring determine the selectivity of these reactions. An example of a selective Friedel-Crafts reaction is shown on Figure~\ref{fig:sear}(a) where according to the patent the para product is formed with a yield of 90\% \cite{fc_para1981}. In this reaction that acyl group is primarily substituting the hydrogen in the para position compared to the -F substituent. The transformation is correctly predicted by the Molecular Transformer. 
@@ -160,7 +160,7 @@ To more quantitatively investigate how this imbalance in training data affects t
 \begin{figure}[htbp!] 
     \centering    
     \includegraphics[width=0.6\textwidth]{Chapters/Transformer/Figs/venn_toy.pdf}
-    \caption{ \textbf{The effect of biased training data on the predictions of the Molecular Transformer} (a) The number of para Friedel-Crafts acylation reactions far outweigh those of meta or ortho reactions. (b) Dataset bias is reflected in the model predictions. The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.}
+    \caption{ \textbf{Biased training data leads to biased predictions from the Molecular Transformer.} (\textbf{a}) The number of para Friedel-Crafts acylation reactions in USPTO far outweigh those of meta or ortho reactions. (\textbf{b}) Dataset bias is reflected in the model predictions. The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.}
     \label{fig:venn_toy}
 \end{figure}
 
@@ -177,7 +177,7 @@ To investigate the effect of dataset bias, we vary the proportion of para:meta r
 The test set has an equal proportion of para and meta reactions generated using the three meta directing benzyl compounds from the `Severely Biased' training set and three para directing ones (Fluorobenzene, N-phenylpropionamide, and ethoxybenzene), together with -R groups from enumerating straight carbon chains of length 9-10 with no double bonds. This resulted in a test set with 177 para and 177 meta reactions.
 
 \begin{table}[!h]
-    \caption{Number of meta-/para-directing reactions in the artificial datasets}
+    \caption{\textbf{Number of meta-/para-directing reactions in the artificial datasets.}}
     \centering
     \label{table:synth_datasets}
     \begin{tabular}{m{0.3\textwidth}>{\centering}m{0.1\textwidth}>{\centering \arraybackslash}m{0.1\textwidth}}
@@ -214,7 +214,7 @@ Our case study of Friedel-Crafts acylation reveals the sensitivity of the Molecu
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Transformer/Figs/siblings_alt.pdf}
-    \caption{\label{fig:sibling} \textbf{Near-identical training and testing reactions during random splitting of the dataset} Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets. $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.}
+    \caption{\label{fig:sibling} \textbf{Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets.}  $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.}
 \end{figure}
 
 To gain further insight into this phenomenon, we apply a 50:50 random train/test split to the full USPTO dataset and inspect reactions from one set that have structurally similar products to those from the other set. We define the 'structural similarity' of two molecules by calculating the Tanimoto similarity $\sigma$ between the Morgan fingerprints of the respective molecules \cite{Bajusz2015Tanimoto}. Figure~\ref{fig:sibling} reveals that many training and test set reactions are remarkably similar as measured by both $\sigma$ as well as the Tanimoto similarity of the reaction difference fingerprints of the reaction \cite{Schneider2015rxnfp}.
@@ -238,7 +238,7 @@ We also inspected using the fingerprint difference between the product and react
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Transformer/Figs/rxn_distribution.pdf}
-    \caption{\label{fig:rxn_dist} \textbf{Template Analysis of Distribution of Reaction Types from Tanimoto-Splitting} (a - b)The absolute occurrence (a) and fractional occurrence (b) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (c - d)The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (c) to 0.4 (d), the deviation in frequency of the test set reactions from the training set increases.}
+    \caption{\label{fig:rxn_dist} \textbf{Tanimoto splitting minimally affects reaction template distribution.} (\textbf{a} - \textbf{b}) The absolute occurrence (\textbf{a}) and fractional occurrence (\textbf{b}) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (\textbf{c} - \textbf{d}) The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (\textbf{c}) to 0.4 (\textbf{d}), the deviation in frequency of the test set reactions from the training set increases.}
 \end{figure}
 
 \subsection{Model performance on Tanimoto-split USPTO}
@@ -246,10 +246,9 @@ We train and evaluate the Molecular Transformer on Tanimoto-split USPTO with $\s
 
 Table~\ref{table:tanimoto} shows that the model performance of both the graph-based model and the Molecular Transformer significantly decrease upon debiasing the dataset, but Molecular Transformer continues to outperform WLDN5.  These results show that scaffold bias affects both graph-based and sequence-based models, confirming that this bias is intrinsic to data and independent of model architecture. Importantly, this demonstrates that there is significant scope for improvement in the performance of reaction prediction, and that the 90\% accuracy obtained for a randomly split dataset does not necessarily translate to real-life applications.
 
-%TODO - figure/table caption bolding
 \begin{table}[!h]
     \centering
-    \caption{ \textbf{Evaluation of reaction prediction models on different train-test splits} The performance of the best ML models on various USPTO train/test splits are shown. The accuracy of the best-performing model is highlighted in bold.}
+    \caption{ \textbf{Reaction prediction models are strongly affected by scaffold bias.} The performance of the Molecular Transformer and WLDN5 on various USPTO train/test splits are shown, with the accuracy of the best-performing model highlighted in bold.}
     \centering
     \label{table:tanimoto}
     \begin{tabular*}{0.8\textwidth}{l@{\extracolsep{\fill}}rrr}
