@@ -33,13 +33,13 @@ In Transformer models for text, we first break down the string input to the mode
 \end{equation}
 where $\textrm{tok}_i$ is the $i$-th predicted token and $N$ is the length of the prediction.
 
-The Molecular Transformer (Fig~\ref{fig:mol_transformer})
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{Chapters/Transformer/Figs/mol_transformer.png}
     \caption{\label{fig:mol_transformer} \textbf{Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.}
 \end{figure}
+
+The Molecular Transformer (Fig~\ref{fig:mol_transformer}) uses this approach to perform reaction prediction by using tokenized SMILES of reaction reagents and reactants as input, and the tokenized SMILES of the reaction product as output. Typically, the SMILES of the reaction product are canonicalized while both canonical as well as non-canonical SMILES are used for the reactants and reagents as that has been shown to improve model performance \cite{Bjerrum2017SMILESaugmentation} compared to only using canonical SMILES. In addition, no distinction is made between "reactant" and "reagent" and the model is only trained on reactions with a single reaction product.
 
 \subsection{Training data}
 The training data used in this study was obtained by the text mining work of Lowe \cite{Lowe2012}, where organic reactions from US patents filed between 1976 and 2016 were extracted. The dataset was filtered by Jin et. al. \cite{Jin2017} to remove duplicates and some of the erroneous reactions which resulted in a set of ca 480 000 organic reactions. We found that this dataset, though much cleaner, still contained a large number of erroneous reactions whose sole product were halogen ions, nitric, sulphuric or phosphoric acids etc. We verified that the Molecular Transformer indeed learns these reactions if they are present in the training, resulting in catastrophic overfitting and unphysical predictions in some cases. To eliminate this effect we deleted a further ~8 000 reactions to obtain a dataset of 471 791 reactions. From this number we used 377 419 for training, 23 589 for validation and 70 765 as a hold-out test set. The training set was augmented by an equal number of random equivalent SMILES strings following the protocol of Schwaller et. al. \cite{Schwaller2019}. We trained a Molecular Transformer model as described in the original paper and were able to achieve 88.8\% Top-1 accuracy on the test set, similarly to the original paper. This model was used throughout the interpretability experiments.
