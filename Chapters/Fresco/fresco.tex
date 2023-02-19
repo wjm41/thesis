@@ -49,18 +49,18 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 \begin{figure}[!bh]
     \centering
     \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=0.75\textwidth]{Chapters/Fresco/Figs/fresco_vs_linking_a.pdf}
+        \centering
+        \includegraphics[width=0.75\textwidth]{Chapters/Fresco/Figs/fresco_vs_linking_a.pdf}
     
     \end{subfigure}
     \hfill
     \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=0.75\textwidth]{Chapters/Fresco/Figs/fresco_details.pdf}
+        \centering
+        \includegraphics[width=0.75\textwidth]{Chapters/Fresco/Figs/fresco_details.pdf}
 
     \end{subfigure}
-\caption{(a) A visual illustration of how FRESCO differs from traditional fragment linking approaches. (b) A visual illustration of how we apply unsupervised learning to fragment ensembles and perform virtual screening of unseen molecules.}
-\label{fig:fresco_vs_linking}
+    \caption{(a) A visual illustration of how FRESCO differs from traditional fragment linking approaches. (b) A visual illustration of how we apply unsupervised learning to fragment ensembles and perform virtual screening of unseen molecules.}
+    \label{fig:fresco_vs_linking}
 \end{figure}
 
 \section{Unsupervised Learning of Pharmacophore Distributions} \label{sec:model}
@@ -143,24 +143,24 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
 
 % This resulted in 24748 and 22358 clusters for Mpro and Mac1, respectively. For both targets the centroids of the 50 most populous clusters (or the closest purchasable analogue if it wasn't available) were chosen as the candidate compounds. These compounds were ordered for synthesis from Enamine which resulted in 38 and 52 successfully made molecules for Mpro and Mac1, respectively.
 
-\begin{figure}[!ph]
-    \centering
+% \begin{figure}[!ph]
+%     \centering
 
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
-        \label{fig:mpro_ligands}
-        \end{subfigure}
-    \hfill
+%     \begin{subfigure}{\textwidth}
+%         \centering
+%         \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_ligands.png}
+%         \label{fig:mpro_ligands}
+%     \end{subfigure}
+%     \hfill
 
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_hit_IC50.pdf}
-        \label{fig:mpro_hit}
-    \end{subfigure}
-    \caption{(a) Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown. (b) Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
+%     \begin{subfigure}{\textwidth}
+%         \centering
+%         \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mpro_hit_IC50.pdf}
+%         \label{fig:mpro_hit}
+%     \end{subfigure}
+%     \caption{(a) Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown. (b) Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
 
-\end{figure}
+% \end{figure}
 
 % \begin{figure}[!hbtp]
 %     \centering
@@ -176,9 +176,9 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
 %     \caption{Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
 % \end{figure}
 
-Inspecting the cluster centroids favored by FRESCO, we observe typically 2 aromatic moieties connected via an amide or amide isostere. This scaffold is exhibited by three of the initial fragment hits (x0434, x0678, x1093), with the most of the other fragment hits possessing an aromatic group bound at similar locations (Figure \ref{fig:mpro_ligands}). The most promising compound, WIL-UNI-d4749f31-37, has an IC50 of 25.8\uM measured via fluorescence assay while the remaining compounds were found to be weak-to-negligible activity.
+% Inspecting the cluster centroids favored by FRESCO, we observe typically 2 aromatic moieties connected via an amide or amide isostere. This scaffold is exhibited by three of the initial fragment hits (x0434, x0678, x1093), with the most of the other fragment hits possessing an aromatic group bound at similar locations (Figure \ref{fig:mpro_ligands}). The most promising compound, WIL-UNI-d4749f31-37, has an IC50 of 25.8\uM measured via fluorescence assay while the remaining compounds were found to be weak-to-negligible activity.
 
-To validate compound activity, we synthesized 8 close analogues to demonstrate the existence of responsive Structure-Activity Relationship  \cite{Hermann2013ZincImpurity, Morreale2017ZincImpurity} (Figure \ref{fig:mpro_hit}). 3 of those compounds, which contained modifications to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37, retained relatively high potency of IC50 $<$ 100\uM with one of them (ALP-UNI-ed5cdfd2-1) exhibiting a lower IC50 of 19.4\uM. The remaining 5 compounds which perturbed the benzimidazole functional group of WIL-UNI-d4749f31-3 exhibit decreased potency, with only 20-50\% inhibition at a concentration of 99.5\uM.
+% To validate compound activity, we synthesized 8 close analogues to demonstrate the existence of responsive Structure-Activity Relationship  \cite{Hermann2013ZincImpurity, Morreale2017ZincImpurity} (Figure \ref{fig:mpro_hit}). 3 of those compounds, which contained modifications to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37, retained relatively high potency of IC50 $<$ 100\uM with one of them (ALP-UNI-ed5cdfd2-1) exhibiting a lower IC50 of 19.4\uM. The remaining 5 compounds which perturbed the benzimidazole functional group of WIL-UNI-d4749f31-3 exhibit decreased potency, with only 20-50\% inhibition at a concentration of 99.5\uM.
 
 
 We then turn to SARS-CoV-2 nsp3-Mac1, a structurally unrelated protein target, to demonstrate generalisability of FRESCO in performing hit detection. nsp3-Mac1 is a viral ADP-ribosylhydrolase which counteracts host immune response by cleaving ADP-ribose that is transferred to viral proteins by host ADP-ribosyltransferases. Unlike Mpro, there is no potent chemical matter against nsp3-Mac1. As such, this is a novel first-in-class biological target. 
@@ -211,7 +211,7 @@ As with Mpro, 11 close analogues to Z5551425673 were ordered to explore the stru
 \end{figure}
 
 
-\section{Discussion} \label{sec:discussion}
+\section{Discussion} \label{sec:fresco_discussion}
 
 Here we show that the combination of computational statistics with high-throughput structural biology and large libraries of purchasable fragment-like molecules unlocks a powerful tool in hit discovery. Going beyond classical fragment-based drug design, which involves merging or expanding a small set of fragments, we derived a statistical framework that leverages dense fragment hits to build potent inhibitors. Whilst individual fragments are weak binders, our key insight is that a fragment-protein interaction is likely to be significant if there are multiple fragments making similar interactions. Therefore, by picking out these persistent interactions, we can discern the salient chemical motifs which make favourable interactions with the binding site. Specifically, we coarse-grained fragments into pharmacophores, and infer the distribution of pairwise distances between pharmacophores using Kernel Density Estimation. We then screen large libraries of purchasable compounds against this fragment-derived pharmacophore distribution. We retrospectively validated our method using data from The COVID Moonshot, an open science drug discovery campaign against the SARS-CoV-2 main protease, and prospectively discovered new hits against SARS-CoV-2 main protease and nsp3-Mac1.
 

@@ -9,13 +9,10 @@
 \newcommand{\angstrom}{\textup{\AA}}
 \usepackage{subfigure}
 \usepackage{soul}
-%\usepackage[normalem]{ulem}
 
 \begin{document}
 
-%def\fixFloatSize#1{}
 \title{Electronic Supplementary Material: Discovery of SARS-CoV-2 main protease inhibitors using a synthesis-directed \emph{de novo} design model}
-%\title{Forecasting battery health with machine learning and impedance spectroscopy}
 
 \author{Aaron Morris}
 \thanks{AM and WJM contributed equally.} 
@@ -43,8 +40,6 @@
 \author{Alpha A. Lee}
 \email{alpha.lee@postera.ai}
 \affiliation{PostEra Inc, 2 Embarcadero Centre, San Franciso, CA 94111, United States of America}
-%\affiliation{The Faraday Institution, Quad One, Becquerel Avenue, Harwell Campus, Didcot, OX11 0RA, UK}
-
 
 \maketitle
 
@@ -88,31 +83,31 @@ As a baseline comparison, we docked the training and test sets of our machine le
 We compare the performance of our model in predicting the pairwise ranking of compounds against the baseline model of simply training a regression model on bioactivities. As a baseline model, we trained a random forest model with the package \texttt{scikit-learn} \cite{scikit-learn}, \texttt{RandomForestRegressor} function, with default hyperparameters. Likewise, for the learning-to-rank model we take the FastAI tabular model with default hyperparameters, as discussed in the main text. 
 
     
-%\begin{table}[]
-%\begin{tabular}{|l|l|l|}
-%\hline
-%\textbf{Dataset} & \textbf{RF Baseline AUC} & \textbf{Model AUC}  \\ \hline
-%LCK              & 0.94              & 0.91          \\ \hline
-%opioid           & 0.92                & \textbf{0.94} \\ \hline
-%Cannabinoid      & 0.97               & 0.87          \\ \hline
-%Estrogen         & 0.96               & \textbf{0.98} \\ \hline
-%B-raf            & 0.95              & \textbf{0.96} \\ \hline
-%Ephrin           & 0.83               & \textbf{0.85} \\ \hline
-%Glycogen         & 0.89             & 0.88         \\ \hline
-%Vanilloid        & 0.93              & 0.90          \\ \hline
-%JAK2             & 0.97              & \textbf{0.98} \\ \hline
-%Dopamine         & 0.97               & \textbf{0.98} \\ \hline
-%ABL1             & 0.81               & \textbf{0.84} \\ \hline
-%A2a              & 0.58              & \textbf{0.91} \\ \hline
-%Coagulation      & 0.82                & \textbf{0.85}  \\ \hline
-%Glucocorticoid   & 0.96             & \textbf{0.98} \\ \hline
-%Dihydrofolate    & 0.90               & 0.86          \\ \hline
-%Carbonic         & 0.97              & \textbf{0.996} \\ \hline
-%Aurora-A         & 0.89               & \textbf{0.93} \\ \hline
-%\end{tabular}
-%\caption{Comparing learning-to-rank with direct potency prediction in prioritising compounds.}
-%\label{table1}
-%\end{table}
+% \begin{table}[]
+% \begin{tabular}{|l|l|l|}
+% \hline
+% \textbf{Dataset} & \textbf{RF Baseline AUC} & \textbf{Model AUC}  \\ \hline
+% LCK              & 0.94              & 0.91          \\ \hline
+% opioid           & 0.92                & \textbf{0.94} \\ \hline
+% Cannabinoid      & 0.97               & 0.87          \\ \hline
+% Estrogen         & 0.96               & \textbf{0.98} \\ \hline
+% B-raf            & 0.95              & \textbf{0.96} \\ \hline
+% Ephrin           & 0.83               & \textbf{0.85} \\ \hline
+% Glycogen         & 0.89             & 0.88         \\ \hline
+% Vanilloid        & 0.93              & 0.90          \\ \hline
+% JAK2             & 0.97              & \textbf{0.98} \\ \hline
+% Dopamine         & 0.97               & \textbf{0.98} \\ \hline
+% ABL1             & 0.81               & \textbf{0.84} \\ \hline
+% A2a              & 0.58              & \textbf{0.91} \\ \hline
+% Coagulation      & 0.82                & \textbf{0.85}  \\ \hline
+% Glucocorticoid   & 0.96             & \textbf{0.98} \\ \hline
+% Dihydrofolate    & 0.90               & 0.86          \\ \hline
+% Carbonic         & 0.97              & \textbf{0.996} \\ \hline
+% Aurora-A         & 0.89               & \textbf{0.93} \\ \hline
+% \end{tabular}
+% \caption{Comparing learning-to-rank with direct potency prediction in prioritising compounds.}
+% \label{table1}
+% \end{table}
 
 
 \bibliography{rsc}
