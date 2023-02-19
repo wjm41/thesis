@@ -29,13 +29,18 @@ The Molecular Transformer \cite{Schwaller2019MolecularPrediction} is a tailored 
 The string input to the model is broken down into individual tokens with a learnt embedding that is fed into the encoder layer with positional encoding. The encoder is composed of 4 identical attention blocks each containing a multi-head self-attention layer and a 2-layer fully connected feed-forward neural network. The decoder is very similar to the encoder with the only difference being that the multi-head attention uses the output of the encoder as the keys and the values with the output of the previous decoder layer being the query. The predictions are generated in an autoregressive way meaning that the decoder predicts one token at a time and the previously generated tokens are fed into the decoder when generating the next tokens. The prediction is considered final when an \texttt{<end>} token is generated or the maximum length is reached. Through this process each translation gets assigned a probability score:
 
 \begin{equation}
-    P(\textrm{tgt} \mid \textrm{src}) = \prod_{i=1}^N P(\textrm{tok}_i \mid \textrm{tok}_1, \cdots , \textrm{tok}{i-1}, \textrm{src}) 
+    P(\textrm{tgt} \mid \textrm{src}) = \prod_{i=1}^N P(\textrm{tok}_i \mid \textrm{tok}_1, \cdots , \textrm{tok}_{i-1}, \textrm{src}) 
 \end{equation}
 where $\textrm{tok}_i$ is the $i$-th predicted token and $N$ is the length of the prediction.
 
 %TODO - truncate mathematical details
+The Molecular Transformer (Fig~\ref{fig:mol_transformer})
 
-%TODO - figure of molecular transformer
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapters/Transformer/Figs/mol_transformer.png}
+    \caption{\label{fig:mol_transformer} \textbf{Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.}
+\end{figure}
 
 \subsection{Training data}
 The training data used in this study was obtained by the text mining work of Lowe \cite{Lowe2012}, where organic reactions from US patents filed between 1976 and 2016 were extracted. The dataset was filtered by Jin et. al. \cite{Jin2017} to remove duplicates and some of the erroneous reactions which resulted in a set of ca 480 000 organic reactions. We found that this dataset, though much cleaner, still contained a large number of erroneous reactions whose sole product were halogen ions, nitric, sulphuric or phosphoric acids etc. We verified that the Molecular Transformer indeed learns these reactions if they are present in the training, resulting in catastrophic overfitting and unphysical predictions in some cases. To eliminate this effect we deleted a further ~8 000 reactions to obtain a dataset of 471 791 reactions. From this number we used 377 419 for training, 23 589 for validation and 70 765 as a hold-out test set. The training set was augmented by an equal number of random equivalent SMILES strings following the protocol of Schwaller et. al. \cite{Schwaller2019}. We trained a Molecular Transformer model as described in the original paper and were able to achieve 88.8\% Top-1 accuracy on the test set, similarly to the original paper. This model was used throughout the interpretability experiments.
