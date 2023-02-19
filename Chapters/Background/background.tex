@@ -20,7 +20,7 @@ Detailed description of many things
     
 \end{itemize}
 
-\section{Molecular Transformer}
+% \section{Molecular Transformer}
 % The task in organic chemical reaction prediction is to predict the outcome (product or products) and potentially the yield of some organic reaction given the reactants, reagents, catalysts and conditions such as the solvent, temperature, reaction time etc.  This is both an academic and an industrial problem. It is of scientific interest to understand the different factors determining the outcome of reactions that are essential for the design of a successful reaction prediction model but it is also of interest for industry, in particular the pharmaceutical industry who wants to be able to synthesise drug candidate molecules quickly and efficiently to accelerate the drug discovery pipeline. There are several ways of tackling this problem all of them can be useful for different aspects of the prediction problem. \par
 
 % \section{\emph{Ab-initio} reaction prediction}
@@ -47,27 +47,37 @@ Detailed description of many things
 % Machine learning models can also be used to directly predict the outcome of chemical reactions. These template-free approaches do not require any subgraph searching which results in much faster predictions. Another advantage is that since they are not directly memorizing templates from the training datasets they have the potential of better generalization by inferring some of the underlying reactivity trends. One of the first successful machine learning based model was proposed by Coley et. al. in 2017 \cite{Coley2017PredictionLearning}. Their approach builds on the template based models and combines them with neural networks. First a number of candidate products are generated using general templates extracted form the literature. These candidate templates are than scored using a neural network model trained to identify the major product. \par
 % An improved model published by the same group has abandoned templates entirely \cite{ Coley2019AReactivity, Jin2017}. They have made use of the observation that usually only a small number of atoms and bonds participate directly in a chemical transformation. By considering the reactants and reagents as molecular graphs and the reaction as a series of graph edits they trained a reaction centre identifier network. This network selects a small number of atom pairs that are most likely to be involved in the reaction. All possible chemically valid graph edits are than considered on these centres. It is important to note that not all bond changes on the reaction centres have identical probabilities, and a product that results from more probable bond changes is itself more probable. This provides an initial ranking of the possible products. This generated ranking of products is then refined by a Weisfeiler-Lehman Difference Network, a type of graph convolutional neural network, to find the most probable product structure.  Together with the model they have also published a dataset of ca 480 000 reactions filtered from the text mining work of Lowe \cite{Lowe2012}. They have achieved 85\% accuracy on this dataset outperforming the previous state-of-the-art by more than 10\%. The key strength of this approach is that interpretability is built into the design of the algorithm. The way the model is predicting the sequence of graph edits is very similar to how humans would write arrow-pushing mechanisms of organic reactions\cite{Clayden2012}. This way one can get a direct insight into how the model is arriving at certain predictions. This is in contrast to previous reaction prediction approaches that were trying to directly learn mechanisms based on expert crafted rules as a supervised learning problem \cite{Bradshaw2019APaths, Kayala2012ReactionPredictor:Learning}.  \par
 
-% In the 2010s natural language processing (NLP) and neural machine translation saw a huge revolution \cite{Young2018RecentProcessing}. This led scientists from different fields to the realization that many problems can be cast in a sequence-to-sequence formalism. This allowed them to use the powerful tools of NLP in a variety of applications. The first attempt to formulate the reaction prediction problem in a sequence-to-sequence manner came by Nam and Kim \cite{Nam2016LinkingReactions}. They have used a text based representation of organic molecules called SMILES \cite{Weininger1988, Weininger1989}. SMILES strings represent atoms with their chemical symbols and aromatic atoms with lowercase letters. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. These rules lead to a large number of valid SMILES representations for larger molecules. To make the mapping injective a deterministic algorithm is used to enumerate the nodes of the molecular graph. Following this ordering a unique canonical text representation of organic molecules is obtained. This representation forms the basis for all of the text-based models discussed later. 
-% A few examples of the SMILES syntax with the corresponding structures is shown below. 
+\subsection{SMILES}
+In the 2010s natural language processing (NLP) and neural machine translation saw a huge revolution \cite{Young2018RecentProcessing}. This led scientists from different fields to the realization that many problems can be cast in a sequence-to-sequence formalism. This allowed them to use the powerful tools of NLP in a variety of applications. The first attempt to formulate the reaction prediction problem in a sequence-to-sequence manner came by Nam and Kim \cite{Nam2016LinkingReactions}. They have used a text based representation of organic molecules called SMILES \cite{Weininger1988, Weininger1989}. SMILES strings represent atoms with their chemical symbols and aromatic atoms with lowercase letters. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. These rules lead to a large number of valid SMILES representations for larger molecules. To make the mapping injective a deterministic algorithm is used to enumerate the nodes of the molecular graph. Following this ordering a unique canonical text representation of organic molecules is obtained. This representation forms the basis for all of the text-based models discussed later. 
+A few examples of the SMILES syntax with the corresponding structures is shown below. 
 
-% \begin{table}[h!]
-% \begin{center}
-%     \begin{tabular}{|c|c|}
-%     \hline
-%          SMILES & Structure \\
-%          \hline
-%          C & CH\textsubscript{4} \\
-%          \lbrack Fe2+\rbrack & Fe\textsuperscript{2+} \\
-%          C=O & CH\textsubscript{2}O \\
-%          C\#N & HCN (cyan) \\
-%          CCN(CC)CC & \includegraphics[width=0.75in]{triethyl_amine.png} \\
-%          CC1=CC(CCC1)Br & \includegraphics[width=0.7in]{cyclic.png} \\
-%          \hline
-%     \end{tabular}
-%     \caption{Demonstration of the SMILES language}
-%     \label{table:smiles}
-% \end{center}
-% \end{table}
+\begin{table}[h!]
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+         SMILES & Structure \\
+         \hline
+         C & CH\textsubscript{4} \\
+         \lbrack Fe2+\rbrack & Fe\textsuperscript{2+} \\
+         C=O & CH\textsubscript{2}O \\
+         C\#N & HCN (cyan) \\
+         CCN(CC)CC & \includegraphics[width=0.75in]{triethyl_amine.png} \\
+         CC1=CC(CCC1)Br & \includegraphics[width=0.7in]{cyclic.png} \\
+         \hline
+    \end{tabular}
+    \caption{Demonstration of the SMILES language}
+    \label{table:smiles}
+\end{center}
+\end{table}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
+    \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
+\end{figure}
+
+
 
 % In the paper of Nam and Kim they formulated the reaction prediction problem as a translation task. The input SMILES corresponding to the reactant and reagent molecules are tokenized, so that each character of SMILES is equivalent to a word and the whole input is equivalent to a sentence. This sentence is than ``translated" by the model to the product SMILES. Neural machine translation models are trained using a large parallel corpus. This is available in the case of organic reactions from patents and publications or can be generated using templates of elementary reactions. The method of Nam and Kim served as an important proof of concept but could not match the accuracy of rule-based and graph-to-graph models. \par
 % %The method was built on a neural network building block called gated recurrent unit (GRU) \cite{Cho2014LearningTranslation}. GRUs are a type of recurrent neural networks that process arbitrarily long inputs token by token, so that the hidden state representation of each token depends on the previous ones. %The model used in the paper is illustrated on Figure~\ref{fig:gru}. 
@@ -144,9 +154,7 @@ Detailed description of many things
 % The outputs of the encoder which are $N$ vectors if the input sequence is $N$ words long are fed into the decoder which has a structure almost identical to the encoder. The first modifications concern the masking in the multi-head self-attention layers to make sure that every token in the output translation can only attend to the preceding ones. The second modification of the attention mechanism is making use of the encoder outputs by using them as keys whilst the queries are the outputs of the previous decoder layer. \par
 % The generation of the translation happens in a sequential manner. First the embedding of the special \texttt{<start>} token is fed into the decoder and passed through the layers. The result is projected to a vector that has the same dimensionality as the size of the vocabulary. Finally the softmax function is applied to obtain the probability of the first word. The second word is generated by passing in the first word (and the \texttt{start} token) to the decoder, the third is generated by passing in the first and the second etc. This is called autoregressive translation. Finally the translation terminates either when the most probable next token is the special \texttt{<end>} token or when the maximum sequence length is reached. By multiplying together the next-token probabilities and normalizing with respect to the length of the output a confidence score of the translation can be obtained. 
 
-% \subsection{Architecture of the Molecular Transformer}
-% The Molecular Transformer architecture used throughout this work is based on the model described in Schwaller et. al. \cite{Schwaller2019MolecularPrediction}. The Transformer implementation used for this work is part of the OpenNMT natural language processing package \cite{Klein2017} which makes use of the PyTorch 1.2 framework \cite{Paszke2019PyTorch:Library}.\par
-% Our implementation of the model uses a 256 dimensional learnt embedding for each SMILES token. The encoder and the decoder are both made up of 4 standard transformer layers and dropout is applied with probability 0.1 \cite{Srivastava2014Dropout:Overfittin}. For the optimization the Adam optimizer is used and the model is trained for 500 000 or 1 000 000 steps for the USPTO and Pistachio datasets respectively. Checkpoints are saved every 10 000 steps and the final model is obtained by averaging the weights of the last 20 checkpoints for USPTO and the last 10 checkpoints for Pistachio. \par
+
 % \subsubsection{Datasets}
 % The first dataset used in this work is the freely available USPTO dataset \cite{Lowe2012} that was filtered by Jin et. al. \cite{Jin2017}. Further filtering was preformed to remove some remaining duplicates or reactions that were erroneously text mined. These included examples such as reactions whose sole product is nitric acid, sulfuric acid, chloride ion etc. This way the final number of reactions in the dataset was 471 791 of which 377 419  were used for training, 23 589 for validation and 70 765 were used as a hold-out test set. The training set was augmented by an equal number of random equivalent SMILES strings. Augmentation can help the model to learn the underlying molecular graph from the SMILES sequence. \par
 % The model trained in the way described above achieved 88.8\% Top-1 accuracy on the test set. This model was used throughout the interpretability experiments and is referred to as USPTO Transformer. \par
