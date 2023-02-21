@@ -31,11 +31,11 @@ Reaction SMILES are a simple extension of SMILES for specifying chemical reactio
 
 The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data. In the context of machine learning, the vast majority of molecular datasets where ML models are used will have molecules represented as SMILES strings. For example, the (blah blah) dataset consists of (blah) SMILES strings alongside the measured (blah) value for each molecule, while USPTO consists of (blah) reaction SMILES strings. For text-based ML models such as the Molecular Transformer (see chapter \ref{ch:transformer}), the SMILES strings are directly input to the model, while for other types of models the SMILES strings will be further processed to generate the necessary input features.
 
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
-%     \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
-% \end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
+    \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
+\end{figure}
 
 While SMILES is by far the most widely used text-based representation of molecules, other representations have been developed and are in use to address some shortcomings in SMILES. For example, the International Chemical Identifier (InChI) \cite{Heller2013InChI} string representation, which has a hierarchical construction for specifying tautomeric/stereochemical/charge states, allows greater precision and flexibility in querying molecules from large chemical databases. Another example is SELF-referencIng Embedded Strings (SELFIES) \cite{Krenn2020Selfies} which is constructed such that every SELFIES string, including random combinations of characters, is a valid molecule. This property is useful for the application of ML models that generate text as output - using SELFIES as the molecular representation, the model always output valid molecules whereas with SMILES that is not guaranteed.
 
@@ -44,24 +44,24 @@ Given a dataset of molecules or chemical reactions encoded with SMILES, we often
 
 Using many of the same symbols as SMILES, it also allows specification of wildcard atoms and bonds, which allows expressive and precise definitons of substructures and atomic environments for searching chemical databases. One common misconception is that SMARTS-based substructural searching involves matching of SMILES and SMARTS strings. When performing a SMARTS query on a SMILES string, both SMILES and SMARTS strings are first converted to internal graph representations which are then searched for subgraph isomorphism.
 
-% \begin{table}[!h]
-% \begin{center}
-%     \begin{tabular}{|c|c|}
-%     \hline
-%         SMARTS & Substructure \\
-%         \hline
-%     %  C\#N & recursive \\
-%         [N;R] &  An aliphatic nitrogen in a ring \\
-%         [\#R] & Two carbons connected by a ring bond \\
-%         C=O & wildcard \\
-%     %  C\#N & recursive \\
-%         CCN(CC)CC & reaction SMARTS \\
-%         \hline
-%     \end{tabular}
-%     \caption{Demonstration of SMARTS patterns}
-%     \label{table:smarts}
-% \end{center}
-% \end{table}
+\begin{table}[!h]
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+        SMARTS & Substructure \\
+        \hline
+        % [N;R] &  An aliphatic nitrogen in a ring \\
+        C=O & wildcard \\
+        CCN(CC)CC & reaction SMARTS \\
+        \hline
+    \end{tabular}
+    \caption{Demonstration of SMARTS patterns}
+    \label{table:smarts}
+\end{center}
+\end{table}
+%  C\#N & recursive \\
+%  C\#N & recursive \\
+% [\#R] & Two carbons connected by a ring bond \\
 
 %TODO - example applications from wikidia
 The precise and transparent substructural specification that SMARTS allows has been exploited in a number of applications.
@@ -76,12 +76,12 @@ Beyond substructures for individual molecules, SMARTS can also be applied to rea
 
 Often it is not necessary to fully simulate and understand a chemical reaction and it is sufficient to know the outcome i.e. the major product of it. This is most often the case when experimental organic chemists are willing to validate their synthetic route or when a synthesis planning software uses a reaction prediction model to score its suggestions. This is what is more traditionally referred to as reaction prediction. In these use cases a general purpose model that is able to predict a wide variety of organic reactions with good accuracy is desired. Trained organic chemists usually rationalize reactions based on the reaction mechanisms \cite{Clayden2012}. These mechanisms can be used to categorize organic reactions and each of these categories can be summarised with the help of so called reaction templates. Figure~\ref{fig:rx_template} shows a typical general reaction template for the synthesis of an amide using acid chloride and an amine. Here the $R_1$ and $R_2$ represent any chemical structures.
 
-% \begin{figure}[htbp!] 
-%     \centering    
-%     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/rx_template.png}
-%     \caption[Reaction template]{An example of a reaction template for the synthesis of an amide}
-%     \label{fig:rx_template}
-% \end{figure}
+\begin{figure}[htbp!] 
+    \centering    
+    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/rx_template.png}
+    \caption[Reaction template]{An example of a reaction template for the synthesis of an amide}
+    \label{fig:rx_template}
+\end{figure}
 
 In addition to virtual library construction, reaction templates can be used for organic reaction prediction by building a catalogue of templates of as many organic reactions as possible. Then given some reactants and reagents as labelled graphs the problem of reaction prediction is transformed into one of subgraph searching to find the best matching general template in the catalogue. When that template is found it can be applied on the input to obtain the predicted outcome of the reaction. This approach was originally proposed and pioneered in the 1980s by E. J. Corey when he used templates for the reverse problem of retrosynthesis \cite{Corey1985Computer-assistedSynthesis}. The template-based approach had some success in forward reaction prediction for example as described in Ref~\cite{Klucznik2018EfficientLaboratory} a template-based model helped design synthetic pathways to a diverse set of 8 drug-like molecules. This method had considerably more success in retrosynthesis though where there does not exist a single correct solution. One of the major limitation of template-based approaches when applied to forward prediction is scalability, meaning that the template library needs to be maintained and every time a new reaction is reported the associated template needs to be added to the template library. A further problem is that it is often not obvious which parts of the molecule are crucial for a given reaction. This means that given a reaction one can derive a smaller more general template or a larger one that is more specific for the particular reaction. This results in either too many templates matching a particular input resulting in many equally possible reaction outcomes or in the case of larger more specific templates the library will grow very big which results in very slow predictions.
 

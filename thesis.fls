@@ -1375,6 +1375,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
@@ -1382,6 +1387,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm

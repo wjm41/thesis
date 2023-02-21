@@ -25,45 +25,45 @@ Warning--empty year in ChemSpace
 Warning--empty year in Kovacs2020MolecularExplainer
 Warning--empty year in rdkit
 Warning--empty year in moonshot2020
-You've used 108 entries,
+You've used 109 entries,
             1935 wiz_defined-function locations,
-            1139 strings with 36759 characters,
-and the built_in function-call counts, 63175 in all, are:
-= -- 5591
-> -- 4898
+            1145 strings with 36982 characters,
+and the built_in function-call counts, 63612 in all, are:
+= -- 5633
+> -- 4916
 < -- 30
-+ -- 1866
-- -- 1835
-* -- 6394
-:= -- 11348
-add.period$ -- 324
-call.type$ -- 108
-change.case$ -- 1449
-chr.to.int$ -- 103
-cite$ -- 114
-duplicate$ -- 1542
-empty$ -- 3059
-format.name$ -- 1961
-if$ -- 11643
++ -- 1872
+- -- 1841
+* -- 6436
+:= -- 11423
+add.period$ -- 327
+call.type$ -- 109
+change.case$ -- 1457
+chr.to.int$ -- 104
+cite$ -- 115
+duplicate$ -- 1556
+empty$ -- 3091
+format.name$ -- 1968
+if$ -- 11729
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 95
-newline$ -- 540
-num.names$ -- 323
-pop$ -- 1266
+missing$ -- 96
+newline$ -- 545
+num.names$ -- 326
+pop$ -- 1272
 preamble$ -- 1
-purify$ -- 1449
+purify$ -- 1457
 quote$ -- 0
-skip$ -- 1163
+skip$ -- 1173
 stack$ -- 0
-substring$ -- 3501
-swap$ -- 170
+substring$ -- 3540
+swap$ -- 171
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 646
+type$ -- 652
 warning$ -- 5
-while$ -- 354
+while$ -- 357
 width$ -- 0
-write$ -- 1383
+write$ -- 1396
 (There were 9 warnings)

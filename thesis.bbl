@@ -306,6 +306,13 @@ Kearnes, S. (2021).
 \newblock Pursuing a prospective perspective.
 \newblock {\em Trends in Chemistry}, 3(2):77--79.
 
+\bibitem[Kim et~al., 2021]{Kim2021GenerativeCT}
+Kim, H., Na, J., and Lee, W.~B. (2021).
+\newblock Generative chemical transformer: Neural machine learning of molecular
+  geometric structures from chemical language via attention.
+\newblock {\em Journal of Chemical Information and Modeling},
+  61(12):5804--5814.
+
 \bibitem[Kishimoto et~al., 2019]{kishimoto2019depth}
 Kishimoto, A., Buesser, B., Chen, B., and Botea, A. (2019).
 \newblock Depth-first proof-number search with heuristic edge cost and

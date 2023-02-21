@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  21 FEB 2023 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  21 FEB 2023 22:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -909,22 +909,31 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 
 
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [6 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/triethyl_amine.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/cyclic.png>]
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<Chapters/Background/Figs/smiles.png, id=91, 640.3925pt x 348.30125pt>
+File: Chapters/Background/Figs/smiles.png Graphic file (type png)
+<use Chapters/Background/Figs/smiles.png>
+Package pdftex.def Info: Chapters/Background/Figs/smiles.png  used on input line 36.
+(pdftex.def)             Requested size: 358.50609pt x 194.9889pt.
+ [6 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/triethyl_amine.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/cyclic.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png>] [7]
+<Chapters/Background/Figs/rx_template.png, id=116, 351.74602pt x 62.28532pt>
+File: Chapters/Background/Figs/rx_template.png Graphic file (type png)
+<use Chapters/Background/Figs/rx_template.png>
+Package pdftex.def Info: Chapters/Background/Figs/rx_template.png  used on input line 81.
+(pdftex.def)             Requested size: 336.09818pt x 59.51855pt.
 
-LaTeX Warning: Reference `fig:rx_template' on page 7 undefined on input line 77.
-
-[7]
 
 Package natbib Warning: Citation `Corey1985Computer-assistedSynthesis' on page 8 undefined on input line 86.
 
 
 Package natbib Warning: Citation `Klucznik2018EfficientLaboratory' on page 8 undefined on input line 86.
 
+[8 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template.png>]
 
 Package lineno Warning: Linenumber reference failed, 
 (lineno)                rerun to get it right.
 
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17]) [18] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [63
+[9] [10] [11] [12] [13] [14] [15] [16] [17]) [18] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [63
 
 
 
@@ -935,7 +944,7 @@ Package lineno Warning: Linenumber reference failed,
 
 
 ] [64] [65] [66] [67] [68] [69]
-Underfull \hbox (badness 1112) in paragraph at lines 649--654
+Underfull \hbox (badness 1112) in paragraph at lines 656--661
 \T1/ptm/m/n/12 (+20) cov-ery of sars-cov-2 main pro-tease in-hibitors by com-bin-ing crowd-sourc-ing, high-
  []
 
@@ -947,27 +956,24 @@ Package natbib Warning: There were undefined citations.
 
 
 ] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 23DCA0FE7D1FDDF2687266F6CDD1604F;2647.
+(rerunfilecheck)             Checksum: 6080652F5335D2A708E5F48FB895FCEF;2647.
  ) 
 Here is how much of TeX's memory you used:
- 19868 strings out of 478994
- 346875 string characters out of 5858184
- 732900 words of memory out of 5000000
- 36424 multiletter control sequences out of 15000+600000
- 468333 words of font info for 292 fonts, out of 8000000 for 9000
+ 19894 strings out of 478994
+ 347555 string characters out of 5858184
+ 734180 words of memory out of 5000000
+ 36441 multiletter control sequences out of 15000+600000
+ 468460 words of font info for 294 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,130p,1963b,1135s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{chapter.5} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (25 pages, 210872 bytes).
+Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (25 pages, 779786 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 347 compressed objects within 4 object streams
- 159 named destinations out of 1000 (max. 500000)
- 77459 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 416 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 163 named destinations out of 1000 (max. 500000)
+ 77469 words of extra memory for PDF output out of 89155 (max. 10000000)
 
