@@ -5,10 +5,7 @@ Detailed description of many things. Blurb - brief description of cheminformatic
 \section{Molecular Representation}
 
 \subsection{SMILES}
-The simplified molecular-input line-entry system (SMILES) is a specification in the form of a line notation for describing the structure of chemical species using short ASCII strings. SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules.
-
-They have used a text based representation of organic molecules called SMILES \cite{Weininger1988, Weininger1989}. SMILES strings represent atoms with their chemical symbols and aromatic atoms with lowercase letters. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. These rules lead to a large number of valid SMILES representations for larger molecules. To make the mapping injective a deterministic algorithm is used to enumerate the nodes of the molecular graph. Following this ordering a unique canonical text representation of organic molecules is obtained. This representation forms the basis for all of the text-based models discussed later. 
-A few examples of the SMILES syntax with the corresponding structures is shown below. 
+The simplified molecular-input line-entry system (SMILES)  \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure (Table~\ref{table:smiles}). In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
 
 \begin{table}[!h]
 \begin{center}
@@ -29,6 +26,7 @@ A few examples of the SMILES syntax with the corresponding structures is shown b
 \end{center}
 \end{table}
 
+SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules.
 
 \begin{figure}[!h]
     \centering
@@ -61,7 +59,7 @@ SMARTS is a line notation for specification of substructural patterns in molecul
         \caption{Demonstration of the SMILES language}
         \label{table:smarts}
     \end{center}
-    \end{table}
+\end{table}
 
 Chemical substructures. Scaffolds. Reaction templates.
 
