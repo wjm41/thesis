@@ -28,7 +28,7 @@ The simplified molecular-input line-entry system (SMILES)  \cite{Weininger1988, 
 
 Reaction SMILES are a simple extension of SMILES for specifying chemical reactions. Reaction SMILES strings constructed by placing a \texttt{>} character between the SMILES strings of reactants, reagents, and products. If multiple molecules participate in the reactio, their SMILES strings are separated by a period (\texttt{.}) character.
 
-The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data. In the context of machine learning, the vast majority of molecular datasets where ML models are used will have molecules represented as SMILES strings. For example, the (blah blah) dataset consists of (blah) SMILES strings alongside the measured (blah) value for each molecule, while USPTO consists of (blah) reaction SMILES strings. For text-based ML models, the SMILES strings are directly input to the model, while for other types of models the SMILES strings will be further processed to generate the necessary input features.
+The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data. In the context of machine learning, the vast majority of molecular datasets where ML models are used will have molecules represented as SMILES strings. For example, the (blah blah) dataset consists of (blah) SMILES strings alongside the measured (blah) value for each molecule, while USPTO consists of (blah) reaction SMILES strings. For text-based ML models such as the Molecular Transformer (see chapter \ref{ch:transformer}), the SMILES strings are directly input to the model, while for other types of models the SMILES strings will be further processed to generate the necessary input features.
 
 \begin{figure}[!h]
     \centering
@@ -62,17 +62,14 @@ Using many of the same symbols as SMILES, it also allows specification of wildca
     \end{center}
 \end{table}
 
-Chemical substructures. Scaffolds. Reaction templates.
-
 %TODO - example applications from wikidia
 The precise and transparent substructural specification that SMARTS allows has been exploited in a number of applications.
 
 Substructural filters defined in SMARTS have been used [7] to identify undesirable compounds when performing strategic pooling of compounds for high-throughput screening. The REOS (rapid elimination of swill) [8] procedure uses SMARTS to filter out reactive, toxic and otherwise undesirable moieties from databases of chemical structures.
 
-RECAP [9](Retrosynthetic Combinatorial Analysis Procedure) uses SMARTS to define bond types. RECAP is a molecule editor which generates fragments of structures by breaking bonds of defined types and the original link points in these are specified using isotopic labels. Searching databases of biologically active compounds for occurrences of fragments allows privileged structural motifs to be identified. The Molecular Slicer [10] is similar to RECAP and has been used to identify fragments that are commonly found in marketed oral drugs.
-
-The Leatherface program[11] is a general purpose molecule editor which allows automated modification of a number of substructural features of molecules in databases, including protonation state, hydrogen count, formal charge, isotopic weight and bond order. The molecular editing rules used by Leatherface are defined in SMARTS. Leatherface can be used to standardise tautomeric and ionization states and to set and enumerate these in preparation of databases[12] for virtual screening. Leatherface has been used in Matched molecular pair analysis, which enables the effects of structural changes (e.g. substitution of hydrogen with chlorine) to be quantified,[13] over a range of structural types.
 ALADDIN[14] is a pharmacophore matching program that uses SMARTS to define recognition points (e.g. neutral hydrogen bond acceptor) of pharmacophores. A key problem in pharmacophore matching is that functional groups that are likely to be ionised at physiological pH are typically registered in their neutral forms in structural databases. The ROCS shape matching program allows atom types to be defined using SMARTS.[15]
+
+Scaffold splitting.
 
 Beyond substructures for individual molecules, SMARTS can also be applied to reaction SMILES to capture transformation in substructures. These SMARTS strings for chemical reactions are often referred to in the literature as `reaction templates'. For example... Beyond querying for the occurence of substructres, reaction templates can also be directly applied to a set of molecules to computationally generate a `reaction product'. This approach is used to generate virtual libraries eg EnamineREAL.
 
