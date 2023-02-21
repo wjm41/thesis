@@ -225,6 +225,20 @@ Hartenfeller, M., Zettl, H., Walter, M., Rupp, M., Reisen, F., Proschak, E.,
 \newblock Dogs: reaction-driven de novo design of bioactive compounds.
 \newblock {\em PLoS Comput Biol}, 8(2):e1002380.
 
+\bibitem[Heller et~al., 2013]{Heller2013InChI}
+Heller, S., McNaught, A., Stein, S., Tchekhovskoi, D., and Pletnev, I. (2013).
+\newblock Inchi - the worldwide chemical structure identifier standard.
+\newblock {\em Journal of Cheminformatics}, 5(1):7.
+
+\bibitem[Hermann et~al., 2013]{Hermann2013ZincImpurity}
+Hermann, J.~C., Chen, Y., Wartchow, C., Menke, J., Gao, L., Gleason, S.~K.,
+  Haynes, N.-E., Scott, N., Petersen, A., Gabriel, S., Vu, B., George, K.~M.,
+  Narayanan, A., Li, S.~H., Qian, H., Beatini, N., Niu, L., and Gan, Q.-F.
+  (2013).
+\newblock Metal impurities cause false positives in high-throughput screening
+  campaigns.
+\newblock {\em ACS Medicinal Chemistry Letters}, 4(2):197--200.
+
 \bibitem[Howard et~al., 2018]{howard2018fastai}
 Howard, J. et~al. (2018).
 \newblock fastai.
@@ -292,13 +306,6 @@ Kearnes, S. (2021).
 \newblock Pursuing a prospective perspective.
 \newblock {\em Trends in Chemistry}, 3(2):77--79.
 
-\bibitem[Kim et~al., 2021]{Kim2021GenerativeCT}
-Kim, H., Na, J., and Lee, W.~B. (2021).
-\newblock Generative chemical transformer: Neural machine learning of molecular
-  geometric structures from chemical language via attention.
-\newblock {\em Journal of Chemical Information and Modeling},
-  61(12):5804--5814.
-
 \bibitem[Kishimoto et~al., 2019]{kishimoto2019depth}
 Kishimoto, A., Buesser, B., Chen, B., and Botea, A. (2019).
 \newblock Depth-first proof-number search with heuristic edge cost and
@@ -314,6 +321,13 @@ Klein, G., Kim, Y., Senellart, J., and Rush, A.~M. (2017).
 Kovacs, D.~P., McCorkindale, W., and Lee, A.~A.
 \newblock {Molecular Transformer Explainer}.
 \newblock https://github.com/davkovacs/MTExplainer.git.
+
+\bibitem[Krenn et~al., 2020]{Krenn2020Selfies}
+Krenn, M., H{\"a}se, F., Nigam, A., Friederich, P., and Aspuru-Guzik, A.
+  (2020).
+\newblock Self-referencing embedded strings (selfies): A 100% robust molecular
+  string representation.
+\newblock {\em Machine Learning: Science and Technology}, 1(4):045024.
 
 \bibitem[Landrum, ]{rdkit}
 Landrum, G.
@@ -387,6 +401,13 @@ McCloskey, K., Taly, A., Monti, F., Brenner, M.~P., and Colwell, L.~J. (2019).
 Montavon, G., Samek, W., and M{\"{u}}ller, K.~R. (2018).
 \newblock {Methods for interpreting and understanding deep neural networks}.
 \newblock {\em Digital Signal Processing: A Review Journal}, 73:1--15.
+
+\bibitem[Morreale et~al., 2017]{Morreale2017ZincImpurity}
+Morreale, F.~E., Testa, A., Chaugule, V.~K., Bortoluzzi, A., Ciulli, A., and
+  Walden, H. (2017).
+\newblock Mind the metal: A fragment library-derived zinc impurity binds the e2
+  ubiquitin-conjugating enzyme ube2t and induces structural rearrangements.
+\newblock {\em Journal of Medicinal Chemistry}, 60(19):8183--8191.
 
 \bibitem[Morris et~al., 2021]{Morris2021Rank}
 Morris, A., McCorkindale, W., Consortium, T. C.~M., Drayman, N., Chodera,

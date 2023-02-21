@@ -5,8 +5,9 @@ Detailed description of many things. Blurb - brief description of cheminformatic
 \section{Molecular Representation}
 
 \subsection{SMILES}
-The simplified molecular-input line-entry system (SMILES)  \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure (Table~\ref{table:smiles}). In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
+The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure. In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
 
+(Table~\ref{table:smiles})
 \begin{table}[!h]
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -30,44 +31,44 @@ Reaction SMILES are a simple extension of SMILES for specifying chemical reactio
 
 The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data. In the context of machine learning, the vast majority of molecular datasets where ML models are used will have molecules represented as SMILES strings. For example, the (blah blah) dataset consists of (blah) SMILES strings alongside the measured (blah) value for each molecule, while USPTO consists of (blah) reaction SMILES strings. For text-based ML models such as the Molecular Transformer (see chapter \ref{ch:transformer}), the SMILES strings are directly input to the model, while for other types of models the SMILES strings will be further processed to generate the necessary input features.
 
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
-    \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
-\end{figure}
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
+%     \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
+% \end{figure}
 
 While SMILES is by far the most widely used text-based representation of molecules, other representations have been developed and are in use to address some shortcomings in SMILES. For example, the International Chemical Identifier (InChI) \cite{Heller2013InChI} string representation, which has a hierarchical construction for specifying tautomeric/stereochemical/charge states, allows greater precision and flexibility in querying molecules from large chemical databases. Another example is SELF-referencIng Embedded Strings (SELFIES) \cite{Krenn2020Selfies} which is constructed such that every SELFIES string, including random combinations of characters, is a valid molecule. This property is useful for the application of ML models that generate text as output - using SELFIES as the molecular representation, the model always output valid molecules whereas with SMILES that is not guaranteed.
 
-\subsection{SMARTS}
+\subsection{SMARTS} \label{subsec:smarts}
 Given a dataset of molecules or chemical reactions encoded with SMILES, we often want to identify molecules or reactions that contain a specific substructure. For example, we may want to identify molecules that contain a specific functional group or reaction that contains a specific reaction center. The standard tool for performing these substructure queries is via SMILES Arbitrary Target Specification (SMARTS) notation. The SMARTS line notation is expressive and allows extremely precise and transparent substructural specification and atom typing.
 
 Using many of the same symbols as SMILES, it also allows specification of wildcard atoms and bonds, which allows expressive and precise definitons of substructures and atomic environments for searching chemical databases. One common misconception is that SMARTS-based substructural searching involves matching of SMILES and SMARTS strings. When performing a SMARTS query on a SMILES string, both SMILES and SMARTS strings are first converted to internal graph representations which are then searched for subgraph isomorphism.
 
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{|c|c|}
-        \hline
-             SMARTS & Substructure \\
-             \hline
-             C & CH\textsubscript{4} \\
-             \lbrack Fe2+\rbrack & Fe\textsuperscript{2+} \\
-             C=O & CH\textsubscript{2}O \\
-             C\#N & HCN (cyan) \\
-             CCN(CC)CC & \includegraphics[width=0.75in]{Chapters/Background/Figs/triethyl_amine.png} \\
-             CC1=CC(CCC1)Br & \includegraphics[width=0.7in]{Chapters/Background/Figs/cyclic.png} \\
-             \hline
-        \end{tabular}
-        \caption{Demonstration of the SMARTS language}
-        \label{table:smarts}
-    \end{center}
-\end{table}
+% \begin{table}[!h]
+% \begin{center}
+%     \begin{tabular}{|c|c|}
+%     \hline
+%         SMARTS & Substructure \\
+%         \hline
+%     %  C\#N & recursive \\
+%         [N;R] &  An aliphatic nitrogen in a ring \\
+%         [\#R] & Two carbons connected by a ring bond \\
+%         C=O & wildcard \\
+%     %  C\#N & recursive \\
+%         CCN(CC)CC & reaction SMARTS \\
+%         \hline
+%     \end{tabular}
+%     \caption{Demonstration of SMARTS patterns}
+%     \label{table:smarts}
+% \end{center}
+% \end{table}
 
 %TODO - example applications from wikidia
 The precise and transparent substructural specification that SMARTS allows has been exploited in a number of applications.
 
 Substructural filters defined in SMARTS have been used [7] to identify undesirable compounds when performing strategic pooling of compounds for high-throughput screening. The REOS (rapid elimination of swill) [8] procedure uses SMARTS to filter out reactive, toxic and otherwise undesirable moieties from databases of chemical structures.
 
-ALADDIN[14] is a pharmacophore matching program that uses SMARTS to define recognition points (e.g. neutral hydrogen bond acceptor) of pharmacophores. A key problem in pharmacophore matching is that functional groups that are likely to be ionised at physiological pH are typically registered in their neutral forms in structural databases. The ROCS shape matching program allows atom types to be defined using SMARTS.[15]
+ALADDIN[14] is a pharmacophore matching program that uses SMARTS to define recognition points (e.g. neutral hydrogen bond acceptor) of pharmacophores. A key problem in pharmacophore matching is that functional groups that are likely to be ionised at physiological pH are typically registered in their neutral forms in structural databases. The ROCS shape matching program allows atom types to be defined using SMARTS.[15] (see section \ref{subsec:pharmacophores})
 
 Scaffold splitting.
 
@@ -75,16 +76,16 @@ Beyond substructures for individual molecules, SMARTS can also be applied to rea
 
 Often it is not necessary to fully simulate and understand a chemical reaction and it is sufficient to know the outcome i.e. the major product of it. This is most often the case when experimental organic chemists are willing to validate their synthetic route or when a synthesis planning software uses a reaction prediction model to score its suggestions. This is what is more traditionally referred to as reaction prediction. In these use cases a general purpose model that is able to predict a wide variety of organic reactions with good accuracy is desired. Trained organic chemists usually rationalize reactions based on the reaction mechanisms \cite{Clayden2012}. These mechanisms can be used to categorize organic reactions and each of these categories can be summarised with the help of so called reaction templates. Figure~\ref{fig:rx_template} shows a typical general reaction template for the synthesis of an amide using acid chloride and an amine. Here the $R_1$ and $R_2$ represent any chemical structures.
 
-\begin{figure}[htbp!] 
-\centering    
-\includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/rx_template.png}
-\caption[Reaction template]{An example of a reaction template for the synthesis of an amide}
-\label{fig:rx_template}
-\end{figure}
+% \begin{figure}[htbp!] 
+%     \centering    
+%     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/rx_template.png}
+%     \caption[Reaction template]{An example of a reaction template for the synthesis of an amide}
+%     \label{fig:rx_template}
+% \end{figure}
 
 In addition to virtual library construction, reaction templates can be used for organic reaction prediction by building a catalogue of templates of as many organic reactions as possible. Then given some reactants and reagents as labelled graphs the problem of reaction prediction is transformed into one of subgraph searching to find the best matching general template in the catalogue. When that template is found it can be applied on the input to obtain the predicted outcome of the reaction. This approach was originally proposed and pioneered in the 1980s by E. J. Corey when he used templates for the reverse problem of retrosynthesis \cite{Corey1985Computer-assistedSynthesis}. The template-based approach had some success in forward reaction prediction for example as described in Ref~\cite{Klucznik2018EfficientLaboratory} a template-based model helped design synthetic pathways to a diverse set of 8 drug-like molecules. This method had considerably more success in retrosynthesis though where there does not exist a single correct solution. One of the major limitation of template-based approaches when applied to forward prediction is scalability, meaning that the template library needs to be maintained and every time a new reaction is reported the associated template needs to be added to the template library. A further problem is that it is often not obvious which parts of the molecule are crucial for a given reaction. This means that given a reaction one can derive a smaller more general template or a larger one that is more specific for the particular reaction. This results in either too many templates matching a particular input resulting in many equally possible reaction outcomes or in the case of larger more specific templates the library will grow very big which results in very slow predictions.
 
-\subsection{Pharmacophores}
+\subsection{Pharmacophores} \label{subsec:pharmacophores}
 
 A pharmacophore is an abstract description of molecular features that are necessary for molecular recognition of a ligand by a biological macromolecule. IUPAC defines a pharmacophore to be "an ensemble of steric and electronic features that is necessary to ensure the optimal supramolecular interactions with a specific biological target and to trigger (or block) its biological response".[1] A pharmacophore model explains how structurally diverse ligands can bind to a common receptor site. Furthermore, pharmacophore models can be used to identify through de novo design or virtual screening novel ligands that will bind to the same receptor.
 
@@ -93,7 +94,8 @@ Typical pharmacophore features include hydrophobic centroids, aromatic rings, hy
 In modern computational chemistry, pharmacophores are used to define the essential features of one or more molecules with the same biological activity. A database of diverse chemical compounds can then be searched for more molecules which share the same features arranged in the same relative orientation. Pharmacophores are also used as the starting point for developing 3D-QSAR models. Such tools and a related concept of "privileged structures", which are "defined as molecular frameworks which are able of providing useful ligands for more than one type of receptor or enzyme target by judicious structural modifications",[3] aid in drug discovery.[4]
 
 Use SMARTS to define pharmacophores.
-\subsection{Fingerprints}
+
+\subsection{Fingerprints} \label{subsec:fingerprints}
 
 The similarity-based[4] virtual screening (a kind of ligand-based virtual screening) assumes that all compounds in a database that are similar to a query compound have similar biological activity. Although this hypothesis is not always valid,[5] quite often the set of retrieved compounds is considerably enriched with actives.[6] To achieve high efficacy of similarity-based screening of databases containing millions of compounds, molecular structures are usually represented by molecular screens (structural keys) or by fixed-size or variable-size molecular fingerprints. Molecular screens and fingerprints can contain both 2D- and 3D-information. However, the 2D-fingerprints, which are a kind of binary fragment descriptors, dominate in this area. Fragment-based structural keys, like MDL keys,[7] are sufficiently good for handling small and medium-sized chemical databases, whereas processing of large databases is performed with fingerprints having much higher information density. Fragment-based Daylight,[8] BCI,[9] and UNITY 2D (Tripos[10]) fingerprints are the best known examples. The most popular similarity measure for comparing chemical structures represented by means of fingerprints is the Tanimoto (or Jaccard) coefficient T. Two structures are usually considered similar if T > 0.85 (for Daylight fingerprints). However, it is a common misunderstanding that a similarity of T > 0.85 reflects similar bioactivities in general ("the 0.85 myth").[11]
 
@@ -218,8 +220,6 @@ In the above description of the MLP, the key requirement is that the model is en
 
 Within materials science, this ability to compose differentiable building blocks into novel architectures has led to the development of a wide variety of message-passing neural networks that operate directly on the atomic coordinates of molecules and materials. Typically these models operate on “radius”-graphs of interconnected local environments determined using a cutoff radius – the resulting data structure closely mirrors that of Verlet lists used in atomistic simulations [80]. The nodes of the graphs encode atoms with edges encoding interactions or bonds. As with shallow descriptor-based models, it is important to encode the underlying symmetries of the problem into the network architecture. Earlier models ensured SO(3)-invariance by only including position information via the relative distances between connected sites [81–83]. More recently SO(3)-equivariant architectures have been proposed that include angular and higher-order information or relative displacement vectors between atoms to allow construction of message passing operations that maintain equivariance [84].
 
-
-
 Examples of NNs with fingerprints and SMILES.
 
 \subsection{Evaluating Models}
@@ -234,7 +234,6 @@ The ROC curve is created by plotting the true positive rate (TPR) against the fa
 \begin{equation}
     \mathrm{EF}(n) = \frac{\mathrm{Hit\: rate (predicted\: top - }n)}{\mathrm{Hit\: rate (baseline)}}
 \end{equation}
-
 
 Train-Test splitting
 
