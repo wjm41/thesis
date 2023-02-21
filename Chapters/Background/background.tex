@@ -50,18 +50,18 @@ Using many of the same symbols as SMILES, it also allows specification of wildca
     \hline
         SMARTS & Substructure \\
         \hline
-        % [N;R] &  An aliphatic nitrogen in a ring \\
+        [N;R] &  An aliphatic nitrogen in a ring \\\relax
+        [\#6]@[\#6] & Two carbons connected by a ring bond \\
         C=O & wildcard \\
+        C\#N & recursive \\\relax
         CCN(CC)CC & reaction SMARTS \\
         \hline
     \end{tabular}
-    \caption{Demonstration of SMARTS patterns}
+    \caption{Examples of SMARTS patterns}
     \label{table:smarts}
 \end{center}
 \end{table}
 %  C\#N & recursive \\
-%  C\#N & recursive \\
-% [\#R] & Two carbons connected by a ring bond \\
 
 %TODO - example applications from wikidia
 The precise and transparent substructural specification that SMARTS allows has been exploited in a number of applications.
