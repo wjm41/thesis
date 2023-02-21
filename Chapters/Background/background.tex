@@ -28,7 +28,7 @@ The simplified molecular-input line-entry system (SMILES)  \cite{Weininger1988, 
 
 Reaction SMILES are a simple extension of SMILES for specifying chemical reactions. Reaction SMILES strings constructed by placing a \texttt{>} character between the SMILES strings of reactants, reagents, and products. If multiple molecules participate in the reactio, their SMILES strings are separated by a period (\texttt{.}) character.
 
-The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data.  can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules.
+The text-based nature of SMILES strings as well as its expressiveness in encoding the molecular graph alongside stereochemistry results in its widespread use for storing chemical data. In the context of machine learning, the vast majority of molecular datasets where ML models are used will have molecules represented as SMILES strings. For example, the (blah blah) dataset consists of (blah) SMILES strings alongside the measured (blah) value for each molecule, while USPTO consists of (blah) reaction SMILES strings. For text-based ML models, the SMILES strings are directly input to the model, while for other types of models the SMILES strings will be further processed to generate the necessary input features.
 
 \begin{figure}[!h]
     \centering
@@ -36,13 +36,12 @@ The text-based nature of SMILES strings as well as its expressiveness in encodin
     \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
 \end{figure}
 
-While SMILES is by far the most widely used text-based representation of molecules, other representations have been developed and are in use to address some shortcomings in SMILES. For example, the International Chemical Identifier (InChI) \cite{Heller2013InChI} string representation, which has a hierarchical construction for specifying tautomeric/stereochemical/charge states, allows greater precision and flexibility in querying molecules from large chemical databases. Another example is Self-referencing embedded strings (SELFIES) \cite{Krenn2020Selfies} which is constructed such that every SELFIES string, including random combinations of characters, is a valid molecule. This property is useful for the application of ML models that generate text as output - using SELFIES as the molecular representation, the model always output valid molecules whereas with SMILES that is not guaranteed.
+While SMILES is by far the most widely used text-based representation of molecules, other representations have been developed and are in use to address some shortcomings in SMILES. For example, the International Chemical Identifier (InChI) \cite{Heller2013InChI} string representation, which has a hierarchical construction for specifying tautomeric/stereochemical/charge states, allows greater precision and flexibility in querying molecules from large chemical databases. Another example is SELF-referencIng Embedded Strings (SELFIES) \cite{Krenn2020Selfies} which is constructed such that every SELFIES string, including random combinations of characters, is a valid molecule. This property is useful for the application of ML models that generate text as output - using SELFIES as the molecular representation, the model always output valid molecules whereas with SMILES that is not guaranteed.
 
 \subsection{SMARTS}
+Given a dataset of molecules or chemical reactions encoded with SMILES, we often want to identify molecules or reactions that contain a specific substructure. For example, we may want to identify molecules that contain a specific functional group or reaction that contains a specific reaction center. The standard tool for performing these substructure queries is via SMILES Arbitrary Target Specification (SMARTS) notation. The SMARTS line notation is expressive and allows extremely precise and transparent substructural specification and atom typing.
 
-SMILES arbitrary target specification (SMARTS) is a language for specifying substructural patterns in molecules. The SMARTS line notation is expressive and allows extremely precise and transparent substructural specification and atom typing. % TODO - from wikipedia, update
-
-SMARTS is a line notation for specification of substructural patterns in molecules. While it uses many of the same symbols as SMILES, it also allows specification of wildcard atoms and bonds, which can be used to define substructural queries for chemical database searching. One common misconception is that SMARTS-based substructural searching involves matching of SMILES and SMARTS strings. In fact, both SMILES and SMARTS strings are first converted to internal graph representations which are searched for subgraph isomorphism.
+Using many of the same symbols as SMILES, it also allows specification of wildcard atoms and bonds, which allows expressive and precise definitons of substructures and atomic environments for searching chemical databases. One common misconception is that SMARTS-based substructural searching involves matching of SMILES and SMARTS strings. When performing a SMARTS query on a SMILES string, both SMILES and SMARTS strings are first converted to internal graph representations which are then searched for subgraph isomorphism.
 
 \begin{table}[!h]
     \begin{center}
@@ -58,7 +57,7 @@ SMARTS is a line notation for specification of substructural patterns in molecul
              CC1=CC(CCC1)Br & \includegraphics[width=0.7in]{Chapters/Background/Figs/cyclic.png} \\
              \hline
         \end{tabular}
-        \caption{Demonstration of the SMILES language}
+        \caption{Demonstration of the SMARTS language}
         \label{table:smarts}
     \end{center}
 \end{table}
@@ -74,6 +73,8 @@ RECAP [9](Retrosynthetic Combinatorial Analysis Procedure) uses SMARTS to define
 
 The Leatherface program[11] is a general purpose molecule editor which allows automated modification of a number of substructural features of molecules in databases, including protonation state, hydrogen count, formal charge, isotopic weight and bond order. The molecular editing rules used by Leatherface are defined in SMARTS. Leatherface can be used to standardise tautomeric and ionization states and to set and enumerate these in preparation of databases[12] for virtual screening. Leatherface has been used in Matched molecular pair analysis, which enables the effects of structural changes (e.g. substitution of hydrogen with chlorine) to be quantified,[13] over a range of structural types.
 ALADDIN[14] is a pharmacophore matching program that uses SMARTS to define recognition points (e.g. neutral hydrogen bond acceptor) of pharmacophores. A key problem in pharmacophore matching is that functional groups that are likely to be ionised at physiological pH are typically registered in their neutral forms in structural databases. The ROCS shape matching program allows atom types to be defined using SMARTS.[15]
+
+Beyond substructures for individual molecules, SMARTS can also be applied to reaction SMILES to capture transformation in substructures. For example...
 
 % Often it is not necessary to fully simulate and understand a chemical reaction and it is sufficient to know the outcome i.e. the major product of it. This is most often the case when experimental organic chemists are willing to validate their synthetic route or when a synthesis planning software uses a reaction prediction model to score its suggestions. This is what is more traditionally referred to as reaction prediction. In these use cases a general purpose model that is able to predict a wide variety of organic reactions with good accuracy is desired. Trained organic chemists usually rationalize reactions based on the reaction mechanisms \cite{Clayden2012}. These mechanisms can be used to categorize organic reactions and each of these categories can be summarised with the help of so called reaction templates. Figure~\ref{fig:rx_template} shows a typical general reaction template for the synthesis of an amide using acid chloride and an amine. Here the $R_1$ and $R_2$ represent any chemical structures. 
 % \begin{figure}[htbp!] 
