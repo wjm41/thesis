@@ -50,11 +50,10 @@ Using many of the same symbols as SMILES, it also allows specification of wildca
     \hline
         SMARTS & Substructure \\
         \hline
-        [N;R] &  An aliphatic nitrogen in a ring \\\relax
-        [\#6]@[\#6] & Two carbons connected by a ring bond \\
-        C=O & wildcard \\
-        C\#N & recursive \\\relax
-        CCN(CC)CC & reaction SMARTS \\
+        [C;R] &  An aliphatic carbon in a ring \\\relax
+        [\#6]@[\#6] & Two carbons connected by a ring bond \\\relax
+        [N;\$(NC=[O,S])] & amide or thioamide nitrogen \\\relax
+        [N:1][C:2](=[O:3])[N:4]>>[N:1][C:2](=[O:3])[C:4] & urea group transforming into an amide \\
         \hline
     \end{tabular}
     \caption{Examples of SMARTS patterns}

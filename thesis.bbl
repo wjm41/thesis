@@ -114,6 +114,11 @@ Coley, C.~W., Jin, W., Rogers, L., Jamison, T.~F., Jaakkola, T.~S., Green,
   chemical reactivity.
 \newblock {\em Chem. Sci.}, 10:370--377.
 
+\bibitem[Corey et~al., 1985]{Corey1985ComputerAssistedSynthesis}
+Corey, E.~J., Long, A.~K., and Rubenstein, S.~D. (1985).
+\newblock {Computer-assisted analysis in organic synthesis}.
+\newblock {\em Science}, 228(4698):408.
+
 \bibitem[Davis and Roughley, 2017]{David2017FBLD}
 Davis, B.~J. and Roughley, S.~D. (2017).
 \newblock Chapter eleven - fragment-based lead discovery.
@@ -324,6 +329,16 @@ Kishimoto, A., Buesser, B., Chen, B., and Botea, A. (2019).
 Klein, G., Kim, Y., Senellart, J., and Rush, A.~M. (2017).
 \newblock {OpenNMT}.
 
+\bibitem[Klucznik et~al., 2018]{Klucznik2018EfficientLaboratory}
+Klucznik, T., Mikulak-Klucznik, B., McCormack, M.~P., Lima, H., Szymku{\'{c}},
+  S., Bhowmick, M., Molga, K., Zhou, Y., Rickershauser, L., Gajewska, E.~P.,
+  Toutchkine, A., Dittwald, P., Startek, M.~P., Kirkovits, G.~J., Roszak, R.,
+  Adamski, A., Sieredzi{\'{n}}ska, B., Mrksich, M., Trice, S.~L., and
+  Grzybowski, B.~A. (2018).
+\newblock {Efficient Syntheses of Diverse, Medicinally Relevant Targets Planned
+  by Computer and Executed in the Laboratory}.
+\newblock {\em Chem}, 4(3):522--532.
+
 \bibitem[Kovacs et~al., ]{Kovacs2020MolecularExplainer}
 Kovacs, D.~P., McCorkindale, W., and Lee, A.~A.
 \newblock {Molecular Transformer Explainer}.
@@ -347,6 +362,14 @@ Lee, A.~A., Yang, Q., Sresht, V., Bolgar, P., Hou, X., Klug-McLeod, J.~L.,
 \newblock Molecular transformer unifies reaction prediction and retrosynthesis
   across pharma chemical space.
 \newblock {\em Chemical Communications}, 55(81):12152--12155.
+
+\bibitem[Limban et~al., 2018]{Limban2018StrucuralAlerts}
+Limban, C., Nu{\c t}{\u a}, D.~C., Chiri{\c t}{\u a}, C., Negreș, S., Arsene,
+  A.~L., Goumenou, M., Karakitsios, S.~P., Tsatsakis, A.~M., and Sarigiannis,
+  D.~A. (2018).
+\newblock The use of structural alerts to avoid the toxicity of
+  pharmaceuticals.
+\newblock {\em Toxicology Reports}, 5:943--953.
 
 \bibitem[Liu et~al., 2020]{liu2020development}
 Liu, Y., Liang, C., Xin, L., Ren, X., Tian, L., Ju, X., Li, H., Wang, Y., Zhao,
@@ -728,6 +751,11 @@ Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.~N.,
 \newblock {Attention is all you need}.
 \newblock {\em Advances in Neural Information Processing Systems},
   2017-Decem(Nips):5999--6009.
+
+\bibitem[Walters et~al., 1998]{Walters1998overview}
+Walters, W., Stahl, M.~T., and Murcko, M.~A. (1998).
+\newblock Virtual screening---an overview.
+\newblock {\em Drug Discovery Today}, 3(4):160--178.
 
 \bibitem[Weininger, 1988]{Weininger1988}
 Weininger, D. (1988).
