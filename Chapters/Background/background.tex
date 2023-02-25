@@ -124,14 +124,14 @@ We can think of each entry corresponding to the absence or presence of a particu
 
 The most popular similarity measure for comparing chemical structures represented by means of fingerprints is the Tanimoto (or Jaccard) coefficient S (Eqn~\ref{eqn:tanimoto}). Two structures are usually considered similar if T > 0.85 (for Daylight fingerprints). However, it is a common misunderstanding that a similarity of T > 0.85 reflects similar bioactivities in general ("the 0.85 myth").[11]
 
-Tanimoto similarity.
+Tanimoto similarity. If Jaccard or Tanimoto similarity is expressed over a bit vector, then it can be written as
+Tanimoto distance is often referred to, erroneously, as a synonym for Jaccard distance 1 - $T_{s}$. This function is a proper distance metric. "Tanimoto Distance" is often stated as being a proper distance metric, probably because of its confusion with Jaccard distance.
 
-\begin{equation} \label{eqn:tanimoto} %TOOD - replace with intersection symbol
-    S(A, B) = \frac{A \cup B}{A \cup B}
+\begin{equation} \label{eqn:tanimoto}
+    S(A, B) = \frac{A \cap B}{A \cup B} = \frac{A \cdot B}{|A|^{2} + |B|^{2} - A \cdot B}
 \end{equation}
 
-The Tanimoto
-
+A number of comparison studies \cite{Todeschini2012tanimoto, Bajusz2015Tanimoto} have shown the Tanimoto similarity to be the most useful similarity metric.
 \section{Computational Approaches}
 
 \subsection{Docking}
