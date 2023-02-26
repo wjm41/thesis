@@ -4,6 +4,8 @@ Testing a drug candidate requires compound synthesis and purification followed b
 
 Recent work in developing nanomolar-scale high-throughput chemistry seeks to address this issue \cite{Santarilla2015MerckNanomolar, Perera2018PfizerNanomolar, Gehrtz2022nanomolar}. (TODO - not quite connected to the first paragraph). Adopting techniques from plate-based biological-assay screening, reacting one reagent with a different second reagent in each well of the plate, these approaches enable commonplace medicinal chemistry reactions (e.g., amide couplings and Suzuki reactions) to be conducted in a high-throughput manner with minimal starting material (<300 nmol). Utilising this method at the end of the synthesis route allows high-throughput generation of analogues for SAR exploration. In addition to higher throughput, nanomolar-scale chemistry also reduces costs by lowering solvent usage and conserving advance intermediates in the synthesis route. The drawback, however, is that it is rarely possible to perform purification for reactions conducted at the nanomole scale. 
 
+nanosar \cite{Gesmundo2018nanosar}.
+
 A related approach for synthesizing large and diverse combinatorial libraries are DNA-encoded libraries (DEL) \cite{GirondaMartinez2021DNALibrary}. DEL workflows also do not require purification of every compound, and there has been recent success in training ML models on DEL bioactivity screen for hit-finding \cite{McCloskey2020DNALibrary}. The success of this approach despite the inherent uncertainty in compound yields suggest that a similar approach with nanomolar screening data 
 
 % Such derivatization is preferably achieved toward the end of the synthesis route, to maximize the utility of a single intermediate. This approach can be readily scaled to plate-based format, where the starting material is reacted with a different second reagent in each well of the plate. Provided there is no interference from the other reagents in the reaction, this significantly increases the speed, reduces chemical waste and lowers the cost of initial SAR exploration. The plate-based format allows closer integration of chemical and biological experiments but also comes with the limitation that reactions conducted at the nanomole scale are rarely appropriate for purification.
@@ -48,20 +50,3 @@ Looking forward, we test the ability of the trained models to extrapolate to nov
 Figure 4 - top 2 crude, false negative?
 
 \section{Discussion}
-
-References:
-
-1	Selvaraj, C., Chandra, I. \& Singh, S. K. Artificial intelligence and machine learning approaches for drug design: challenges and opportunities for the pharmaceutical industries. Molecular Diversity 26, 1893-1913, doi:10.1007/s11030-021-10326-z (2022).
-2	Göller, A. H. et al. Bayer’s in silico ADMET platform: A journey of machine learning over the past two decades. Drug discovery today 25, 1702-1709 (2020).
-3	Lavecchia, A. Machine-learning approaches in drug discovery: methods and applications. Drug Discovery Today 20, 318-331, doi:https://doi.org/10.1016/j.drudis.2014.10.012 (2015).
-4	Lipinski, C. F., Maltarollo, V. G., Oliveira, P. R., Da Silva, A. B. \& Honorio, K. M. Advances and perspectives in applying deep learning for drug design and discovery. Frontiers in Robotics and AI 6, 108 (2019).
-5	Vamathevan, J. et al. Applications of machine learning in drug discovery and development. Nature Reviews Drug Discovery 18, 463-477, doi:10.1038/s41573-019-0024-5 (2019).
-6	Ardila, D. et al. End-to-end lung cancer screening with three-dimensional deep learning on low-dose chest computed tomography. Nature medicine 25, 954-961 (2019).
-7	Ryu, J. Y., Lee, M. Y., Lee, J. H., Lee, B. H. \& Oh, K.-S. DeepHIT: a deep learning framework for prediction of hERG-induced cardiotoxicity. Bioinformatics 36, 3049-3055 (2020).
-8	Jiménez-Luna, J., Grisoni, F. \& Schneider, G. Drug discovery with explainable artificial intelligence. Nature Machine Intelligence 2, 573-584, doi:10.1038/s42256-020-00236-4 (2020).
-9	Reker, D. \& Schneider, G. Active-learning strategies in computer-assisted drug discovery. Drug discovery today 20, 458-465 (2015).
-10	Kapsiani, S. \& Howlin, B. J. Random forest classification for predicting lifespan-extending chemical compounds. Scientific Reports 11, 13812, doi:10.1038/s41598-021-93070-6 (2021).
-11	Svetnik, V. et al. Random Forest: A Classification and Regression Tool for Compound Classification and QSAR Modeling. Journal of Chemical Information and Computer Sciences 43, 1947-1958, doi:10.1021/ci034160g (2003).
-12	Kang, B., Seok, C. \& Lee, J. Prediction of Molecular Electronic Transitions Using Random Forests. Journal of Chemical Information and Modeling 60, 5984-5994, doi:10.1021/acs.jcim.0c00698 (2020).
-13	Kumar, M. S., Tamilarasan, R. \& Sreekanth, A. 4-Salicylideneamino-3-methyl-1,2,4-triazole-5-thione as a sensor for aniline recognition. Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy 79, 370-375, doi:https://doi.org/10.1016/j.saa.2011.03.030 (2011).
-
