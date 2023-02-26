@@ -94,29 +94,11 @@ Use SMARTS to define pharmacophores.
 
 \subsection{Fingerprints} \label{subsec:fingerprints}
 
-Molecular fingerprints (1) are representations of chemical structures originally designed to assist in chemical database substructure searching (2) but later used for analysis tasks, such as similarity searching, (3) clustering, (4) and classification. (5)Extended-connectivity fingerprints (ECFPs) are a recently developed fingerprint methodology explicitly designed to capture molecular features relevant to molecular activity. While not designed for substructure searching, they are well suited to tasks related to predicting and gaining insight into drug activity. (6) Additionally, ECFPs can be used much like other fingerprints in methods, such as similarity searching, clustering, and virtual screening.
+In order to apply powerful machine learning methods, we require a (typically fixed-length) vector representation of molecules konwn in the literature as `molecular fingerprints'. The most popular molecular fingerprint is the Morgan fingerprint \cite{morgan1965fingerprints}, also known as the Extended-Connectivity FingerPrint (ECFP) \cite{rogers2010extended}. ECFPs are a particular example of `topological' fingerprints that encode the presence of substructures in a molecule by traversing the molecular graph.
 
-ECFPs are derived using a variant of the Morgan algorithm, (10) which was proposed as a method for solving the molecular isomorphism problem (that is, identify when two molecules, with different atom numberings, are the same). In the Morgan algorithm, an iterative process assigns numeric identifiers to each atom, at first using a rule that encodes the numbering invariant atom information into an initial atom identifier, and later using the identifiers from the previous iteration. Thus, identifiers generated are independent of the original numbering of the atoms. The iteration process is continued until every atom identifier is unique (or as close to “unique” as symmetry allows); the intermediate results are discarded, and the final identifiers provide a canonical numbering scheme for the atoms.
+ECFPs are generated via a recursive hashing algorithm that numerically hashes the representation of each atom with those of its neighbours, and again with it's next-nearest neighbours etc until a pre-defined `radius' is reached. The resulting hash values are then used to generate a fixed-length binary vector of 1/0 bits. The length of the vector is pre-determined and each 1-bit represents a unique substructure that is encountered during the traversal. The radius of the graph traversal is also a pre-defined parameter that controls the size of the substructures that are represented in the fingerprint. The radius is typically set to 2 or 3, and the length of the fingerprint is typically in the range of 1024-4096.
 
-Molecular fingerprints are a way to represent molecules as mathematical objects. By doing this, we can perform statistical analyses and/or machine learning techniques on the set of molecules to gain new insights that we could not gain as humans. One of the most common molecular fingerprinting methods is Extended Connectivity FingerPrinting (ECFP) which we will look at today.
-
-
-We choose an atom in the molecule and take note of:
-number of nearest-neighbour non-hydrogen atoms
-number of bonds attached to the atom (not including bonds to hydrogens)
-atomic number
-atomic mass
-number of hydrogens connected to the atom
-is the atom in a ring (1) or not (0)?
-These values form the Daylight atomic invariants rule.
-These values are hashed into an integer. This process is repeated for each atom until all atoms have been assigned a hashed integer value. As an example, this is the result of this process on this arbitrary molecule:
-
-Next, we add two more numbers to the array for each non-hydrogen attachment. The first is the bond order to that particular attachment (1,2,3,4 for single, double, triple and aromatic bonds). The second is that atom’s identifier. We then sort the pairs in descending order with respect to the atom identifiers.
-The final array is: [(1, -1100000244),(1,1559650422),(1,1572579716),(2,-1074141656)]. We then hash this array to generate atom 4s new identifier after the first iteration: -1708545601.
-
-The hashing process is repeated with neighbouring heavy atoms and ...
-
-The most popular molecular fingerprint is the Morgan fingerprint \cite{morgan1965fingerprints}, also known as extended-connectivity fingerprint ECFP4 \cite{rogers2010extended}. ECFP4 belongs to the best performing fingerprints in small molecule virtual screening [13] and target prediction benchmarks [14, 15]. Typically 2048 bits and radius of 2. Larger radius = larger substructures.
+chemical database substructure searching (2) , similarity searching, (3) clustering, (4) and classification. (5), predicting and gaining insight into drug activity. (6) Additionally, ECFPs can be used much like other fingerprints in methods, such as similarity searching, clustering, and virtual screening. ECFP4 belongs to the best performing fingerprints in small molecule virtual screening [13]
 
 The similarity-based[4] virtual screening (a kind of ligand-based virtual screening) assumes that all compounds in a database that are similar to a query compound have similar biological activity. Although this hypothesis is not always valid,[5] quite often the set of retrieved compounds is considerably enriched with actives.[6] To achieve high efficacy of similarity-based screening of databases containing millions of compounds, molecular structures are usually represented by molecular screens (structural keys) or by fixed-size or variable-size molecular fingerprints. Molecular screens and fingerprints can contain both 2D- and 3D-information. However, the 2D-fingerprints, which are a kind of binary fragment descriptors, dominate in this area. Fragment-based structural keys, like MDL keys,[7] are sufficiently good for handling small and medium-sized chemical databases, whereas processing of large databases is performed with fingerprints having much higher information density. Fragment-based Daylight,[8] BCI,[9] and UNITY 2D (Tripos[10]) fingerprints are the best known examples.
 
