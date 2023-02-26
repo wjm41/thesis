@@ -81,7 +81,7 @@ In addition to virtual library construction, reaction templates can be used for 
 
 \subsection{Pharmacophores} \label{subsec:pharmacophores}
 
-A pharmacophore is an abstract description of molecular features that are necessary for molecular recognition of a ligand by a biological macromolecule. IUPAC defines a pharmacophore to be "an ensemble of steric and electronic features that is necessary to ensure the optimal supramolecular interactions with a specific biological target and to trigger (or block) its biological response".[1] A pharmacophore model explains how structurally diverse ligands can bind to a common receptor site. Furthermore, pharmacophore models can be used to identify through de novo design or virtual screening novel ligands that will bind to the same receptor.
+A pharmacophore is an abstract description of molecular features that are necessary for molecular recognition of a ligand by a biological macromolecule \cite{Kaserer2015PharmacophoreReview}. IUPAC defines a pharmacophore to be "an ensemble of steric and electronic features that is necessary to ensure the optimal supramolecular interactions with a specific biological target and to trigger (or block) its biological response".[1] A pharmacophore model explains how structurally diverse ligands can bind to a common receptor site. Furthermore, pharmacophore models can be used to identify through de novo design or virtual screening novel ligands that will bind to the same receptor.
 
 Typical pharmacophore features include hydrophobic centroids, aromatic rings, hydrogen bond acceptors or donors, cations, and anions. These pharmacophoric points may be located on the ligand itself or may be projected points presumed to be located in the receptor.
 
@@ -108,7 +108,7 @@ where $A$ and $B$ refer to the bit-vector molecular fingerprints of two molecule
 
 The combination of the Morgan fingerprint with Tanimoto similarity is useful for clustering \cite{Butina1999Clustering} datasets of similar compounds as well as performing similarity-based virtual screening. Similarity-based virtual screening relies on the  similarity property principle (SPP) \cite{johnson1990concepts}, which states that similar compounds should have similar biological activity. As a guiding strategy this means one could search a database for similar compounds to a known active molecule, and expect those compounds to retain and perhaps have improved biological activity against a target. Although this hypothesis is not always valid in cases known as `activity cliffs' where small changes in structure cause large changes in biological activity \cite{maggiora2006cliffs}, empirically it has been shown that structurally similar compounds are much more likely to be actives compared to dissimilar ones \cite{martin2002similar}. Performing similarity-based virtual screening in practice involves calculating molecular similarities between known active compounds and unkonwn molecules from a database, then selecting those with the highest similarities; ECFP4 is a consistently well-performing fingerprint for this task \cite{riniker2013benchmark, oboyle2016benchmark}.
 
-In addition, machine learning - its versatility as a molecular descriptor for machine learning \cite{wu2017molnet, Bender2019}.
+In addition, Morgan fingerprints have also been shown to be versatile as a molecular descriptor for machine learning. Machine learning models learn statistical patterns from data and can be used to make predictions on new data (see section \ref{ch:machine_learning}). In the context of drug discvoery, machine learning models can be used to associate patterns in the molecular fingerprints of the molecules in a dataset with experimentally measured properties. For example, fingerprint-based models have demonstrated success in predicting physical/chemical properties such as solubility \cite{wu2017molnet}, biological activities \cite{Bender2019} as well as yields and stereoselectivities for chemical reactions \cite{sandfort2020yield}. Non-fingerprint based deep learning methods have recently been developed that learn molecular representations directly from molecular graphs, however ECFP-based shallow learning techniques continue to provide a strong, robust baseline to compare against.
 
 \section{Computational Approaches}
 
@@ -202,7 +202,7 @@ In contrast to high-throughput screening, virtual screening involves computation
 
 \subsection{FEP?}
 
-\section{Machine Learning}
+\section{Machine Learning} \label{ch:machine_learning}
 
 \subsection{Random Forest}
 
