@@ -98,22 +98,19 @@ In order to apply powerful machine learning methods, we require a (typically fix
 
 ECFPs are generated via a recursive hashing algorithm that numerically hashes the representation of each atom with those of its neighbours, and again with it's next-nearest neighbours etc until a pre-defined `radius' is reached. The resulting hash values are then used to generate a fixed-length binary vector of 1/0 bits. The length of the vector is pre-determined and each 1-bit represents a unique substructure that is encountered during the traversal. The radius of the graph traversal is also a pre-defined parameter that controls the size of the substructures that are represented in the fingerprint. The radius is typically set to 2 or 3, and the length of the fingerprint is typically in the range of 1024-4096.
 
+The popularity of the Morgan fingerprint owes to its usefullness in calculating molecular similarity \cite{Maggiora2014similarity}and thus similarity-based virtual screening \& clustering, as well as its versatility as a molecular descriptor for machine learning. Intuitively, we would expect two molecules that have `similar' molecular fingerprints to have similar chemical structures (and potentically similar biological activity). Numerically, we can quantify the similarity between two molecular fingerprints by the Tanimoto coefficient \cite{Willet1998similarity}:
+
+\begin{equation} \label{eqn:tanimoto}
+    \mathrm{Tanimoto}(A, B) = \frac{A \cap B}{A \cup B} = \frac{A \cdot B}{|A|^{2} + |B|^{2} - A \cdot B}
+\end{equation}
+
+where $A$ and $B$ refer to the bit-vector molecular fingerprints of two molecules. The numerator $A \cdot B$ represents the number of bits shared between the two fingerprints, while the denominator represents the total number of unique bits covered by the finerprints. Two structures are usually considered similar if the tanimoto similarity is > 0.4 \cite{baldi2010similarity}. Alternate similarity measures exist but a number of comparison studies \cite{Todeschini2012tanimoto, Bajusz2015Tanimoto} have shown the Tanimoto similarity to be generally robust and consistently perform well in a variety of applications.
+
 chemical database substructure searching (2) , similarity searching, (3) clustering, (4) and classification. (5), predicting and gaining insight into drug activity. (6) Additionally, ECFPs can be used much like other fingerprints in methods, such as similarity searching, clustering, and virtual screening. ECFP4 belongs to the best performing fingerprints in small molecule virtual screening [13]
 
 The similarity-based[4] virtual screening (a kind of ligand-based virtual screening) assumes that all compounds in a database that are similar to a query compound have similar biological activity. Although this hypothesis is not always valid,[5] quite often the set of retrieved compounds is considerably enriched with actives.[6] To achieve high efficacy of similarity-based screening of databases containing millions of compounds, molecular structures are usually represented by molecular screens (structural keys) or by fixed-size or variable-size molecular fingerprints. Molecular screens and fingerprints can contain both 2D- and 3D-information. However, the 2D-fingerprints, which are a kind of binary fragment descriptors, dominate in this area. Fragment-based structural keys, like MDL keys,[7] are sufficiently good for handling small and medium-sized chemical databases, whereas processing of large databases is performed with fingerprints having much higher information density. Fragment-based Daylight,[8] BCI,[9] and UNITY 2D (Tripos[10]) fingerprints are the best known examples.
 
-We can think of each entry corresponding to the absence or presence of a particular chemical substructure.
 
-The most popular similarity measure for comparing chemical structures represented by means of fingerprints is the Tanimoto (or Jaccard) coefficient S (Eqn~\ref{eqn:tanimoto}). Two structures are usually considered similar if T > 0.4 \cite{baldi2010similarity}.
-
-Tanimoto similarity. If Jaccard or Tanimoto similarity is expressed over a bit vector, then it can be written as
-Tanimoto distance is often referred to, erroneously, as a synonym for Jaccard distance 1 - $T_{s}$. This function is a proper distance metric. "Tanimoto Distance" is often stated as being a proper distance metric, probably because of its confusion with Jaccard distance.
-
-\begin{equation} \label{eqn:tanimoto}
-    S(A, B) = \frac{A \cap B}{A \cup B} = \frac{A \cdot B}{|A|^{2} + |B|^{2} - A \cdot B}
-\end{equation}
-
-A number of comparison studies \cite{Todeschini2012tanimoto, Bajusz2015Tanimoto} have shown the Tanimoto similarity to be the most useful similarity metric.
 
 Clustering.
 
