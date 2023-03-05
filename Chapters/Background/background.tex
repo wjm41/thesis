@@ -134,26 +134,22 @@ In the absence of exisiting ligand bioactivity measurements for a protein target
 
 \section{Machine Learning} \label{ch:machine_learning}
 
+In machine learning, a common task is the study and construction of algorithms that can learn from and make predictions on data.[1] Such algorithms function by making data-driven predictions or decisions,[2] through building a mathematical model from input data.
+
 Machine learning (ML) refers to the construction of models and algorithms that perform tasks without being explicitly programmed. Instead, ML algorithms rely on optimisation techniques to infer what to return based on available data. In the following paragraphs, we provide a summary of the ML concepts and ideas needed to understand the following research. For brevity, we focus on supervised regression and neglect many important sub-fields. We recommend Refs. [45, 46] for readers interested in other topics, such as supervised classification, unsupervised learning, and generative models.
 
-\subsection{Shallow Learning}
-
-Shallow learning refers to machine learning models that take hand-crafted features as inputs. Features are constructed heuristically by experts based on domain knowledge of the target problem. Concretely, the aim of shallow learning is given features, $x$, to learn the parameters, $\theta$, of a predicative model y = $f (x, \theta)$ that minimise a given cost function, $\mathcal{L}(y, \hat{y})$, where $y$ is the target variable and $\hat{y}$ is the predicted value, i.e. to find the solution
-
-\begin{equation}
-    y = f(x, \theta)
-\end{equation}
+Very broadly, the aim of machine learning is to learn the parameters $\theta$ of a predicative model $y = f (x, \theta)$ that minimise a given cost function, $\mathcal{L}(y, \hat{y})$, where $x$ is a given input, $y$ is the target variable and $\hat{y}$ is the predicted value, i.e. to find the solution
 
 \begin{equation}
     \hat{\theta} = \arg\min_{\theta} \mathcal{L}(\theta)
 \end{equation}
 
-For regression, the most common loss function choice is the squared residuals,
+For regression, which is the modelling of a continuous variable, the most common loss function choice is the squared residuals,
 \begin{equation}
     \mathcal{L}(y, \hat{y}) = \sum_{i}(y_i - \hat{y}_i)^{2}
 \end{equation}
 
-while for binary classification tasks the most common loss function is the binary cross-entropy loss:
+while for binary classification, which is the task of predicting which class an input $x$ belongs to, the most common loss function is the binary cross-entropy loss:
 
 \begin{equation}
     \mathcal{L}(y, \hat{y}) = -\sum_{i}y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)
@@ -161,24 +157,33 @@ while for binary classification tasks the most common loss function is the binar
 
 where the target variable $y$ can be either 0 or 1 while the predicted value $\hat{y}_i$ is the predicted probability of class 1 and $1-\hat{y}_i$ is the predicted probability of class 0.
 
+To find the solution $\hat{\theta}$ for a dataset in practice, we would first divide the input data into training, validation and test sets. The model is initially fit on the training data set, where the data-dependent parameters of the model (e.g. the coefficients of a polynomial regression model) are optimised to minimise the loss function. Afterwards, the fitted model is used to make predictions on the validation data set. The validation data set provides an unbiased estimate of the model's performance on the training data set for the purpose of tuning the non-data-dependent parameters, known as `hyperparameters', of a model (e.g. the number of degrees to include in a polynomial regression model). This process may be repeated multiple times, with the model's performance on the validation data set being used to select the best hyperparameters. This overall process is known as `training a model'.
+
+After a model has been trained we use the test dataset, which has never been seen by the model during training, to evaluate the performance of the model. It is important to use the same training and test datasets for a fair comparison of different models, and curated datasets from the literature are commonly used as a benchmark for evaluating the performance of new models.
+
+\subsection{Shallow Learning}
+
+Shallow learning refers to machine learning models that take hand-crafted features as inputs. Features are constructed heuristically by experts based on domain knowledge of the target problem. 
+
 The most ubiquitous example of shallow learning is linear regression where a model of the form $y_{i} = \textbf{W}x_{i} + b$ is assumed. Large values of the feature weights $\textbf{W}$ tend to be linked to overfitting, causing high generalisation errors. Therefore, it is common to add regularisation terms to the cost function that penalise either the L1 (LASSO) or L2 (Ridge/Tikhonov) norm of the weights to reduce the likelihood of overfitting. More advanced examples of shallow learning are ensemble-based models and kernel-based models described below.
 
 A number of shallow learning techniques have been described in the literature, and a more detailed overview of them can be found in [some reference here]. In this thesis, two of the most common shallow learning techniques are used: Random forests and Gaussian processes.
 
 Random forests or random decision forests is an ensemble learning method for classification, regression and other tasks that operates by constructing a multitude of decision trees at training time. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the mean or average prediction of the individual trees is returned.[1][2] Random decision forests correct for decision trees' habit of overfitting to their training set.[3] Random forests generally outperform decision trees, but their accuracy is lower than gradient boosted trees.[citation needed] However, data characteristics can affect their performance.[4][5]
 
-Random Forests are a decision tree-based model that use an ensemble of multiple weak regressors to make predictions [47]. Each tree is constructed to find a series of decision boundaries that split the data to minimise the squared deviations between the samples and the sample mean in each branch or leaf of the tree. Predictions are made by averaging the outputs of the different trees when applied to new data. To overcome issues of over-fitting common to decision tree methods, Random Forests use bagging and random subspace projection to reduce the correlation between the trees, improving their generalisation performance.
+Random Forests are a decision tree-based model that use an ensemble of multiple weak regressors to make predictions [47]. Each tree is constructed to find a series of decision boundaries that split the data to minimise the squared deviations between the samples and the sample mean in each branch or leaf of the tree. Predictions are made by averaging the outputs of the different trees when applied to new data. To overcome issues of over-fitting common to decision tree methods, Random Forests use bagging and random subspace projection to reduce the correlation between the trees, improving their generalisation performance. 
 
-Linear machine learning algorithms can often be recast in terms of inner products between points in the feature space. The kernel trick involves replacing these inner products with kernel functions that are easy to compute, for example, the squared exponential kernel,
+Examples of RF with morgan fingerprints. Kinase inhibitors \cite{Merget2017KinaseInhibitors}.
+
+Linear machine learning algorithms can often be recast in terms of inner products between points in the feature space. The kernel trick involves replacing these inner products with kernel functions that are easy to compute, for example, the squared exponential kernel,s
 
 \begin{equation}
     \mathcal{K}(x , x') = \exp\left(-\frac{\|x - x'\|^{2}}{2l^{2}}\right)
 \end{equation}
 
-where $l$ is the length scale of the kernel, that determines how quickly the function can change, and $x$ and $x'$ are the feature vectors of the points being considered in the original feature space. The squared exponential kernel corresponds to the inner product of a basis set of radial basis functions with infinitely many reference centers. Consequently, the kernel trick allows us to explore models that are, in theory, infinitely complicated with a finite amount of computation. Kernel ridge regression, support vector machines, and Gaussian processes are all examples of model classes that make use of the kernel trick [49]. Training kernel methods notoriously suffers from O(N3) scaling, where N is the number of training examples. However, in practical applications - particularly within material science applications where kernel models are commonly used to approximate a potential energy surface for atomistic simulations - it is often reasonable to make sparse approximations that can reduce the scaling to O(NM2), where M is the number of inducing points [50].
+where $l$ is the length scale of the kernel, that determines how quickly the function can change, and $x$ and $x'$ are the feature vectors of the points being considered in the original feature space. The squared exponential kernel corresponds to the inner product of a basis set of radial basis functions with infinitely many reference centers. Consequently, the kernel trick allows us to explore models that are, in theory, infinitely complicated with a finite amount of computation. Kernel ridge regression, support vector machines, and Gaussian processes are all examples of model classes that make use of the kernel trick [49]. Training kernel methods notoriously suffers from $\mathcal{O}(N^{3})$ scaling, where N is the number of training examples. However, in practical applications - particularly within material science applications where kernel models are commonly used to approximate a potential energy surface for atomistic simulations - it is often reasonable to make sparse approximations that can reduce the scaling to $\mathcal{O}(NM^{2})$, where M is the number of inducing points [50].
 
-
-Examples of RF with morgan fingerprints. GPR with tanimoto kernel (cite photoswitches). GPR with expensive features for reaction barriers.
+GPR with tanimoto kernel \cite{Griffiths2022photoswitches}. GPR with expensive features for reaction barriers \cite{Jorner2021ActiviationEnergiesGPR}.
 
 \subsection{Deep Learning}
 
@@ -196,22 +201,21 @@ Deep learning has found remarkable success in a wide range of applications, incl
     \theta_{t+1} = \theta_t - \eta \nabla_{\theta} \mathcal{L}
 \end{equation}
 
-where at each step $t$ the model's parameters are updated according to the learning rate $\eta$, a `hyperparameter' of the optimiser. Instead of calculating the gradient of the loss $\nabla_{\theta}\mathcal{L}$ on the full training set, standard practice is to use a stochastic approximation of the gradient that is calculated from a randomly sampled batch of training data. This significantly speeds up the optimisation process and allows neural networks to be trained on large datasets that would otherwise be intractable. These stochastic gradient steps are iterated repeatedly over the training set until the value of the loss has satisfactorily converged. 
+where at each step $t$ the model's parameters are updated according to the learning rate $\eta$, a hyperparameter of the optimiser. Instead of calculating the gradient of the loss $\nabla_{\theta}\mathcal{L}$ on the full training set, standard practice is to use a stochastic approximation of the gradient that is calculated from a randomly sampled batch of training data. This significantly speeds up the optimisation process and allows neural networks to be trained on large datasets that would otherwise be intractable. These stochastic gradient steps are iterated repeatedly over the training set until the value of the loss has satisfactorily converged. 
 
 The gradient of the loss function with respect to the model parameters can be obtained efficiently by applying the chain rule via a process called `backpropogation'. Using automatic differentiation frameworks that can be carried out on hardware accelerators, such as graphical processing units (GPUs), the time needed to train neural networks are dramatically reduced. Further improvements to model optimisation procedures can be achieved by incorporating additional terms such as momentum, learning rate schedules, or adaptive learning rates [73], and additional regularisation procedures such as weight decay, early-stopping, or dropout [74].
 
 The only constraint on the design of a neural network is that the mathematical operations in the model must have defined derivatives so that the gradient of the loss function can be calculated with backpropagation for efficient training. This results in a zoo of different neural network designs (referred to as `architectures') that use differentiable building blocks with specific inductive biases tailored to the task at hand. For example, convolutional neural networks (CNNs) utilise built-in translational invariance for computer vision applications (e.g. LeNet [77], AlexNet [78], and ResNets [79]) while recurrent neural networks (RNNs) designed for learning temporal dependencies are applied to sequential data such as text and speech (e.g. Gated-Recurrent-Unit (GRU) [75] and Long-Short-Term-Memory (LSTM) networks [76]). 
 
-In the context of drug discovery, the challenge of modelling molecular inputs has led to the devlopment of graph-based neural network architectures known as `graph neural networks' (GNNs). These models are designed to learn representations of molecular graphs that are invariant to the order of the nodes and edges. GNNs have been successfully applied to a range of molecular tasks, including molecular property prediction \cite{wu2017molnet}, and predicting reaction templates for input reactants \cite{Coley19WLDN5}. More standard architectures such as Transformer models developed for natural language processing have also been applied to SMILES, as well as three-dimensional voxel-based CNNs which can be trained on protein-ligand complexes for the prediction of binding affinity \cite{Ragoza2017ProteinCNN,Imrie2018ProteinCNN,Jimenez2018Kdeep}.
+In the context of drug discovery, the challenge of modelling molecular inputs has led to the devlopment of graph-based neural network architectures known as `graph neural networks' (GNNs). These models are designed to learn representations of molecular graphs that are invariant to the order of the nodes and edges. GNNs have been successfully applied to a range of molecular tasks, including molecular property prediction \cite{wu2017molnet,Gilmer17mpnn, Mayr2018compare, yang2019chemprop}, and predicting reaction templates for input reactants \cite{Coley19WLDN5}. More standard architectures such as Transformer models developed for natural language processing have also been applied to SMILES, as well as three-dimensional voxel-based CNNs which can be trained on protein-ligand complexes for the prediction of binding affinity \cite{Ragoza2017ProteinCNN,Imrie2018ProteinCNN,Jimenez2018Kdeep}.
 
 Neural networks can also be used with pre-computed features such as molecular fingerprints. Example applications include the use of bioactivity prediction \cite{Bender2019}, reaction prediction \cite{Wei2016reactionprediction, segler2017neural}, and the prediction of docking scores \cite{Gentile2020deepdocking}.
 
 Despite their success in certain molecular tasks, deep learning still has several limitations when it comes to drug discovery. Chief among these is the need for large amounts of training data for strong performance, which can often be costly and time-consuming to obtain. When only a small amount of data is available, which is typical in the early stages of drug discovery, neural networks may perform worse than simpler shallow learning models. [citation needed]
 
-Additionally, neural networks may struggle to generalize to new molecules that are substantially different from the molecules in the training set. This is known as the `generalization gap' and model performance with typical random-split cross-validation procedures do not accurately reflect the true generalization performance of the model.This has led to a growing movement towards measuring model performance using `scaffold split' or `time split' cross-validation, which splits the data into disjoint sets of molecules that are similar in structure or time of data acquisition, respectively. This allows for a more accurate assessment of the generalization gap, but this remains a 
-challenge for applying deep learning and machine learning models in general in drug discovery.
+Additionally, neural networks may struggle to generalize to new molecules that are substantially different from the molecules in the training set. This is known as the `generalization gap' and model performance with typical random-split cross-validation procedures do not accurately reflect the true generalization performance of the model.This has led to a growing movement towards measuring model performance using `scaffold split' or `time split' cross-validation, which splits the data into disjoint sets of molecules that are similar in structure or time of data acquisition, respectively. This allows for a more accurate assessment of the generalization gap, but this remains a challenge for applying deep learning and machine learning models in general in drug discovery.
 
-Another challenge is the lack of interpretability of neural network models, which make it difficult to understand the underlying reasons for a model's predictions. Without explainations of model predictions, it becomes difficult to avoid correct predictions for the wrong reasons (the so-called clever Hans effect) [32], avert unfair biases, and gain potentially useful insights from the model. This is a challenge in general for deep learning, but is particularly difficult in drug discovery due to the domain-specific complication of projecting `explanations' onto molecule representations.  
+Another challenge is the lack of interpretability of neural network models, which make it difficult to understand the underlying reasons for a model's predictions. Without explainations of model predictions, it becomes difficult to avoid correct predictions for the wrong reasons (the so-called clever Hans effect) \cite{Lapuschkin2019UnmaskingCleverHans}, avert unfair biases, and gain potentially useful insights from the model. This is a challenge in general for deep learning, but is particularly difficult in drug discovery due to the domain-specific complication of projecting `explanations' onto molecule representations \cite{Jimenze2020XAI}.
 
 Accounting for these limitations are critical for realizing the full potential of applying both shallow and deep learning models to accelerate the design-make-test cycle in drug discovery.
 
@@ -227,20 +231,6 @@ The ROC curve is created by plotting the true positive rate (TPR) against the fa
 \begin{equation}
     \mathrm{EF}(n) = \frac{\mathrm{Hit\: rate (predicted\: top - }n)}{\mathrm{Hit\: rate (baseline)}}
 \end{equation}
-
-Train-Test splitting
-
-Random split, scaffold split, time split
-
-In machine learning, a common task is the study and construction of algorithms that can learn from and make predictions on data.[1] Such algorithms function by making data-driven predictions or decisions,[2] through building a mathematical model from input data. These input data used to build the model are usually divided in multiple data sets. In particular, three data sets are commonly used in different stages of the creation of the model: training, validation and test sets.
-
-The model is initially fit on a training data set,[3] which is a set of examples used to fit the parameters (e.g. weights of connections between neurons in artificial neural networks) of the model.[4] The model (e.g. a naive Bayes classifier) is trained on the training data set using a supervised learning method, for example using optimization methods such as gradient descent or stochastic gradient descent. In practice, the training data set often consists of pairs of an input vector (or scalar) and the corresponding output vector (or scalar), where the answer key is commonly denoted as the target (or label). The current model is run with the training data set and produces a result, which is then compared with the target, for each input vector in the training data set. Based on the result of the comparison and the specific learning algorithm being used, the parameters of the model are adjusted. The model fitting can include both variable selection and parameter estimation.
-
-Successively, the fitted model is used to predict the responses for the observations in a second data set called the validation data set.[3] The validation data set provides an unbiased evaluation of a model fit on the training data set while tuning the model's hyperparameters[5] (e.g. the number of hidden units—layers and layer widths—in a neural network[4]). Validation datasets can be used for regularization by early stopping (stopping training when the error on the validation data set increases, as this is a sign of over-fitting to the training data set).[6] This simple procedure is complicated in practice by the fact that the validation dataset's error may fluctuate during training, producing multiple local minima. This complication has led to the creation of many ad-hoc rules for deciding when over-fitting has truly begun.[6]
-
-Finally, the test data set is a data set used to provide an unbiased evaluation of a final model fit on the training data set.[5] If the data in the test data set has never been used in training (for example in cross-validation), the test data set is also called a holdout data set. The term "validation set" is sometimes used instead of "test set" in some literature (e.g., if the original data set was partitioned into only two subsets, the test set might be referred to as the validation set).[5]
-Deciding the sizes and strategies for data set division in training, test and validation sets is very dependent on the problem and data available.[7]
-
 
 % In the paper of Nam and Kim \cite{Nam2016LinkingReactions} they formulated the reaction prediction problem as a translation task. The input SMILES corresponding to the reactant and reagent molecules are tokenized, so that each character of SMILES is equivalent to a word and the whole input is equivalent to a sentence. This sentence is than ``translated" by the model to the product SMILES. Neural machine translation models are trained using a large parallel corpus. This is available in the case of organic reactions from patents and publications or can be generated using templates of elementary reactions. The method of Nam and Kim served as an important proof of concept but could not match the accuracy of rule-based and graph-to-graph models. \par
 % %The method was built on a neural network building block called gated recurrent unit (GRU) \cite{Cho2014LearningTranslation}. GRUs are a type of recurrent neural networks that process arbitrarily long inputs token by token, so that the hidden state representation of each token depends on the previous ones. %The model used in the paper is illustrated on Figure~\ref{fig:gru}. 
