@@ -179,15 +179,15 @@ Random forests are relatively easy to use, require little tuning of hyperparamet
 
 \subsection{Gaussian Process}
 
-Linear machine learning algorithms can often be recast in terms of inner products between points in the feature space. The kernel trick involves replacing these inner products with kernel functions that are easy to compute, for example, the squared exponential kernel,
+Gaussian Process models are a kernel-based method that utilises what is known as the `kernel trick' to calculate high-dimensional weighted averages. The kernel trick is the use of a kernel function to calculate the inner product between the features vectors of two datapoints in a high-dimensional feature space without explicitly computing higher-dimensional feature vectors. A typical kernel function is the squared exponential kernel:
 
 \begin{equation}
     \mathcal{K}(x , x') = \exp\left(-\frac{\|x - x'\|^{2}}{2l^{2}}\right)
 \end{equation}
 
-where $l$ is the length scale of the kernel, that determines how quickly the function can change, and $x$ and $x'$ are the feature vectors of the points being considered in the original feature space. The squared exponential kernel corresponds to the inner product of a basis set of radial basis functions with infinitely many reference centers. Consequently, the kernel trick allows us to explore models that are, in theory, infinitely complicated with a finite amount of computation. Kernel ridge regression, support vector machines, and Gaussian processes are all examples of model classes that make use of the kernel trick [49]. Training kernel methods notoriously suffers from $\mathcal{O}(N^{3})$ scaling, where N is the number of training examples. However, in practical applications - particularly within material science applications where kernel models are commonly used to approximate a potential energy surface for atomistic simulations - it is often reasonable to make sparse approximations that can reduce the scaling to $\mathcal{O}(NM^{2})$, where M is the number of inducing points [50].
+where $l$ is the length scale of the kernel, a hyperparameter that determines how quickly the function can change, and $x$ and $x'$ are the feature vectors of the datapoints in the initial low-dimensional feature space. Mathematically, the kernel trick enables the construction of models that are, in theory, infinitely complicated with a finite amount of computation. Gaussian Processes utilise the kernel function to calculate the covariance matrix of the Gaussian distribution over the function values. The covariance matrix is then used to calculate the posterior distribution over the function values given the training data, which can then be used to make predictions on new data with associated uncertainty values.
 
-GPR in drug discovery \cite{Swamidass2005kernels}. GPR with tanimoto kernel \cite{Griffiths2022photoswitches}. GPR with expensive features for reaction barriers \cite{Jorner2021ActiviationEnergiesGPR}.
+The fact that GPs have few hyperparameters to tune and maintain uncertainty estimates over property values have also led to their use for molecular property prediction \cite{Obrezanova2007GPQSAR, McCorkindale2020Soap, Jorner2021ActiviationEnergiesGPR}, in particular incorporating the Tanimoto similarity in the kernel function \cite{Swamidass2005kernels, Griffiths2022photoswitches}.
 
 \subsection{Deep Learning}
 
