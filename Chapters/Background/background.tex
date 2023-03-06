@@ -83,20 +83,20 @@ A pharmacophore is an abstract description of molecular features that are necess
 
 Typical pharmacophore features, characterised by SMARTS strings, include hydrophobic groups, aromatic rings, hydrogen bond acceptors or donors, and charged functional groups.
 
-Pharmacophore models can either be constructed using structural data or from a set of active compounds. In the structure-based approach, the pharmacophores are directly inferred from the observed interactions of a molecule and the binding site in experimentally determined ligand-protein complexes. (Fig \ref{fig:pharmacophores}A).
+Pharmacophore models can either be constructed using structural data or from a set of active compounds \cite{Vuorinen2015pharmacophore}. In the structure-based approach, the pharmacophores are directly inferred from the observed interactions of a molecule and the binding site in experimentally determined ligand-protein complexes. (Fig \ref{fig:pharmacophore_models}A).
 
 \begin{figure}[htbp!] 
     \centering    
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/pharmacophore_models.png}
     \caption{An illustration of structure-based or ligand-based pharmacophore models. Reproduced from \cite{Kaserer2015PharmacophoreReview}}
-    \label{fig:pharmacophores}
+    \label{fig:pharmacophore_models}
 \end{figure}
 
-In the ligand-based approach, the three-dimensional (3D) structures of known active molecules are aligned and pharmacophores that are found to overlap in space are extracted as the pharmacophore model (Figure \ref{fig:pharmacophores}B). Although this approach circumvents the need for structural data which might not be possible to obtain, a downside is that all of the extracted pharmacophore have to be presumed as essential for protein-ligand binding, whereas in the structure-based approach it is possible to identify and discard non-important pharmacophores.
+In the ligand-based approach, the three-dimensional (3D) structures of known active molecules are aligned and pharmacophores that are found to overlap in space are extracted as the pharmacophore model (Figure \ref{fig:pharmacophore_models}B). Although this approach circumvents the need for structural data which might not be possible to obtain, a downside is that all of the extracted pharmacophore have to be presumed as essential for protein-ligand binding, whereas in the structure-based approach it is possible to identify and discard non-important pharmacophores.
 
-After obtaining a pharmacophore model, it can be used to virtually screen ligands from a database by identifying molecules that share similar pharmacophore features. This approach is known as `pharmacophore-based virtual screening' and is a useful tool on its own as well as for complementing molecular docking and machine learning approaches.
+After obtaining a pharmacophore model, it can be used to virtually screen ligands from a database by identifying molecules that share similar pharmacophore features. This approach is known as `pharmacophore-based virtual screening' and is a useful tool on its own as well as for complementing molecular docking and machine learning approaches \cite{Dixon2006pharmacophore, Temml2014pharmacophore, Pradeepkiran2019pharmacophor, Pal2019pharmacophore}.
 
-Molecular descriptors and fingerprints based on pharmacophores have also been developed and have found to be useful as inputs for machine learning models.
+% Molecular descriptors and fingerprints based on pharmacophores have also been developed and have found to be useful as inputs for machine learning models.
 
 \subsection{Fingerprints} \label{subsec:fingerprints}
 
