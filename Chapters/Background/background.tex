@@ -126,13 +126,19 @@ The search space of conformations is imposible to exhaustively explore as in the
 
 The wide range of design choices for the scoring function and conformation search results in a large number of different docking algorithms that are in use in the field, such as DOCK \cite{Coleman2013DOCK}, Glide \cite{friesner2004glide}, AutoDock Vina \cite{Eberhardt2021Vina}, GOLD \cite{Verdonk2003Gold}, and FRED \cite{McGann2012FRED}. The relative performance between these docking algorithms are typically retrospectively evaluated by directly comparing predicted binding poses to known crystal structures of ligand-protein complexes. The benchmark datasets used for this purpose are typically high-quality structures of drug-like molecules such as PDBbind \cite{Wang2004PDBbind,Liu2014PDBbind}. There are also community assessments on the relative prospective performance of different docking approaches \cite{Parks2020D3R} and scoring functions \cite{Su2019CASF}.
 
-Besides the structural focus of binding pose prediction, increasingly in recent years docking has been used to directly virtually screen large databases of molecules in silico to identify molecules that are likely to bind to protein target of interest \cite{Bender2021LargeScaleDocking}. This approach puts the focus on the scoring function, with the rationale that molecules with high docking scores are much more likely to be active than those with low scores. In this scenario, success is defined by the enrichment of active compounds in the top ranks of a docking screen. Performance is typically retrospectively evaluated by diretly calculating the enrichment factor of known ligands from a large database of presumed non-binding, “decoy” molecules for multiple protein targets - the classic benchmark is the Directory of Useful Decoys (DUD) \cite{Huang2006DUD, Mysinger2012DUDE}.
+Besides the structural focus of binding pose prediction, increasingly in recent years docking has been used to directly virtually screen large databases of molecules in silico to identify molecules that are likely to bind to protein target of interest \cite{Bender2021LargeScaleDocking}. This approach puts the focus on the scoring function, with the rationale that molecules with high docking scores are much more likely to be active than those with low scores. In this scenario, success is defined by the enrichment of active compounds in the top ranks of a docking screen, measured via the enrichment factor:
+
+\begin{equation}
+    \mathrm{EF}(n) = \frac{\mathrm{Hit\: rate (predicted\: top - }n)}{\mathrm{Hit\: rate (baseline)}}
+\end{equation}
+
+where the baseline hit rate is the proportion of actives in the dataset overall, representing the performance of simple random ordering. Different methods are benchmarked by retrospectively evaluating the enrichment factor of known ligands from a large database of presumed non-binding, “decoy” molecules for multiple protein targets - the classic benchmark dataset for this is the Directory of Useful Decoys (DUD) \cite{Huang2006DUD, Mysinger2012DUDE}.
 
 Prospectively, large-scale virtual screening with molecular docking has had notable successes. A review specifically looking at G protein-coupled receptors (GPCRs) \cite{Ballante2021DockingGPCR}, which are the target of more than 30\% of all marketed drugs, showed 62 successful virtual screens for 22 unique protein targets belonging to 14 different receptor families in the past decade. Of particular note is that increasing availability of computational resources, together with increases in the sizes of commercially-available make-on-demand compound libraries, has made possible ultra-large virtual screening campaigns against libraries of >100 million compounds  \cite{Lyu2019UltraLargeDocking, Alon2021sigma, Fink2022Alpha}. At the same time, limitations in the accuracy of scoring functions and in the modelling of protein flexibility \cite{Erickson2004flexibility, Antunes2015flexibility} restrict the ability of docking to reliably distinguish active molecules from inactive ones \cite{Llanos2021StrengthsAndWeaknesses, Macip2022HasteMakesWaste}, leading to false positives which are exacerbated when screening large libraries \cite{Lyu2023Expansion}.
 
 In the absence of exisiting ligand bioactivity measurements for a protein target, virtual screening with molecular docking remains the only computational method of choice and is a default starting point for beginning drug discovery against a brand new target. However, there has been recent results claiming that deep learning models which use neural networks to directly generate ligand binding poses \cite{Stark2022equibind, corso2023diffdock} outperform docking algorithms in terms of accuracy. These results are promising and, coupled with continued advancements in protein structure prediction to account for protein flexibility, suggest that deep learning may be a viable alternative to molecular docking for binding pose prediction and virtual screening in the coming years.
 
-\section{Machine Learning} \label{ch:machine_learning}
+\subsection{Machine Learning} \label{ch:machine_learning}
 
 In machine learning, a common task is the study and construction of algorithms that can learn from and make predictions on data.[1] Such algorithms function by making data-driven predictions or decisions,[2] through building a mathematical model from input data.
 
@@ -161,9 +167,13 @@ To find the solution $\hat{\theta}$ for a dataset in practice, we would first di
 
 After a model has been trained we use the test dataset, which has never been seen by the model during training, to evaluate the performance of the model. It is important to use the same training and test datasets for a fair comparison of different models, and curated datasets from the literature are commonly used as a benchmark for evaluating the performance of new models.
 
+For regression models, the most common metric used to evaluate the performance of a model is the root mean squared error (RMSE) or the pearson correlation coefficient (PCC). For binary classification models, the most common metric used is the area under the receiver operating characteristic curve (AUC). The receiver operating characteristic curve, or ROC curve, is created by plotting the true positive rate (TPR) against the false positive rate (FPR) as the discrimination threshold for classifying one class over the other is varied. The AUC is the area under the ROC curve, and is a measure of the model's ability to distinguish between the two classes. AUC values range from 0 to 1, with 0.5 indicating a model that is no better than random guessing, and 1 indicating a perfect model.
+
+< an example ROC curve ?>
+
 A large number of machine learning techniques have been described in the literature, and a more detailed overview of them can be found in [some reference here]. In this thesis, two common techniques are used: Random forests and Gaussian processes.
 
-\subsection{Random Forest}
+\subsubsection{Random Forest}
 
 Random Forest models are ensemble learning methods that utilise a large number of decision trees for making predictions. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the output is the mean of the predictions by the individual trees:[1][2]
 
@@ -177,7 +187,7 @@ Although extremely computationally efficient and interpretable, individual decis
 
 Random forests are relatively easy to use, require little tuning of hyperparameters, and are robust to over-fitting, and thus are a popular general machine learning technique. In particular for drug discovery, random forests have been extensively used with molecular fingerprints features for prediction of properties such as solubility \cite{Palmer2007RandomForest}, biological activity \cite{Svetnik2003RandomForest, Merget2017KinaseInhibitors}, and toxicity \cite{Polishchuk2009RandomForest}.
 
-\subsection{Gaussian Process}
+\subsubsection{Gaussian Process}
 
 Gaussian Process models are a kernel-based method that utilises what is known as the `kernel trick' to calculate high-dimensional weighted averages. The kernel trick is the use of a kernel function to calculate the inner product between the features vectors of two datapoints in a high-dimensional feature space without explicitly computing higher-dimensional feature vectors. A typical kernel function is the squared exponential kernel:
 
@@ -189,7 +199,7 @@ where $l$ is the length scale of the kernel, a hyperparameter that determines ho
 
 The fact that GPs have few hyperparameters to tune and maintain uncertainty estimates over property values have also led to their use for molecular property prediction \cite{Obrezanova2007GPQSAR, McCorkindale2020Soap, Jorner2021ActiviationEnergiesGPR}, in particular incorporating the Tanimoto similarity in the kernel function \cite{Swamidass2005kernels, Griffiths2022photoswitches}.
 
-\subsection{Deep Learning}
+\subsubsection{Deep Learning}
 
 In contrast to methods which use hand-crafted features as input (`shallow learning'), deep learning revolves around learning representations directly from the raw data using neural networks. Neural networks are composed of layers of `neurons' that successively perform non-linear transformations on their inputs, mimicking the way that biological neurons transfer signals to one another. These transformations are typically of the form:
 
@@ -222,19 +232,6 @@ Additionally, neural networks may struggle to generalize to new molecules that a
 Another challenge is the lack of interpretability of neural network models, which make it difficult to understand the underlying reasons for a model's predictions. Without explainations of model predictions, it becomes difficult to avoid correct predictions for the wrong reasons (the so-called clever Hans effect) \cite{Lapuschkin2019UnmaskingCleverHans}, avert unfair biases, and gain potentially useful insights from the model. This is a challenge in general for deep learning, but is particularly difficult in drug discovery due to the domain-specific complication of projecting `explanations' onto molecule representations \cite{Jimenze2020XAI}.
 
 Accounting for these limitations are critical for realizing the full potential of applying both shallow and deep learning models to accelerate the design-make-test cycle in drug discovery.
-
-\subsection{Evaluating Models}
-
-ROC-AUC. Accuracy. Enrichment.
-
-%TODO - from wikipedia
-A receiver operating characteristic curve, or ROC curve, is a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied.
-
-The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The true-positive rate is also known as sensitivity, recall or probability of detection.[10] The false-positive rate is also known as probability of false alarm[10] and can be calculated as (1 - specificity).
-
-\begin{equation}
-    \mathrm{EF}(n) = \frac{\mathrm{Hit\: rate (predicted\: top - }n)}{\mathrm{Hit\: rate (baseline)}}
-\end{equation}
 
 % In the paper of Nam and Kim \cite{Nam2016LinkingReactions} they formulated the reaction prediction problem as a translation task. The input SMILES corresponding to the reactant and reagent molecules are tokenized, so that each character of SMILES is equivalent to a word and the whole input is equivalent to a sentence. This sentence is than ``translated" by the model to the product SMILES. Neural machine translation models are trained using a large parallel corpus. This is available in the case of organic reactions from patents and publications or can be generated using templates of elementary reactions. The method of Nam and Kim served as an important proof of concept but could not match the accuracy of rule-based and graph-to-graph models. \par
 % %The method was built on a neural network building block called gated recurrent unit (GRU) \cite{Cho2014LearningTranslation}. GRUs are a type of recurrent neural networks that process arbitrarily long inputs token by token, so that the hidden state representation of each token depends on the previous ones. %The model used in the paper is illustrated on Figure~\ref{fig:gru}. 
