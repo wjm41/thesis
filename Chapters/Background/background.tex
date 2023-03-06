@@ -161,21 +161,25 @@ To find the solution $\hat{\theta}$ for a dataset in practice, we would first di
 
 After a model has been trained we use the test dataset, which has never been seen by the model during training, to evaluate the performance of the model. It is important to use the same training and test datasets for a fair comparison of different models, and curated datasets from the literature are commonly used as a benchmark for evaluating the performance of new models.
 
-\subsection{Shallow Learning}
+A large number of machine learning techniques have been described in the literature, and a more detailed overview of them can be found in [some reference here]. In this thesis, two common techniques are used: Random forests and Gaussian processes.
+
+\subsection{Random Forest}
 
 Shallow learning refers to machine learning models that take hand-crafted features as inputs. Features are constructed heuristically by experts based on domain knowledge of the target problem. 
 
-The most ubiquitous example of shallow learning is linear regression where a model of the form $y_{i} = \textbf{W}x_{i} + b$ is assumed. Large values of the feature weights $\textbf{W}$ tend to be linked to overfitting, causing high generalisation errors. Therefore, it is common to add regularisation terms to the cost function that penalise either the L1 (LASSO) or L2 (Ridge/Tikhonov) norm of the weights to reduce the likelihood of overfitting. More advanced examples of shallow learning are ensemble-based models and kernel-based models described below.
-
-A number of shallow learning techniques have been described in the literature, and a more detailed overview of them can be found in [some reference here]. In this thesis, two of the most common shallow learning techniques are used: Random forests and Gaussian processes.
+\begin{equation}
+    f(x) = \frac{1}{N}\sum^{N}_{i} f_{i}(x)
+\end{equation}
 
 Random forests or random decision forests is an ensemble learning method for classification, regression and other tasks that operates by constructing a multitude of decision trees at training time. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the mean or average prediction of the individual trees is returned.[1][2] Random decision forests correct for decision trees' habit of overfitting to their training set.[3] Random forests generally outperform decision trees, but their accuracy is lower than gradient boosted trees.[citation needed] However, data characteristics can affect their performance.[4][5]
 
 Random Forests are a decision tree-based model that use an ensemble of multiple weak regressors to make predictions [47]. Each tree is constructed to find a series of decision boundaries that split the data to minimise the squared deviations between the samples and the sample mean in each branch or leaf of the tree. Predictions are made by averaging the outputs of the different trees when applied to new data. To overcome issues of over-fitting common to decision tree methods, Random Forests use bagging and random subspace projection to reduce the correlation between the trees, improving their generalisation performance. 
 
-Examples of RF with morgan fingerprints. Kinase inhibitors \cite{Merget2017KinaseInhibitors}.
+Examples of RF with morgan fingerprint \cite{Svetnik2003RandomForest}. Bioactivity of kinase inhibitors \cite{Merget2017KinaseInhibitors}, predicting solubity \cite{Palmer2007RandomForest} and toxicity \cite{Polishchuk2009RandomForest}.
 
-Linear machine learning algorithms can often be recast in terms of inner products between points in the feature space. The kernel trick involves replacing these inner products with kernel functions that are easy to compute, for example, the squared exponential kernel,s
+\subsection{Gaussian Process}
+
+Linear machine learning algorithms can often be recast in terms of inner products between points in the feature space. The kernel trick involves replacing these inner products with kernel functions that are easy to compute, for example, the squared exponential kernel,
 
 \begin{equation}
     \mathcal{K}(x , x') = \exp\left(-\frac{\|x - x'\|^{2}}{2l^{2}}\right)
@@ -183,11 +187,11 @@ Linear machine learning algorithms can often be recast in terms of inner product
 
 where $l$ is the length scale of the kernel, that determines how quickly the function can change, and $x$ and $x'$ are the feature vectors of the points being considered in the original feature space. The squared exponential kernel corresponds to the inner product of a basis set of radial basis functions with infinitely many reference centers. Consequently, the kernel trick allows us to explore models that are, in theory, infinitely complicated with a finite amount of computation. Kernel ridge regression, support vector machines, and Gaussian processes are all examples of model classes that make use of the kernel trick [49]. Training kernel methods notoriously suffers from $\mathcal{O}(N^{3})$ scaling, where N is the number of training examples. However, in practical applications - particularly within material science applications where kernel models are commonly used to approximate a potential energy surface for atomistic simulations - it is often reasonable to make sparse approximations that can reduce the scaling to $\mathcal{O}(NM^{2})$, where M is the number of inducing points [50].
 
-GPR with tanimoto kernel \cite{Griffiths2022photoswitches}. GPR with expensive features for reaction barriers \cite{Jorner2021ActiviationEnergiesGPR}.
+GPR in drug discovery \cite{Swamidass2005kernels}. GPR with tanimoto kernel \cite{Griffiths2022photoswitches}. GPR with expensive features for reaction barriers \cite{Jorner2021ActiviationEnergiesGPR}.
 
 \subsection{Deep Learning}
 
-In contrast to shallow learning which uses hand-crafted features, deep learning revolves around learning representations directly from the raw data using neural networks. Neural networks are composed of layers of `neurons' that successively perform non-linear transformations on their inputs, mimicking the way that biological neurons transfer signals to one another. These transformations are typically of the form:
+In contrast to methods which uses hand-crafted features (`shallow learning'), deep learning revolves around learning representations directly from the raw data using neural networks. Neural networks are composed of layers of `neurons' that successively perform non-linear transformations on their inputs, mimicking the way that biological neurons transfer signals to one another. These transformations are typically of the form:
 
 \begin{equation}
     \textbf{h} = \sigma(\mathbf{W} \cdot \mathbf{x} + \mathbf{b})
