@@ -165,17 +165,17 @@ A large number of machine learning techniques have been described in the literat
 
 \subsection{Random Forest}
 
-Shallow learning refers to machine learning models that take hand-crafted features as inputs. Features are constructed heuristically by experts based on domain knowledge of the target problem. 
+Random Forest models are ensemble learning methods that utilise a large number of decision trees for making predictions. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the output is the mean of the predictions by the individual trees:[1][2]
 
 \begin{equation}
     f(x) = \frac{1}{N}\sum^{N}_{i} f_{i}(x)
 \end{equation}
 
-Random forests or random decision forests is an ensemble learning method for classification, regression and other tasks that operates by constructing a multitude of decision trees at training time. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the mean or average prediction of the individual trees is returned.[1][2] Random decision forests correct for decision trees' habit of overfitting to their training set.[3] Random forests generally outperform decision trees, but their accuracy is lower than gradient boosted trees.[citation needed] However, data characteristics can affect their performance.[4][5]
+where $f_{i}$ is the $i$th tree in the forest and $N$ is the total number of trees in the forest. Decision trees are constructed to succerssively split the data into branches via `decision boundaries' (e.g. $x > 1.5$). Decision boundaries are chosen to minimise the square deviations (for regression) or information entropy (for classification) between the samples and the sample mean in each branch or leaf of the tree. 
 
-Random Forests are a decision tree-based model that use an ensemble of multiple weak regressors to make predictions [47]. Each tree is constructed to find a series of decision boundaries that split the data to minimise the squared deviations between the samples and the sample mean in each branch or leaf of the tree. Predictions are made by averaging the outputs of the different trees when applied to new data. To overcome issues of over-fitting common to decision tree methods, Random Forests use bagging and random subspace projection to reduce the correlation between the trees, improving their generalisation performance. 
+Although extremely computationally efficient and interpretable, individual decision trees are very prone to over-fitting. By using a large number of decision trees each trained on different random subsets of the data (a process known as bootstrap aggregation), random forest models can acheive a lower variance and hence improved performance. To further reduce correlation between the decision trees, random forests use random feature selection, where only a random subset of the features are considered for each decision boundary.  
 
-Examples of RF with morgan fingerprint \cite{Svetnik2003RandomForest}. Bioactivity of kinase inhibitors \cite{Merget2017KinaseInhibitors}, predicting solubity \cite{Palmer2007RandomForest} and toxicity \cite{Polishchuk2009RandomForest}.
+Random forests are relatively easy to use, require little tuning of hyperparameters, and are robust to over-fitting, and thus are a popular general machine learning technique. In particular for drug discovery, random forests have been extensively used with molecular fingerprints features for prediction of properties such as solubility \cite{Palmer2007RandomForest}, biological activity \cite{Svetnik2003RandomForest, Merget2017KinaseInhibitors}, and toxicity \cite{Polishchuk2009RandomForest}.
 
 \subsection{Gaussian Process}
 
@@ -191,7 +191,7 @@ GPR in drug discovery \cite{Swamidass2005kernels}. GPR with tanimoto kernel \cit
 
 \subsection{Deep Learning}
 
-In contrast to methods which uses hand-crafted features (`shallow learning'), deep learning revolves around learning representations directly from the raw data using neural networks. Neural networks are composed of layers of `neurons' that successively perform non-linear transformations on their inputs, mimicking the way that biological neurons transfer signals to one another. These transformations are typically of the form:
+In contrast to methods which use hand-crafted features as input (`shallow learning'), deep learning revolves around learning representations directly from the raw data using neural networks. Neural networks are composed of layers of `neurons' that successively perform non-linear transformations on their inputs, mimicking the way that biological neurons transfer signals to one another. These transformations are typically of the form:
 
 \begin{equation}
     \textbf{h} = \sigma(\mathbf{W} \cdot \mathbf{x} + \mathbf{b})
