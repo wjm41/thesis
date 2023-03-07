@@ -3,9 +3,8 @@
 \section{Molecular Representation}
 
 \subsection{SMILES}
-The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure. In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase. Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
+The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure. In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase (see Table~\ref{table:smiles} for examples). Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
 
-(Table~\ref{table:smiles})
 \begin{table}[!h]
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -78,18 +77,18 @@ In addition to virtual library construction, reaction templates can be used for 
 
 \subsection{Pharmacophores} \label{subsec:pharmacophores}
 
+\begin{figure}[b!] 
+    \centering    
+    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/pharmacophore_models.png}
+    \caption{An illustration of structure-based or ligand-based pharmacophore models. Reproduced from \cite{Kaserer2015PharmacophoreReview}.}
+    \label{fig:pharmacophore_models}
+\end{figure}
+
 A pharmacophore is an abstract description of molecular features that are necessary for molecular recognition of a ligand by a biological macromolecule \cite{Kaserer2015PharmacophoreReview}. A collection of pharmacophores in a geometric configuration is known as a `pharmacophore model' and it is a representation of the interactions between ligands and the binding site. By their coarse-grained nature, pharmacophore model can explain structurally diverse ligands can bind to a common receptor site, and can be used to identify novel ligands that will bind to the same receptor.
 
 Typical pharmacophore features, characterised by SMARTS strings, include hydrophobic groups, aromatic rings, hydrogen bond acceptors or donors, and charged functional groups.
 
 Pharmacophore models can either be constructed using structural data or from a set of active compounds \cite{Vuorinen2015pharmacophore}. In the structure-based approach, the pharmacophores are directly inferred from the observed interactions of a molecule and the binding site in experimentally determined ligand-protein complexes. (Fig \ref{fig:pharmacophore_models}A).
-
-\begin{figure}[htbp!] 
-    \centering    
-    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/pharmacophore_models.png}
-    \caption{An illustration of structure-based or ligand-based pharmacophore models. Reproduced from \cite{Kaserer2015PharmacophoreReview}}
-    \label{fig:pharmacophore_models}
-\end{figure}
 
 In the ligand-based approach, the three-dimensional (3D) structures of known active molecules are aligned and pharmacophores that are found to overlap in space are extracted as the pharmacophore model (Figure \ref{fig:pharmacophore_models}B). Although this approach circumvents the need for structural data which might not be possible to obtain, a downside is that all of the extracted pharmacophore have to be presumed as essential for protein-ligand binding, whereas in the structure-based approach it is possible to identify and discard non-important pharmacophores.
 
@@ -175,9 +174,14 @@ To find the solution $\hat{\theta}$ for a dataset in practice, we would first di
 
 After a model has been trained we use the test dataset, which has never been seen by the model during training, to evaluate the performance of the model. It is important to use the same training and test datasets for a fair comparison of different models, and curated datasets from the literature are commonly used as a benchmark for evaluating the performance of new models.
 
-For regression models, the most common metric used to evaluate the performance of a model is the root mean squared error (RMSE) or the pearson correlation coefficient (PCC). For binary classification models, the most common metric used is the area under the receiver operating characteristic curve (AUC). The receiver operating characteristic curve, or ROC curve, is created by plotting the true positive rate (TPR) against the false positive rate (FPR) as the discrimination threshold for classifying one class over the other is varied. The AUC is the area under the ROC curve, and is a measure of the model's ability to distinguish between the two classes. AUC values range from 0 to 1, with 0.5 indicating a model that is no better than random guessing, and 1 indicating a perfect model.
+For regression models, the most common metric used to evaluate the performance of a model is the root mean squared error (RMSE) or the pearson correlation coefficient (PCC). For binary classification models, the most common metric used is the area under the receiver operating characteristic curve (AUC). The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) as the discrimination threshold for classifying one class over the other is varied \ref{fig:roc_curve}. The AUC is the area under the ROC curve, and is a measure of the model's ability to distinguish between the two classes. AUC values range from 0 to 1, with 0.5 indicating a model that is no better than random guessing, and 1 indicating a perfect model.
 
-< an example ROC curve ?>
+\begin{figure}[htbp!] 
+    \centering    
+    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/roc_curve.png}
+    \caption{An example Receiver Operating Characteristic (ROC) curve. The diagonal shows the performance of a random classifier. Three example classifiers (blue, orange, green) are shown. Reproduced from \cite{roccurve}.}
+    \label{fig:roc_curve}
+\end{figure}
 
 A large number of machine learning techniques have been described and applied for drug discovery, and an overview of them can be found in \cite{Bender2021part1,Bender2021part2,Volkamer2023review}. In this thesis, two common techniques are used: Random forests and Gaussian processes.
 
