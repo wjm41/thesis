@@ -2,17 +2,17 @@
 % ******************************* Thesis Appendix A ****************************
 \chapter{Computational Details} \label{appendix:details}
 
-\section{Docking against SARS-CoV-2} \label{subsec:docking}
+\section{Docking against SARS-CoV-2} \label{appendix:docking}
 All molecules synthesised by the COVID Moonshot Consortium were docked against structure x2908 reported by Diamond XChem \cite{Douangamath2020XChem}. We use the “Classic OEDocking” floe v0.7.2 as implemented in the Orion 2020.3.1 Academic Stack (OpenEye Scientific). Omega was used to enumerate conformations (and expand stereochemistry) with up to 500 conformations. FRED was used for docking in HYBRID mode using the x2908 bound ligand. The docked poses of the ligands were scored using the Chemgauss4 scoring function.
 
-\section{Machine learning}
-\subsection{FRESCO}
+\section{Machine learning} \label{appendix:machine_learning}
+\subsection{FRESCO} \label{appendix:fresco}
 All data and code used for this work can be found in the GitHub repo \url{https://github.com/wjm41/frag-pcore-screen}. Supplementary figures and tables can be found in an accompanying file.
 
-\subsection{Ranking model}
+\subsection{Ranking model} \label{appendix:ranking}
 Our training set, de novo design method and generated molecules are available on \url{https://github.com/wjm41/mpro-rank-gen}.
 
-\subsection{Transformer model}
+\subsection{Transformer model} \label{appendix:transformer}
 The Molecular Transformer architecture used throughout this work is based on the model described in Schwaller et. al. \cite{Schwaller2019MolecularPrediction}. 
 
 The model uses a 256 dimensional learnt embedding for each SMILES token. The encoder and the decoder are both made up of 4 standard transformer layers and dropout is applied with probability 0.1 \cite{Srivastava2014Dropout:Overfittin}. For weight optimization the Adam optimizer is used and the model is trained for 500 000 steps. Checkpoints are saved every 10 000 steps and the final model is obtained by averaging the weights of the last 20 checkpoints for USPTO.
