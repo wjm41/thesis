@@ -1,4 +1,4 @@
-\chapter{Discovery of SARS-CoV-2 main protease inhibitors using a synthesis-directed de novo design model}\label{ch:ranking}
+\chapter{Discovery of SARS-CoV-2 main protease inhibitors using synthesis-directed de novo design} \label{ch:ranking}
 
 \begin{quote}
     This chapter is based on Aaron Morris, William McCorkindale, The COVID Moonshot Consortium, Nir Drayman, John D. Chodera, Savaş Tay, Nir London and Alpha A. Lee. Discovery of SARS-CoV-2 main protease inhibitors using a synthesis-directed de novo design model, \textit{Chem. Commun.}, 2021,57, 5909-5912 
@@ -20,16 +20,27 @@ Algorithmic \emph{de novo} design aims to automatically generate compounds that 
 \section{Learning to rank compounds for hit expansion}
 Our compound prioritisation model aims to predict whether a designed compound is likely to be an improvement in activity over the incumbent. However, as is typical in the hit-expansion stage, bioactivity modelling is hindered by insufficient data where the majority of compounds are inactive, and noisy data as measurement variability increases for lower affinity compounds. Thresholding the data and framing the problem as classification of active/inactive would not allow us to rank compounds based on predicted improvement over the incumbent, yet the relatively small number of quantitative potency measurement bioactivity data and the measurement noise makes a regression approach challenging.
 
-% TODO - bigger discussion on QSAR modelling challenges
+\begin{figure}[!th]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Chapters/Ranking/Figs/schematic.png}
+    \caption{A schematic of the model setup. A classifier takes the difference in molecular fingerprint between two molecules and predicts where one molecule is more or less active than the other.}
+    \label{fig:ranking_schematic}
+\end{figure}
+
+\begin{figure}[!th]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/roc_curve.png}
+    \caption{Relative ranking of ligands can be predicted by our learning-to-rank machine learning model. The Receiver Operating Characteristic curve of classifying whether a molecule is more/less active than the other.}
+    \label{fig:roc_plot}
+\end{figure}
+
 Instead of predicting IC50 values directly, we focused our attention on a learn-to-rank approach \cite{duffy2010molecular,agarwal2010ranking} that predicts the pairwise comparison of ligands - given a pair of molecules $(A,B)$, the model predicts whether $A$ is more active than $B$. This approach allows us to assimilate both coarse (active/inactive) and fine (quantitative potency measurements) data into a single model, effectively combining `easy' classification and `difficult' regression into a `moderate' task of ranking input pairs. With a trained ranking model, we can screen for more potent inhibitors by ranking new molecules against the most potent active compounds in the dataset.
 
-To implement this ranking model (Figure \ref{fig:roc_plot} A), we use the difference in molecular fingerprints between two molecules, $f_A - f_B$ as input to the model, and the output is the whether the molecule $A$ is more or less potent than molecule $B$. The descriptor we use for representing a molecule is a concatenation of 3 512-bit fingerprint representations (Morgan, Atom, Topological Torsion) into one 1536 representation, chosen based on empirical performance. %The fingerprint is projected onto 20 dimensions using Principal Component Analysis.
+To implement this ranking model (Figure \ref{fig:ranking_schematic}), we use the difference in molecular fingerprints between two molecules, $f_A - f_B$ as input to the model, and the output is the whether the molecule $A$ is more or less potent than molecule $B$. The descriptor we use for representing a molecule is a concatenation of 3 512-bit fingerprint representations (Morgan, Atom, Topological Torsion) into one 1536 representation. A multilayer perceptron, implemented via FastAI Tabular framework \cite{howard2018fastai} with default hyperparameters, is used for modelling the data. The choice of molecular descriptor and model was based on empirical performance (Details on the model implementation can be found in Appendix \ref{appendix:ranking}). %The fingerprint is projected onto 20 dimensions using Principal Component Analysis.
 
-To construct a suitable dataset for training the model, the activity data must be reformated into pairs of molecules. This is done by pairing all actives with all inactives, as well as pairing up actives where there is a significant different in bioactivity ($\Delta$pIC50 $>0.5$M). This threshold was chosen to match typical assay error, forcing the model to ignore irrelevant experimental noise by ensuring that it is ranking only ligands with demonstrably different bioactivity. The inactive molecules were not paired up between each other as the ranking of inactivity is not relevant to the task at hand and potentially noisy/misleading.
+To construct a suitable dataset for training the model, the activity data must be reformated into pairs of molecules. This is done by pairing all actives with all inactives, as well as pairing up actives where there is a significant different in bioactivity ($\Delta$pIC50 $>0.5$). This threshold was chosen to match typical assay error, forcing the model to ignore irrelevant experimental noise by ensuring that it is ranking only ligands with demonstrably different bioactivity. The inactive molecules were not paired up between each other as the ranking of inactivity is not relevant to the task at hand and potentially noisy/misleading.
 
 A flipped pairing is included for all pairs so that the dataset is antisymmetric since the model would just predict ones otherwise. Theoretically this method is appealing because it is a natural way of oversampling the low proportion of actives, addressing the problem of dataset imbalance commonly seen in drug discovery classification tasks. Additionally, creating pairs between the actives allows the exploitation of activity information without the noise/difficulty of trying to learn accurate pIC50 values.
-
-We use the FastAI Tabular model \cite{howard2018fastai} for implementing the model (Details on the model implementation can be found in Appendix \ref{appendix:ranking}).
 
 % We compare the performance of our model in predicting the pairwise ranking of compounds against the baseline model of simply training a regression model on bioactivities. As a baseline model, we trained a random forest model with the package \texttt{scikit-learn} \cite{scikit-learn}, \texttt{RandomForestRegressor} function, with default hyperparameters. Likewise, for the learning-to-rank model we employ the FastAI tabular model, a general machine learning package for processing classification problems. 
 
@@ -60,20 +71,15 @@ We use the FastAI Tabular model \cite{howard2018fastai} for implementing the mod
 % \label{table1}
 % \end{table}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{Chapters/Ranking/Figs/ranking-model.pdf}
-    \caption{Relative ranking of ligands can be predicted by our learning-to-rank machine learning model. (A) A schematic of the model setup. A classifier takes the difference in pharmacophore fingerprint between two molecules and predicts where one molecule is more or less active than the other. (B) The Receiver Operating Characteristic curve of classifying whether a molecule is more/less active than the other. AUC 95\% CI reported in main text.}
-    \label{fig:roc_plot}
-\end{figure}
-
 For performance evaluation, the dataset was randomly split into training (80\%) and testing (20\%) sets (with roughly the same active/inactive proportion) before the molecules are paired up independently within each set. This ensures that there is no cross-talk between the train/test sets where the model could simply memorize the activity of certain compounds. We train the model on pairs of compounds within the training set and evaluate the model on both pairs within the test set as well as pairs between the training and test set.
 
-Figure \ref{fig:roc_plot} shows that our binary ranking model achieves an AUC of 0.88 (95\% CI: [0.83,0.96]) in ranking ligands within the test set, and AUC for 0.94 (95\% CI: [0.91,0.98]) where we compare a ligand in the training set against another ligand in the test set; the latter is more relevant as our goal is finding ligands more active than the best incumbent. The 95\% confidence interval is computed using bootstrapping. We also compare our model against ranking compounds using docking scores generated with OpenEye's FRED docking algorithm, which achieves an AUC of 0.72 (95\% CI: [0.722,0.723]) (Details of the docking procedure can be found in Appendix \ref{appendix:docking}). Note that docking does not require ligand bioactivity as training data, thus is not a directly comparison to machine learning. 
+Figure \ref{fig:roc_plot} shows that our binary ranking model achieves an AUC of 0.88 (95\% CI: [0.83,0.96]) in ranking ligands within the test set, and AUC for 0.94 (95\% CI: [0.91,0.98]) where we compare a ligand in the training set against another ligand in the test set; the latter is more relevant as our goal is finding ligands more active than the best incumbent. The 95\% confidence interval is computed using bootstrapping. We also compare our model against ranking compounds using docking scores generated with OpenEye's FRED docking algorithm, which achieves an AUC of 0.72 (95\% CI: [0.722,0.723]) (Details of the docking procedure can be found in Appendix \ref{appendix:docking}). Note that docking does not require ligand bioactivity as training data, thus is not a directly comparison to machine learning.
 
 % In the Supplementary Material, we discuss that our model ranks ligands better than a model that directly learns $\mathrm{IC}_{50}$ (AUC = 0.86; 95\% CI: [0.71,0.95]). 
 
-\begin{table}
+Beyond train-test split, model performance can be evaluated from a time-split. Five months have elapsed from the time we deployed our model for prospective compound selection to writing up the this work. During that time, the COVID Moonshot Consortium (a team of expert medicinal chemists) has independently designed, synthesised and tested 356 compounds \cite{moonshot2020covid}, out of which 15\% were better than the top 2 compounds (having $\mathrm{IC}_{50}$ comparable within error) in our dataset. Table \ref{table:time_split} shows that our model has an enrichment factor of $\sim$2, i.e. if we rescore the 356 compounds synthesized by the medicinal chemistry team using our model, and pick the top 1\%-10\% percentile, the proportion of molecules that would be better than the top 2 compounds would be $\sim$2x higher than human selection. 
+
+\begin{table}[!bh]
     \centering
     \begin{tabular}{|l|l|l|l|}
     \hline
@@ -84,15 +90,15 @@ Figure \ref{fig:roc_plot} shows that our binary ranking model achieves an AUC of
     \label{table:time_split}
 \end{table}
 
-Beyond train-test split, model performance can be evaluated from a time-split. Five months have elapsed from the time we deployed our model to select compounds to writing up the manuscript. During that time, the COVID Moonshot Consortium (a team of expert medicinal chemists) has independently designed, synthesised and tested 356 compounds \cite{moonshot2020covid}, out of which 15\% were better than the top 2 compounds (having $\mathrm{IC}_{50}$ comparable within error) in our dataset. Table \ref{table:time_split} shows that our model has an enrichment factor of $\sim$2, i.e. if we rescore the 356 compounds synthesized by the medicinal chemistry team using our model, and pick the top 1\%-10\% percentile, the proportion of molecules that would be better than the top 2 compounds would be $\sim$2x higher than human selection. 
-
-%From a set of binary ranking, we can accurately rank-order the active ligands (Figure XXXb), with a higher rank correlation than using the quantitative activity data alone. We use the average probability of a ligand being ranked higher than ligands in the training set as a proxy for overall rank.
-
+These retrospective results illustrate that a learning-to-rank approach can leverage bioactivity data from both active and inactive molecules for the enrichment of potent compounds in a real-world drug discovery campaign. In the next section, we deploy our model to discover new Mpro inhibitors in a prospective experiment.
 
 \section{Prospective chemical space exploration}
-% After designing a well-founded ML scoring model, a list of candidate molecules must be generated to rank by score. Many ML methods for candidate generation have been described in the literature, ranging from relatively straightforward applications of distribution-learning ML models such as Variational Auto-Encoders \cite{Bombarelli2018VAE}, to more chemistry-tailored approaches such as scaffold decoration \cite{Pous2020scaffold}. While at first glance these seem ideal for the task at hand, attempting to implement these in practice reveal that these methods tend to generate molecules that are not particularly goal-orientated, ignoring prior chemical intuition regarding the scaffold of the active molecules. Presumably this is addressed in more complex molecular generative workflows where a scoring model is incorporated in a Reinforcement Learning feedback loop \cite{born2019paccmannrl}; due to time constraints this was not investigated.
 
-% Instead, a more traditional method of constructing and screening an explicit chemical library was chosen. The general approach for generating the chemical library is by decomposing the existing compounds into distinct components before enumerating all components with one another, all according to manually specified rules based on chemical intuition. Separate libraries were generated for the acrylamides and the non-covalents as the prior known intuitions and ease of synthesizability for those two series are different. In this case, it was observed that a unifying motif for many of the active molecules was the presence of an amide or urea group in the central part of the scaffold (Fig \ref{fig:example}). The presence of amides is unsurprising since they are guaranteed to appear in the products of the Ugi reaction but they are also frequent in the non-covalents. 
+After designing a well-founded ML scoring model, a list of candidate molecules must be generated to rank by score. Many ML methods for candidate generation have been described in the literature, ranging from relatively straightforward applications of distribution-learning ML models such as Variational Auto-Encoders \cite{Bombarelli2018VAE}, to more chemistry-tailored approaches such as scaffold decoration \cite{Pous2020scaffold}. While at first glance these seem ideal for the task at hand, attempting to implement these in practice reveal that these methods tend to generate molecules that are not particularly goal-orientated, ignoring prior chemical intuition regarding the scaffold of the active molecules. Presumably this is addressed in more complex molecular generative workflows where a scoring model is incorporated in a Reinforcement Learning feedback loop \cite{born2019paccmannrl}; due to time constraints this was not investigated.
+
+Instead, a more traditional method of constructing and screening an explicit chemical library was chosen. The general approach for generating the chemical library is by decomposing the existing compounds into distinct components before enumerating all components with one another, all according to manually specified rules based on chemical intuition. Separate libraries were generated for the acrylamides and the non-covalents as the prior known intuitions and ease of synthesizability for those two series are different. In this case, it was observed that a unifying motif for many of the active molecules was the presence of an amide or urea group in the central part of the scaffold (Fig \ref{fig:example}). The presence of amides is unsurprising since they are guaranteed to appear in the products of the Ugi reaction but they are also frequent in the non-covalents. 
+
+Structure generators are widely used in de novo design studies and their performance substantially influences an outcome. Approaches based on the deep learning models and conventional atom-based approaches may result in invalid structures and fail to address their synthetic feasibility issues. On the other hand, conventional reaction-based approaches result in synthetically feasible compounds but novelty and diversity of generated compounds may be limited. Fragment-based approaches can provide both better novelty and diversity of generated compounds but the issue of synthetic complexity of generated structure was not explicitly addressed before.
 
 % \begin{figure}[!h] % !h ~ force here, t ~ top, b ~ bottom, p ~ separate page
 % \centering
@@ -108,9 +114,15 @@ The virtual library of compounds is then scored against the top 3 compound in th
 
 %TODO - discuss this approach more in depth (examples in literature)
 
-Having demonstrated the accuracy of our ranking model, we now turn to chemical space exploration. We first consider a set of chemically reasonable perturbations (e.g. amide to retroamide, amide to urea), which is applied to the whole set of active molecules. We then fragment along synthetically accessible bonds (e.g. amides and aromatic C-C and C-N), and reconnect the synthons to generate an exhaustive library. This is similar to the method known as BRICS. 
+Having demonstrated the accuracy of our ranking model, we now turn to chemical space exploration. We first consider a set of chemically reasonable perturbations (e.g. amide to retroamide, amide to urea), which is applied to the whole set of active molecules. We then fragment along synthetically accessible bonds (e.g. amides and aromatic C-C and C-N), and reconnect the synthons to generate an exhaustive library. This is similar to the method known as BRICS \cite{Degen2008brics} and CReM \cite{Polishchuk2020Crem}.
 
 The resulting library of 8.8 million generated molecules is scored using our ranking model by the probability of having a higher potency compared to the most potent molecule in the dataset.
+\begin{figure}
+    \centering
+        \includegraphics[width=0.75\textwidth]{Chapters/Ranking/Figs/library.png}
+        \caption{A schedmatic of the methodology for the library generation process.}
+        \label{fig:library}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -122,8 +134,8 @@ The resulting library of 8.8 million generated molecules is scored using our ran
     
 \begin{figure}
 \centering
-    \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/aaron_schemes.pdf}
-    \caption{Model generated synthetic schemes that are experimentally validated. Schemes (A)-(E) show the synthesis schemes generated by our model (grey) and experimental schemes for Compounds $\mathbf{1}$-$\mathbf{5}$. The ESI contains experimental procedures provided by our contract research organisation.}
+    \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf}
+    \caption{Model generated synthetic schemes that are experimentally validated. Schemes (A)-(C) show the synthesis schemes generated by our model (grey) and experimental schemes (black) for Compounds $\mathbf{1}$-$\mathbf{3}$. The schemes for compounds $\mathbf{4}$ and $\mathbf{5}$ can be found in Appendix.}
     \label{fig:synthesis_schemes}
 \end{figure}
 
@@ -133,12 +145,12 @@ Although virtual ``reactions'' were used to generate new molecules, the synthons
 Figure \ref{fig:synthesis_schemes} shows that for Compounds $\mathbf{1}$, $\mathbf{2}$, $\mathbf{4}$ and $\mathbf{5}$ our retrosynthesis algorithm generates successful routes, thus provides a reasonable estimate of synthetic complexity. The syntheses were carried out at the Wuxi AppTec and compounds were assayed as received. Minor variations in building blocks were employed depending on what was readily available. We note that our algorithm failed to estimate the synthetic complexity of Compound $\mathbf{3}$. The final amide formation step was unexpectedly challenging, and no desired product was seen despite significant efforts in condition screening. Compound $\mathbf{3}$ was furnished via an alternative strategy, employing an Ullmann coupling to arylate the amide, which was not predicted by our approach. 
 
 %result + discussion 
-Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluorescence assay. Figure \ref{fig:data} shows that Compounds $\mathbf{1}$-$\mathbf{3}$ have $\mathrm{IC}_{50}$ within assay dynamic range ($<100 \mu M$), and Compound $\mathbf{1}$ has $\mathrm{IC}_{50} = 4.1 \mu M$. Compound $\mathbf{1}$ is further assayed in live virus assays, with the less pathogenic OC43 coronavirus, showing $\mathrm{EC}_{50} = 13 \mu M$ and is not cytotoxic ($\mathrm{CC}_{50}>100 \mu M$ against A549 cell line; $CC_{50}$ is the concentration required  to cause 50\% cell death). We employ OC43 as a rapid surrogate assay for SARS-CoV-2 as the former can be done in a BSL-2 rather than BSL-3 lab.  Interestingly, the top non-cytotoxic hit of the training set (TRY-UNI-2eddb1ff-7) does not show OC43 activity, showcasing the utility of using generative models to suggest new scaffolds with complementary physicochemical properties. 
+Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluorescence assay. Figure \ref{fig:data} shows that Compounds $\mathbf{1}$-$\mathbf{3}$ have $\mathrm{IC}_{50}$ within assay dynamic range ($<100 \mu$M), and Compound $\mathbf{1}$ has $\mathrm{IC}_{50} = 4.1 \mu$M (95\% CI: [3.42,4.86]). Compound $\mathbf{1}$ is further assayed in live virus assays, with the less pathogenic OC43 coronavirus, showing $\mathrm{EC}_{50} = 13 \mu$M (95\% CI: [10.1, 18.4]) and is not cytotoxic ($\mathrm{CC}_{50}>100 \mu$M against A549 cell line; $CC_{50}$ is the concentration required to cause 50\% cell death). We employ OC43 as a rapid surrogate assay for SARS-CoV-2 as the former can be done in a BSL-2 rather than BSL-3 lab (See Appendix \ref{appendix:experiments} for assay details). Interestingly, the top non-cytotoxic hit of the training set (TRY-UNI-2eddb1ff-7) does not show OC43 activity, showcasing the utility of using generative models to suggest new scaffolds with complementary physicochemical properties. 
 
-\begin{figure}
+\begin{figure}[!bh]
     \centering
     \includegraphics[width=0.75\textwidth]{Chapters/Ranking/Figs/data_curve.pdf}
-    \caption{Three compounds generated using our synthesis-directed model exhibit Mpro activity. Our most active compound has measurable antiviral activity against the OC43 coronavirus and no measurable cytotoxic effect ($\mathrm{CC}_{50} (A549)>100 \mu M$). 95\% CI: IC50 (Mpro) -- Compound 1 [3.42,4.86] $\mu$M, Compound 2 [15.1,16.5] $\mu$M, Compound 3 [48.8,69.4] $\mu$M; EC50 (OC43) -- Compound 1 [10.1, 18.4] $\mu$M. See Appendix \ref{appendix:experiments} for assay details.}
+    \caption{Three compounds generated using our synthesis-directed model exhibit Mpro activity. Our most active compound has measurable antiviral activity against the OC43 coronavirus and no measurable cytotoxic effect.}
     \label{fig:data}
 \end{figure}
 
@@ -146,11 +158,13 @@ Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluore
 
 In summary, we demonstrated the utility of a \emph{de novo} design model, guided by estimation of synthetic complexity, for generating ideas in hit expansion. At the time of writing, the quinolone series is undergoing optimisation by the COVID Moonshot initiative (\url{https://postera.ai/covid}). Data for Compound $\mathbf{1}$-$\mathbf{5}$ is registered as the $\texttt{ALP-POS-ddb41b15}$ series on the Moonshot platform. 
 
-% TODO - Make conclusion.
-Further work extends the learning-to-rank approach presented in this chapter to utilise information from ligand-protein complexes \cite{Saar2023pnas}. 
+% some stuff about learning-to-rank
+Further work extends the learning-to-rank approach presented in this chapter to utilise information from ligand-protein complexes \cite{Saar2023pnas}. This demonstrates the overall utility of the learning-to-rank approach.
 
-The HTS data is also left out as the sheer size of that dataset leads to a computationally unfeasible number of molecular pairs even if the pairing is constrained by Tanimoto similarity. 
+The HTS data is also left out as the sheer size of that dataset leads to a computationally unfeasible number of molecular pairs even if the pairing is constrained by Tanimoto similarity.
 
+% link to automated chemical design
+AI for designing synthesis routes, triaging by synthetic complexity. Explicit consideration of synthesisability makes this a level 3 ACD workflow \cite{Goldman2022ChemicalDesignLevels}.
 
 % \begin{table}[!h]
 % \caption{Graph SNN pairwise ranking results}
