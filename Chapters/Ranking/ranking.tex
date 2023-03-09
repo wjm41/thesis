@@ -6,11 +6,13 @@
 
 \noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
 
-The SARS-CoV-2 main viral protease (MPro) is an attractive target for antivirals given its distinctiveness from host proteases, essentiality in the viral life cycle and conservation across coronaviridae. We launched the COVID Moonshot initiative to rapidly develop patent-free antivirals with open science and open data. Here we report the use of machine learning for \emph{de novo} design, coupled with synthesis route prediction, in our campaign. We discover novel chemical scaffolds active in biochemical and live virus assays, synthesized with model generated routes.
+% TODO - rewrite intro
+
+The SARS-CoV-2 main viral protease (Mpro) is an attractive target for antivirals given its distinctiveness from host proteases, essentiality in the viral life cycle and conservation across coronaviridae. We launched the COVID Moonshot initiative to rapidly develop patent-free antivirals with open science and open data. Here we report the use of machine learning for \emph{de novo} design, coupled with synthesis route prediction, in our campaign. We discover novel chemical scaffolds active in biochemical and live virus assays, synthesized with model generated routes.
 
 Coronaviruses are a family of pathogens that is frequently associated with serious and highly infectious human diseases, from the common cold to the SARS-CoV pandemic (2003, 774 deaths, 11\% fatality rate), MERS-CoV pandemic (2012, 858 deaths, 34\% fatality rate) and most recently the COVID-19 pandemic (ongoing pandemic, 1.7 million deaths up to Dec 2020).
 
-The main protease (MPro) is one of the best characterized drug targets for direct-acting antivirals \cite{pillaiyar2016overview,cannalire2020targeting}. Mpro is essential for viral replication and its binding site is distinct from known human proteases, thus inhibitors are unlikely to be toxic \cite{jin2020structure,liu2020development}. Moreover, the high degree of conservation across different coronaviruses renders Mpro targeting a fruitful avenue towards pan-cornavirus antivirals \cite{ullrich2020sars}. To date, most reported Mpro inhibitors are peptidomimetics, covalent, or both \cite{cannalire2020targeting}. Peptidomimetics are challenging to develop into oral therapeutics, and covalent inhibitors incur additional idiosyncratic toxicity risks. We launched the COVID Moonshot consortium in March 2020, aiming to find oral antivirals against COVID-19 in an open-science, patent-free manner \cite{chodera2020crowdsourcing}.
+The main protease (Mpro) is one of the best characterized drug targets for direct-acting antivirals \cite{pillaiyar2016overview,cannalire2020targeting}. Mpro is essential for viral replication and its binding site is distinct from known human proteases, thus inhibitors are unlikely to be toxic \cite{jin2020structure,liu2020development}. Moreover, the high degree of conservation across different coronaviruses renders Mpro targeting a fruitful avenue towards pan-cornavirus antivirals \cite{ullrich2020sars}. To date, most reported Mpro inhibitors are peptidomimetics, covalent, or both \cite{cannalire2020targeting}. Peptidomimetics are challenging to develop into oral therapeutics, and covalent inhibitors incur additional idiosyncratic toxicity risks. We launched the COVID Moonshot consortium in March 2020, aiming to find oral antivirals against COVID-19 in an open-science, patent-free manner \cite{chodera2020crowdsourcing}.
 
 Here we report the prospective use of a simple model to rapidly expand hits. Starting from 42 compounds with $\mathrm{IC}_{50}$ within assay dynamic range ($<100 \mu$M) and 515 inactives, our model designed 5 new compounds predicted to have higher activity, together with predicted synthetic routes. All designs were were chemically synthesized and experimentally tested, and 3 have measurable activity against Mpro. The top compound has comparable Mpro inhibition to the best in the training set, but with a different scaffold, and is active against the OC43 coronavirus in a live virus assay.
 
@@ -92,37 +94,23 @@ Beyond train-test split, model performance can be evaluated from a time-split. F
 
 These retrospective results illustrate that a learning-to-rank approach can leverage bioactivity data from both active and inactive molecules for the enrichment of potent compounds in a real-world drug discovery campaign. In the next section, we deploy our model to discover new Mpro inhibitors in a prospective experiment.
 
+% TODO - finish this section
 \section{Prospective chemical space exploration}
 
-After designing a well-founded ML scoring model, a list of candidate molecules must be generated to rank by score. Many ML methods for candidate generation have been described in the literature, ranging from relatively straightforward applications of distribution-learning ML models such as Variational Auto-Encoders \cite{Bombarelli2018VAE}, to more chemistry-tailored approaches such as scaffold decoration \cite{Pous2020scaffold}. While at first glance these seem ideal for the task at hand, attempting to implement these in practice reveal that these methods tend to generate molecules that are not particularly goal-orientated, ignoring prior chemical intuition regarding the scaffold of the active molecules. Presumably this is addressed in more complex molecular generative workflows where a scoring model is incorporated in a Reinforcement Learning feedback loop \cite{born2019paccmannrl}; due to time constraints this was not investigated.
+After designing a well-founded ML scoring model, we must decide on a virtual library of compouds to explore. While one could screen an ultra-large library of make-on-demand compounds as in the previous chapter, it is only feasible for a relatively cheap computational model which is not the case for the ML model developed in this work. 
 
-Instead, a more traditional method of constructing and screening an explicit chemical library was chosen. The general approach for generating the chemical library is by decomposing the existing compounds into distinct components before enumerating all components with one another, all according to manually specified rules based on chemical intuition. Separate libraries were generated for the acrylamides and the non-covalents as the prior known intuitions and ease of synthesizability for those two series are different. In this case, it was observed that a unifying motif for many of the active molecules was the presence of an amide or urea group in the central part of the scaffold (Fig \ref{fig:example}). The presence of amides is unsurprising since they are guaranteed to appear in the products of the Ugi reaction but they are also frequent in the non-covalents. 
+Instead, we consider a more targeted approach by exploring the chemical space of chemical substructres contained within our initial dataset. Following substructre-based methods such as BRICS \cite{Degen2008brics} and CReM \cite{Polishchuk2020Crem}, our general approach is to decompose the existing molecules into a large set of distinct substructure components before enumerating all components with one another, generating a large number of novel and diverse molecules.
 
-Structure generators are widely used in de novo design studies and their performance substantially influences an outcome. Approaches based on the deep learning models and conventional atom-based approaches may result in invalid structures and fail to address their synthetic feasibility issues. On the other hand, conventional reaction-based approaches result in synthetically feasible compounds but novelty and diversity of generated compounds may be limited. Fragment-based approaches can provide both better novelty and diversity of generated compounds but the issue of synthetic complexity of generated structure was not explicitly addressed before.
-
-% \begin{figure}[!h] % !h ~ force here, t ~ top, b ~ bottom, p ~ separate page
-% \centering
-% \includegraphics[width=0.5\textwidth]{Chapter3/Figs/example_mol.png}
-% \caption{\label{fig:example} An example of a potent molecule (IC50 = $2.96\mu$M) where the amide/urea motif is highlighted with the dashed circle.}
-% \end{figure}
-
-% For the non-covalents, the procedure was therefore to slice along all amide and urea bonds as well as the slicing the substituents from secondary amines. All possible secondary amines were then enumerated by combining all substituents with all primary amines, and all primary/secondary amines were then combined with all substituents to obtain a library of amides and ureas. This resulted in a library of size $\sim$8.8M.. 
-
-To generate new compounds, we: (a) introduce linker and chemotype swaps, e.g. amide to retroamide, amide to urea, swapping N-aryl groups; (b) fragment compounds along synthetically accessible bonds into building blocks, e.g. amide to carboxylic acid and amine; (c) reconnect the fragments to form a library of virtual compounds. These operations are defined using SMARTS rules. 
-
-The virtual library of compounds is then scored against the top 3 compound in the training set using the learning-to-rank framework. Compounds predicted to have higher activity is then fed into our synthetic route predictor \cite{schwaller2019molecular,yang2019molecular}. 5 molecules with $<$4 predicted steps were synthesised and assayed. 
-
-%TODO - discuss this approach more in depth (examples in literature)
-
-Having demonstrated the accuracy of our ranking model, we now turn to chemical space exploration. We first consider a set of chemically reasonable perturbations (e.g. amide to retroamide, amide to urea), which is applied to the whole set of active molecules. We then fragment along synthetically accessible bonds (e.g. amides and aromatic C-C and C-N), and reconnect the synthons to generate an exhaustive library. This is similar to the method known as BRICS \cite{Degen2008brics} and CReM \cite{Polishchuk2020Crem}.
-
-The resulting library of 8.8 million generated molecules is scored using our ranking model by the probability of having a higher potency compared to the most potent molecule in the dataset.
 \begin{figure}
     \centering
         \includegraphics[width=0.75\textwidth]{Chapters/Ranking/Figs/library.png}
         \caption{A schedmatic of the methodology for the library generation process.}
         \label{fig:library}
 \end{figure}
+
+Specifically, we first introduce a set of chemically reasonable perturbations (linker and chemotype swaps, e.g. amide to retroamide, amide to urea, swapping N-aryl groups), which is applied to the whole set of active molecules. We then fragment along synthetically accessible bonds (e.g. amides and aromatic C-C and C-N), and reconnect the synthons to generate an exhaustive library (Figure \ref{fig:library}). These operations are defined using SMARTS rules.
+
+The resulting library of 8.8 million generated molecules is then scored against the top 3 compounds in the training set using the learning-to-rank framework, and the mean score is taken as the final score for each compound.
 
 \begin{figure}
     \centering
@@ -131,21 +119,16 @@ The resulting library of 8.8 million generated molecules is scored using our ran
         \label{fig:compounds}
 \end{figure}
 
-    
+Although virtual ``reactions'' were used to generate new molecules, the synthons are not necessarily off-the-shelf nor the reactions optimal. As such, we use a retrosynthesis predictor to triage based on synthetic accessibility. We used Manifold, a platform for synthesis route prediction (\url{https://postera.ai/manifold}), to generate synthetic routes for the model's top-ranked molecules starting from purchasable building blocks. The underlying technology is based on Molecular Transformer, a machine learning model for reaction prediction using sequence-to-sequence translation \citep{yang2019molecular,schwaller2019molecular}. The top 5 molecules from the screening library with <4 steps in their predicted routes were synthesised and tested (Figure \ref{fig:compounds}A). For comparison, the most potent molecules from the training set are shown in Figure \ref{fig:compounds}B. All five compounds have Tanimoto similarity <0.48 (1024-bit ECFP6) to any molecule in the training set, indicating that the model is not merely reproducing molecules similar to the most potent actives but are exploring novel scaffolds.
+
 \begin{figure}
-\centering
-    \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf}
-    \caption{Model generated synthetic schemes that are experimentally validated. Schemes (A)-(C) show the synthesis schemes generated by our model (grey) and experimental schemes (black) for Compounds $\mathbf{1}$-$\mathbf{3}$. The schemes for compounds $\mathbf{4}$ and $\mathbf{5}$ can be found in Appendix \ref{}}
-    \label{fig:synthesis_schemes}
-\end{figure}
+    \centering
+        \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf}
+        \caption{Model generated synthetic schemes that are experimentally validated. Schemes (A)-(C) show the synthesis schemes generated by our model (grey) and experimental schemes (black) for Compounds $\mathbf{1}$-$\mathbf{3}$. The schemes for compounds $\mathbf{4}$ and $\mathbf{5}$ can be found in Appendix \ref{appendix:rxn_schemes}.}
+        \label{fig:synthesis_schemes}
+    \end{figure}
 
-Although virtual ``reactions'' were used to generate new molecules, the synthons are not necessarily off-the-shelf nor the reactions optimal. As such, we use a retrosynthesis predictor to triage based on synthetic accessibility. We fed top hits into Manifold, our platform for synthesis route prediction (\url{https://postera.ai/manifold}). Manifold searches for synthetic routes starting from purchasable molecules. The underlying technology is based on Molecular Transformer, a machine learning model for reaction prediction using sequence-to-sequence translation \citep{yang2019molecular,schwaller2019molecular}. The top 5 molecules with predicted routes <4 steps were synthesised and tested (Figure \ref{fig:compounds}A). For comparison, the most potent molecules from the training set are shown in Figure \ref{fig:compounds}B; $\mathbf{1}-\mathbf{5}$ have Tanimoto similarity <0.48 (1024-bit ECFP6) to every molecule in the training set. 
-
-%TODO - remove unnecessary detail about retrosynthesis ; replace with figure from slides
 Figure \ref{fig:synthesis_schemes} shows that for Compounds $\mathbf{1}$, $\mathbf{2}$, $\mathbf{4}$ and $\mathbf{5}$ our retrosynthesis algorithm generates successful routes, thus provides a reasonable estimate of synthetic complexity. The syntheses were carried out at the Wuxi AppTec and compounds were assayed as received. Minor variations in building blocks were employed depending on what was readily available. We note that our algorithm failed to estimate the synthetic complexity of Compound $\mathbf{3}$. The final amide formation step was unexpectedly challenging, and no desired product was seen despite significant efforts in condition screening. Compound $\mathbf{3}$ was furnished via an alternative strategy, employing an Ullmann coupling to arylate the amide, which was not predicted by our approach. 
-
-%result + discussion 
-Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluorescence assay. Figure \ref{fig:data} shows that Compounds $\mathbf{1}$-$\mathbf{3}$ have $\mathrm{IC}_{50}$ within assay dynamic range ($<100 \mu$M), and Compound $\mathbf{1}$ has $\mathrm{IC}_{50} = 4.1 \mu$M (95\% CI: [3.42,4.86]). Compound $\mathbf{1}$ is further assayed in live virus assays, with the less pathogenic OC43 coronavirus, showing $\mathrm{EC}_{50} = 13 \mu$M (95\% CI: [10.1, 18.4]) and is not cytotoxic ($\mathrm{CC}_{50}>100 \mu$M against A549 cell line; $CC_{50}$ is the concentration required to cause 50\% cell death). We employ OC43 as a rapid surrogate assay for SARS-CoV-2 as the former can be done in a BSL-2 rather than BSL-3 lab (See Appendix \ref{appendix:experiments} for assay details). Interestingly, the top non-cytotoxic hit of the training set (TRY-UNI-2eddb1ff-7) does not show OC43 activity, showcasing the utility of using generative models to suggest new scaffolds with complementary physicochemical properties. 
 
 \begin{figure}[!bh]
     \centering
@@ -154,6 +137,10 @@ Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluore
     \label{fig:data}
 \end{figure}
 
+%result + discussion 
+Compounds $\mathbf{1}$-$\mathbf{5}$ were tested for Mpro activity using a fluorescence assay. Figure \ref{fig:data} shows that Compounds $\mathbf{1}$-$\mathbf{3}$ have $\mathrm{IC}_{50}$ within assay dynamic range ($<100 \mu$M), and Compound $\mathbf{1}$ has $\mathrm{IC}_{50} = 4.1 \mu$M (95\% CI: [3.42,4.86]). Compound $\mathbf{1}$ is further assayed in live virus assays, with the less pathogenic OC43 coronavirus, showing $\mathrm{EC}_{50} = 13 \mu$M (95\% CI: [10.1, 18.4]) and is not cytotoxic ($\mathrm{CC}_{50}>100 \mu$M against A549 cell line; $CC_{50}$ is the concentration required to cause 50\% cell death). We employ OC43 as a rapid surrogate assay for SARS-CoV-2 as the former can be done in a BSL-2 rather than BSL-3 lab (See Appendix \ref{appendix:experiments} for assay details). %Interestingly, the top non-cytotoxic hit of the training set (TRY-UNI-2eddb1ff-7) does not show OC43 activity, showcasing the utility of using generative models to suggest new scaffolds with complementary physicochemical properties. 
+
+% TODO - finish discussion
 \section{Discussion} \label{sec:discussion}
 
 In summary, we demonstrated the utility of a \emph{de novo} design model, guided by estimation of synthetic complexity, for generating ideas in hit expansion. At the time of writing, the quinolone series is undergoing optimisation by the COVID Moonshot initiative (\url{https://postera.ai/covid}). Data for Compound $\mathbf{1}$-$\mathbf{5}$ is registered as the $\texttt{ALP-POS-ddb41b15}$ series on the Moonshot platform. 
@@ -164,7 +151,7 @@ Further work extends the learning-to-rank approach presented in this chapter to 
 The HTS data is also left out as the sheer size of that dataset leads to a computationally unfeasible number of molecular pairs even if the pairing is constrained by Tanimoto similarity.
 
 % link to automated chemical design
-AI for designing synthesis routes, triaging by synthetic complexity. Explicit consideration of synthesisability makes this a level 3 ACD workflow \cite{Goldman2022ChemicalDesignLevels}.
+Presumably this is addressed in more complex molecular generative workflows where a scoring model is incorporated in a Reinforcement Learning feedback loop \cite{born2019paccmannrl}; AI for designing synthesis routes, triaging by synthetic complexity. Explicit consideration of synthesisability makes this a level 3 ACD workflow \cite{Goldman2022ChemicalDesignLevels}.
 
 % \begin{table}[!h]
 % \caption{Graph SNN pairwise ranking results}
