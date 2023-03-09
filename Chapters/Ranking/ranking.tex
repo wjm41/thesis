@@ -148,8 +148,8 @@ The learning-to-rank approach presented in this chapter is a promising technique
 
 A caveat for pair-based ranking is that even for moderately sized datasets the number of molecular pairs (which is proportional to the square of the dataset size) may become very large and therefore unfeasible to train on. Engineering approaches for efficient sampling of molecular pairs, such as using Tanimoto similarity to constrain pair selection, may be necessary and should be the subject of future work.
 
-% link to automated chemical design
-Presumably this is addressed in more complex molecular generative workflows where a scoring model is incorporated in a Reinforcement Learning feedback loop \cite{born2019paccmannrl}; AI for designing synthesis routes, triaging by synthetic complexity. Explicit consideration of synthesisability makes this a level 3 ACD workflow \cite{Goldman2022ChemicalDesignLevels}.
+% discuss the potential of estimation synthetic complexity for drug design workflows and incorporating it for automated design
+The AI-based estimation of synthetic feasibility played a critical role in compound selection in this work and is a promising enabler for automated design workflows in drug discovery \cite{Goldman2022ChemicalDesignLevels}. Beyond the capability to triage libraries by synthesisability and to guide the design of synthetic routes, ML synthesis models could play a key part in an automated drug design workflow. Utilising an automated workflow for the automatic generation of molecular designs as well as decision-making could potentially reduce iteration cycle time, require fewer compounds and iterations to produce a candidate, and scale to more programs \cite{Schneider2018AutomatingDrugDiscovery, Coley2020Outlook}. The framework presented in this chapter is an example of an automated design workflow albeit only with a single iteration - utilisation of multiple iterations via an optimisation \cite{korovina2019chembo} or reinforcement learning feedback loop \cite{born2019paccmannrl} will be a challenging but exciting area of future work.
 
 % \begin{table}[!h]
 % \caption{Graph SNN pairwise ranking results}
