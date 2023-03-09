@@ -20,6 +20,8 @@ Here we report the prospective use of algorithmic \emph{de novo} design to rapid
 \section{Learning to rank compounds}
 Our compound prioritisation model aims to predict whether a designed compound is likely to be an improvement in activity over the incumbent. However, as is typical in the hit-expansion stage, bioactivity modelling is hindered by insufficient data where the majority of compounds are inactive, and noisy data as measurement variability increases for lower affinity compounds. Thresholding the data and framing the problem as classification of active/inactive would not allow us to rank compounds based on predicted improvement over the incumbent, yet the relatively small number of quantitative potency measurement bioactivity data and the measurement noise makes a regression approach challenging.
 
+Instead of predicting IC50 values directly, we focused our attention on a learn-to-rank approach \cite{duffy2010molecular,agarwal2010ranking} that predicts the pairwise comparison of ligands - given a pair of molecules $(A,B)$, the model predicts whether $A$ is more active than $B$. This approach allows us to assimilate both coarse (active/inactive) and fine (quantitative potency measurements) data into a single model, effectively combining `easy' classification and `difficult' regression into a `moderate' task of ranking input pairs. With a trained ranking model, we can screen for more potent inhibitors by ranking new molecules against the most potent active compounds in the dataset.
+
 \begin{figure}[!th]
     \centering
     \includegraphics[width=0.85\textwidth]{Chapters/Ranking/Figs/schematic.png}
@@ -27,18 +29,16 @@ Our compound prioritisation model aims to predict whether a designed compound is
     \label{fig:ranking_schematic}
 \end{figure}
 
+To implement this ranking model (Figure \ref{fig:ranking_schematic}), we use the difference in molecular fingerprints between two molecules, $f_A - f_B$ as input to the model, and the output is the whether the molecule $A$ is more or less potent than molecule $B$. The descriptor we use for representing a molecule is a concatenation of 3 512-bit fingerprint representations (Morgan, Atom, Topological Torsion) into one 1536 representation. A multilayer perceptron, implemented via FastAI Tabular framework \cite{howard2018fastai} with default hyperparameters, is used for modelling the data. The choice of molecular descriptor and model was based on empirical performance (Details on the model implementation can be found in Appendix \ref{appendix:ranking}). %The fingerprint is projected onto 20 dimensions using Principal Component Analysis.
+
+To construct a suitable dataset for training the model, the activity data must be reformated into pairs of molecules. This is done by pairing all actives with all inactives, as well as pairing up actives where there is a significant different in bioactivity ($\Delta$pIC50 $>0.5$). This threshold was chosen to match typical assay error, forcing the model to ignore irrelevant experimental noise by ensuring that it is ranking only ligands with demonstrably different bioactivity. The inactive molecules were not paired up between each other as the ranking of inactivity is not relevant to the task at hand and potentially noisy/misleading.
+
 \begin{figure}[!th]
     \centering
     \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/roc_curve.png}
     \caption{Relative ranking of ligands can be predicted by our learning-to-rank machine learning model. The Receiver Operating Characteristic curve of classifying whether a molecule is more/less active than the other.}
     \label{fig:roc_plot}
 \end{figure}
-
-Instead of predicting IC50 values directly, we focused our attention on a learn-to-rank approach \cite{duffy2010molecular,agarwal2010ranking} that predicts the pairwise comparison of ligands - given a pair of molecules $(A,B)$, the model predicts whether $A$ is more active than $B$. This approach allows us to assimilate both coarse (active/inactive) and fine (quantitative potency measurements) data into a single model, effectively combining `easy' classification and `difficult' regression into a `moderate' task of ranking input pairs. With a trained ranking model, we can screen for more potent inhibitors by ranking new molecules against the most potent active compounds in the dataset.
-
-To implement this ranking model (Figure \ref{fig:ranking_schematic}), we use the difference in molecular fingerprints between two molecules, $f_A - f_B$ as input to the model, and the output is the whether the molecule $A$ is more or less potent than molecule $B$. The descriptor we use for representing a molecule is a concatenation of 3 512-bit fingerprint representations (Morgan, Atom, Topological Torsion) into one 1536 representation. A multilayer perceptron, implemented via FastAI Tabular framework \cite{howard2018fastai} with default hyperparameters, is used for modelling the data. The choice of molecular descriptor and model was based on empirical performance (Details on the model implementation can be found in Appendix \ref{appendix:ranking}). %The fingerprint is projected onto 20 dimensions using Principal Component Analysis.
-
-To construct a suitable dataset for training the model, the activity data must be reformated into pairs of molecules. This is done by pairing all actives with all inactives, as well as pairing up actives where there is a significant different in bioactivity ($\Delta$pIC50 $>0.5$). This threshold was chosen to match typical assay error, forcing the model to ignore irrelevant experimental noise by ensuring that it is ranking only ligands with demonstrably different bioactivity. The inactive molecules were not paired up between each other as the ranking of inactivity is not relevant to the task at hand and potentially noisy/misleading.
 
 A flipped pairing is included for all pairs so that the dataset is antisymmetric since the model would just predict ones otherwise. Theoretically this method is appealing because it is a natural way of oversampling the low proportion of actives, addressing the problem of dataset imbalance commonly seen in drug discovery classification tasks. Additionally, creating pairs between the actives allows the exploitation of activity information without the noise/difficulty of trying to learn accurate pIC50 values.
 
@@ -71,7 +71,9 @@ A flipped pairing is included for all pairs so that the dataset is antisymmetric
 % \label{table1}
 % \end{table}
 
+
 For performance evaluation, the dataset was randomly split into training (80\%) and testing (20\%) sets (with roughly the same active/inactive proportion) before the molecules are paired up independently within each set. This ensures that there is no cross-talk between the train/test sets where the model could simply memorize the activity of certain compounds. We train the model on pairs of compounds within the training set and evaluate the model on both pairs within the test set as well as pairs between the training and test set.
+
 
 Figure \ref{fig:roc_plot} shows that our binary ranking model achieves an AUC of 0.88 (95\% CI: [0.83,0.96]) in ranking ligands within the test set, and AUC for 0.94 (95\% CI: [0.91,0.98]) where we compare a ligand in the training set against another ligand in the test set; the latter is more relevant as our goal is finding ligands more active than the best incumbent. The 95\% confidence interval is computed using bootstrapping. We also compare our model against ranking compounds using docking scores generated with OpenEye's FRED docking algorithm, which achieves an AUC of 0.72 (95\% CI: [0.722,0.723]) (Details of the docking procedure can be found in Appendix \ref{appendix:docking}). Note that docking does not require ligand bioactivity as training data, thus is not a directly comparison to machine learning.
 
@@ -99,10 +101,10 @@ After designing a well-founded ML scoring model, we must decide on a virtual lib
 
 Instead, we consider a more targeted approach by exploring the chemical space of chemical substructres contained within our initial dataset. Building on rule-based fragmentation methods such as BRICS \cite{Degen2008brics} and CReM \cite{Polishchuk2020Crem}, our general approach is to decompose the existing molecules into a large set of distinct substructure components before enumerating all components with one another, generating a large number of novel and diverse molecules.
 
-\begin{figure}
+\begin{figure}[!th]
     \centering
         \includegraphics[width=0.75\textwidth]{Chapters/Ranking/Figs/library.png}
-        \caption{A schedmatic of the methodology for the library generation process.}
+        \caption{A schematic of the methodology for the library generation process.}
         \label{fig:library}
 \end{figure}
 
@@ -110,7 +112,7 @@ Specifically, we first introduce a set of chemically reasonable perturbations (l
 
 The resulting library of 8.8 million generated molecules is then scored against the top 3 compounds in the training set using the learning-to-rank framework, and the mean score is taken as the final score for each compound.
 
-\begin{figure}
+\begin{figure}[!bh]
     \centering
         \includegraphics[width=0.75\textwidth]{Chapters/Ranking/Figs/fig2.pdf}
         \caption{Our synthesis-driven design model prioritises molecular scaffold that are not in the top hits. (A) The 5 compounds selected by our methodology for synthesis and testing. (B) The top 3 compounds from the training set, with potency and cytotoxicity measurements.}
@@ -119,7 +121,7 @@ The resulting library of 8.8 million generated molecules is then scored against 
 
 Although virtual ``reactions'' were used to generate new molecules, the synthons are not necessarily off-the-shelf nor the reactions optimal. As such, we use a retrosynthesis predictor to triage based on synthetic accessibility. We used Manifold, a platform for synthesis route prediction (\url{https://postera.ai/manifold}), to generate synthetic routes for the model's top-ranked molecules starting from purchasable building blocks. The underlying technology is based on Molecular Transformer, a machine learning model for reaction prediction using sequence-to-sequence translation \citep{yang2019molecular,schwaller2019molecular}. The top 5 molecules from the screening library with <4 steps in their predicted routes were synthesised and tested (Figure \ref{fig:compounds}A). For comparison, the most potent molecules from the training set are shown in Figure \ref{fig:compounds}B. All five compounds have Tanimoto similarity <0.48 (1024-bit ECFP6) to any molecule in the training set, indicating that the model is not merely reproducing molecules similar to the most potent actives but are exploring novel scaffolds.
 
-\begin{figure}
+\begin{figure}[!th]
     \centering
         \includegraphics[width=0.65\textwidth]{Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf}
         \caption{Model generated synthetic schemes that are experimentally validated. Schemes (A)-(C) show the synthesis schemes generated by our model (grey) and experimental schemes (black) for Compounds $\mathbf{1}$-$\mathbf{3}$. The schemes for compounds $\mathbf{4}$ and $\mathbf{5}$ can be found in Appendix \ref{appendix:rxn_schemes}.}
