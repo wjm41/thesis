@@ -3,15 +3,13 @@
 \citation{blakemore2018organic,bostrom2018expanding}
 \citation{segler2017neural,segler2018planning,kishimoto2019depth,schreck2019learning,segler2019world}
 \citation{Coley2018,Johansson2020,Struble2020}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Make - Understanding the Molecular Transformer}{45}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Make - Understanding the Molecular Transformer}{47}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@LN{959}{56}
-\@LN{960}{56}
 \@LN{961}{56}
-\newlabel{ch:transformer}{{5}{45}{Make - Understanding the Molecular Transformer}{chapter.5}{}}
 \@LN{962}{56}
 \@LN{963}{56}
+\newlabel{ch:transformer}{{5}{47}{Make - Understanding the Molecular Transformer}{chapter.5}{}}
 \@LN{964}{56}
 \@LN{965}{56}
 \@LN{966}{56}
@@ -28,16 +26,16 @@
 \@LN{977}{56}
 \@LN{978}{56}
 \@LN{979}{56}
+\@LN{980}{56}
+\@LN{981}{56}
 \citation{Schwaller2019}
 \citation{Vaswani2017}
 \citation{Lowe2012}
 \citation{Jin2017}
 \citation{tetko2020state}
-\newlabel{sec:intro}{{5.1}{46}{Introduction}{section.5.1}{}}
-\@LN{980}{57}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{46}{section.5.1}\protected@file@percent }
-\@LN{981}{57}
+\newlabel{sec:intro}{{5.1}{48}{Introduction}{section.5.1}{}}
 \@LN{982}{57}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{48}{section.5.1}\protected@file@percent }
 \@LN{983}{57}
 \@LN{984}{57}
 \@LN{985}{57}
@@ -71,16 +69,16 @@
 \@LN{1013}{57}
 \@LN{1014}{57}
 \@LN{1015}{57}
+\@LN{1016}{57}
+\@LN{1017}{57}
 \citation{Schwaller2019MolecularPrediction}
 \citation{Vaswani2017}
 \citation{Niu2021AttnReview}
 \citation{Bjerrum2017SMILESaugmentation}
-\@LN{1016}{58}
-\@LN{1017}{58}
 \@LN{1018}{58}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Molecular Transforer}{47}{section.5.2}\protected@file@percent }
 \@LN{1019}{58}
 \@LN{1020}{58}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Molecular Transforer}{49}{section.5.2}\protected@file@percent }
 \@LN{1021}{58}
 \@LN{1022}{58}
 \@LN{1023}{58}
@@ -107,19 +105,19 @@
 \@LN{1044}{58}
 \@LN{1045}{58}
 \@LN{1046}{58}
+\@LN{1047}{58}
+\@LN{1048}{58}
 \citation{Lowe2012}
 \citation{Jin2017}
 \citation{Schwaller2019}
 \citation{Bjerrun2020}
 \citation{Jia2019}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces  \textbf  {Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.\relax }}{48}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:mol_transformer}{{5.1}{48}{\textbf {Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.\relax }{figure.caption.31}{}}
-\@LN{1047}{59}
-\@LN{1048}{59}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces  \textbf  {Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.\relax }}{50}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:mol_transformer}{{5.1}{50}{\textbf {Schematic illustration of the Molecular Transformer.} The inputs to the model are tokenized SMILES of the reactants and reagenst, and the model performs machine translation to predict the most likely product molecule with a probability score.\relax }{figure.caption.32}{}}
 \@LN{1049}{59}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Training data}{48}{subsection.5.2.1}\protected@file@percent }
 \@LN{1050}{59}
 \@LN{1051}{59}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Training data}{50}{subsection.5.2.1}\protected@file@percent }
 \@LN{1052}{59}
 \@LN{1053}{59}
 \@LN{1054}{59}
@@ -140,20 +138,22 @@
 \@LN{1069}{59}
 \@LN{1070}{59}
 \@LN{1071}{59}
-\@LN{1072}{60}
-\@LN{1073}{60}
+\@LN{1072}{59}
+\@LN{1073}{59}
 \@LN{1074}{60}
 \@LN{1075}{60}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Quantitative Interpretation methods}{49}{section.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces  \textbf  {Schematic illustration of the attribution workflow.} (\textbf  {a}) Overview of our workflow to interpret the Molecular Transformer. (\textbf  {b}) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (\textbf  {c}) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.\relax }}{49}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:workflow}{{5.2}{49}{\textbf {Schematic illustration of the attribution workflow.} (\textbf {a}) Overview of our workflow to interpret the Molecular Transformer. (\textbf {b}) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (\textbf {c}) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.\relax }{figure.caption.32}{}}
 \@LN{1076}{60}
 \@LN{1077}{60}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Quantitative Interpretation methods}{51}{section.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces  \textbf  {Schematic illustration of the attribution workflow.} (\textbf  {a}) Overview of our workflow to interpret the Molecular Transformer. (\textbf  {b}) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (\textbf  {c}) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.\relax }}{51}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:workflow}{{5.2}{51}{\textbf {Schematic illustration of the attribution workflow.} (\textbf {a}) Overview of our workflow to interpret the Molecular Transformer. (\textbf {b}) Schematic of how the predicted probability difference between two products are attributed back to the reactant-reagent string in order to interpret the model's understanding of selectivity. The IG attributions below the reactant SMILES are compared to the uniformly distributed probability difference (ua) below. (\textbf {c}) Schematic of how the latent space encoding of reactant-reagent strings are used to infer the learnt similarity between query reactants and those from the training set.\relax }{figure.caption.33}{}}
 \@LN{1078}{60}
 \@LN{1079}{60}
 \@LN{1080}{60}
 \@LN{1081}{60}
 \@LN{1082}{60}
+\@LN{1083}{60}
+\@LN{1084}{60}
 \citation{Sundararajan2017}
 \citation{Ribeiro2016WhyClassifier,Lundberg2017APredictions,Montavon2018MethodsNetworks,Sundararajan2017}
 \citation{Sundararajan2017}
@@ -162,8 +162,6 @@
 \citation{Karpov2020}
 \citation{mudrakarta2018did}
 \citation{McCloskey2019}
-\@LN{1083}{61}
-\@LN{1084}{61}
 \@LN{1085}{61}
 \@LN{1086}{61}
 \@LN{1087}{61}
@@ -186,10 +184,10 @@
 \@LN{1104}{61}
 \@LN{1105}{61}
 \@LN{1106}{61}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Input attribution}{50}{subsection.5.3.1}\protected@file@percent }
-\newlabel{subsec:input_attribution}{{5.3.1}{50}{Input attribution}{subsection.5.3.1}{}}
 \@LN{1107}{61}
 \@LN{1108}{61}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Input attribution}{52}{subsection.5.3.1}\protected@file@percent }
+\newlabel{subsec:input_attribution}{{5.3.1}{52}{Input attribution}{subsection.5.3.1}{}}
 \@LN{1109}{61}
 \@LN{1110}{61}
 \@LN{1111}{61}
@@ -199,8 +197,8 @@
 \@LN{1115}{61}
 \@LN{1116}{61}
 \@LN{1117}{61}
-\@LN{1118}{62}
-\@LN{1119}{62}
+\@LN{1118}{61}
+\@LN{1119}{61}
 \@LN{1120}{62}
 \@LN{1121}{62}
 \@LN{1122}{62}
@@ -219,9 +217,9 @@
 \@LN{1135}{62}
 \@LN{1136}{62}
 \@LN{1137}{62}
-\newlabel{eqn:IG}{{5.2}{51}{Input attribution}{equation.5.3.2}{}}
 \@LN{1138}{62}
 \@LN{1139}{62}
+\newlabel{eqn:IG}{{5.2}{53}{Input attribution}{equation.5.3.2}{}}
 \@LN{1140}{62}
 \@LN{1141}{62}
 \@LN{1142}{62}
@@ -235,10 +233,10 @@
 \@LN{1150}{62}
 \@LN{1151}{62}
 \@LN{1152}{62}
+\@LN{1153}{62}
+\@LN{1154}{62}
 \citation{tetko2002}
 \citation{Allen2020}
-\@LN{1153}{63}
-\@LN{1154}{63}
 \@LN{1155}{63}
 \@LN{1156}{63}
 \@LN{1157}{63}
@@ -252,10 +250,10 @@
 \@LN{1165}{63}
 \@LN{1166}{63}
 \@LN{1167}{63}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Training data attribution}{52}{subsection.5.3.2}\protected@file@percent }
-\newlabel{subsec:data_attribution}{{5.3.2}{52}{Training data attribution}{subsection.5.3.2}{}}
 \@LN{1168}{63}
 \@LN{1169}{63}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Training data attribution}{54}{subsection.5.3.2}\protected@file@percent }
+\newlabel{subsec:data_attribution}{{5.3.2}{54}{Training data attribution}{subsection.5.3.2}{}}
 \@LN{1170}{63}
 \@LN{1171}{63}
 \@LN{1172}{63}
@@ -274,11 +272,11 @@
 \@LN{1185}{63}
 \@LN{1186}{63}
 \@LN{1187}{63}
+\@LN{1188}{63}
+\@LN{1189}{63}
 \citation{Lluch1993}
 \citation{Lluch1993}
 \citation{Clayden2012}
-\@LN{1188}{64}
-\@LN{1189}{64}
 \@LN{1190}{64}
 \@LN{1191}{64}
 \@LN{1192}{64}
@@ -291,9 +289,9 @@
 \@LN{1199}{64}
 \@LN{1200}{64}
 \@LN{1201}{64}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Investigation of Specific Reaction Classes}{53}{section.5.4}\protected@file@percent }
 \@LN{1202}{64}
 \@LN{1203}{64}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Investigation of Specific Reaction Classes}{55}{section.5.4}\protected@file@percent }
 \@LN{1204}{64}
 \@LN{1205}{64}
 \@LN{1206}{64}
@@ -305,15 +303,15 @@
 \@LN{1212}{64}
 \@LN{1213}{64}
 \@LN{1214}{64}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Epoxidation}{53}{subsection.5.4.1}\protected@file@percent }
 \@LN{1215}{64}
 \@LN{1216}{64}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Epoxidation}{55}{subsection.5.4.1}\protected@file@percent }
 \@LN{1217}{64}
+\@LN{1218}{64}
+\@LN{1219}{64}
 \citation{Clayden2012}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces  \textbf  {IG attributions highlight correct model reasoning.} (\textbf  {a}) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (\textbf  {b}) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature\nobreakspace  {}\cite  {Lluch1993}\relax }}{54}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:epoxide}{{5.3}{54}{\textbf {IG attributions highlight correct model reasoning.} (\textbf {a}) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (\textbf {b}) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature~\cite {Lluch1993}\relax }{figure.caption.33}{}}
-\@LN{1218}{65}
-\@LN{1219}{65}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces  \textbf  {IG attributions highlight correct model reasoning.} (\textbf  {a}) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (\textbf  {b}) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature\nobreakspace  {}\cite  {Lluch1993}\relax }}{56}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:epoxide}{{5.3}{56}{\textbf {IG attributions highlight correct model reasoning.} (\textbf {a}) The model correctly predicts the product of a typical epoxidation reaction, and shows significant positive attributions to the two methyl group that are responsible for the selectivity. (\textbf {b}) We validate the model's knowledge on two unseen epoxidation reactions from chemical literature~\cite {Lluch1993}\relax }{figure.caption.34}{}}
 \@LN{1220}{65}
 \@LN{1221}{65}
 \@LN{1222}{65}
@@ -327,10 +325,10 @@
 \@LN{1230}{65}
 \@LN{1231}{65}
 \@LN{1232}{65}
+\@LN{1233}{65}
+\@LN{1234}{65}
 \citation{Clayden2012}
 \citation{grubbs}
-\@LN{1233}{66}
-\@LN{1234}{66}
 \@LN{1235}{66}
 \@LN{1236}{66}
 \@LN{1237}{66}
@@ -342,9 +340,9 @@
 \@LN{1243}{66}
 \@LN{1244}{66}
 \@LN{1245}{66}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Diels-Alder}{55}{subsection.5.4.2}\protected@file@percent }
 \@LN{1246}{66}
 \@LN{1247}{66}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Diels-Alder}{57}{subsection.5.4.2}\protected@file@percent }
 \@LN{1248}{66}
 \@LN{1249}{66}
 \@LN{1250}{66}
@@ -364,14 +362,14 @@
 \@LN{1264}{66}
 \@LN{1265}{66}
 \@LN{1266}{66}
+\@LN{1267}{66}
+\@LN{1268}{66}
 \citation{Friedel1877}
 \citation{fc_para1981}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces  \textbf  {Data attribution explains erroneous predictions.} (\textbf  {a}) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (\textbf  {b}) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.\relax }}{56}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:diels_alder}{{5.4}{56}{\textbf {Data attribution explains erroneous predictions.} (\textbf {a}) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (\textbf {b}) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.\relax }{figure.caption.34}{}}
-\@LN{1267}{67}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Friedel-Crafts Acylation}{56}{subsection.5.4.3}\protected@file@percent }
-\@LN{1268}{67}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces  \textbf  {Data attribution explains erroneous predictions.} (\textbf  {a}) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (\textbf  {b}) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.\relax }}{58}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:diels_alder}{{5.4}{58}{\textbf {Data attribution explains erroneous predictions.} (\textbf {a}) The model makes an obviously incorrect prediction on a typical example of a Diels-Alder reaction with challenging selectivity. (\textbf {b}) Attribution to the USPTO training data shows that the model either completely fails to recognize Diels-Alder reactions or that no Diels-Alder reaction is present in the dataset.\relax }{figure.caption.35}{}}
 \@LN{1269}{67}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Friedel-Crafts Acylation}{58}{subsection.5.4.3}\protected@file@percent }
 \@LN{1270}{67}
 \@LN{1271}{67}
 \@LN{1272}{67}
@@ -379,10 +377,10 @@
 \@LN{1274}{67}
 \@LN{1275}{67}
 \@LN{1276}{67}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces  \textbf  {IG attributions reveal incorrect reasoning and guide the design of adversarial examples.} (\textbf  {a}) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (\textbf  {b}) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.\relax }}{57}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:sear}{{5.5}{57}{\textbf {IG attributions reveal incorrect reasoning and guide the design of adversarial examples.} (\textbf {a}) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (\textbf {b}) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.\relax }{figure.caption.35}{}}
-\@LN{1277}{68}
-\@LN{1278}{68}
+\@LN{1277}{67}
+\@LN{1278}{67}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces  \textbf  {IG attributions reveal incorrect reasoning and guide the design of adversarial examples.} (\textbf  {a}) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (\textbf  {b}) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.\relax }}{59}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:sear}{{5.5}{59}{\textbf {IG attributions reveal incorrect reasoning and guide the design of adversarial examples.} (\textbf {a}) The model correctly predicts the major para product of a typical Friedel-Crafts acylation, but low attribution is given to the para-directing -F group. (\textbf {b}) The model is fooled into incorrectly predicting the para product when the -F is replaced by meta-directing groups. The low attributions given to the directing groups indicate that the model has not learnt their importance.\relax }{figure.caption.36}{}}
 \@LN{1279}{68}
 \@LN{1280}{68}
 \@LN{1281}{68}
@@ -390,10 +388,10 @@
 \@LN{1283}{68}
 \@LN{1284}{68}
 \@LN{1285}{68}
-\@LN{1286}{69}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Revealing the Effect of Bias through Artificial Datasets}{58}{section.5.5}\protected@file@percent }
-\@LN{1287}{69}
+\@LN{1286}{68}
+\@LN{1287}{68}
 \@LN{1288}{69}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Revealing the Effect of Bias through Artificial Datasets}{60}{section.5.5}\protected@file@percent }
 \@LN{1289}{69}
 \@LN{1290}{69}
 \@LN{1291}{69}
@@ -401,19 +399,19 @@
 \@LN{1293}{69}
 \@LN{1294}{69}
 \@LN{1295}{69}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces  \textbf  {The number of para Friedel-Crafts acylation reactions in USPTO far outweigh those of meta or ortho reactions.} Overlaps in the Venn diagram denotes cases where the benzene has more than 1 substituent.\relax }}{58}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:venn_friedel}{{5.6}{58}{\textbf {The number of para Friedel-Crafts acylation reactions in USPTO far outweigh those of meta or ortho reactions.} Overlaps in the Venn diagram denotes cases where the benzene has more than 1 substituent.\relax }{figure.caption.36}{}}
 \@LN{1296}{69}
 \@LN{1297}{69}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces  \textbf  {The number of para Friedel-Crafts acylation reactions in USPTO far outweigh those of meta or ortho reactions.} Overlaps in the Venn diagram denotes cases where the benzene has more than 1 substituent.\relax }}{60}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:venn_friedel}{{5.6}{60}{\textbf {The number of para Friedel-Crafts acylation reactions in USPTO far outweigh those of meta or ortho reactions.} Overlaps in the Venn diagram denotes cases where the benzene has more than 1 substituent.\relax }{figure.caption.37}{}}
 \@LN{1298}{69}
 \@LN{1299}{69}
 \@LN{1300}{69}
 \@LN{1301}{69}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Artificial dataset construction}{58}{subsection.5.5.1}\protected@file@percent }
 \@LN{1302}{69}
 \@LN{1303}{69}
-\@LN{1304}{70}
-\@LN{1305}{70}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Artificial dataset construction}{60}{subsection.5.5.1}\protected@file@percent }
+\@LN{1304}{69}
+\@LN{1305}{69}
 \@LN{1306}{70}
 \@LN{1307}{70}
 \@LN{1308}{70}
@@ -434,23 +432,23 @@
 \@LN{1323}{70}
 \@LN{1324}{70}
 \@LN{1325}{70}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf  {Number of meta-/para-directing reactions in the artificial datasets.}\relax }}{59}{table.caption.37}\protected@file@percent }
-\newlabel{table:synth_datasets}{{5.1}{59}{\textbf {Number of meta-/para-directing reactions in the artificial datasets.}\relax }{table.caption.37}{}}
 \@LN{1326}{70}
 \@LN{1327}{70}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf  {Number of meta-/para-directing reactions in the artificial datasets.}\relax }}{61}{table.caption.38}\protected@file@percent }
+\newlabel{table:synth_datasets}{{5.1}{61}{\textbf {Number of meta-/para-directing reactions in the artificial datasets.}\relax }{table.caption.38}{}}
 \@LN{1328}{70}
 \@LN{1329}{70}
 \@LN{1330}{70}
-\@LN{1331}{71}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Model performance on artificial datasets}{60}{subsection.5.5.2}\protected@file@percent }
-\@LN{1332}{71}
+\@LN{1331}{70}
+\@LN{1332}{70}
 \@LN{1333}{71}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Model performance on artificial datasets}{62}{subsection.5.5.2}\protected@file@percent }
 \@LN{1334}{71}
 \@LN{1335}{71}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces  \textbf  {Biased training data leads to biased predictions from the Molecular Transformer.} The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.\relax }}{60}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:hamburger_plot}{{5.7}{60}{\textbf {Biased training data leads to biased predictions from the Molecular Transformer.} The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.\relax }{figure.caption.38}{}}
 \@LN{1336}{71}
 \@LN{1337}{71}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces  \textbf  {Biased training data leads to biased predictions from the Molecular Transformer.} The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.\relax }}{62}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:hamburger_plot}{{5.7}{62}{\textbf {Biased training data leads to biased predictions from the Molecular Transformer.} The figure shows the proportion of para (solid line) and meta (dashed line) predictions on a balanced test set as a function of the number of training epochs for different biased training sets. The error bars shown indicate the standard deviation in the results from training an ensemble of 10 randomly initialized models. The proportion of meta and para predictions does not always add up to 1, because it takes a number of iterations for the model to learn the SMILES syntax and we discount invalid predictions.\relax }{figure.caption.39}{}}
 \@LN{1338}{71}
 \@LN{1339}{71}
 \@LN{1340}{71}
@@ -460,12 +458,12 @@
 \@LN{1344}{71}
 \@LN{1345}{71}
 \@LN{1346}{71}
+\@LN{1347}{71}
+\@LN{1348}{71}
 \citation{Stanovsky2019GenderBias}
 \citation{Mayr2018compare}
 \citation{Bajusz2015Tanimoto}
 \citation{Schneider2015rxnfp}
-\@LN{1347}{72}
-\@LN{1348}{72}
 \@LN{1349}{72}
 \@LN{1350}{72}
 \@LN{1351}{72}
@@ -473,9 +471,9 @@
 \@LN{1353}{72}
 \@LN{1354}{72}
 \@LN{1355}{72}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Uncovering Scaffold bias}{61}{section.5.6}\protected@file@percent }
 \@LN{1356}{72}
 \@LN{1357}{72}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Uncovering Scaffold bias}{63}{section.5.6}\protected@file@percent }
 \@LN{1358}{72}
 \@LN{1359}{72}
 \@LN{1360}{72}
@@ -499,12 +497,12 @@
 \@LN{1378}{72}
 \@LN{1379}{72}
 \@LN{1380}{72}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces  \textbf  {Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets.} $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.\relax }}{62}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:sibling}{{5.8}{62}{\textbf {Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets.} $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.\relax }{figure.caption.39}{}}
-\@LN{1381}{73}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Tanimoto-Splitting USPTO}{62}{subsection.5.6.1}\protected@file@percent }
-\@LN{1382}{73}
+\@LN{1381}{72}
+\@LN{1382}{72}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces  \textbf  {Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets.} $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.\relax }}{64}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:sibling}{{5.8}{64}{\textbf {Randomly splitting USPTO results in a large number of near-identical reactions shared between train/test sets.} $78\%$ of reactions in the test set have products that are within Tanimoto similarity $0.5$ of a product in the training set following a 50:50 random split. By eye it can be seen that many reactions with similar products (differences are highlighted by shading) have similar reagents and follow near-identical reaction mechanisms. This intuition is confirmed by the similarly high similarity of the reaction difference fingerprints from the reactions. The equivalent proportions are $93\%$ and $57\%$ for Tanimoto similarity $>0.4$ and $>0.6$, respectively.\relax }{figure.caption.40}{}}
 \@LN{1383}{73}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Tanimoto-Splitting USPTO}{64}{subsection.5.6.1}\protected@file@percent }
 \@LN{1384}{73}
 \@LN{1385}{73}
 \@LN{1386}{73}
@@ -514,23 +512,23 @@
 \@LN{1390}{73}
 \@LN{1391}{73}
 \@LN{1392}{73}
+\@LN{1393}{73}
+\@LN{1394}{73}
 \citation{Coley19WLDN5}
-\@LN{1393}{74}
-\@LN{1394}{74}
 \@LN{1395}{74}
 \@LN{1396}{74}
 \@LN{1397}{74}
 \@LN{1398}{74}
 \@LN{1399}{74}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces  \textbf  {Tanimoto splitting minimally affects reaction template distribution.} (\textbf  {a} - \textbf  {b}) The absolute occurrence (\textbf  {a}) and fractional occurrence (\textbf  {b}) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (\textbf  {c} - \textbf  {d}) The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (\textbf  {c}) to 0.4 (\textbf  {d}), the deviation in frequency of the test set reactions from the training set increases.\relax }}{63}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:rxn_dist}{{5.9}{63}{\textbf {Tanimoto splitting minimally affects reaction template distribution.} (\textbf {a} - \textbf {b}) The absolute occurrence (\textbf {a}) and fractional occurrence (\textbf {b}) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (\textbf {c} - \textbf {d}) The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (\textbf {c}) to 0.4 (\textbf {d}), the deviation in frequency of the test set reactions from the training set increases.\relax }{figure.caption.40}{}}
 \@LN{1400}{74}
 \@LN{1401}{74}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces  \textbf  {Tanimoto splitting minimally affects reaction template distribution.} (\textbf  {a} - \textbf  {b}) The absolute occurrence (\textbf  {a}) and fractional occurrence (\textbf  {b}) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (\textbf  {c} - \textbf  {d}) The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (\textbf  {c}) to 0.4 (\textbf  {d}), the deviation in frequency of the test set reactions from the training set increases.\relax }}{65}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:rxn_dist}{{5.9}{65}{\textbf {Tanimoto splitting minimally affects reaction template distribution.} (\textbf {a} - \textbf {b}) The absolute occurrence (\textbf {a}) and fractional occurrence (\textbf {b}) of reaction templates in train/valid/test sets of USPTO from a random split. The distribution of test set reactions closely resembles that of the validation set. (\textbf {c} - \textbf {d}) The fractional occurrence of reaction templates in train/valid/test sets of USPTO from two different Tanimoto splits using the Morgan fingerprint of the reaction product. As the Tanimoto similarity threshold value is tightened from 0.6 (\textbf {c}) to 0.4 (\textbf {d}), the deviation in frequency of the test set reactions from the training set increases.\relax }{figure.caption.41}{}}
 \@LN{1402}{74}
 \@LN{1403}{74}
+\@LN{1404}{74}
+\@LN{1405}{74}
 \citation{Coley19WLDN5}
-\@LN{1404}{75}
-\@LN{1405}{75}
 \@LN{1406}{75}
 \@LN{1407}{75}
 \@LN{1408}{75}
@@ -553,9 +551,9 @@
 \@LN{1425}{75}
 \@LN{1426}{75}
 \@LN{1427}{75}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Model performance on Tanimoto-split USPTO}{64}{subsection.5.6.2}\protected@file@percent }
 \@LN{1428}{75}
 \@LN{1429}{75}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Model performance on Tanimoto-split USPTO}{66}{subsection.5.6.2}\protected@file@percent }
 \@LN{1430}{75}
 \@LN{1431}{75}
 \@LN{1432}{75}
@@ -564,17 +562,17 @@
 \@LN{1435}{75}
 \@LN{1436}{75}
 \@LN{1437}{75}
+\@LN{1438}{75}
+\@LN{1439}{75}
 \citation{bradshaw2019generative}
 \citation{guan_coley_robust}
 \citation{sacha2020molecule}
-\@LN{1438}{76}
-\@LN{1439}{76}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces  \textbf  {Reaction prediction models are strongly affected by scaffold bias.} The performance of the Molecular Transformer and WLDN5 on various USPTO train/test splits are shown, with the accuracy of the best-performing model highlighted in bold.\relax }}{65}{table.caption.41}\protected@file@percent }
-\newlabel{table:tanimoto}{{5.2}{65}{\textbf {Reaction prediction models are strongly affected by scaffold bias.} The performance of the Molecular Transformer and WLDN5 on various USPTO train/test splits are shown, with the accuracy of the best-performing model highlighted in bold.\relax }{table.caption.41}{}}
 \@LN{1440}{76}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Discussion}{65}{section.5.7}\protected@file@percent }
 \@LN{1441}{76}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces  \textbf  {Reaction prediction models are strongly affected by scaffold bias.} The performance of the Molecular Transformer and WLDN5 on various USPTO train/test splits are shown, with the accuracy of the best-performing model highlighted in bold.\relax }}{67}{table.caption.42}\protected@file@percent }
+\newlabel{table:tanimoto}{{5.2}{67}{\textbf {Reaction prediction models are strongly affected by scaffold bias.} The performance of the Molecular Transformer and WLDN5 on various USPTO train/test splits are shown, with the accuracy of the best-performing model highlighted in bold.\relax }{table.caption.42}{}}
 \@LN{1442}{76}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Discussion}{67}{section.5.7}\protected@file@percent }
 \@LN{1443}{76}
 \@LN{1444}{76}
 \@LN{1445}{76}
@@ -588,8 +586,8 @@
 \@LN{1453}{76}
 \@LN{1454}{76}
 \@LN{1455}{76}
-\@LN{1456}{77}
-\@LN{1457}{77}
+\@LN{1456}{76}
+\@LN{1457}{76}
 \@LN{1458}{77}
 \@LN{1459}{77}
 \@LN{1460}{77}
@@ -610,8 +608,10 @@
 \@LN{1475}{77}
 \@LN{1476}{77}
 \@LN{1477}{77}
+\@LN{1478}{77}
+\@LN{1479}{77}
 \@setckpt{Chapters/Transformer/transformer}{
-\setcounter{page}{67}
+\setcounter{page}{69}
 \setcounter{equation}{3}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -631,7 +631,7 @@
 \setcounter{@pps}{0}
 \setcounter{@ppsavesec}{0}
 \setcounter{@ppsaveapp}{0}
-\setcounter{linenumber}{1478}
+\setcounter{linenumber}{1480}
 \setcounter{LN@truepage}{78}
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}
