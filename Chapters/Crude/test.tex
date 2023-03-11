@@ -7,11 +7,9 @@ Recent work in developing nanomolar-scale high-throughput chemistry seeks to add
 
 The drawback, however, is that it is rarely possible to perform purification for reactions conducted at the nanomole scale. The output of these reactions are therefore a mixture of chemical reactants, reagents, and products konwn as a crude reaction mixture. These reaction mixtures can still be assayed for measuring biological activity, but there will necessarily be additional noise as detected potency will be influenced by variations in reaction yield, or interference from the reactants. Nevertheless, nanomolar-scale synthesis combined with biochemical screening of crude reaction mixtures have been exploited for the discovery of potent inhibitors for several kinases \cite{Gesmundo2018nanosar, Gehrtz2022nanomolar}, illustrating the potential of this approach for accelerating hit-to-lead drug design.
 
-A related approach for high-throughput synthesis are DNA-encoded libraries (DEL) \cite{GirondaMartinez2021DNALibrary}. By linking small molecule building blocks with DNA fragments before chemically enumerating the building blocks with one another, large and diverse combinatorial libraries can be generated. These libraries can be biochemically screened in crude as potent compounds which bind to the protein target can be identified by their DNA tags using high-throughput sequencing methods. There has been recent success in training ML models on DEL bioactivity screen for hit-finding \cite{McCloskey2020DNALibrary}, and the success of this approach suggest that applying ML to nanomolar screening data may also be possible.
+A related method for high-throughput synthesis is DNA-encoded libraries (DEL) \cite{GirondaMartinez2021DNALibrary}. By linking small molecule building blocks with DNA fragments before chemically enumerating the building blocks with one another, large and diverse combinatorial libraries can be generated. These libraries can be biochemically screened in crude because potent compounds which bind to the protein target can be identified by their DNA tags using high-throughput sequencing methods. There has been recent success in training ML models on DEL bioactivity screen for hit-finding \cite{McCloskey2020DNALibrary, Lim2022DELCountML}, and the success of this approach suggest that applying ML to nanomolar screening data may also be possible.
 
-In this chapter, we assess the utility of training ML models on bioacitvity data from nanomolar-scale high-throughput screening of crude reaction mixtures.
-
-This is a novel assay technique delivering noisy data which has not been assessed for machine learning. Leave-one-out validation on the training data correctly identified false negatives, and a prospective virtual screen of EnamineREAL with the trained models returned top hits with similar potency and better pharmacokinetic properties.
+In this chapter, we investigate the application of ML models on bioacitvity data from nanomolar-scale high-throughput screening of crude reaction mixtures against SARS-CoV-2 Mpro. We show that ML models can be trained on this noisy data to identify false negatives within the dataset, and that these models can be used to identify novel hits in a prospective virtual screen.
 
 % Such derivatization is preferably achieved toward the end of the synthesis route, to maximize the utility of a single intermediate. This approach can be readily scaled to plate-based format, where the starting material is reacted with a different second reagent in each well of the plate. Provided there is no interference from the other reagents in the reaction, this significantly increases the speed, reduces chemical waste and lowers the cost of initial SAR exploration. The plate-based format allows closer integration of chemical and biological experiments but also comes with the limitation that reactions conducted at the nanomole scale are rarely appropriate for purification.
 
@@ -35,7 +33,7 @@ This is a novel assay technique delivering noisy data which has not been assesse
         \label{fig:leave-one-out}
     \end{figure}
 
-Long discussion on the regressed performance. Disagreements between RF and GP model?
+Some discussion on the regressed performance. Disagreements between RF and GP model?
 
 < Figure of the false negative >
 
@@ -56,7 +54,7 @@ Looking forward, we test the ability of the trained models to extrapolate to nov
 
 We virtually enumerate primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from the crude activity screening. This results in a library of ~62,800 amides which were scored by the trained GP and RF models, and 
 
-filtered for structural alerts and filtering out molecules with more than one chiral center to avoid complications in assessing potency.
+filtered for structural alerts and filtering out molecules with more than one chiral center to avoid complications in assessing potency. 58082.
 
 we select the top 20 compounds with high predicted activity for both the GP and RF for synthesis and assaying to obtain IC50 values. 
 
