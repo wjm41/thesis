@@ -17,7 +17,7 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 
 % However, one overlooked area in this development cycle is ML applied as a filtering protocol for initial lead discovery, despite reports that ML methods often implicitly identify false positives and false negatives.6,7 Crude activity screening (assuming some level of introduction by Mihajlo is given previously) is a logical area to apply such techniques as noise and false hits/misses play a substantial role in obscuring valuable data. We hypothesized that combining two robust ML methodologies, Gaussian Processes (GPs) and Random Forests (RFs), could be used to identify hidden gems (false negatives) and overlooked molecules (low activity positives). Both GPs and RFs have been utilized in numerous chemoinformatics tasks, with several precedents in pharmaceutics development, making both ideal for predicting activity of novel compounds.8-12 Given the difference in approach to modeling for GPs and RFs, it was hypothesized that a combination of the two would lead to a highly robust framework; a compound predicted to have low activity from both a GP and a RF is likely to be inactive and likewise a compound with high predicted activity from both the GP and RF is likely potent.
 
-\begin{figure}
+\begin{figure}[!t]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/schematic.pdf}
     \caption{Schematic of workflow. Try to include MAT-POS-4223bc15-21 in the figure. }
@@ -26,25 +26,26 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 
 \section{Modelling high-throughput crude screening data}
 
-\begin{figure}
+\begin{figure}[!t]
     \centering
-    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
-    \caption{Leave one out regression.}
-    \label{fig:leave-one-out}
-\end{figure}
-
-As the COVID Moonshot intiative for designing SARS-CoV-2 Mpro inhibitors progressed, multiple chemically diverse molecular series were investigated simultaneously in order to minimise the risk of failure. One of the series explored was MAT-POS-4223bc15-21, whose molecular structure had the potential for optimisation towards targeting the P4 pocket of Mpro. In order to rapidly evaluate the SAR of this series, nanomolar high-throughput chemistry was used to enumerate a library of 300 amine building blocks via amide coupling. Yield estimation via integration of UV spectra showed 151 of the library yielded >30\% of the desired product, and the crude reaction mixtures were then assayed against Mpro (Experimental details can be found in Appendix \ref{appendix:mpro_assay} \& \ref{appendix:amide_coupling}).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
+    \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/yield_vs_activity.pdf}
     \caption{Yield-Activity graph (\# TODO).}
     \label{fig:yield_activity}
 \end{figure}
 
+As the COVID Moonshot intiative for designing SARS-CoV-2 Mpro inhibitors progressed, multiple chemically diverse molecular series were investigated simultaneously in order to minimise the risk of failure. One of the series explored was MAT-POS-4223bc15-21, whose molecular structure had the potential for optimisation towards targeting the P4 pocket of Mpro. In order to rapidly evaluate the SAR of this series, nanomolar high-throughput chemistry was used to enumerate a library of 300 amine building blocks via amide coupling. Yield estimation via integration of UV spectra showed 151 of the library yielded >30\% of the desired product, and the crude reaction mixtures were then assayed against Mpro (Experimental details can be found in Appendix \ref{appendix:mpro_assay} \& \ref{appendix:amide_coupling}).
+
 Although the bioactivity measured in crude is obviously a strong indicator of the potency of compounds, it is also influenced by the yield of the crude reaction mixture. Inspection of the crude activity data reveals a clear relationship (spearman correlation $\rho = 0.54$) between the measured activity and the yield of the crude reaction mixture (Figure \ref{fig:yield_activity}). Compounds with high yields tend to have strong inhibition, while many compounds with low measured yields have no activity. This means that potentially potent inhibitors may be missed due to low yield from the amide coupling reaction, and this confounding variable adds an additional difficulty to the already challenging task of modelling bioactivity with machine learning. 
 
 We model the bioactivity data using two different ML models, taking the mean of their predictions as the final output, to avoid overfitting to the small number of datapoints in this dataset. The two models are: (A) a random forest (RF) model that takes the morgan fingerprint representation of the amide product in the crude reaction mixture, and (B) a gaussian process (GP) model that takes the morgan fingerprint representation of the \textit{amine} building block as that is the only varying component in the reactants of the crude reaction mixture. Both models aim to predict the measured activity of the crude reaction mixture.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/rf_loo.pdf}
+    \caption{Leave one out regression.}
+    \label{fig:leave-one-out}
+\end{figure}
+
 
 Due to the small size of this dataset, we also choose to use a leave-one-out cross-validation approach to train the models. This means that the model is trained on all but one datapoint, and then evaluated on the remaining datapoint. This is repeated for each datapoint in the dataset (Figure \ref{fig:leave-one-out}). Overall, the model predictions moderately correlate with the experimental measurements (spearman correlation $\rho =0.64$) and clearly identifies distinct clusters of high and low activity compounds. 
 
@@ -54,7 +55,7 @@ While the model is generally quite conservative in its predictions, it does iden
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/false_negative.pdf}
     \caption{False negative.}
     \label{fig:false_negative}
 \end{figure}
@@ -63,7 +64,7 @@ While the model is generally quite conservative in its predictions, it does iden
 
 Having demonstrated that our ML model can meaningfully learn insights from crude activity data and identify false negatives, we further investigate whether it can extrapolate to novel compounds and be used for virtual screening. The ultimate aim of the SAR exploration of MAT-POS-4223bc15-21 is to optimise potency, and by virutally screening commercially available amine building blocks for the amide coupling reaction we may be able to identify novel compounds with even higher potency.
 
-We construct the screening library by virtually enumerating primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from MAT-POS-4223bc15-21, resulting in a library of ~62,800 amides. These compounds were then filtered for structural alerts and molecules with more than one chiral center were removed to avoid complications in assessing potency. This leaves ~58000 compounds which was scored by the trained GP and RF models, and the top 20 (``ML'') compounds with high mean predicted activity were selected for synthesis, purification, and assaying to obtain IC50 values.
+We construct the screening library by virtually enumerating primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from MAT-POS-4223bc15-21, resulting in a library of \~62,800 amides. These compounds were then filtered for structural alerts and molecules with more than one chiral center were removed to avoid complications in assessing potency. This leaves \~58000 compounds which was scored by the trained GP and RF models, and the top 20 (``ML'') compounds with high mean predicted activity were selected for synthesis, purification, and assaying to obtain IC50 values.
 
 % Discuss compounds liked by the model?
 
@@ -71,16 +72,16 @@ In paralell, the top 20 (``crude'') compounds with the highest measured crude ac
 
 Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref{fig:strip}), with several compounds improving IC50 by up-to 300-fold on MAT-POS-4223bc15-21 (up-to 3-fold on the corresponding methyl-amide). The top 2 ML compounds showed promising average IC50 values of 53nM (ASAP-0000169) and 75nM (ASAP-0000211), respectively (Figure \ref{fig:ml_vs_crude}). Although the top 2 most potent crude compounds were  more potent with IC50 = 28nM (ASAP-0000221) and IC50 = 34nM (ASAP-0000164), they contain aniline motifs that are generally avoided due to their propensity for the formation of reactive metabolites \cite{Stepan2011aniline}. The top 2 crude compounds without the aforementioned motif had IC50s of 46nM (ASAP-0000155) and 64nM (ASAP-0000225), which are similar to the top 2 ML compounds.
 
-\begin{figure}
+\begin{figure}[!t]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
     \caption{Plot of mean IC50 values.}
     \label{fig:strip}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!t]
     \centering
-    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/ml_vs_crude.pdf}
     \caption{Comparison of top ML compounds vs top crude compounds.}
     \label{fig:ml_vs_crude}
 \end{figure}
