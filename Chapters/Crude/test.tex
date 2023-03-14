@@ -19,28 +19,28 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 
 \begin{figure}
     \centering
-             \includegraphics[width=\textwidth]{Chapters/Crude/Figs/schematic.pdf}
-        \caption{Schematic of workflow. Try to include MAT-POS-4223bc15-21 in the figure. }
-        \label{fig:schematic}
-    \end{figure}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/schematic.pdf}
+    \caption{Schematic of workflow. Try to include MAT-POS-4223bc15-21 in the figure. }
+    \label{fig:schematic}
+\end{figure}
 
 \section{Modelling high-throughput crude screening data}
 
 \begin{figure}
     \centering
-             \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
-        \caption{Leave one out regression.}
-        \label{fig:leave-one-out}
-    \end{figure}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
+    \caption{Leave one out regression.}
+    \label{fig:leave-one-out}
+\end{figure}
 
 As the COVID Moonshot intiative for designing SARS-CoV-2 Mpro inhibitors progressed, multiple chemically diverse molecular series were investigated simultaneously in order to minimise the risk of failure. One of the series explored was MAT-POS-4223bc15-21, whose molecular structure had the potential for optimisation towards targeting the P4 pocket of Mpro. In order to rapidly evaluate the SAR of this series, nanomolar high-throughput chemistry was used to enumerate a library of 300 amine building blocks via amide coupling. Yield estimation via integration of UV spectra showed 151 of the library yielded >30\% of the desired product, and the crude reaction mixtures were then assayed against Mpro (Experimental details can be found in Appendix \ref{appendix:mpro_assay} \& \ref{appendix:amide_coupling}).
 
 \begin{figure}
     \centering
-             \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
-        \caption{Yield-Activity graph (\# TODO).}
-        \label{fig:yield_activity}
-    \end{figure}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/rf.pdf}
+    \caption{Yield-Activity graph (\# TODO).}
+    \label{fig:yield_activity}
+\end{figure}
 
 Although the bioactivity measured in crude is obviously a strong indicator of the potency of compounds, it is also influenced by the yield of the crude reaction mixture. Inspection of the crude activity data reveals a clear relationship (spearman correlation $\rho = 0.54$) between the measured activity and the yield of the crude reaction mixture (Figure \ref{fig:yield_activity}). Compounds with high yields tend to have strong inhibition, while many compounds with low measured yields have no activity. This means that potentially potent inhibitors may be missed due to low yield from the amide coupling reaction, and this confounding variable adds an additional difficulty to the already challenging task of modelling bioactivity with machine learning. 
 
@@ -48,9 +48,16 @@ We model the bioactivity data using two different ML models, taking the mean of 
 
 Due to the small size of this dataset, we also choose to use a leave-one-out cross-validation approach to train the models. This means that the model is trained on all but one datapoint, and then evaluated on the remaining datapoint. This is repeated for each datapoint in the dataset (Figure \ref{fig:leave-one-out}). Overall, the model predictions moderately correlate with the experimental measurements (spearman correlation $\rho =0.64$) and clearly identifies distinct clusters of high and low activity compounds. 
 
-While the model is generally quite conservative in its predictions, it does identify a number of compounds with high predicted activity that are not active in the crude assay. We suspected that these were false negatives due to either the low yield of the crude reaction mixture or some other form of experimental noise. We identified 5 compounds with the largest positive difference between predicted and measured activity and re-synthesized, purified, and re-tested them with full dose-response curves to obtain IC50 inhibition values. This revealed that one of them was indeed potent with IC50 = $0.113\pm0.046$\uM (ASAP-0000204).
+While the model is generally quite conservative in its predictions, it does identify a number of compounds with high predicted activity that are not active in the crude assay. We suspected that these were false negatives due to either the low yield of the crude reaction mixture or some other form of experimental noise. We identified 5 compounds with the largest positive difference between predicted and measured activity and re-synthesized, purified, and re-tested them with full dose-response curves to obtain IC50 inhibition values. This revealed that one of them was indeed potent with IC50 = $0.113\pm0.046$\uM (ASAP-0000204) (Figure \ref{fig:false_negative}).
 
-< Figure of the false negative > \# TODO
+% discuss false positives?
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+    \caption{False negative.}
+    \label{fig:false_negative}
+\end{figure}
 
 \section{Prospective Virtual Screening}
 
@@ -62,23 +69,31 @@ We construct the screening library by virtually enumerating primary and secondar
 
 In paralell, the top 20 (``crude'') compounds with the highest measured crude activity from the initial 300 amides were also selected for resynthesis. Structures of the resynthesised compounds bound to Mpro were obtained, verifying that the extended compounds indeed adopt a similar binding mode to the parent, extending towards P3/P5 instead of the P4 pocket nevertheless forming new interactions with Mpro (Figure 2E).
 
-Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref{fig:strip}), with several compounds improving IC50 by up-to 300-fold on MAT-POS-4223bc15-21 (up-to 3-fold on the corresponding methyl-amide).
-
-The top 2 ML compounds showed promising average IC50 values of 0.0525\uM (ASAP-0000169) and 0.075\uM (ASAP-0000211), respectively. Although the top 2 most potent crude compounds were slightly more potent with IC50 = 0.034\uM (ASAP-0000221) and IC50 = 0.064\uM (ASAP-0000164), they contain the toxic benzene-1,4-diamine motif that is generally avoided \cite{Kumar2011diallinine}. The top 2 crude compounds without the aforementioned motif had IC50s of 0.046\uM (ASAP-0000155) and 0.064\uM (ASAP-0000225), which are similar to the top 2 ML compounds.
+Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref{fig:strip}), with several compounds improving IC50 by up-to 300-fold on MAT-POS-4223bc15-21 (up-to 3-fold on the corresponding methyl-amide). The top 2 ML compounds showed promising average IC50 values of 0.0525\uM (ASAP-0000169) and 0.075\uM (ASAP-0000211), respectively (Figure \ref{fig:ml_vs_crude}). Although the top 2 most potent crude compounds were slightly more potent with IC50 = 0.034\uM (ASAP-0000221) and IC50 = 0.064\uM (ASAP-0000164), they contain the toxic benzene-1,4-diamine motif that is generally avoided \cite{Kumar2011diallinine}. The top 2 crude compounds without the aforementioned motif had IC50s of 0.046\uM (ASAP-0000155) and 0.064\uM (ASAP-0000225), which are similar to the top 2 ML compounds.
 
 \begin{figure}
     \centering
-             \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
-        \caption{Plot of mean IC50 values.}
-        \label{fig:strip}
-    \end{figure}
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+    \caption{Plot of mean IC50 values.}
+    \label{fig:strip}
+\end{figure}
 
-< Figure of the top 2 shown in panel B >
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
+    \caption{Comparison of top ML compounds vs top crude compounds.}
+    \label{fig:ml_vs_crude}
+\end{figure}
 
 This result highlights ML's ability to identify promising yet overlooked scaffolds without compromising potency. 
 
 \section{Discussion}
 
-Usefulness of training models with crude reaction mixtures. Not only is it useful for nanoSAR, it's very potent for generating data and screening libraries - ideal for setting up automated feedback loop and/or bayesian optimisation workflow.
+% false negatives
+In this work we demonstrate the application of ML models on bioacitvity data from nanomolar-scale high-throughput screening of crude reaction mixtures, and illustrate the potential of this approach for accelerating compound optimisation in drug discovery. Focussing on the SAR exploration of an inhibitor against SARS-CoV-2 Mpro, we show that ML models trained on nanomolar-scale crude screening data can be used to identify false negatives within the dataset missed due to experimental noise. Furthermore, we show that these models can be used for virtual screening of compound libraries and identify novel potent inhibitors.
 
-Not limited to biochemical assays. Crude reaction mixtures for crystallographic fragment screening ~5 FTE days to set up and analyse, compared to an estimate of 15-20 FTE days for preparation, purification, characterisation and preparation of separate stock solution for each of the samples, additionally saving 35-50 litres of various solvents for workup and purification, and approximately sevenfold saving of reagents and solvents for synthetic operations. \cite{Baker2020FragementsFromCrude}
+The combination of nanomolar-scale synthesis with cellular/biochemical screening is a powerful experimental technique that can greatly speed up compound optimisation, and has already demonstrated success in the discovery of potent kinase inhibitors \cite{Gesmundo2018nanosar, Gehrtz2022nanomolar}. Despite the relatively high throughput of this technique, the number of compounds that can be screened is still dwarved by the size of chemical space, intrinsically limiting the degree to which compound potency can be optimised. Not only can machine learning augment this technique by deconvolution of the experimental noise, they fundamentally extend its reach by utilising the data to virtually screen compound libraries and explore chemical space.
+
+While only a single iteration of model training and prospective testing was investigated in this work, it is clear that the combination of ML with nanomolar high-throughput screening could be very effective in an automated decision-making workflow. As discussed in a previous chapter, an automated workflow for the generation of molecular designs could potentially reduce iteration cycle time, require fewer compounds and iterations to produce a candidate, and scale to more programs \cite{Schneider2018AutomatingDrugDiscovery, Coley2020Outlook, Goldman2022ChemicalDesignLevels}. Nanomolar high-throughput screening could be used as the testing step in such a workflow for performing Bayesian optimisation of compound potency \cite{korovina2019chembo}.
+
+More broadly, the concept of using crude reaction mixtures in place of pure compounds in drug discovery is not limited to biochemical assays. A recent work in utilising crude reaction mixtures for crystallographic fragment screening demonstrated approximately sevenfold saving of reagents and solvents and up to fourfold reduction in time \cite{Baker2020FragementsFromCrude}. The higher throughput of these approaches necessarily result in additional noise, and perhaps the application of machine learning can be used to detect outliers in such data and perform extrapolation also with the ultimate aim of accelerating drug discovery.
