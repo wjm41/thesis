@@ -20,7 +20,7 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/schematic.pdf}
-    \caption{Schematic of workflow. Try to include MAT-POS-4223bc15-21 in the figure. }
+    \caption{A schematic of the screening workflow. Nanomolar-scale crude reaction mixtures are assayed for activity against Mpro, and a machine learning model is trained to predict the bioactivity measurements from the chemical structure of the compounds. The trained model is used to identify false negatives in the dataset, and to identify novel hits in a prospective virtual screen.}
     \label{fig:schematic}
 \end{figure}
 
@@ -29,7 +29,7 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 \begin{figure}[!t]
     \centering
     \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/yield_vs_activity.pdf}
-    \caption{Yield-Activity graph (\# TODO).}
+    \caption{The bioactivity of the crude reaction mixtures is influenced by the yield of the nanomolar-scale reaction. High yielding compounds are much likelier to exhibit high activity (strongly inhibiting Mpro) while low yielding compounds tend to have low activity.}
     \label{fig:yield_activity}
 \end{figure}
 
@@ -41,8 +41,8 @@ We model the bioactivity data using two different ML models, taking the mean of 
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/rf_loo.pdf}
-    \caption{Leave one out regression.}
+    \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/rf_loo_flat.pdf}
+    \caption{Machine learning is able to model crude bioactivity data. The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref{fig:false_negative}).}
     \label{fig:leave-one-out}
 \end{figure}
 
@@ -56,7 +56,7 @@ While the model is generally quite conservative in its predictions, it does iden
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/false_negative.pdf}
-    \caption{False negative.}
+    \caption{Experimental validation of ML identified false negative. A compound with a large positive difference between predicted and measured activity (Figure \ref{fig:leave-one-out}) was re-synthesized and assayed to obtain full dose-response curves. Two sets of curves were obtained with one set demonstrating significantly higher potency than the other, suggesting that solubility issues were interfering with the assay measurements. Examining the higher potency dose-response curves show that the compound has IC50 = $0.113\pm0.046$\uM, which would place it among the top-20 potent compounds in the original dataset.}
     \label{fig:false_negative}
 \end{figure}
 
@@ -75,14 +75,13 @@ Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
-    \caption{Plot of mean IC50 values.}
-    \label{fig:strip}
+    \caption{The bioactivity distribution of ML identified compounds from virtual screening are similar to those from the most potent crude compounds. The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.}
 \end{figure}
 
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/ml_vs_crude.pdf}
-    \caption{Comparison of top ML compounds vs top crude compounds.}
+    \caption{Comparison of top ML compounds vs top crude compounds. The top compounds from the crude screening are more potent, but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.}
     \label{fig:ml_vs_crude}
 \end{figure}
 

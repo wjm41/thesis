@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  10 MAR 2023 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  15 MAR 2023 13:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -13,6 +13,9 @@ LaTeX Warning: You have requested document class `Classes/PhDThesisPSnPDF',
 
 Document Class: PhDThesisPSnPDF 2016/04/23 A PhD thesis class file by Krishna Kumar (v2.3.1)
 https://github.com/kks32/phd-thesis-template/
+
+Class PhDThesisPSnPDF Warning: You have chosen an option that generates only selected chapters with references, if this was intentional, ignore this warning. If not, please remove the option `chapter' from the document class and recompile. Good luck with your writing! on input line 238.
+
 
 Class PhDThesisPSnPDF Warning: Draft is ON. Don't forget to turn it off in your final version. This enhanced `draft' mode adds watermark with timestamp, line numbering, and version number. Use `draftclassic' if you prefer the \cite {} lassic draft mode. To tweak options see `preamble.tex' on input line 238.
 
@@ -702,7 +705,7 @@ Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_text_align_skip=\skip77
  (/usr/local/texlive/2021/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2020-08-03 v1.12c Easy translation of strings in LaTeX
-))) (/Users/williammccorkindale/ml_physics/thesis/thesis-info.tex) (/Users/williammccorkindale/ml_physics/thesis/thesis.aux)
+))) (/Users/williammccorkindale/ml_physics/thesis/thesis-info.tex) (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
@@ -766,6 +769,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 116.
 LaTeX Info: Redefining \pageref on input line 116.
 LaTeX Info: Redefining \nameref on input line 116.
+ (/Users/williammccorkindale/ml_physics/thesis/thesis.out) (/Users/williammccorkindale/ml_physics/thesis/thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
@@ -856,79 +860,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\PHD@Title=\box64
-\PHD@crest=\box65
-<Figs//University_Crest.pdf, id=4, 59.22125pt x 69.25874pt>
-File: Figs//University_Crest.pdf Graphic file (type pdf)
-<use Figs//University_Crest.pdf>
-Package pdftex.def Info: Figs//University_Crest.pdf  used on input line 120.
-(pdftex.def)             Requested size: 89.6248pt x 104.81888pt.
-\PHD@collegecrest=\box66
-\PHD@author=\box67
-\PHD@supervisor=\box68
-\PHD@advisor=\box69
-\PHD@dept=\box70
-\PHD@submission=\box71
-\PHD@collegedate=\box72
-\PHD@titlepagespacing=\skip78
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
- [1
+\openout2 = `Chapters/Crude/test.aux'.
 
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/williammccorkindale/ml_physics/thesis/Figs//University_Crest.pdf>]
-\openout2 = `Declaration/declaration.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.tex [2
-
-
-]) [3
-
-]
-\openout2 = `Acknowledgement/acknowledgement.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.tex [4
-
-
-
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 18.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)) [5
-
-]
-\openout2 = `Abstract/abstract.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.tex [6
-
-
-
-
-] [7
-
-]) [8]
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
-
- [9
-
-
-
-
-] [10
-
-]
-\openout2 = `Chapters/Preface/preface.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.tex
-
-Package lineno Warning: Linenumber reference failed, 
-(lineno)                rerun to get it right.
-
+ (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.tex
+Chapter 6.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -937,1246 +872,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+ [69
 
 
-LaTeX Warning: Hyper reference `ch:intro' on page 1 undefined on input line 3.
 
 
-LaTeX Warning: Hyper reference `ch:background' on page 1 undefined on input line 5.
 
 
-LaTeX Warning: Hyper reference `ch:fresco' on page 1 undefined on input line 7.
 
 
-LaTeX Warning: Hyper reference `ch:ranking' on page 1 undefined on input line 13.
 
-[1
 
 
-]
 
-LaTeX Warning: Hyper reference `ch:transformer' on page 2 undefined on input line 19.
 
 
-LaTeX Warning: Hyper reference `ch:testing' on page 2 undefined on input line 25.
-
-) [2]
-\openout2 = `Chapters/Intro/intro.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.tex
-Chapter 1.
-<Chapters/Intro/Figs/design-make-test.png, id=67, 710.655pt x 586.19pt>
-File: Chapters/Intro/Figs/design-make-test.png Graphic file (type png)
-<use Chapters/Intro/Figs/design-make-test.png>
-Package pdftex.def Info: Chapters/Intro/Figs/design-make-test.png  used on input line 6.
-(pdftex.def)             Requested size: 224.06544pt x 184.82077pt.
-
-Package natbib Warning: Citation `Coley2019AutonomousProgress' on page 3 undefined on input line 10.
-
-
-LaTeX Warning: Reference `fig:cycle' on page 3 undefined on input line 10.
-
-[3
-
-
-
-
- </Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/Figs/design-make-test.png>]
-
-Package natbib Warning: Citation `moonshot2020' on page 4 undefined on input line 17.
-
-[4]) [5]
-\openout2 = `Chapters/Background/background.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.tex [6
-
-
-
-
-]
-Chapter 2.
-
-Package natbib Warning: Citation `Weininger1988' on page 7 undefined on input line 6.
-
-
-Package natbib Warning: Citation `Weininger1989' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Reference `table:smiles' on page 7 undefined on input line 6.
-
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-<Chapters/Background/Figs/triethyl_amine.png, id=89, 109.24535pt x 66.2675pt>
-File: Chapters/Background/Figs/triethyl_amine.png Graphic file (type png)
-<use Chapters/Background/Figs/triethyl_amine.png>
-Package pdftex.def Info: Chapters/Background/Figs/triethyl_amine.png  used on input line 18.
-(pdftex.def)             Requested size: 54.2025pt x 32.87885pt.
-<Chapters/Background/Figs/cyclic.png, id=90, 92.19827pt x 98.3542pt>
-File: Chapters/Background/Figs/cyclic.png Graphic file (type png)
-<use Chapters/Background/Figs/cyclic.png>
-Package pdftex.def Info: Chapters/Background/Figs/cyclic.png  used on input line 19.
-(pdftex.def)             Requested size: 50.58878pt x 53.9674pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package natbib Warning: Citation `delauney2004esol' on page 7 undefined on input line 29.
-
-
-Package natbib Warning: Citation `Lowe2012' on page 7 undefined on input line 29.
-
-
-LaTeX Warning: Reference `ch:transformer' on page 7 undefined on input line 29.
-
-[7]
-<Chapters/Background/Figs/smiles.png, id=99, 640.3925pt x 348.30125pt>
-File: Chapters/Background/Figs/smiles.png Graphic file (type png)
-<use Chapters/Background/Figs/smiles.png>
-Package pdftex.def Info: Chapters/Background/Figs/smiles.png  used on input line 33.
-(pdftex.def)             Requested size: 358.50609pt x 194.9889pt.
-
-
-Package natbib Warning: Citation `Kim2021GenerativeCT' on page 8 undefined on input line 34.
-
-
-Package natbib Warning: Citation `Kim2021GenerativeCT' on page 8 undefined on input line 34.
-
-
-Package natbib Warning: Citation `Heller2013InChI' on page 8 undefined on input line 37.
-
-
-Package natbib Warning: Citation `Krenn2020Selfies' on page 8 undefined on input line 37.
-
-[8 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/triethyl_amine.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/cyclic.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.png>]
-
-Package natbib Warning: Citation `SMARTS' on page 9 undefined on input line 40.
-
-
-Overfull \hbox (4.08554pt too wide) in paragraph at lines 46--56
- [] |
- []
-
-
-Package natbib Warning: Citation `Walters1998overview' on page 9 undefined on input line 61.
-
-
-Package natbib Warning: Citation `Baell2010Pains' on page 9 undefined on input line 61.
-
-
-Package natbib Warning: Citation `Limban2018StrucuralAlerts' on page 9 undefined on input line 61.
-
-[9]
-
-LaTeX Warning: Reference `subsec:pharmacophores' on page 10 undefined on input line 63.
-
-
-LaTeX Warning: Reference `fig:rx_template' on page 10 undefined on input line 65.
-
-
-Package natbib Warning: Citation `Walters2019libraries' on page 10 undefined on input line 65.
-
-
-Package natbib Warning: Citation `SaldivarGonzalez2020enumeration' on page 10 undefined on input line 65.
-
-
-Package natbib Warning: Citation `Irwin2020Zinc' on page 10 undefined on input line 65.
-
-<Chapters/Background/Figs/rx_template_new.png, id=116, 795.97375pt x 265.99374pt>
-File: Chapters/Background/Figs/rx_template_new.png Graphic file (type png)
-<use Chapters/Background/Figs/rx_template_new.png>
-Package pdftex.def Info: Chapters/Background/Figs/rx_template_new.png  used on input line 71.
-(pdftex.def)             Requested size: 336.09818pt x 112.31323pt.
-
-Package natbib Warning: Citation `Corey1985ComputerAssistedSynthesis' on page 10 undefined on input line 76.
-
-
-Package natbib Warning: Citation `Klucznik2018EfficientLaboratory' on page 10 undefined on input line 76.
-
-[10 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template_new.png>]
-<Chapters/Background/Figs/pharmacophore_models.png, id=123, 89.3739pt x 67.33154pt>
-File: Chapters/Background/Figs/pharmacophore_models.png Graphic file (type png)
-<use Chapters/Background/Figs/pharmacophore_models.png>
-Package pdftex.def Info: Chapters/Background/Figs/pharmacophore_models.png  used on input line 82.
-(pdftex.def)             Requested size: 336.09818pt x 253.28986pt.
-
-
-Package natbib Warning: Citation `Kaserer2015PharmacophoreReview' on page 11 undefined on input line 83.
-
-
-Package natbib Warning: Citation `Kaserer2015PharmacophoreReview' on page 11 undefined on input line 83.
-
-
-Package natbib Warning: Citation `Kaserer2015PharmacophoreReview' on page 11 undefined on input line 87.
-
-
-Package natbib Warning: Citation `Vuorinen2015pharmacophore' on page 11 undefined on input line 91.
-
-
-LaTeX Warning: Reference `fig:pharmacophore_models' on page 11 undefined on input line 91.
-
-[11 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/pharmacophore_models.png>]
-
-LaTeX Warning: Reference `fig:pharmacophore_models' on page 12 undefined on input line 93.
-
-
-Package natbib Warning: Citation `Dixon2006pharmacophore' on page 12 undefined on input line 95.
-
-
-Package natbib Warning: Citation `Temml2014pharmacophore' on page 12 undefined on input line 95.
-
-
-Package natbib Warning: Citation `Pradeepkiran2019pharmacophore' on page 12 undefined on input line 95.
-
-
-Package natbib Warning: Citation `Pal2019pharmacophore' on page 12 undefined on input line 95.
-
-
-Package natbib Warning: Citation `morgan1965fingerprints' on page 12 undefined on input line 101.
-
-
-Package natbib Warning: Citation `rogers2010extended' on page 12 undefined on input line 101.
-
-
-Package natbib Warning: Citation `Maggiora2014similarity' on page 12 undefined on input line 105.
-
-
-Package natbib Warning: Citation `Willet1998similarity' on page 12 undefined on input line 105.
-
-[12]
-
-Package natbib Warning: Citation `baldi2010similarity' on page 13 undefined on input line 111.
-
-
-Package natbib Warning: Citation `Todeschini2012tanimoto' on page 13 undefined on input line 111.
-
-
-Package natbib Warning: Citation `Bajusz2015Tanimoto' on page 13 undefined on input line 111.
-
-
-Package natbib Warning: Citation `Butina1999Clustering' on page 13 undefined on input line 113.
-
-
-Package natbib Warning: Citation `johnson1990concepts' on page 13 undefined on input line 113.
-
-
-Package natbib Warning: Citation `maggiora2006cliffs' on page 13 undefined on input line 113.
-
-
-Package natbib Warning: Citation `martin2002similar' on page 13 undefined on input line 113.
-
-
-Package natbib Warning: Citation `riniker2013benchmark' on page 13 undefined on input line 113.
-
-
-Package natbib Warning: Citation `oboyle2016benchmark' on page 13 undefined on input line 113.
-
-
-LaTeX Warning: Reference `ch:machine_learning' on page 13 undefined on input line 115.
-
-
-Package natbib Warning: Citation `wu2017molnet' on page 13 undefined on input line 115.
-
-
-Package natbib Warning: Citation `Bender2019' on page 13 undefined on input line 115.
-
-
-Package natbib Warning: Citation `sandfort2020yield' on page 13 undefined on input line 115.
-
-
-Package natbib Warning: Citation `meng2011molecular' on page 13 undefined on input line 121.
-
-
-Package natbib Warning: Citation `Kitchen2004Docking' on page 13 undefined on input line 121.
-
-[13]
-<Chapters/Background/Figs/docked_6a93.png, id=143, 818.05624pt x 511.9125pt>
-File: Chapters/Background/Figs/docked_6a93.png Graphic file (type png)
-<use Chapters/Background/Figs/docked_6a93.png>
-Package pdftex.def Info: Chapters/Background/Figs/docked_6a93.png  used on input line 125.
-(pdftex.def)             Requested size: 358.50609pt x 224.34392pt.
-
-
-Package natbib Warning: Citation `Jumper2021AlphaFold' on page 14 undefined on input line 129.
-
-
-Package natbib Warning: Citation `Wong2022AF2Docking' on page 14 undefined on input line 129.
-
-[14 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/docked_6a93.png>]
-
-Package natbib Warning: Citation `Li2019scoring' on page 15 undefined on input line 131.
-
-
-Package natbib Warning: Citation `Coleman2013DOCK' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `friesner2004glide' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Eberhardt2021Vina' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Verdonk2003Gold' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `McGann2012FRED' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Wang2004PDBbind' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Liu2014PDBbind' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Parks2020D3R' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Su2019CASF' on page 15 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Bender2021LargeScaleDocking' on page 15 undefined on input line 137.
-
-[15]
-
-Package natbib Warning: Citation `Huang2006DUD' on page 16 undefined on input line 143.
-
-
-Package natbib Warning: Citation `Mysinger2012DUDE' on page 16 undefined on input line 143.
-
-
-Package natbib Warning: Citation `Ballante2021DockingGPCR' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Lyu2019UltraLargeDocking' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Alon2021sigma' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Fink2022Alpha' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Erickson2004flexibility' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Antunes2015flexibility' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Llanos2021StrengthsAndWeaknesses' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Macip2022HasteMakesWaste' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Lyu2023Expansion' on page 16 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Stark2022equibind' on page 16 undefined on input line 147.
-
-
-Package natbib Warning: Citation `corso2023diffdock' on page 16 undefined on input line 147.
-
-
-Package natbib Warning: Citation `Bishop2006PatternRecognition' on page 16 undefined on input line 151.
-
-
-Package natbib Warning: Citation `Goodfellow2016DeepLearning' on page 16 undefined on input line 151.
-
-[16]
-
-LaTeX Warning: Reference `fig:roc_curve' on page 17 undefined on input line 177.
-
-[17]
-<Chapters/Background/Figs/roc_curve.png, id=174, 1027.84pt x 1027.84pt>
-File: Chapters/Background/Figs/roc_curve.png Graphic file (type png)
-<use Chapters/Background/Figs/roc_curve.png>
-Package pdftex.def Info: Chapters/Background/Figs/roc_curve.png  used on input line 181.
-(pdftex.def)             Requested size: 336.09818pt x 336.09859pt.
-
-
-Package natbib Warning: Citation `roccurve' on page 18 undefined on input line 182.
-
-
-Package natbib Warning: Citation `roccurve' on page 18 undefined on input line 182.
-
-
-Package natbib Warning: Citation `Bender2021part1' on page 18 undefined on input line 186.
-
-
-Package natbib Warning: Citation `Bender2021part2' on page 18 undefined on input line 186.
-
-
-Package natbib Warning: Citation `Volkamer2023review' on page 18 undefined on input line 186.
-
-[18 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.png>]
-
-Package natbib Warning: Citation `Breiman2001RF' on page 19 undefined on input line 190.
-
-
-Package natbib Warning: Citation `Palmer2007RandomForest' on page 19 undefined on input line 200.
-
-
-Package natbib Warning: Citation `Svetnik2003RandomForest' on page 19 undefined on input line 200.
-
-
-Package natbib Warning: Citation `Merget2017KinaseInhibitors' on page 19 undefined on input line 200.
-
-
-Package natbib Warning: Citation `Polishchuk2009RandomForest' on page 19 undefined on input line 200.
-
-
-Package natbib Warning: Citation `rasmussen2005gp' on page 19 undefined on input line 204.
-
-
-Package natbib Warning: Citation `Hofmann2008kernel' on page 19 undefined on input line 210.
-
-[19]
-
-Package natbib Warning: Citation `Obrezanova2007GPQSAR' on page 20 undefined on input line 212.
-
-
-Package natbib Warning: Citation `McCorkindale2020Soap' on page 20 undefined on input line 212.
-
-
-Package natbib Warning: Citation `Jorner2021ActiviationEnergiesGPR' on page 20 undefined on input line 212.
-
-
-Package natbib Warning: Citation `Swamidass2005kernels' on page 20 undefined on input line 212.
-
-
-Package natbib Warning: Citation `Griffiths2022photoswitches' on page 20 undefined on input line 212.
-
-
-Package natbib Warning: Citation `Wang2020CLIP' on page 20 undefined on input line 224.
-
-
-Package natbib Warning: Citation `OpenAI2021GPT3' on page 20 undefined on input line 224.
-
-
-Package natbib Warning: Citation `Schneider2019wav2vec' on page 20 undefined on input line 224.
-
-
-Package natbib Warning: Citation `Jumper2021AlphaFold' on page 20 undefined on input line 224.
-
-
-Package natbib Warning: Citation `Sapoval2022Bioinformatics' on page 20 undefined on input line 224.
-
-[20]
-
-Package natbib Warning: Citation `Baydin2018autodiff' on page 21 undefined on input line 232.
-
-
-Package natbib Warning: Citation `Kingma2014Adam' on page 21 undefined on input line 232.
-
-
-Package natbib Warning: Citation `Srivastava2014dropout' on page 21 undefined on input line 232.
-
-
-Package natbib Warning: Citation `Ioffe2015batchnorm' on page 21 undefined on input line 232.
-
-
-Package natbib Warning: Citation `Krizhevsky2012AlexNet' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `He2015ResNet' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `Cho2014RNN' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `Lipton2015RNN' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `Chung2014GRU' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `Hochreiter1997LSTM' on page 21 undefined on input line 234.
-
-
-Package natbib Warning: Citation `wu2017molnet' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Gilmer17mpnn' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Mayr2018compare' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `yang2019chemprop' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Coley19WLDN5' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Ragoza2017ProteinCNN' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Imrie2018ProteinCNN' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Jimenez2018Kdeep' on page 21 undefined on input line 236.
-
-
-Package natbib Warning: Citation `Bender2019' on page 21 undefined on input line 238.
-
-
-Package natbib Warning: Citation `Wei2016reactionprediction' on page 21 undefined on input line 238.
-
-
-Package natbib Warning: Citation `segler2017neural' on page 21 undefined on input line 238.
-
-
-Package natbib Warning: Citation `Gentile2020deepdocking' on page 21 undefined on input line 238.
-
-
-Package natbib Warning: Citation `Jiang2021benchmark' on page 21 undefined on input line 240.
-
-[21]
-
-Package natbib Warning: Citation `Sheridan2013TimeSplit' on page 22 undefined on input line 242.
-
-
-Package natbib Warning: Citation `wu2017molnet' on page 22 undefined on input line 242.
-
-
-Package natbib Warning: Citation `yang2019chemprop' on page 22 undefined on input line 242.
-
-
-Package natbib Warning: Citation `Sheridan2013TimeSplit' on page 22 undefined on input line 242.
-
-
-Package natbib Warning: Citation `Lapuschkin2019UnmaskingCleverHans' on page 22 undefined on input line 244.
-
-
-Package natbib Warning: Citation `Jimenze2020XAI' on page 22 undefined on input line 244.
-
-) [22]
-\openout2 = `Chapters/Fresco/fresco.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex
-Chapter 3.
-
-Package natbib Warning: Citation `Hughes2011Principles' on page 23 undefined on input line 10.
-
-
-Package natbib Warning: Citation `David2017FBLD' on page 23 undefined on input line 18.
-
-
-Package natbib Warning: Citation `hann2001molecular' on page 23 undefined on input line 18.
-
-
-Package natbib Warning: Citation `Ichihara2011FragLinking' on page 23 undefined on input line 18.
-
-
-Package natbib Warning: Citation `Yu2021FragLinkingEntropy' on page 23 undefined on input line 18.
-
-
-Package natbib Warning: Citation `Schiebel2016HighThroughput' on page 23 undefined on input line 30.
-
-
-Package natbib Warning: Citation `Douangamath2020XChem' on page 23 undefined on input line 30.
-
-[23
-
-
-
-
-]
-
-Package natbib Warning: Citation `Moonshot2022' on page 24 undefined on input line 44.
-
-<Chapters/Fresco/Figs/fresco_vs_linking_a.pdf, id=210, 445.27907pt x 299.55132pt>
-File: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/fresco_vs_linking_a.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf  used on input line 53.
-(pdftex.def)             Requested size: 336.09818pt x 226.11642pt.
-<Chapters/Fresco/Figs/fresco_details.pdf, id=211, 443.94627pt x 320.97525pt>
-File: Chapters/Fresco/Figs/fresco_details.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/fresco_details.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/fresco_details.pdf  used on input line 59.
-(pdftex.def)             Requested size: 336.09818pt x 243.00336pt.
-<Chapters/Fresco/Figs/pharmacophores.png, id=212, 1131.22626pt x 430.60875pt>
-File: Chapters/Fresco/Figs/pharmacophores.png Graphic file (type png)
-<use Chapters/Fresco/Figs/pharmacophores.png>
-Package pdftex.def Info: Chapters/Fresco/Figs/pharmacophores.png  used on input line 70.
-(pdftex.def)             Requested size: 358.50609pt x 136.46378pt.
-
-LaTeX Warning: Reference `fig:fresco_vs_linking' on page 24 undefined on input line 76.
-
-
-LaTeX Warning: Reference `fig:pharmacophores' on page 24 undefined on input line 78.
-
-
-Package natbib Warning: Citation `Kaserer2015PharmacophoreReview' on page 24 undefined on input line 78.
-
-[24]
-
-Package natbib Warning: Citation `Parzen1962KDE' on page 25 undefined on input line 82.
-
-
-LaTeX Warning: Reference `fig:fresco_vs_linking' on page 25 undefined on input line 82.
-
-[25 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_linking_a.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_details.pdf>]
-
-Package natbib Warning: Citation `Imrie2020DeLinker' on page 26 undefined on input line 84.
-
-
-Package natbib Warning: Citation `Yang2020SyntaLinker' on page 26 undefined on input line 84.
-
-
-Package natbib Warning: Citation `Imrie2021Develop' on page 26 undefined on input line 84.
-
-
-Package natbib Warning: Citation `Hall2017FragNet' on page 26 undefined on input line 84.
-
-
-Package natbib Warning: Citation `muratov2020qsar' on page 26 undefined on input line 86.
-
-
-Package natbib Warning: Citation `Lyu2019UltraLargeDocking' on page 26 undefined on input line 86.
-
-
-Package natbib Warning: Citation `Alon2021sigma' on page 26 undefined on input line 86.
-
-
-Package natbib Warning: Citation `Fink2022Alpha' on page 26 undefined on input line 86.
-
-
-Package natbib Warning: Citation `Kearnes2021Prospective' on page 26 undefined on input line 88.
-
-[26 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/pharmacophores.png>]
-
-Package natbib Warning: Citation `Douangamath2020XChem' on page 27 undefined on input line 92.
-
-
-Package natbib Warning: Citation `Douangamath2020XChem' on page 27 undefined on input line 92.
-
-
-Package natbib Warning: Citation `Schuller2021Mac1Frag' on page 27 undefined on input line 92.
-
-
-Package natbib Warning: Citation `Botev2010ISJ' on page 27 undefined on input line 98.
-
-[27]
-
-Package natbib Warning: Citation `Moonshot2022' on page 28 undefined on input line 106.
-
-
-Package natbib Warning: Citation `Dafydd2021Paxlovid' on page 28 undefined on input line 106.
-
-
-Package natbib Warning: Citation `unoh2022discovery' on page 28 undefined on input line 106.
-
-
-Package natbib Warning: Citation `Morris2021Rank' on page 28 undefined on input line 110.
-
-
-Package natbib Warning: Citation `Saar2021biorxiv' on page 28 undefined on input line 110.
-
-[28]
-
-Package natbib Warning: Citation `Douangamath2020XChem' on page 29 undefined on input line 114.
-
-<Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf, id=314, 433.62pt x 289.08pt>
-File: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf  used on input line 118.
-(pdftex.def)             Requested size: 358.50609pt x 239.01443pt.
-
-LaTeX Warning: Reference `fig:moonshot_enrichment_vs_docking' on page 29 undefined on input line 123.
-
-[29 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf>]
-<Chapters/Fresco/Figs/flowchart_screening.pdf, id=373, 845.1575pt x 597.23125pt>
-File: Chapters/Fresco/Figs/flowchart_screening.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/flowchart_screening.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/flowchart_screening.pdf  used on input line 128.
-(pdftex.def)             Requested size: 448.1309pt x 316.67685pt.
-
-
-LaTeX Warning: Reference `fig:screening_workflow' on page 30 undefined on input line 137.
-
-[30 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/flowchart_screening.pdf>]
-
-Package natbib Warning: Citation `Gorgulla2020VirtualFlow' on page 31 undefined on input line 140.
-
-
-Package natbib Warning: Citation `ChemSpace' on page 31 undefined on input line 140.
-
-
-Package natbib Warning: Citation `Baell2010Pains' on page 31 undefined on input line 140.
-
-
-Package natbib Warning: Citation `Butina1999Clustering' on page 31 undefined on input line 142.
-
-<Chapters/Fresco/Figs/mpro_ligands.png, id=417, 1177.39874pt x 795.97375pt>
-File: Chapters/Fresco/Figs/mpro_ligands.png Graphic file (type png)
-<use Chapters/Fresco/Figs/mpro_ligands.png>
-Package pdftex.def Info: Chapters/Fresco/Figs/mpro_ligands.png  used on input line 151.
-(pdftex.def)             Requested size: 336.09818pt x 227.21924pt.
-<Chapters/Fresco/Figs/mpro_hit_IC50.pdf, id=418, 441.39284pt x 411.68153pt>
-File: Chapters/Fresco/Figs/mpro_hit_IC50.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/mpro_hit_IC50.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mpro_hit_IC50.pdf  used on input line 159.
-(pdftex.def)             Requested size: 336.09818pt x 313.48427pt.
-
-LaTeX Warning: Float too large for page by 49.41837pt on input line 165.
-
-
-LaTeX Warning: Reference `fig:mpro_results' on page 31 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Hermann2013ZincImpurity' on page 31 undefined on input line 183.
-
-
-Package natbib Warning: Citation `Morreale2017ZincImpurity' on page 31 undefined on input line 183.
-
-
-LaTeX Warning: Reference `fig:mpro_results' on page 31 undefined on input line 183.
-
-[31] [32 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_ligands.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_hit_IC50.pdf>]
-<Chapters/Fresco/Figs/mac1_ligands.png, id=475, 1177.39874pt x 795.97375pt>
-File: Chapters/Fresco/Figs/mac1_ligands.png Graphic file (type png)
-<use Chapters/Fresco/Figs/mac1_ligands.png>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_ligands.png  used on input line 190.
-(pdftex.def)             Requested size: 358.50609pt x 242.36476pt.
-
-
-Package natbib Warning: Citation `Schuller2021Mac1Frag' on page 33 undefined on input line 195.
-
-
-LaTeX Warning: Reference `fig:mac1_ligands' on page 33 undefined on input line 195.
-
-
-LaTeX Warning: Reference `fig:mac1_hit' on page 33 undefined on input line 197.
-
-[33 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_ligands.png>]
-<Chapters/Fresco/Figs/mac1_fig.pdf, id=483, 316.30803pt x 357.04955pt>
-File: Chapters/Fresco/Figs/mac1_fig.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/mac1_fig.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_fig.pdf  used on input line 201.
-(pdftex.def)             Requested size: 336.09818pt x 379.41867pt.
-
-
-LaTeX Warning: Reference `fig:mac1_rounds' on page 34 undefined on input line 206.
-
-[34 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_fig.pdf>]
-<Chapters/Fresco/Figs/mac1_rounds.pdf, id=523, 429.70085pt x 472.26958pt>
-File: Chapters/Fresco/Figs/mac1_rounds.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/mac1_rounds.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_rounds.pdf  used on input line 210.
-(pdftex.def)             Requested size: 336.09818pt x 369.39928pt.
- [35 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_rounds.pdf>]) [36]
-\openout2 = `Chapters/Ranking/ranking.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.tex
-Chapter 4.
-
-Package natbib Warning: Citation `pillaiyar2016overview' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `cannalire2020targeting' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `jin2020structure' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `liu2020development' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `ullrich2020sars' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `cannalire2020targeting' on page 37 undefined on input line 13.
-
-
-Package natbib Warning: Citation `chodera2020crowdsourcing' on page 37 undefined on input line 13.
-
-[37
-
-
-
-
-]
-
-Package natbib Warning: Citation `duffy2010molecular' on page 38 undefined on input line 23.
-
-
-Package natbib Warning: Citation `agarwal2010ranking' on page 38 undefined on input line 23.
-
-<Chapters/Ranking/Figs/schematic.png, id=601, 981.6675pt x 612.2875pt>
-File: Chapters/Ranking/Figs/schematic.png Graphic file (type png)
-<use Chapters/Ranking/Figs/schematic.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/schematic.png  used on input line 27.
-(pdftex.def)             Requested size: 380.914pt x 237.58595pt.
-
-LaTeX Warning: Reference `fig:ranking_schematic' on page 38 undefined on input line 32.
-
-
-Package natbib Warning: Citation `howard2018fastai' on page 38 undefined on input line 32.
-
-
-LaTeX Warning: Reference `appendix:ranking' on page 38 undefined on input line 32.
-
-[38]
-<Chapters/Ranking/Figs/roc_curve.png, id=607, 512.91624pt x 547.04375pt>
-File: Chapters/Ranking/Figs/roc_curve.png Graphic file (type png)
-<use Chapters/Ranking/Figs/roc_curve.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/roc_curve.png  used on input line 38.
-(pdftex.def)             Requested size: 291.28235pt x 310.66626pt.
-
-
-LaTeX Warning: Reference `fig:roc_plot' on page 39 undefined on input line 78.
-
-
-LaTeX Warning: Reference `appendix:docking' on page 39 undefined on input line 78.
-
-[39 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/schematic.png>]
-
-Package natbib Warning: Citation `moonshot2020covid' on page 40 undefined on input line 82.
-
-
-LaTeX Warning: Reference `table:time_split' on page 40 undefined on input line 82.
-
-[40 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/roc_curve.png>]
-
-Package natbib Warning: Citation `Degen2008brics' on page 41 undefined on input line 102.
-
-
-Package natbib Warning: Citation `Polishchuk2020Crem' on page 41 undefined on input line 102.
-
-<Chapters/Ranking/Figs/library.png, id=621, 1101.11375pt x 541.02126pt>
-File: Chapters/Ranking/Figs/library.png Graphic file (type png)
-<use Chapters/Ranking/Figs/library.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/library.png  used on input line 106.
-(pdftex.def)             Requested size: 336.09818pt x 165.13919pt.
-
-LaTeX Warning: Reference `fig:library' on page 41 undefined on input line 111.
-
-[41 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/library.png>]
-<Chapters/Ranking/Figs/fig2.pdf, id=630, 1228.59pt x 794.97pt>
-File: Chapters/Ranking/Figs/fig2.pdf Graphic file (type pdf)
-<use Chapters/Ranking/Figs/fig2.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/fig2.pdf  used on input line 117.
-(pdftex.def)             Requested size: 336.09818pt x 217.47112pt.
-
-
-Package natbib Warning: Citation `yang2019molecular' on page 42 undefined on input line 122.
-
-
-Package natbib Warning: Citation `schwaller2019molecular' on page 42 undefined on input line 122.
-
-
-LaTeX Warning: Reference `fig:compounds' on page 42 undefined on input line 122.
-
-
-LaTeX Warning: Reference `fig:compounds' on page 42 undefined on input line 122.
-
-<Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf, id=632, 817.18979pt x 1107.42578pt>
-File: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf Graphic file (type pdf)
-<use Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf  used on input line 126.
-(pdftex.def)             Requested size: 291.28235pt x 394.71886pt.
-
-LaTeX Warning: Reference `appendix:rxn_schemes' on page 42 undefined on input line 127.
-
-
-LaTeX Warning: Reference `appendix:rxn_schemes' on page 42 undefined on input line 127.
-
-
-LaTeX Warning: Reference `fig:synthesis_schemes' on page 42 undefined on input line 131.
-
-[42 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/fig2.pdf>]
-<Chapters/Ranking/Figs/data_curve.pdf, id=660, 729.72626pt x 293.095pt>
-File: Chapters/Ranking/Figs/data_curve.pdf Graphic file (type pdf)
-<use Chapters/Ranking/Figs/data_curve.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/data_curve.pdf  used on input line 135.
-(pdftex.def)             Requested size: 380.914pt x 152.99165pt.
-
-
-LaTeX Warning: Reference `fig:data' on page 43 undefined on input line 141.
-
-
-LaTeX Warning: Reference `appendix:experiments' on page 43 undefined on input line 141.
-
-[43 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>]
-
-Package natbib Warning: Citation `Saar2023pnas' on page 44 undefined on input line 147.
-
-[44 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/data_curve.pdf>]
-
-Package natbib Warning: Citation `Goldman2022ChemicalDesignLevels' on page 45 undefined on input line 152.
-
-
-Package natbib Warning: Citation `Schneider2018AutomatingDrugDiscovery' on page 45 undefined on input line 152.
-
-
-Package natbib Warning: Citation `Coley2020Outlook' on page 45 undefined on input line 152.
-
-
-Package natbib Warning: Citation `korovina2019chembo' on page 45 undefined on input line 152.
-
-
-Package natbib Warning: Citation `born2019paccmannrl' on page 45 undefined on input line 152.
-
-) [45]
-\openout2 = `Chapters/Transformer/transformer.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.tex [46
-
-
-
-
-]
-Chapter 5.
-
-Package natbib Warning: Citation `blakemore2018organic' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `bostrom2018expanding' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `segler2017neural' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `segler2018planning' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `kishimoto2019depth' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `schreck2019learning' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `segler2019world' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `Coley2018' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `Johansson2020' on page 47 undefined on input line 13.
-
-
-Package natbib Warning: Citation `Struble2020' on page 47 undefined on input line 13.
-
-[47]
-
-Package natbib Warning: Citation `Schwaller2019' on page 48 undefined on input line 15.
-
-
-Package natbib Warning: Citation `Vaswani2017' on page 48 undefined on input line 15.
-
-
-Package natbib Warning: Citation `Lowe2012' on page 48 undefined on input line 15.
-
-
-Package natbib Warning: Citation `Jin2017' on page 48 undefined on input line 15.
-
-
-Package natbib Warning: Citation `tetko2020state' on page 48 undefined on input line 15.
-
-[48]
-
-Package natbib Warning: Citation `Schwaller2019MolecularPrediction' on page 49 undefined on input line 26.
-
-
-Package natbib Warning: Citation `Vaswani2017' on page 49 undefined on input line 26.
-
-
-Package natbib Warning: Citation `Niu2021AttnReview' on page 49 undefined on input line 26.
-
-<Chapters/Transformer/Figs/mol_transformer.png, id=727, 1192.455pt x 290.08376pt>
-File: Chapters/Transformer/Figs/mol_transformer.png Graphic file (type png)
-<use Chapters/Transformer/Figs/mol_transformer.png>
-Package pdftex.def Info: Chapters/Transformer/Figs/mol_transformer.png  used on input line 37.
-(pdftex.def)             Requested size: 358.50609pt x 87.2117pt.
-
-LaTeX Warning: Reference `fig:mol_transformer' on page 49 undefined on input line 41.
-
-
-Package natbib Warning: Citation `Bjerrum2017SMILESaugmentation' on page 49 undefined on input line 41.
-
-[49]
-
-Package natbib Warning: Citation `Lowe2012' on page 50 undefined on input line 44.
-
-
-Package natbib Warning: Citation `Jin2017' on page 50 undefined on input line 44.
-
-
-Package natbib Warning: Citation `Schwaller2019' on page 50 undefined on input line 44.
-
-
-Package natbib Warning: Citation `Bjerrun2020' on page 50 undefined on input line 46.
-
-
-Package natbib Warning: Citation `Jia2019' on page 50 undefined on input line 46.
-
-[50 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/mol_transformer.png>]
-<Chapters/Transformer/Figs/workflow.pdf, id=741, 626.80904pt x 466.41406pt>
-File: Chapters/Transformer/Figs/workflow.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/workflow.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/workflow.pdf  used on input line 52.
-(pdftex.def)             Requested size: 358.50609pt x 266.77686pt.
- [51 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/workflow.pdf>]
-
-Package natbib Warning: Citation `Sundararajan2017' on page 52 undefined on input line 60.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 52 undefined on input line 60.
-
-
-LaTeX Warning: Reference `subsec:input_attribution' on page 52 undefined on input line 60.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 52 undefined on input line 62.
-
-
-LaTeX Warning: Reference `subsec:data_attribution' on page 52 undefined on input line 62.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 52 undefined on input line 67.
-
-
-Package natbib Warning: Citation `Ribeiro2016WhyClassifier' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Lundberg2017APredictions' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Montavon2018MethodsNetworks' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Sundararajan2017' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Sundararajan2017' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Lundberg2017APredictions' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Sundararajan2017' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `Karpov2020' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `mudrakarta2018did' on page 52 undefined on input line 71.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 52 undefined on input line 71.
-
-
-Package natbib Warning: Citation `McCloskey2019' on page 52 undefined on input line 71.
-
-[52] [53]
-
-Package natbib Warning: Citation `tetko2002' on page 54 undefined on input line 91.
-
-
-Package natbib Warning: Citation `Allen2020' on page 54 undefined on input line 93.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 54 undefined on input line 95.
-
-[54]
-
-LaTeX Warning: Reference `fig:workflow' on page 55 undefined on input line 105.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 55 undefined on input line 107.
-
-<Chapters/Transformer/Figs/epoxidation.pdf, id=823, 445.90399pt x 459.18379pt>
-File: Chapters/Transformer/Figs/epoxidation.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/epoxidation.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/epoxidation.pdf  used on input line 115.
-(pdftex.def)             Requested size: 268.88127pt x 276.89969pt.
-
-Package natbib Warning: Citation `Lluch1993' on page 55 undefined on input line 116.
-
-
-Package natbib Warning: Citation `Lluch1993' on page 55 undefined on input line 116.
-
-
-Package natbib Warning: Citation `Clayden2012' on page 55 undefined on input line 119.
-
-[55]
-
-Package natbib Warning: Citation `Clayden2012' on page 56 undefined on input line 121.
-
-
-LaTeX Warning: Reference `fig:epoxide' on page 56 undefined on input line 121.
-
-
-LaTeX Warning: Reference `fig:epoxide' on page 56 undefined on input line 125.
-
-[56 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/epoxidation.pdf>]
-
-LaTeX Warning: Reference `fig:epoxide' on page 57 undefined on input line 127.
-
-<Chapters/Transformer/Figs/diels_alder.pdf, id=881, 456.04297pt x 572.224pt>
-File: Chapters/Transformer/Figs/diels_alder.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/diels_alder.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/diels_alder.pdf  used on input line 133.
-(pdftex.def)             Requested size: 268.88127pt x 337.38222pt.
-
-Package natbib Warning: Citation `Clayden2012' on page 57 undefined on input line 137.
-
-
-LaTeX Warning: Reference `fig:diels_alder' on page 57 undefined on input line 137.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 57 undefined on input line 139.
-
-
-LaTeX Warning: Reference `fig:diels_alder' on page 57 undefined on input line 141.
-
-
-Package natbib Warning: Citation `grubbs' on page 57 undefined on input line 141.
-
-[57]
-<Chapters/Transformer/Figs/sear.pdf, id=888, 443.26955pt x 519.08676pt>
-File: Chapters/Transformer/Figs/sear.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/sear.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/sear.pdf  used on input line 149.
-(pdftex.def)             Requested size: 268.88127pt x 314.87616pt.
-
-
-Package natbib Warning: Citation `Friedel1877' on page 58 undefined on input line 153.
-
-
-LaTeX Warning: Reference `fig:sear' on page 58 undefined on input line 153.
-
-
-Package natbib Warning: Citation `fc_para1981' on page 58 undefined on input line 153.
-
-[58 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/diels_alder.pdf>]
-
-LaTeX Warning: Reference `fig:venn_friedel' on page 59 undefined on input line 158.
-
-[59 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/sear.pdf>]
-<Chapters/Transformer/Figs/venn.pdf, id=989, 488.6309pt x 457.57526pt>
-File: Chapters/Transformer/Figs/venn.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/venn.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/venn.pdf  used on input line 162.
-(pdftex.def)             Requested size: 224.06544pt x 209.82388pt.
- [60 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/venn.pdf>]
-
-LaTeX Warning: Reference `table:synth_datasets' on page 61 undefined on input line 178.
-
-[61]
-<Chapters/Transformer/Figs/synth_conv.png, id=1013, 1084.05pt x 650.43pt>
-File: Chapters/Transformer/Figs/synth_conv.png Graphic file (type png)
-<use Chapters/Transformer/Figs/synth_conv.png>
-Package pdftex.def Info: Chapters/Transformer/Figs/synth_conv.png  used on input line 205.
-(pdftex.def)             Requested size: 358.50609pt x 215.09909pt.
-
-
-LaTeX Warning: Reference `fig:hamburger_plot' on page 62 undefined on input line 211.
-
-[62 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/synth_conv.png>]
-
-Package natbib Warning: Citation `Stanovsky2019GenderBias' on page 63 undefined on input line 215.
-
-
-Package natbib Warning: Citation `Mayr2018compare' on page 63 undefined on input line 219.
-
-<Chapters/Transformer/Figs/siblings_alt.pdf, id=1021, 725.00279pt x 423.96194pt>
-File: Chapters/Transformer/Figs/siblings_alt.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/siblings_alt.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/siblings_alt.pdf  used on input line 223.
-(pdftex.def)             Requested size: 448.1309pt x 262.05151pt.
-
-Package natbib Warning: Citation `Bajusz2015Tanimoto' on page 63 undefined on input line 227.
-
-
-LaTeX Warning: Reference `fig:sibling' on page 63 undefined on input line 227.
-
-
-Package natbib Warning: Citation `Schneider2015rxnfp' on page 63 undefined on input line 227.
-
-[63]
-
-LaTeX Warning: Reference `fig:rxn_dist' on page 64 undefined on input line 237.
-
-[64 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/siblings_alt.pdf>]
-<Chapters/Transformer/Figs/rxn_distribution.pdf, id=1081, 644.98615pt x 448.6769pt>
-File: Chapters/Transformer/Figs/rxn_distribution.pdf Graphic file (type pdf)
-<use Chapters/Transformer/Figs/rxn_distribution.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/rxn_distribution.pdf  used on input line 241.
-(pdftex.def)             Requested size: 448.1309pt x 311.74396pt.
-
-
-Package natbib Warning: Citation `Coley19WLDN5' on page 65 undefined on input line 245.
-
-
-LaTeX Warning: Reference `fig:rxn_dist' on page 65 undefined on input line 245.
-
-[65 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/rxn_distribution.pdf>]
-
-LaTeX Warning: Reference `fig:rxn_dist' on page 66 undefined on input line 247.
-
-
-Package natbib Warning: Citation `Coley19WLDN5' on page 66 undefined on input line 252.
-
-
-LaTeX Warning: Reference `table:tanimoto' on page 66 undefined on input line 254.
-
-[66]
-
-Package natbib Warning: Citation `bradshaw2019generative' on page 67 undefined on input line 300.
-
-
-Package natbib Warning: Citation `guan_coley_robust' on page 67 undefined on input line 300.
-
-
-Package natbib Warning: Citation `sacha2020molecule' on page 67 undefined on input line 300.
-
-[67]) [68]
-\openout2 = `Chapters/Crude/test.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.tex
-Chapter 6.
-
-Package natbib Warning: Citation `Santarilla2015MerckNanomolar' on page 69 undefined on input line 5.
-
-
-Package natbib Warning: Citation `Perera2018PfizerNanomolar' on page 69 undefined on input line 5.
-
-
-Package natbib Warning: Citation `Gehrtz2022nanomolar' on page 69 undefined on input line 5.
-
-
-Package natbib Warning: Citation `Gesmundo2018nanosar' on page 69 undefined on input line 7.
-
-
-Package natbib Warning: Citation `GirondaMartinez2021DNALibrary' on page 69 undefined on input line 9.
-
-
-Package natbib Warning: Citation `McCloskey2020DNALibrary' on page 69 undefined on input line 9.
-
-[69
-
-
-
-
-]
-<Chapters/Crude/Figs/schematic.pdf, id=1118, 764.87453pt x 396.66884pt>
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<Chapters/Crude/Figs/schematic.pdf, id=43, 764.87453pt x 396.66884pt>
 File: Chapters/Crude/Figs/schematic.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/schematic.pdf>
-Package pdftex.def Info: Chapters/Crude/Figs/schematic.pdf  used on input line 21.
+Package pdftex.def Info: Chapters/Crude/Figs/schematic.pdf  used on input line 22.
 (pdftex.def)             Requested size: 448.1309pt x 232.41046pt.
-<Chapters/Crude/Figs/rf.pdf, id=1119, 903.375pt x 602.25pt>
-File: Chapters/Crude/Figs/rf.pdf Graphic file (type pdf)
-<use Chapters/Crude/Figs/rf.pdf>
-Package pdftex.def Info: Chapters/Crude/Figs/rf.pdf  used on input line 30.
-(pdftex.def)             Requested size: 448.1309pt x 298.76253pt.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2185,15 +905,18 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[70] [71 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/rf.pdf>]
-
-LaTeX Warning: Reference `appendix:amide_coupling' on page 72 undefined on input line 46.
-
-
-LaTeX Warning: Reference `appendix:mpro_assay' on page 72 undefined on input line 46.
-
-
-Package natbib Warning: Citation `Kumar2011diallinine' on page 72 undefined on input line 58.
+[70 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf>]
+<Chapters/Crude/Figs/yield_vs_activity.pdf, id=75, 752.8125pt x 602.25pt>
+File: Chapters/Crude/Figs/yield_vs_activity.pdf Graphic file (type pdf)
+<use Chapters/Crude/Figs/yield_vs_activity.pdf>
+Package pdftex.def Info: Chapters/Crude/Figs/yield_vs_activity.pdf  used on input line 31.
+(pdftex.def)             Requested size: 380.914pt x 304.73576pt.
+ [71 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/yield_vs_activity.pdf>]
+<Chapters/Crude/Figs/rf_loo_flat.pdf, id=111, 845.1575pt x 597.23125pt>
+File: Chapters/Crude/Figs/rf_loo_flat.pdf Graphic file (type pdf)
+<use Chapters/Crude/Figs/rf_loo_flat.pdf>
+Package pdftex.def Info: Chapters/Crude/Figs/rf_loo_flat.pdf  used on input line 44.
+(pdftex.def)             Requested size: 380.914pt x 269.17989pt.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2202,182 +925,89 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[72]
-<Chapters/Crude/Figs/strip_plot.pdf, id=1177, 752.8125pt x 376.52669pt>
+[72 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/rf_loo_flat.pdf>]
+<Chapters/Crude/Figs/false_negative.pdf, id=149, 420.90599pt x 194.55786pt>
+File: Chapters/Crude/Figs/false_negative.pdf Graphic file (type pdf)
+<use Chapters/Crude/Figs/false_negative.pdf>
+Package pdftex.def Info: Chapters/Crude/Figs/false_negative.pdf  used on input line 58.
+(pdftex.def)             Requested size: 448.1309pt x 207.15657pt.
+ [73 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/false_negative.pdf>]
+
+LaTeX Warning: Reference `fig:strip' on page 74 undefined on input line 73.
+
+<Chapters/Crude/Figs/strip_plot.pdf, id=195, 752.8125pt x 376.52669pt>
 File: Chapters/Crude/Figs/strip_plot.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/strip_plot.pdf>
-Package pdftex.def Info: Chapters/Crude/Figs/strip_plot.pdf  used on input line 62.
+Package pdftex.def Info: Chapters/Crude/Figs/strip_plot.pdf  used on input line 77.
 (pdftex.def)             Requested size: 448.1309pt x 224.14244pt.
-) [73 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/strip_plot.pdf>]
-\openout2 = `Chapters/Outlook/outlook.aux'.
+<Chapters/Crude/Figs/ml_vs_crude.pdf, id=196, 822.93991pt x 336.70734pt>
+File: Chapters/Crude/Figs/ml_vs_crude.pdf Graphic file (type pdf)
+<use Chapters/Crude/Figs/ml_vs_crude.pdf>
+Package pdftex.def Info: Chapters/Crude/Figs/ml_vs_crude.pdf  used on input line 83.
+(pdftex.def)             Requested size: 448.1309pt x 183.35028pt.
 
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.tex [74
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 26.98592pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.98592pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
+
+[74] [75 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/strip_plot.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/ml_vs_crude.pdf>])
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 26.98592pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.98592pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
+
+[76] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [79
 
 
 
 
-]
-Chapter 7.
 
-LaTeX Warning: Reference `chap:MolTrans' on page 75 undefined on input line 9.
-
-[75]) [76] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [77
-
-
-
-
-] [78] [79]
-Overfull \hbox (1.28014pt too wide) in paragraph at lines 323--327
+] [80] [81]
+Overfull \hbox (1.28014pt too wide) in paragraph at lines 331--335
 \T1/ptm/m/n/12 (-20) P. J., and Cernak, T. (2018).  Nanoscale synthesis and affinity ranking.  \T1/ptm/m/it/12 (-20) Nature\T1/ptm/m/n/12 (-20) , 557(7704):228--|
  []
 
-[80] [81] [82] [83] [84] [85] [86] [87] [88]
-Underfull \hbox (badness 3386) in paragraph at lines 1010--1014
+[82] [83] [84] [85] [86] [87] [88] [89] [90]
+Underfull \hbox (badness 1152) in paragraph at lines 1019--1023
 []\T1/ptm/m/n/12 (+20) Sald�var-Gonz�lez, F. I., Huerta-Garc�a, C. S., and Medina-Franco, J. (2020).
  []
 
-
-Overfull \hbox (0.56535pt too wide) in paragraph at lines 1047--1050
-[]\T1/ptm/m/n/12 (-20) Schneider, G. (2018).  Automating drug discovery.  \T1/ptm/m/it/12 (-20) Nature Reviews Drug Discovery\T1/ptm/m/n/12 (-20) , 17(2):97--|
+[91] [92]
+Underfull \hbox (badness 1112) in paragraph at lines 1235--1240
+\T1/ptm/m/n/12 (+20) cov-ery of sars-cov-2 main pro-tease in-hibitors by com-bin-ing crowd-sourc-ing, high-
  []
 
-[89] [90] [91] [92]) [93]
-\openout2 = `Appendix/Appendix1/appendix1.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.tex [94
+[93] [94] [95]) [96] [103
 
 
-]
-Appendix A.
-
-Package natbib Warning: Citation `Douangamath2020XChem' on page 95 undefined on input line 6.
-
-
-Package natbib Warning: Citation `Schwaller2019MolecularPrediction' on page 95 undefined on input line 16.
-
-
-Package natbib Warning: Citation `Srivastava2014Dropout:Overfittin' on page 95 undefined on input line 18.
-
-[95]
-
-Package natbib Warning: Citation `Klein2017' on page 96 undefined on input line 20.
-
-
-Package natbib Warning: Citation `Paszke2019PyTorch:Library' on page 96 undefined on input line 20.
-
-
-Package natbib Warning: Citation `Kovacs2020MolecularExplainer' on page 96 undefined on input line 22.
-
-
-Package natbib Warning: Citation `Lowe2012' on page 96 undefined on input line 22.
-
-
-Package natbib Warning: Citation `Jin2017' on page 96 undefined on input line 22.
-
-) [96]
-\openout2 = `Appendix/Appendix2/appendix2.aux'.
-
- (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex
-Appendix B.
-
-Package natbib Warning: Citation `Moonshot2022' on page 97 undefined on input line 7.
-
-[97
-
-
-
-
-]
-<Chapters/Ranking/Figs/rxn_schemes_full.pdf, id=1543, 867.80914pt x 1877.88171pt>
-File: Chapters/Ranking/Figs/rxn_schemes_full.pdf Graphic file (type pdf)
-<use Chapters/Ranking/Figs/rxn_schemes_full.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_full.pdf  used on input line 19.
-(pdftex.def)             Requested size: 268.88127pt x 581.85078pt.
-
-
-Package natbib Warning: Citation `Schuller2021Mac1Frag' on page 98 undefined on input line 25.
-
-[98] [99 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_full.pdf>]
-
-/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex:33: Package inputenc Error: Unicode character μ (U+03BC)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 ...er diluting the reaction mixture with 4 μ
-                                                  L DMSO. For yield estimati...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex:33: Package inputenc Error: Unicode character μ (U+03BC)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 ...ith 4 μL DMSO. For yield estimation, 1 μ
-                                                  L of the diluted library w...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex:33: Package inputenc Error: Unicode character μ (U+03BC)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 ... ACN in water to the final volume of 50 μ
-                                                  L. The desired product was...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-) [100]
-
-Package natbib Warning: There were undefined citations.
-
-[101
-
-
-] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux)
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-(/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
+] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D0CC9D4999AF3D3DAE37C38EFA3B0AE3;13502.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: A9C9CB794853785A54804B0075994E42;1321.
  ) 
 Here is how much of TeX's memory you used:
- 20748 strings out of 478994
- 368815 string characters out of 5858184
- 710926 words of memory out of 5000000
- 36790 multiletter control sequences out of 15000+600000
- 487614 words of font info for 427 fonts, out of 8000000 for 9000
+ 20343 strings out of 478994
+ 358448 string characters out of 5858184
+ 740617 words of memory out of 5000000
+ 36785 multiletter control sequences out of 15000+600000
+ 466480 words of font info for 307 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,12n,130p,1875b,1314s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (111 pages, 16415479 bytes).
+ 128i,11n,130p,1277b,1334s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section.a.B.6} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.a.B.1} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (27 pages, 1940099 bytes).
 PDF statistics:
- 1746 PDF objects out of 2073 (max. 8388607)
- 1250 compressed objects within 13 object streams
- 435 named destinations out of 1000 (max. 500000)
- 92863 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 682 PDF objects out of 1000 (max. 8388607)
+ 553 compressed objects within 6 object streams
+ 248 named destinations out of 1000 (max. 500000)
+ 70727 words of extra memory for PDF output out of 74296 (max. 10000000)
 

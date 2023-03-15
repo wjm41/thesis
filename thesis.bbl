@@ -41,6 +41,14 @@ Bajusz, D., R{\'{a}}cz, A., and H{\'{e}}berger, K. (2015).
   similarity calculations?}
 \newblock {\em Journal of Cheminformatics}, 7(1):20.
 
+\bibitem[Baker et~al., 2020]{Baker2020FragementsFromCrude}
+Baker, L.~M., Aimon, A., Murray, J.~B., Surgenor, A.~E., Matassova, N.,
+  Roughley, S.~D., Collins, P.~M., Krojer, T., von Delft, F., and Hubbard,
+  R.~E. (2020).
+\newblock Rapid optimisation of fragments and hits to lead compounds from
+  screening of crude reaction mixtures.
+\newblock {\em Communications Chemistry}, 3(1):122.
+
 \bibitem[Baldi and Nasr, 2010]{baldi2010similarity}
 Baldi, P. and Nasr, R. (2010).
 \newblock When is chemical similarity significant? the statistical distribution
@@ -417,7 +425,7 @@ Hofmann, T., Sch{\"o}lkopf, B., and Smola, A.~J. (2008).
 \bibitem[Howard et~al., 2018]{howard2018fastai}
 Howard, J. et~al. (2018).
 \newblock fastai.
-\newblock https://github.com/fastai/fastai.
+\newblock \url{https://github.com/fastai/fastai}.
 
 \bibitem[Huang et~al., 2006]{Huang2006DUD}
 Huang, N., Shoichet, B.~K., and Irwin, J.~J. (2006).
@@ -596,7 +604,7 @@ Korovina, K., Xu, S., Kandasamy, K., Neiswanger, W., Poczos, B., Schneider, J.,
 \bibitem[Kovacs et~al., 2021]{Kovacs2020MolecularExplainer}
 Kovacs, D.~P., McCorkindale, W., and Lee, A.~A. (2021).
 \newblock {Molecular Transformer Explainer}.
-\newblock https://github.com/davkovacs/MTExplainer.git.
+\newblock \url{https://github.com/davkovacs/MTExplainer.git}.
 
 \bibitem[Krenn et~al., 2020]{Krenn2020Selfies}
 Krenn, M., H{\"a}se, F., Nigam, A., Friederich, P., and Aspuru-Guzik, A.
@@ -611,13 +619,6 @@ Krizhevsky, A., Sutskever, I., and Hinton, G.~E. (2012).
 \newblock In Pereira, F., Burges, C., Bottou, L., and Weinberger, K., editors,
   {\em Advances in Neural Information Processing Systems}, volume~25. Curran
   Associates, Inc.
-
-\bibitem[Kumar et~al., 2011]{Kumar2011diallinine}
-Kumar, M.~S., Tamilarasan, R., and Sreekanth, A. (2011).
-\newblock 4-salicylideneamino-3-methyl-1,2,4-triazole-5-thione as a sensor for
-  aniline recognition.
-\newblock {\em Spectrochimica Acta Part A: Molecular and Biomolecular
-  Spectroscopy}, 79(2):370--375.
 
 \bibitem[Lapuschkin et~al., 2019]{Lapuschkin2019UnmaskingCleverHans}
 Lapuschkin, S., W{\"a}ldchen, S., Binder, A., Montavon, G., Samek, W., and
@@ -639,6 +640,14 @@ Li, J., Fu, A., and Zhang, L. (2019).
   interactions in molecular docking.
 \newblock {\em Interdisciplinary Sciences: Computational Life Sciences},
   11(2):320--328.
+
+\bibitem[Lim et~al., 2022]{Lim2022DELCountML}
+Lim, K.~S., Reidenbach, A.~G., Hua, B.~K., Mason, J.~W., Gerry, C.~J., Clemons,
+  P.~A., and Coley, C.~W. (2022).
+\newblock Machine learning on dna-encoded library count data using an
+  uncertainty-aware probabilistic loss function.
+\newblock {\em Journal of Chemical Information and Modeling},
+  62(10):2316--2331.
 
 \bibitem[Limban et~al., 2018]{Limban2018StrucuralAlerts}
 Limban, C., Nu{\c t}{\u a}, D.~C., Chiri{\c t}{\u a}, C., Negreș, S., Arsene,
@@ -905,7 +914,7 @@ Polishchuk, P.~G., Muratov, E.~N., Artemenko, A.~G., Kolumbin, O.~G., Muratov,
 \bibitem[{PostEra Inc.}, 2022]{moonshot2020}
 {PostEra Inc.} (2022).
 \newblock {COVID} moonshot.
-\newblock https://postera.ai/covid.
+\newblock \url{https://postera.ai/covid}.
 
 \bibitem[Pradeepkiran et~al., 2019]{Pradeepkiran2019pharmacophore}
 Pradeepkiran, J.~A., Reddy, A.~P., and Reddy, P.~H. (2019).
@@ -1143,6 +1152,15 @@ St{\"a}rk, H., Ganea, O., Pattanaik, L., Barzilay, R., and Jaakkola, T. (2022).
   prediction.
 \newblock In {\em International Conference on Machine Learning}, pages
   20503--20521. PMLR.
+
+\bibitem[Stepan et~al., 2011]{Stepan2011aniline}
+Stepan, A.~F., Walker, D.~P., Bauman, J., Price, D.~A., Baillie, T.~A.,
+  Kalgutkar, A.~S., and Aleo, M.~D. (2011).
+\newblock Structural alert/reactive metabolite concept as applied in medicinal
+  chemistry to mitigate the risk of idiosyncratic drug toxicity: A perspective
+  based on the critical examination of trends in the top 200 drugs marketed in
+  the united states.
+\newblock {\em Chemical Research in Toxicology}, 24(9):1345--1410.
 
 \bibitem[Struble et~al., 2020]{Struble2020}
 Struble, T.~J., Alvarez, J.~C., Brown, S.~P., Chytil, M., Cisar, J.,

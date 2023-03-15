@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Declaration/declaration.aux
+A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Chapters/Preface/preface.aux
+A level-1 auxiliary file: Chapters/Intro/intro.aux
+A level-1 auxiliary file: Chapters/Background/background.aux
+A level-1 auxiliary file: Chapters/Fresco/fresco.aux
+A level-1 auxiliary file: Chapters/Ranking/ranking.aux
+A level-1 auxiliary file: Chapters/Transformer/transformer.aux
+A level-1 auxiliary file: Chapters/Crude/test.aux
+A level-1 auxiliary file: Chapters/Outlook/outlook.aux
+The style file: apalike.bst
+A level-1 auxiliary file: Appendix/Appendix1/appendix1.aux
+A level-1 auxiliary file: Appendix/Appendix2/appendix2.aux
+Database file #1: References/references.bib
+Warning--I didn't find a database entry for "Srivastava2014Dropout:Overfittin"
+Warning--I didn't find a database entry for "Paszke2019PyTorch:Library"
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+You've used 207 entries,
+            1935 wiz_defined-function locations,
+            1684 strings with 64551 characters,
+and the built_in function-call counts, 117208 in all, are:
+= -- 10369
+> -- 8850
+< -- 57
++ -- 3338
+- -- 3299
+* -- 11828
+:= -- 21056
+add.period$ -- 619
+call.type$ -- 207
+change.case$ -- 2671
+chr.to.int$ -- 204
+cite$ -- 207
+duplicate$ -- 2946
+empty$ -- 5865
+format.name$ -- 3547
+if$ -- 21714
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 186
+newline$ -- 1029
+num.names$ -- 625
+pop$ -- 2315
+preamble$ -- 1
+purify$ -- 2675
+quote$ -- 0
+skip$ -- 2217
+stack$ -- 0
+substring$ -- 6529
+swap$ -- 305
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1232
+warning$ -- 0
+while$ -- 650
+width$ -- 0
+write$ -- 2651
+(There were 2 warnings)
