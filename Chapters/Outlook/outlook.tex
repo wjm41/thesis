@@ -1,25 +1,38 @@
-%!TEX root = ../thesis.tex
-%*******************************************************************************
-%****************************** Third Chapter **********************************
-%*******************************************************************************
-\chapter{Future Work}
+\chapter{Outlook} \label{ch:outlook}
 
+The research presented in this thesis explore ways in which data-driven approaches based on machine learning can be leveraged in the design-make-test cycle of drug discovery. In each of the three steps of `design', `make', and `test' we encounter the same underlying challenge, of grappling with the practical difficulties of a drug discovery campaign where we must make full use of the limited data available.
 
-\section{Short-Term: Continutation of ongoing work}
-Given the relative success of work so far, the immediate plan is to continue ongoing research to completion. After developing a more appropriate benchmark dataset for evaluating the performance of reaction prediction models, the intention is to write up the results of chapter \ref{chap:MolTrans} within the next month, potentially following up with an attempt to `fix' the model which may also be a contribution to the field of NLP in particular regarding the modelling of long sequences. The investigation into SOAP descriptors for QSAR should hopefully be concluded shortly after resubmitting the results to JMedChem. If the drug candidates proposed by the Siamese GNN prove potent, then there is a strong incentive to refine and retrospectively validate the model on historical data and publish the methodology.
+In Chapter \ref{ch:fresco} we looked at how to leverage fragment-protein structures from a crystallographic fragment screen to hit discovery in the absence of any bioactivity data. Using an unsupervised learning approach, we learn the geometric distribution of pharmacophores from the fragment-protein complexes, and use these to screen potential molecules for bioactivity. We showed that this approach outperforms docking on distinguishing active compounds from inactive ones on retrospective data. Further, we prospectively found novel hits for SARS-CoV-2 Mpro and the Mac1 domain of SARS-CoV-2 non-structural protein 3 by virtually screening a library of 1B molecules.
 
-In addition, the COVID Moonshot project will likely continue for another $\sim$8 months and I will continue my participation of the project given the obvious urgency of the pandemic. No doubt this enterprise will remain a fruitful source of interesting problems with real experimental data, which will hopefully lead to innovative solutions. Research will probably be on continuing optimisation of existing molecular series, or searching for alternative backup series while the most promising series undergo \textit{in vivo} toxicity screening.
+Chapter \ref{ch:ranking} takes us to the early stages of hit-to-lead molecular optimisation where bioactivity data is limited, noisy, and dominated by inactive molecules. We overcame this challenge with a learning-to-rank framework via an ML model that predicts whether a compound is more or less active than another. This approach allowed us to make use of inactive data and threshold the bioactivity differences above measurement noise, and validation on retrospective data for SARS-CoV-2 Mpro showed that we can outperform docking on ranking ligands. Combining this model with AI-based synthesis tools, we prospectively screened a library of 8.8M molecules to arrive at a potent compound with a novel scaffold.
 
-\section{Long-Term: Investigation of new modalities}
-Although using artificial intelligence for optimising the small-molecule drug discovery process is undoubtedly a difficult task, there has been extensive interest from both academia and private industry with many breakthroughs having been made already. The field is maturing to the extent that ML algorithms are already beginning to become part of the commercial design-make-test workflow, such that the remaining challenges are arguably merely an engineering problem. 
+While AI-based synthesis tools have already shown demonstrable success in accelerating the synthesis of new molecules, they are still prone to failure and suffer from a lack of transparency in their decision making due to their black-box nature. To address this, in Chapter \ref{ch:transformer} we showcased a workflow for quantitatively interpreting a state-of-the-art deep learning model for reaction prediction. By analysing chemically selective reactions, we showed examples of correct reasoning by the model, explain counterintuitive predictions, and identify Clever Hans predictions where the correct answer is reached for the wrong reason due to dataset bias.
 
-The therapeutic space beyond small-molecules, however, is relatively unexplored territory for data-driven techniques. Applying machine learning to this area will likely present even more complex challenges, but the potential impact of developing new modalities far outweigh that of `just' improving small-molecule QSAR modelling. While the potential areas of research are numerous, thus far two topics of interest have been identified:
+In Chapter \ref{ch:testing} we explored how to accelerate testing procedures by applying machine learning on bioactivity data from nanomolar-scale high-thoughput chemistry. While this experimental technique greatly increases the number of molecules that can be tested, there is additional noise resulting from having to assay crude reaction mixtures instead of pure samples. Nevertheless, we showed that machine learning models trained on this data is able to cut through this noise and identify a false negative assay measurement, as well as prospectively screen a library of ~62K molecules to discover new SARS-CoV-2 Mpro inhibitors just as potent as those from the original assay.
 
-\begin{itemize}
-    \item functionalisation of flexible biomolecules (glycans, peptides),
-    \item understand/design self-assembled nanostructures for drug delivery.
-\end{itemize}
+\section{Directions for Future Research}
 
-Both of these topics involve structures that are larger and less well-understood by medicinal (bio)chemists because of their energetic/entropic complexity. This is a promising area where I could combine physics-based intuition for modelling interactions, as well as pragmatic ML for designing models that would be useful in a drug discovery setting.
+The work presented in this thesis is broad in its scope. Inevitably there are many questions and lines of inquiry exposed but left unanswered within this thesis. Some of the most prominent directions that future work should seek to address are outlined below.
 
-While no ML in involved in the Test of design-make-test it is nonetheless vital to retain this part of the cycle for proper validation of ML drug discovery methods, for taking the important step from mere concept to real-life data-driven-drugs. Therefore there is an expectation that some form of experimental work will be carried out, likely alongside more experienced collaborators, in the latter stages (2\textsuperscript{nd}-3\textsuperscript{rd} year) of the PhD irrespective of the ultimate direction of research.
+\subsection{Synthesis}
+Great strides, continue to improve. Becoming an engineering issue.
+
+LLMs? APIs for connecting/searching chemical databases?
+
+Yield optimisation. Relevant for scaling up of synthesis to kg scale - chemical engineering.
+
+\subsection{Making better use of existing data (?)}
+
+A common complaint is that there's not enough data in drug discovery. Reference MELODDY data sharing. 
+
+Reference DEL. recognise intrinsic nature of the datasets that we are working with.
+
+\subsection{Integrate protein information into property prediction}
+Fundamental bottleneck.
+
+Beyond bioactiviy prediction, ADME/Tox.
+
+\subsection{ML forcefields?}
+
+\subsection{Fully automated drug discovery}
+Generative models. Connect everything above into a single pipeline. 
