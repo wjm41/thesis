@@ -10,9 +10,9 @@
 \contentsline {section}{\numberline {2.2}Computational Approaches}{14}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Docking}{14}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Machine Learning}{16}{subsection.2.2.2}%
-\contentsline {subsubsection}{Random Forest}{19}{section*.14}%
-\contentsline {subsubsection}{Gaussian Process}{19}{section*.15}%
-\contentsline {subsubsection}{Deep Learning}{20}{section*.16}%
+\contentsline {subsubsection}{Random Forest}{19}{section*.17}%
+\contentsline {subsubsection}{Gaussian Process}{19}{section*.18}%
+\contentsline {subsubsection}{Deep Learning}{20}{section*.19}%
 \contentsline {chapter}{\numberline {3}Hit Discovery via Unsupervised Learning of Fragment-Protein Complexes}{23}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Unsupervised Learning of Pharmacophore Distributions}{24}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Model Implementation}{27}{subsection.3.1.1}%
@@ -45,20 +45,23 @@
 \contentsline {section}{\numberline {6.1}Modelling high-throughput crude screening data}{71}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Prospective Virtual Screening}{73}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Discussion}{74}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Future Work}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Short-Term: Continutation of ongoing work}{77}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Long-Term: Investigation of new modalities}{77}{section.7.2}%
-\contentsline {chapter}{References}{79}{chapter*.49}%
-\contentsline {chapter}{Appendix \numberline {A}Computational Details}{97}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}Docking against SARS-CoV-2}{97}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Machine learning}{97}{section.a.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}FRESCO}{97}{subsection.a.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Ranking model}{97}{subsection.a.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}Transformer model}{97}{subsection.a.A.2.3}%
-\contentsline {chapter}{Appendix \numberline {B}Experimental Details}{99}{appendix.a.B}%
-\contentsline {section}{\numberline {B.1}Mpro assay}{99}{section.a.B.1}%
-\contentsline {section}{\numberline {B.2}OC43 antiviral assay}{99}{section.a.B.2}%
-\contentsline {section}{\numberline {B.3}Model generated reaction schemes}{100}{section.a.B.3}%
-\contentsline {section}{\numberline {B.4}Mac1 assay}{100}{section.a.B.4}%
-\contentsline {section}{\numberline {B.5}Crystallographic screening on SARS-CoV-2 nsp3-Mac1}{100}{section.a.B.5}%
-\contentsline {section}{\numberline {B.6}High-Throuhput Amide Coupling}{102}{section.a.B.6}%
+\contentsline {chapter}{\numberline {7}Outlook}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Directions for Future Research}{78}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Deploying and Extending ML-based Synthesis Tools}{78}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Addressing Data Scarcity}{79}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Integration of Protein Bioinformatics}{80}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}Full Automation of Drug Discovery}{81}{subsection.7.1.4}%
+\contentsline {chapter}{References}{83}{chapter*.52}%
+\contentsline {chapter}{Appendix \numberline {A}Computational Details}{107}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}Docking against SARS-CoV-2}{107}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Machine learning}{107}{section.a.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}FRESCO}{107}{subsection.a.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Ranking model}{107}{subsection.a.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Transformer model}{107}{subsection.a.A.2.3}%
+\contentsline {chapter}{Appendix \numberline {B}Experimental Details}{109}{appendix.a.B}%
+\contentsline {section}{\numberline {B.1}Mpro assay}{109}{section.a.B.1}%
+\contentsline {section}{\numberline {B.2}OC43 antiviral assay}{109}{section.a.B.2}%
+\contentsline {section}{\numberline {B.3}Model generated reaction schemes}{110}{section.a.B.3}%
+\contentsline {section}{\numberline {B.4}Mac1 assay}{110}{section.a.B.4}%
+\contentsline {section}{\numberline {B.5}Crystallographic screening on SARS-CoV-2 nsp3-Mac1}{110}{section.a.B.5}%
+\contentsline {section}{\numberline {B.6}High-Throuhput Amide Coupling}{112}{section.a.B.6}%
