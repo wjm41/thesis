@@ -15,8 +15,8 @@ Our training set, de novo design method and generated molecules are available on
 \subsection{Transformer model} \label{appendix:transformer}
 The Molecular Transformer architecture used throughout this work is based on the model described in Schwaller et. al. \cite{Schwaller2019MolecularPrediction}. 
 
-The model uses a 256 dimensional learnt embedding for each SMILES token. The encoder and the decoder are both made up of 4 standard transformer layers and dropout is applied with probability 0.1 \cite{Srivastava2014Dropout:Overfittin}. For weight optimization the Adam optimizer is used and the model is trained for 500 000 steps. Checkpoints are saved every 10 000 steps and the final model is obtained by averaging the weights of the last 20 checkpoints for USPTO.
+The model uses a 256 dimensional learnt embedding for each SMILES token. The encoder and the decoder are both made up of 4 standard transformer layers and dropout is applied with probability 0.1 \cite{Srivastava2014dropout}. For weight optimization the Adam optimizer is used and the model is trained for 500 000 steps. Checkpoints are saved every 10 000 steps and the final model is obtained by averaging the weights of the last 20 checkpoints for USPTO.
 
-The model was implemented with OpenNMT-py package \cite{Klein2017} which makes use of the PyTorch framework \cite{Paszke2019PyTorch:Library}. 
+The model was implemented with OpenNMT-py package \cite{Klein2017} which makes use of the PyTorch framework \cite{paszke2019pytorch}. 
 
 All code used for implementing the attribution tools for the Molecular Transformer, generating the artificial Friedel-Crafts dataset, and Tanimoto-splitting USPTO can be accessed in the GitHub repo \href{https://github.com/davkovacs/MTExplainer.git}{MTExplainer} \cite{Kovacs2020MolecularExplainer}. The USPTO dataset used to train the model \cite{Lowe2012, Jin2017}, as well as the Tanimoto similarity-based train/test splits of USPTO can also be found in the GitHub repo.
