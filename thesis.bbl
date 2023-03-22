@@ -1,9 +1,126 @@
 \begin{thebibliography}{100}
 
-\bibitem{Coley2019AutonomousProgress}
-Connor~W. Coley, Natalie~S. Eyke, and Klavs~F. Jensen.
-\newblock {Autonomous Discovery in the Chemical Sciences Part I: Progress}.
-\newblock {\em Angewandte Chemie - International Edition}, pages 2--38, 2019.
+\bibitem{Brown1868}
+A.~Crum Brown and Thomas~R. Fraser.
+\newblock V.—on the connection between chemical constitution and
+  physiological action. part. i.—on the physiological action of the salts of
+  the ammonium bases, derived from strychnia, brucia, thebaia, codeia, morphia,
+  and nicotia.
+\newblock {\em Earth and Environmental Science Transactions of The Royal
+  Society of Edinburgh}, 25(1):151--203, 1868.
+
+\bibitem{hansch1962correlation}
+Corwin Hansch, Peyton~P Maloney, Toshio Fujita, and Robert~M Muir.
+\newblock Correlation of biological activity of phenoxyacetic acids with
+  hammett substituent constants and partition coefficients.
+\newblock {\em Nature}, 194(4824):178--180, 1962.
+
+\bibitem{hansch1964p}
+Corwin Hansch and Toshio Fujita.
+\newblock p-$\sigma$-$\pi$ analysis. a method for the correlation of biological
+  activity and chemical structure.
+\newblock {\em Journal of the American Chemical Society}, 86(8):1616--1626,
+  1964.
+
+\bibitem{Lindsay1993Dendral}
+Robert~K. Lindsay, Bruce~G. Buchanan, Edward~A. Feigenbaum, and Joshua
+  Lederberg.
+\newblock Dendral: A case study of the first expert system for scientific
+  hypothesis formation.
+\newblock {\em Artificial Intelligence}, 61(2):209--261, 1993.
+
+\bibitem{Yu2017CADDMethods}
+Wenbo Yu and Alexander~D. MacKerell.
+\newblock {\em Computer-Aided Drug Design Methods}, pages 85--106.
+\newblock Springer New York, New York, NY, 2017.
+
+\bibitem{Ma2015MerckMolecularActivity}
+Junshui Ma, Robert~P. Sheridan, Andy Liaw, George~E. Dahl, and Vladimir
+  Svetnik.
+\newblock Deep neural nets as a method for quantitative structure--activity
+  relationships.
+\newblock {\em Journal of Chemical Information and Modeling}, 55(2):263--274,
+  2015.
+
+\bibitem{Kearnes2021Prospective}
+Steven Kearnes.
+\newblock Pursuing a prospective perspective.
+\newblock {\em Trends in Chemistry}, 3(2):77--79, 2021.
+
+\bibitem{Meyers2021DeNovo}
+Joshua Meyers, Benedek Fabian, and Nathan Brown.
+\newblock De novo molecular design and generative models.
+\newblock {\em Drug Discovery Today}, 26(11):2707--2715, 2021.
+
+\bibitem{Renz2019FailureModes}
+Philipp Renz, Dries {Van Rompaey}, J{\"o}rg~Kurt Wegner, Sepp Hochreiter, and
+  G{\"u}nter Klambauer.
+\newblock On failure modes in molecule generation and optimization.
+\newblock {\em Drug Discovery Today: Technologies}, 32-33:55--63, 2019.
+
+\bibitem{corey1991logic}
+Elias~James Corey.
+\newblock {\em The logic of chemical synthesis}.
+\newblock Wiley, 1991.
+
+\bibitem{NobelCorey}
+The~Nobel Foundation.
+\newblock The nobel prize in chemistry 1990, 190.
+
+\bibitem{Corey1985ComputerAssistedSynthesis}
+E~J Corey, A~K Long, and S~D Rubenstein.
+\newblock {Computer-assisted analysis in organic synthesis}.
+\newblock {\em Science}, 228(4698):408, 4 1985.
+
+\bibitem{Coley2018}
+Connor~W. Coley, William~H. Green, and Klavs~F. Jensen.
+\newblock {Machine Learning in Computer-Aided Synthesis Planning}.
+\newblock {\em Accounts of Chemical Research}, 51(5):1281--1289, 2018.
+
+\bibitem{Coley19WLDN5}
+Connor~W. Coley, Wengong Jin, Luke Rogers, Timothy~F. Jamison, Tommi~S.
+  Jaakkola, William~H. Green, Regina Barzilay, and Klavs~F. Jensen.
+\newblock A graph-convolutional neural network model for the prediction of
+  chemical reactivity.
+\newblock {\em Chem. Sci.}, 10:370--377, 2019.
+
+\bibitem{Jimenze2020XAI}
+Jos{\'e} Jim{\'e}nez-Luna, Francesca Grisoni, and Gisbert Schneider.
+\newblock Drug discovery with explainable artificial intelligence.
+\newblock {\em Nature Machine Intelligence}, 2(10):573--584, 2020.
+
+\bibitem{Hughes2011Principles}
+J~P Hughes, S~Rees, S~B Kalindjian, and K~L Philpott.
+\newblock Principles of early drug discovery.
+\newblock {\em British journal of pharmacology}, 162(6):1239--1249, 03 2011.
+
+\bibitem{Chandrasekaran2021Phenotype}
+Srinivas~Niranj Chandrasekaran, Hugo Ceulemans, Justin~D. Boyd, and Anne~E.
+  Carpenter.
+\newblock Image-based profiling for drug discovery: due for a machine-learning
+  upgrade?
+\newblock {\em Nature Reviews Drug Discovery}, 20(2):145--159, 2021.
+
+\bibitem{GirondaMartinez2021DNALibrary}
+Adri{\'a}n Gironda-Mart{\'\i}nez, Etienne~J. Donckele, Florent Samain, and
+  Dario Neri.
+\newblock Dna-encoded chemical libraries: A comprehensive review with succesful
+  stories and future challenges.
+\newblock {\em ACS Pharmacology \& Translational Science}, 4(4):1265--1279, 08
+  2021.
+
+\bibitem{Rossler2023PeptideLibrary}
+Simon~L. R{\"o}ssler, Nathalie~M. Grob, Stephen~L. Buchwald, and Bradley~L.
+  Pentelute.
+\newblock Abiotic peptides as carriers of information for the encoding of
+  small-molecule library synthesis.
+\newblock {\em Science}, 379(6635):939--945, 2023.
+
+\bibitem{Dunas2023MassSpec}
+Maria~Emilia Due{\~n}as, Rachel~E Peltier-Heap, Melanie Leveridge, Roland~S
+  Annan, Frank~H B{\"u}ttner, and Matthias Trost.
+\newblock Advances in high-throughput mass spectrometry in drug discovery.
+\newblock {\em EMBO Molecular Medicine}, 15(1):e14850, 2023.
 
 \bibitem{Weininger1988}
 David Weininger.
@@ -96,11 +213,6 @@ John~J. Irwin, Khanh~G. Tang, Jennifer Young, Chinzorig Dandarchuluun,
   discovery.
 \newblock {\em Journal of Chemical Information and Modeling},
   60(12):6065--6073, 2020.
-
-\bibitem{Corey1985ComputerAssistedSynthesis}
-E~J Corey, A~K Long, and S~D Rubenstein.
-\newblock {Computer-assisted analysis in organic synthesis}.
-\newblock {\em Science}, 228(4698):408, 4 1985.
 
 \bibitem{Klucznik2018EfficientLaboratory}
 Tomasz Klucznik, Barbara Mikulak-Klucznik, Michael~P. McCormack, Heather Lima,
@@ -678,13 +790,6 @@ Kevin Yang, Kyle Swanson, Wengong Jin, Connor Coley, Philipp Eiden, Hua Gao,
   2019.
 \newblock PMID: 31361484.
 
-\bibitem{Coley19WLDN5}
-Connor~W. Coley, Wengong Jin, Luke Rogers, Timothy~F. Jamison, Tommi~S.
-  Jaakkola, William~H. Green, Regina Barzilay, and Klavs~F. Jensen.
-\newblock A graph-convolutional neural network model for the prediction of
-  chemical reactivity.
-\newblock {\em Chem. Sci.}, 10:370--377, 2019.
-
 \bibitem{Ragoza2017ProteinCNN}
 Matthew Ragoza, Joshua Hochuli, Elisa Idrobo, Jocelyn Sunseri, and David~Ryan
   Koes.
@@ -748,16 +853,6 @@ Sebastian Lapuschkin, Stephan W{\"a}ldchen, Alexander Binder, Gr{\'e}goire
 \newblock Unmasking clever hans predictors and assessing what machines really
   learn.
 \newblock {\em Nature Communications}, 10(1):1096, 2019.
-
-\bibitem{Jimenze2020XAI}
-Jos{\'e} Jim{\'e}nez-Luna, Francesca Grisoni, and Gisbert Schneider.
-\newblock Drug discovery with explainable artificial intelligence.
-\newblock {\em Nature Machine Intelligence}, 2(10):573--584, 2020.
-
-\bibitem{Hughes2011Principles}
-J~P Hughes, S~Rees, S~B Kalindjian, and K~L Philpott.
-\newblock Principles of early drug discovery.
-\newblock {\em British journal of pharmacology}, 162(6):1239--1249, 03 2011.
 
 \bibitem{David2017FBLD}
 Ben~J. Davis and Stephen~D. Roughley.
@@ -889,11 +984,6 @@ Eugene~N Muratov, J{\"u}rgen Bajorath, Robert~P Sheridan, Igor~V Tetko, Dmitry
   Adrian Roitberg, et~al.
 \newblock Qsar without borders.
 \newblock {\em Chemical Society Reviews}, 49(11):3525--3564, 2020.
-
-\bibitem{Kearnes2021Prospective}
-Steven Kearnes.
-\newblock Pursuing a prospective perspective.
-\newblock {\em Trends in Chemistry}, 3(2):77--79, 2021.
 
 \bibitem{Schuller2021Mac1Frag}
 Marion Schuller, Galen~J. Correy, Stefan Gahbauer, Daren Fearon, Taiasean Wu,
@@ -1189,11 +1279,6 @@ Marwin H.~S. Segler.
 \newblock World programs for model-based learning and planning in compositional
   state and action spaces, 2019.
 
-\bibitem{Coley2018}
-Connor~W. Coley, William~H. Green, and Klavs~F. Jensen.
-\newblock {Machine Learning in Computer-Aided Synthesis Planning}.
-\newblock {\em Accounts of Chemical Research}, 51(5):1281--1289, 2018.
-
 \bibitem{Johansson2020}
 Simon Johansson, Amol Thakkar, Thierry Kogej, Esben Bjerrum, Samuel Genheden,
   Tomas Bastys, Christos Kannas, Alexander Schliep, Hongming Chen, and Ola
@@ -1426,14 +1511,6 @@ Nathan~J. Gesmundo, B{\'e}reng{\`e}re Sauvagnat, Patrick~J. Curran, Matthew~P.
   Richards, Christine~L. Andrews, Peter~J. Dandliker, and Tim Cernak.
 \newblock Nanoscale synthesis and affinity ranking.
 \newblock {\em Nature}, 557(7704):228--232, 2018.
-
-\bibitem{GirondaMartinez2021DNALibrary}
-Adri{\'a}n Gironda-Mart{\'\i}nez, Etienne~J. Donckele, Florent Samain, and
-  Dario Neri.
-\newblock Dna-encoded chemical libraries: A comprehensive review with succesful
-  stories and future challenges.
-\newblock {\em ACS Pharmacology \& Translational Science}, 4(4):1265--1279, 08
-  2021.
 
 \bibitem{McCloskey2020DNALibrary}
 Kevin McCloskey, Eric~A. Sigel, Steven Kearnes, Ling Xue, Xia Tian, Dennis
@@ -1725,6 +1802,11 @@ Monica Schenone, Vlado Dancik, Bridget~K Wagner, and Paul~A Clemons.
   drug discovery.
 \newblock {\em Nature Chemical Biology}, 9(4):232--240, 2013.
 
+\bibitem{Coley2019AutonomousProgress}
+Connor~W. Coley, Natalie~S. Eyke, and Klavs~F. Jensen.
+\newblock {Autonomous Discovery in the Chemical Sciences Part I: Progress}.
+\newblock {\em Angewandte Chemie - International Edition}, pages 2--38, 2019.
+
 \bibitem{Coley2019AutonomousOutlook}
 Connor~W. Coley, Natalie~S. Eyke, and Klavs~F. Jensen.
 \newblock {Autonomous Discovery in the Chemical Sciences Part II: Outlook}.
@@ -1752,6 +1834,15 @@ Vijil Chenthamarakshan, Samuel~C. Hoffman, C.~David Owen, Petra Lukacik, Claire
 \bibitem{Klein2017}
 Guillaume Klein, Yoon Kim, Jean Senellart, and Alexander~M. Rush.
 \newblock {OpenNMT}, 2017.
+
+\bibitem{paszke2019pytorch}
+Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory
+  Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban
+  Desmaison, Andreas Köpf, Edward Yang, Zach DeVito, Martin Raison, Alykhan
+  Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu~Fang, Junjie Bai, and Soumith
+  Chintala.
+\newblock Pytorch: An imperative style, high-performance deep learning library,
+  2019.
 
 \bibitem{Kovacs2020MolecularExplainer}
 David~P Kovacs, William McCorkindale, and Alpha~A. Lee.
