@@ -3,7 +3,10 @@
 \section{Molecular Representation}
 
 \subsection{SMILES}
-The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure. In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase (see Table~\ref{table:smiles} for examples). Single and aromatic bonds are omitted while for double and triple bonds the specials characters \texttt{=} and \texttt{\#} are used. Branches are specified by enclosing them into parentheses. To encode cyclic structures a single bond in the ring is broken and the matching atoms are denoted by numbers. \texttt{@} characters are used to denote chirality while \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations. Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route.
+The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, Weininger1989} is a widely-used text-based description of molecular structure, developed for the purpose of storing chemical data in a computer-readable format. In SMILES strings, atoms are represented with their chemical symbols and aromatic atoms are denoted in lowercase. Special characters are utilised to fully specify the chemical structure of a molecule following specific rules. For example, the characters \texttt{=} and \texttt{\#} are used to represent double and triple bonds, \texttt{@} characters are used to denote chirality, and \texttt{\textbackslash} and \texttt{/} characters specify local double bond configurations (see Table~\ref{table:smiles} for examples). Parantheses are used to denote 'branches' in the chemical structure, and cyclic substructures are encoded by breaking a single bond in the ring and labelling the matching atoms with numbers (Fig. \ref{fig:smiles}).
+
+Following these rules, a SMILES string is constructed by traversing the nodes of the molecular graph. Depending on the choice of starting node and traversal route there are often multiple valid SMILES representations per molecule, especially for larger molecules. In order to define a single unique SMILES representation for a molecule, known as the `canonical' SMILES, a deterministic algorithm is used to choose the starting node and traversal route. 
+
 
 \begin{table}[!h]
 \begin{center}
@@ -14,12 +17,12 @@ The simplified molecular-input line-entry system (SMILES) \cite{Weininger1988, W
          C & CH\textsubscript{4} \\
          \lbrack Fe2+\rbrack & Fe\textsuperscript{2+} \\
          C=O & CH\textsubscript{2}O \\
-         C\#N & HCN (cyan) \\
+         C\#N & HCN \\
          CCN(CC)CC & \includegraphics[width=0.75in]{Chapters/Background/Figs/triethyl_amine.png} \\
          CC1=CC(CCC1)Br & \includegraphics[width=0.7in]{Chapters/Background/Figs/cyclic.png} \\
          \hline
     \end{tabular}
-    \caption{Demonstration of the SMILES language}
+    \caption{Examples of SMILES strings.}
     \label{table:smiles}
 \end{center}
 \end{table}
@@ -30,7 +33,7 @@ The text-based nature of SMILES strings as well as its expressiveness in encodin
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/smiles.png}
+    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/smiles.pdf}
     \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
 \end{figure}
 
@@ -53,7 +56,7 @@ Using many of the same symbols as SMILES, it also allows specification of wildca
         [N:1][C:2](=[O:3])[N:4]>>[N:1][C:2](=[O:3])[C:4] & urea group transforming into an amide \\
         \hline
     \end{tabular}
-    \caption{Examples of SMARTS patterns}
+    \caption{Examples of SMARTS patterns.}
     \label{table:smarts}
 \end{center}
 \end{table}
@@ -69,7 +72,7 @@ Beyond substructures for individual molecules, SMARTS can also be applied to rea
 \begin{figure}[htbp!] 
     \centering    
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/rx_template_new.png}
-    \caption[Reaction template]{An example of a reaction template for the synthesis of an amide from an acid chloride and a primary amine.}
+    \caption[Reaction template]{\textbf{An example reaction template.} This template describes  the synthesis of an amide from an acid chloride and a primary amine.}
     \label{fig:rx_template}
 \end{figure}
 
@@ -80,7 +83,7 @@ In addition to virtual library construction, reaction templates can be used for 
 \begin{figure}[b!] 
     \centering    
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/pharmacophore_models.png}
-    \caption{An illustration of structure-based or ligand-based pharmacophore models. Reproduced from \cite{Kaserer2015PharmacophoreReview}.}
+    \caption{\textbf{An illustration of structure-based and ligand-based pharmacophore models.} Reproduced from \cite{Kaserer2015PharmacophoreReview}.}
     \label{fig:pharmacophore_models}
 \end{figure}
 
@@ -178,8 +181,8 @@ For regression models, the most common metric used to evaluate the performance o
 
 \begin{figure}[htbp!] 
     \centering    
-    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/roc_curve.png}
-    \caption{An example Receiver Operating Characteristic (ROC) curve. The diagonal shows the performance of a random classifier. Three example classifiers (blue, orange, green) are shown. Reproduced from \cite{roccurve}.}
+    \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/roc_curve.pdf}
+    \caption{\textbf{Example Receiver Operating Characteristic (ROC) curves.} The diagonal shows the performance of a random classifier. Two example classifiers (blue, green) are shown. Adapted from \cite{roccurve}.}
     \label{fig:roc_curve}
 \end{figure}
 
