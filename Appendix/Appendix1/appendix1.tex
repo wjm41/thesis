@@ -1,8 +1,9 @@
-%!TEX root = ../thesis.tex
-% ******************************* Thesis Appendix A ****************************
+
+% TODO - add extra details
+
 \chapter{Computational Details} \label{appendix:details}
 
-\section{Docking against SARS-CoV-2} \label{appendix:docking}
+\section{Docking against SARS-CoV-2 Mpro} \label{appendix:docking}
 All molecules synthesised by the COVID Moonshot Consortium were docked against structure x2908 reported by Diamond XChem \cite{Douangamath2020XChem}. We use the “Classic OEDocking” floe v0.7.2 as implemented in the Orion 2020.3.1 Academic Stack (OpenEye Scientific). Omega was used to enumerate conformations (and expand stereochemistry) with up to 500 conformations. FRED was used for docking in HYBRID mode using the x2908 bound ligand. The docked poses of the ligands were scored using the Chemgauss4 scoring function.
 
 \section{Machine learning} \label{appendix:machine_learning}
