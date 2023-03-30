@@ -116,7 +116,7 @@ The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
-    \caption{FRESCO is able to retrospectively perform hit detection. High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
+    \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
     \label{fig:moonshot_enrichment_vs_docking}
 \end{figure}
 
@@ -126,7 +126,7 @@ Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves highe
 \begin{figure}[!h]
     \centering
     \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/flowchart_screening.pdf}
-    \caption{A schematic of the FRESCO screening workflow.}
+    \caption{\textbf{A schematic of the FRESCO screening workflow.}}
     \label{fig:screening_workflow}
 \end{figure}
 
@@ -222,5 +222,3 @@ Here we show that the combination of computational statistics with high-throughp
 More generally, we note that our method does not require the observation of affinity data in order to infer potency. This is done by employing an unsupervised machine learning approach on unlabelled structural biology data. As the throughput of structural biology increases, we hope that an unsupervised approach may unlock novel ways of overcoming data limitations in the protein-ligand affinity prediction problem.
 
 Finally, although prospective studies demonstrated FRESCO's ability to identify hits, we note that the hit rate and potency of the identified hits are both lower than the retrospective experiments. This highlights the importance of prospective validation in machine learning -- retrospective studies are biased by the fact that the model is rescoring ``reasonable'' design from medicinal chemists, whereas in prospective evaluations, the model is used to score the large chemical space without further inductive biases. Future efforts to improve FRESCO should seek to include further inductive biases, for example incorporating physics-based constrains such as docking to filter FRESCO outputs, as well as solidifying a human-in-the-loop approach to select top hits. 
-
-% TODO - more discussion on the failures of the model? Could include PNAS paper
