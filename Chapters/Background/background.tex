@@ -34,7 +34,7 @@ The text-based nature of SMILES strings as well as its expressiveness in encodin
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/smiles.pdf}
-    \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} Adapted from \cite{Kim2021GenerativeCT}.}
+    \caption{\label{fig:smiles} \textbf{Illustration of the mapping from chemical structure to SMILES.} The chemical structure of a molecule is divided into several `branches', which are shown in different colors. In SMILES, each branch is enclosed by parantheses. Adapted from \cite{Kim2021GenerativeCT}.}
 \end{figure}
 
 While SMILES is by far the most widely used text-based representation of molecules, other representations have been developed and are in use to address some shortcomings in SMILES. For example, the International Chemical Identifier (InChI) \cite{Heller2013InChI} string representation, which has a hierarchical construction for specifying tautomeric/stereochemical/charge states, allows greater precision and flexibility in querying molecules from large chemical databases. Another example is SELF-referencIng Embedded Strings (SELFIES) \cite{Krenn2020Selfies} which is constructed such that every SELFIES string, including random combinations of characters, is a valid molecule. This property is useful for the application of ML models that generate text as output - using SELFIES as the molecular representation, the model always output valid molecules whereas with SMILES that is not guaranteed.
@@ -80,10 +80,10 @@ In addition to virtual library construction, reaction templates can be used for 
 
 \subsection{Pharmacophores} \label{subsec:pharmacophores}
 
-\begin{figure}[b!] 
+\begin{figure}[t!] 
     \centering    
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/pharmacophore_models.png}
-    \caption{\textbf{An illustration of structure-based and ligand-based pharmacophore models.} Reproduced from \cite{Kaserer2015PharmacophoreReview}.}
+    \caption{\textbf{An illustration of pharmacophore model construction.} (A) Structure-based models are constructed from observed protein-ligand complexes while (B) ligand-based models are constructed by aligning conformers and identifying overlapping pharmacophores. Reproduced from \cite{Kaserer2015PharmacophoreReview}.}
     \label{fig:pharmacophore_models}
 \end{figure}
 
@@ -100,6 +100,8 @@ After obtaining a pharmacophore model, it can be used to virtually screen ligand
 % Molecular descriptors and fingerprints based on pharmacophores have also been developed and have found to be useful as inputs for machine learning models.
 
 \subsection{Fingerprints} \label{subsec:fingerprints}
+
+% TODO - fingerprint figure?
 
 In order to apply powerful machine learning methods, we require a (typically fixed-length) vector representation of molecules konwn in the literature as `molecular fingerprints'. The most popular molecular fingerprint is the Morgan fingerprint \cite{morgan1965fingerprints}, also known as the Extended-Connectivity FingerPrint (ECFP) \cite{rogers2010extended}. ECFPs are a particular example of `topological' fingerprints that encode the presence of substructures in a molecule by traversing the molecular graph.
 
@@ -177,9 +179,9 @@ To find the solution $\hat{\theta}$ for a dataset in practice, we would first di
 
 After a model has been trained we use the test dataset, which has never been seen by the model during training, to evaluate the performance of the model. It is important to use the same training and test datasets for a fair comparison of different models, and curated datasets from the literature are commonly used as a benchmark for evaluating the performance of new models.
 
-For regression models, the most common metric used to evaluate the performance of a model is the root mean squared error (RMSE) or the pearson correlation coefficient (PCC). For binary classification models, the most common metric used is the area under the receiver operating characteristic curve (AUC). The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) as the discrimination threshold for classifying one class over the other is varied \ref{fig:roc_curve}. The AUC is the area under the ROC curve, and is a measure of the model's ability to distinguish between the two classes. AUC values range from 0 to 1, with 0.5 indicating a model that is no better than random guessing, and 1 indicating a perfect model.
+For regression models, the most common metric used to evaluate the performance of a model is the root mean squared error (RMSE) or the pearson correlation coefficient (PCC). For binary classification models, the most common metric used is the area under the receiver operating characteristic curve (AUC). The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) as the discrimination threshold for classifying one class over the other is varied (Fig. \ref{fig:roc_curve}). The AUC is the area under the ROC curve, and is a measure of the model's ability to distinguish between the two classes. AUC values range from 0 to 1, with 0.5 indicating a model that is no better than random guessing, and 1 indicating a perfect model.
 
-\begin{figure}[htbp!] 
+\begin{figure}[!h] 
     \centering    
     \includegraphics[width=0.75\textwidth]{Chapters/Background/Figs/roc_curve.pdf}
     \caption{\textbf{Example Receiver Operating Characteristic (ROC) curves.} The diagonal shows the performance of a random classifier. Two example classifiers (blue, green) are shown. Adapted from \cite{roccurve}.}
