@@ -29,7 +29,7 @@ In this chapter, we investigate the application of ML models on bioacitvity data
 \begin{figure}[!t]
     \centering
     \includegraphics[width=0.85\textwidth]{Chapters/Crude/Figs/yield_vs_activity.pdf}
-    \caption{\textbf{The bioactivity of the crude reaction mixtures is influenced by the yield of the nanomolar-scale reaction.} High yielding compounds are much likelier to exhibit high activity (strongly inhibiting Mpro) while low yielding compounds tend to have low activity.}
+    \caption{\textbf{The bioactivity of the crude reaction mixtures is influenced by reaction yield.} High yielding compounds are much likelier to exhibit high activity (strongly inhibiting Mpro) while low yielding compounds tend to have low activity.}
     \label{fig:yield_activity}
 \end{figure}
 
@@ -66,13 +66,11 @@ Having demonstrated that our ML model can meaningfully learn insights from crude
 
 We construct the screening library by virtually enumerating primary and secondary amine building blocks from Enamine with the same carboxylic acid substructure from MAT-POS-4223bc15-21, resulting in a library of \~62,800 amides. These compounds were then filtered for structural alerts and molecules with more than one chiral center were removed to avoid complications in assessing potency. This leaves \~58000 compounds which was scored by the trained GP and RF models, and the top 20 (``ML'') compounds with high mean predicted activity were selected for synthesis, purification, and assaying to obtain IC50 values.
 
-% Discuss compounds liked by the model?
+% TODO - Discuss compounds liked by the model? Discuss structure?
 
-In paralell, the top 20 (``crude'') compounds with the highest measured crude activity from the initial 300 amides were also selected for resynthesis. Structures of the resynthesised compounds bound to Mpro were obtained, verifying that the extended compounds indeed adopt a similar binding mode to the parent, extending towards P3/P5 instead of the P4 pocket nevertheless forming new interactions with Mpro (Figure 2E).
+In paralell, the top 20 (``crude'') compounds with the highest measured crude activity from the initial 300 amides were also selected for resynthesis. Crystal structures of the resynthesised compounds bound to Mpro were obtained, verifying that the extended compounds indeed adopt a similar binding mode to the parent, extending towards P3/P5 instead of the P4 pocket nevertheless forming new interactions with Mpro.
 
-Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref{fig:strip}), with several compounds improving IC50 by up-to 300-fold on MAT-POS-4223bc15-21 (up-to 3-fold on the corresponding methyl-amide). The top 2 ML compounds showed promising average IC50 values of 53nM (ASAP-0000169) and 75nM (ASAP-0000211), respectively (Figure \ref{fig:ml_vs_crude}). Although the top 2 most potent crude compounds were  more potent with IC50 = 28nM (ASAP-0000221) and IC50 = 34nM (ASAP-0000164), they contain aniline motifs that are generally avoided due to their propensity for the formation of reactive metabolites \cite{Stepan2011aniline}. The top 2 crude compounds without the aforementioned motif had IC50s of 46nM (ASAP-0000155) and 64nM (ASAP-0000225), which are similar to the top 2 ML compounds.
-
-\begin{figure}[!t]
+\begin{figure}[!]
     \centering
     \includegraphics[width=\textwidth]{Chapters/Crude/Figs/strip_plot.pdf}
     \caption{\textbf{The bioactivity distribution of ML identified compounds from virtual screening are similar to those from the most potent crude compounds.} The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.}
@@ -85,6 +83,8 @@ Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref
     \caption{\textbf{Comparison of top ML compounds vs top crude compounds.} The top compounds from the crude screening are more potent, but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.}
     \label{fig:ml_vs_crude}
 \end{figure}
+
+Both sets of compounds exhibit similar distributions in bioactivity (Figure \ref{fig:strip}), with several compounds improving IC50 by up-to 300-fold on MAT-POS-4223bc15-21 (up-to 3-fold on the corresponding methyl-amide). The top 2 ML compounds showed promising average IC50 values of 53nM (ASAP-0000169) and 75nM (ASAP-0000211), respectively (Figure \ref{fig:ml_vs_crude}). Although the top 2 most potent crude compounds were  more potent with IC50 = 28nM (ASAP-0000221) and IC50 = 34nM (ASAP-0000164), they contain aniline motifs that are generally avoided due to their propensity for the formation of reactive metabolites \cite{Stepan2011aniline}. The top 2 crude compounds without the aforementioned motif had IC50s of 46nM (ASAP-0000155) and 64nM (ASAP-0000225), which are similar to the top 2 ML compounds.
 
 This result highlights ML's ability to identify promising yet overlooked scaffolds without compromising potency. 
 
