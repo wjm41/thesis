@@ -59,7 +59,7 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
         \includegraphics[width=0.75\textwidth]{Chapters/Fresco/Figs/fresco_details.pdf}
 
     \end{subfigure}
-    \caption{(a) A visual illustration of how FRESCO differs from traditional fragment linking approaches. (b) A visual illustration of how we apply unsupervised learning to fragment ensembles and perform virtual screening of unseen molecules.}
+    \caption{\textbf{Illustrations of the FRESCO method.} (\textbf{a}) FRESCO conceptually differs from traditional fragment merging/linking by taking a distributional approach. (\textbf{b}) Unsupervised learning of the distribution of pairwise pharmacophore distances from fragment ensembles allows the virtual screening of unseen molecules.}
     \label{fig:fresco_vs_linking}
 \end{figure}
 
@@ -68,7 +68,7 @@ In this chapter, we employ unsupervised machine learning to learn the spatial di
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/pharmacophores.png}
-    \caption{The pharmacophores of the fragment ensemble shown in the 3D binding sites of (a) Mpro, and (b) nsp3-Mac1. The red, blue, and green spheres depict hydrogen bond donors, acceptors, and aromatic pharmacophores respectively. Several of the Mpro fragments are drawn to illustrate the ‘origin’ of some pharmacophores. None are drawn for nsp3-Mac1 due to the density of pharmacophores in the binding site.}
+    \caption{\textbf{Examples of pharmacophore distributions from fragment ensembles.} The red, blue, and green spheres depict hydrogen bond donors, acceptors, and aromatic pharmacophores respectively from fragment ensembles in the 3D binding sites of (\textbf{a}) Mpro, and (\textbf{b}) nsp3-Mac1.  Several of the Mpro fragments are drawn to illustrate the ‘origin’ of some pharmacophores. None are drawn for nsp3-Mac1 due to the density of pharmacophores in the binding site.}
     \label{fig:pharmacophores}
 \end{figure}
 
@@ -126,7 +126,7 @@ Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves highe
 \begin{figure}[!h]
     \centering
     \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/flowchart_screening.pdf}
-    \caption{\textbf{A schematic of the FRESCO screening workflow.}}
+    \caption{\textbf{A schematic of the FRESCO screening workflow.} Target-specific FRESCO models are applied on preprocessed conformers of compounds from EnamineREAL to score them. The top-ranked compounds are then filtered by their physical properties, and clustered by structural similarity. Diverse compounds are chosen for synthesis by picking centroids of the most populous clusters.}
     \label{fig:screening_workflow}
 \end{figure}
 
@@ -160,7 +160,7 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
         % \caption{Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
         % \label{fig:mpro_hit}
     \end{subfigure}
-    \caption{(\textbf{a}) Example structures of cluster centroids after executing the FRESCO screening workflow on Mpro. The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown. (\textbf{b}) Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
+    \caption{\textbf{FRESCO prospectively identifies a hit against Mpro.} (\textbf{a}) The molecules favoured by FRESCO tend to have 2 aromatic moieties connected via an amide or an amide isostere, similarly exhibited by three of the initial fragment hits whose structures are also shown. (\textbf{b}) Compound WIL-UNI-d4749f31-37 is identified as a hit against Mpro, with hit confirmation via follow-up compounds demonstrating SAR. Perturbations to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37 led to increased potency while changes to the benzimidazole group consistently decreased potency. Structural differences between the follow-up compounds and WIL-UNI-d4749f31-37 are highlighted in blue/red.}
     \label{fig:mpro_results}
 \end{figure}
 
@@ -188,7 +188,7 @@ We then turn to SARS-CoV-2 nsp3-Mac1, a structurally unrelated protein target, t
 \begin{figure}[!b]
     \centering
     \includegraphics[width=0.8\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
-    \caption{Example structures of cluster centroids after executing the FRESCO screening workflow on nsp3-Mac1. The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a hetrocyclic motif. This mimics adenosine, a core in the natural substrate.This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
+    \caption{\textbf{Top-ranked compounds from FRESCO mimic the natural substract of nsp3-Mac1.} The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a hetrocyclic motif. This mimics adenosine, a core in the natural substrate.This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
     \label{fig:mac1_ligands}
 \end{figure}
 
@@ -199,7 +199,7 @@ In addition, an X-ray crystallographic screen was also run on the compounds reve
 \begin{figure}[!b]
     \centering
     \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_fig.pdf}
-    \caption{(a) Compound Z5551425673 is identified as a hit against Mac1 via HTRF assay, with (b) hit confirmation via resolution of a crystal structure of Z5551425673 (colored in cyan) bound to the Mac1 active site. (c) The pharmacophores of Z5551425673 match those exhibited by the fragment hits as highlighted by overlaying the bound structure of Z5551425673 (PDB 7FR2) on the distribution of pharmacophores from the fragment ensemble. Note that some functional groups can be regarded as both hydrogen-bond acceptor (blue) and hydrogen-bond donor (red) pharmacophores and hence they are illustrated as purple.}
+    \caption{\textbf{FRESCO identifies a hit against nsp3-Mac1 with structural confirmation.} (\textbf{a}) Compound Z5551425673 is identified as a hit against Mac1 via HTRF assay, with (\textbf{b}) hit confirmation via resolution of a crystal structure of Z5551425673 (colored in cyan) bound to the Mac1 active site. (\textbf{c}) The pharmacophores of Z5551425673 match those exhibited by the fragment hits as highlighted by overlaying the bound structure of Z5551425673 (PDB 7FR2) on the distribution of pharmacophores from the fragment ensemble. Note that some functional groups can be regarded as both hydrogen-bond acceptor (blue) and hydrogen-bond donor (red) pharmacophores and hence they are illustrated as purple.}
     \label{fig:mac1_hit}
 \end{figure}
 
@@ -208,7 +208,7 @@ As with Mpro, 11 close analogues to Z5551425673 were ordered to explore the stru
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_rounds.pdf}
-    \caption{Close analogues around the hit compound identified by FRESCO, Z5551425673, reveals structure-activity relationship which derisks singleton artefacts.}
+    \caption{\textbf{nsp3-Mac1 hit confirmation via determination of structural-activity relationship.} Close analogues around the hit compound identified by FRESCO, Z5551425673, reveals structure-activity relationship which derisks singleton artefacts.}
     \label{fig:mac1_rounds}
 \end{figure}
 
