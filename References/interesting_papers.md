@@ -10,3 +10,5 @@
   - Structure-based synthetic accessibility score surprisingly robust - adding synthetic accessibility score to the retrosynthesis model did not significantly improve performance
 - [Machine learning for small molecule drug discovery in academia and industry](https://www.sciencedirect.com/science/article/pii/S2667318522000265)
   - Very good general overview of differences in priority between academia and industry on applying and developing ML methods in drug discovery (good to review before interviews)
+- [Deep Docking: A Deep Learning Platform for Augmentation of Structure Based Drug Discovery](https://pubs.acs.org/doi/10.1021/acscentsci.0c00229)
+  - Reference for applications section in background

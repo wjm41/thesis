@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper, 12pt, times, numbered, draft, chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper, 12pt, times, numbered, draft]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -103,13 +103,14 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- 	% \includeonly{Chapters/Preface/preface}
- 	\includeonly{Chapters/Background/background}
- 	% \includeonly{Chapters/Ranking/ranking}
-%  	\includeonly{Chapters/Fresco/fresco}
- 	% \includeonly{Chapters/Transformer/transformer}
- 	% \includeonly{Chapters/Crude/test}
-
+	% \includeonly{Chapters/Preface/preface}
+	\includeonly{Chapters/Intro/intro}
+	% \includeonly{Chapters/Background/background}
+	% \includeonly{Chapters/Fresco/fresco}
+	% \includeonly{Chapters/Ranking/ranking}
+	% \includeonly{Chapters/Transformer/transformer}
+	% \includeonly{Chapters/Crude/test}
+	% \includeonly{Chapters/Outlook/outlook}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -140,7 +141,6 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-% TODO - update chapter names
 \include{Chapters/Preface/preface}
 \include{Chapters/Intro/intro}
 \include{Chapters/Background/background}
@@ -161,8 +161,8 @@
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
-\bibliographystyle{apalike}
-% \bibliographystyle{unsrt} % Use for unsorted references  
+% \bibliographystyle{apalike}
+\bibliographystyle{unsrt} % Use for unsorted references  
 % \bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
 \bibliography{References/references} % Path to your References.bib file
