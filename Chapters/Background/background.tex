@@ -128,7 +128,7 @@ Molecular docking is the process of predicting the binding mode of a small molec
 \begin{figure}[!h]
  \centering
  \includegraphics[width=0.8\textwidth]{Chapters/Background/Figs/docked_6a93.png}
- \caption{\label{fig:docked} \textbf{Example of a docked molecule.} The experimental structure of the ligand risperidone bound to the serotonin 2A receptor is shown in green, with the protein in grey (PDB: 6A93). The structure of the same ligand docked using GOLD is shown in cyan.}
+ \caption{\label{fig:docked} \textbf{Example of a docked molecule.} The experimental structure of the ligand risperidone bound to the serotonin 2A receptor is shown in green, with the protein in grey (PDB: 6A93). The structure of the same ligand docked using GOLD via the CSDDiscovery suite is shown in cyan.}
 \end{figure}
 
 The physics of ligand-protein binding are complex, and in reality, each ligand will have an ensemble of binding modes. Attempting to accurately simulate the binding process is computationally intractable, and so the goal of molecular docking is to predict the most likely binding mode. In practice, this is approached as an optimisation problem, where the coordinates of the ligand and/or protein atoms are adjusted until the `best fit' is achieved. An essential preliminary step to performing molecular docking is obtaining a structure of the protein of interest. Traditionally this means using biophysical techniques such as X-ray crystallography, NMR spectroscopy, or cryo-electron microscopy (cryo-EM), but recent development in computational protein structure prediction \cite{Jumper2021AlphaFold, Wong2022AF2Docking} open the door to performing fully \textit{in-silico} structure-based drug design.
@@ -238,7 +238,60 @@ The gradient of the loss function with respect to the model parameters can be ob
 
 The only constraint on the design of a neural network is that the mathematical operations in the model must have defined derivatives so that the gradient of the loss function can be calculated with backpropagation for efficient training. This results in a zoo of different neural network designs (referred to as `architectures') that use differentiable building blocks with specific inductive biases tailored to the task at hand. For example, convolutional neural networks (CNNs) utilise built-in translational invariance for computer vision applications (e.g. AlexNet \cite{Krizhevsky2012AlexNet}, and ResNets \cite{He2015ResNet}) while recurrent neural networks (RNNs) designed for learning temporal dependencies are applied to sequential data such as text \cite{Cho2014RNN} and speech \cite{Lipton2015RNN} (e.g. Gated-Recurrent-Unit (GRU) \cite{Chung2014GRU} and Long-Short-Term-Memory (LSTM) networks \cite{Hochreiter1997LSTM}). 
 
-In the context of drug discovery, the challenge of modelling molecular inputs has led to the development of graph-based neural network architectures known as `graph neural networks' (GNNs). These models are designed to learn representations of molecular graphs that are invariant to the order of the nodes and edges. GNNs have been successfully applied to a range of molecular tasks, including molecular property prediction \cite{wu2017molnet, Gilmer17mpnn, Mayr2018compare, yang2019chemprop}, and predicting reaction templates for input reactants \cite{Coley19WLDN5}. More standard architectures such as Transformer models developed for natural language processing have also been applied to SMILES, as well as three-dimensional voxel-based CNNs which can be trained on protein-ligand complexes for the prediction of binding affinity \cite{Ragoza2017ProteinCNN, Imrie2018ProteinCNN, Jimenez2018Kdeep}.
+\subsubsection{The Transformer architecture}
+
+The Transformer neural network architecture \cite{Vaswani2017} developed for machine translation has had wide-ranging success in many natural language processing tasks, and has been naturally adapted to text-based SMILES representations of molecules and reactions. It has an encoder-decoder structure, where both the encoder and the decoder are made up of so-called transformer blocks which process the inputs by utilising a mechanism known as `attention'. The Transformer performs text generation by autoregressively predicting the next word in a sentence given the previous words. The Transformer architecture is illustrated in Figure \ref{fig:transformer}(a).
+
+\begin{figure}[ht]
+\centering 
+\includegraphics[width=0.9\textwidth]{Chapters/Background/Figs/transformer.pdf}
+\caption{\textbf{Graphical illustration of the Transformer model} (a) Encoder-Decoder structure. (b) The attention mechanism. Adapted from \cite{Vaswani2017}.}
+\label{fig:transformer}
+\end{figure}
+
+Each string input (sentence) to the model is broken down into different individual `tokens' (words) that are contained in a vocabulary. For each word in the vocabulary, we generate its own learnt fixed-length vector representation. Passing these vectors to the model would not be enough though as these vectors have no reference to where the given word appears inside the sequence. To include the relative order of the tokens and thus distinguish tokens of the same type at different positions, an additional vector is generated based on the token positions (known as the positional encoding) and added to the token embeddings. An example positional encoding is simply the sine/cosine function of the token position, while more modern approaches use position embeddings that are learnt during model training.
+
+This sequence of token embeddings is then input into the encoder and decoder layers. The encoder layer is responsible for encoding the input sequence into an informative vector representation to feed into the decoder layer. The encoder layer is composed of multiple identical transformer blocks, each of which consists of a multi-head scaled attention layer followed by layer normalization and some fully connected feed-forward layers.
+
+The multi-head scaled dot-product attention is the heart of the Transformer model. It is a specific version of a general deep learning technique called attention. Given a set of vector \emph{values} and a vector \emph{query} the attention mechanism computes a weighted sum of the \emph{values} dependent on the \emph{query}. The sum represents a selective summary of the \emph{values} and the \emph{query} determines the importance of each vector, i.e. determines how much each \emph{value} vector is attended to. 
+
+The full attention mechanism operates by performing the following steps. Given some vector values $\bm{h_1}, \bm{h_2},\dots, \bm{h_N} \in \mathbb{R} ^{d_1}$ and a query $\bm{q} \in \mathbb{R} ^{d_2}$ 
+
+\begin{enumerate}
+\item First the attention scores $\bm{e} \in \mathbb{R}^N$ are computed. In the case of the scaled dot-product attention $d_1=d_2$ and $\bm{e}$ is simply defined as the scaled vector of projections $e_i=\frac{\bm{q}^\intercal \bm{h}_i}{\sqrt{d_1}}$
+\item To generate the attention distribution $\bm{\alpha}$ the softmax of $\bm{e}$ is taken: 
+\begin{equation}
+\alpha_i=\frac{\exp{(e_i)}}{\sum_{j=1}^N \exp{(e_j)}} 
+\label{eqn:softmax}
+\end{equation}
+\item Finally the attention distribution is used to take the weighted sum of the values to obtain the final output
+\begin{equation}
+\bm{a}=\sum_{i=1}^N \alpha_i \: \bm{h}_i \; \in \mathbb{R}^{d_1}
+\end{equation}
+\end{enumerate}
+
+An in-depth review of the attention mechanism can be found in \cite{Niu2021AttnReview}.
+
+In the encoder of the Transformer, the attention mechanism is used to update the vector representation of each word in the input sequence by attending to the other words in the sequence, a technique known as self-attention. This allows the model to learn which words usually interact with each other.
+
+Usually the input, be it a chemical formula or human langauge, contains a rich structure with the words affecting each others' meanings in multiple ways. The problem with the simple self-attention mechanism is that by defining a single attention distribution only one way of interaction can be learnt by the model. To give the model the ability to focus on different parts of the input sequence at different times, multi-head attention was introduced. In multi-head attention, the attention mechanism is applied multiple times in parallel in different lower dimensional latent vector spaces and the outputs of the different attention heads are concatenated and combined. The whole mechanism is illustrated on Figure~\ref{fig:transformer}(b).
+
+The decoder reads the output from the encoder layer to generate the output sequence. The attention mechanism in the decoder is slightly modified to allow the decoder to attend to outputs from the encoder. The first modification is the application of masking in the multi-head self-attention layers to make sure that every token in the output translation can only attend to the preceding ones. The second modification of the attention mechanism is that the encoder outputs are used as keys whilst the queries are the outputs of the previous decoder layer. 
+
+The generation of the translation happens in a sequential manner. First the embedding of the special \texttt{<start>} token is fed into the decoder and passed through the layers. The result is projected to a vector that has the same dimensionality as the size of the vocabulary. Finally the softmax function is applied to obtain the probability of the first word. The second word is generated by passing in the first word (and the \texttt{start} token) to the decoder, the third is generated by passing in the first and the second etc., in a process known as autoregressive translation. The prediction is considered final when an \texttt{<end>} token is generated or a pre-specified maximum length is reached. Through this process each translation gets assigned a probability score:
+
+\begin{equation}
+    P(\textrm{tgt} \mid \textrm{src}) = \prod_{i=1}^N P(\textrm{tok}_i \mid \textrm{tok}_1, \cdots , \textrm{tok}_{i-1}, \textrm{src}) 
+\end{equation}
+where $\textrm{tok}_i$ is the $i$-th predicted token and $N$ is the length of the prediction.
+
+The Transformer architecture forms the basis of current state-of-the-art models for natural language processing, and active research is ongoing to improve the attention mechanism on long sequences as well as memory efficiency particularly since increases in model size have been shown to improve performance.
+
+In the context of drug discovery, the obvious use case of the Transformer model is to apply them on text-based SMILES representations of molecules and reactions. Recent work has shown that Transformer models pre-trained on SMILES can learn useful vector representations for molecular property prediction, while the application of the Transformer models to reaction SMILES have shown promising results from reaction prediction to atom-mapping. In particular, The Molecular Transformer \cite{Schwaller2019MolecularPrediction} uses this approach to perform reaction prediction by `translating' the SMILES of reaction reagents and reactants to the SMILES of the reaction product, a model that we examine in further detail in Chapter \ref{ch:transformer}.
+
+\subsubsection{Deep Learning for Drug Discovery}
+
+Beyond the application of Transformer models on SMILES, a wide range of other deep learning approaches has been used in drug discovery. The challenge of modelling molecular inputs has led to the development of graph-based neural network architectures known as `graph neural networks' (GNNs). These models are designed to learn representations of molecular graphs that are invariant to the order of the nodes and edges. GNNs have been successfully applied to a range of molecular tasks, including molecular property prediction \cite{wu2017molnet, Gilmer17mpnn, Mayr2018compare, yang2019chemprop}, and predicting reaction templates for input reactants \cite{Coley19WLDN5}. More standard architectures such as three-dimensional voxel-based CNNs have also been trained on protein-ligand complexes to predict binding affinity \cite{Ragoza2017ProteinCNN, Imrie2018ProteinCNN, Jimenez2018Kdeep}.
 
 Neural networks can also be used with pre-computed features such as molecular fingerprints. Example applications include the use of bioactivity prediction \cite{Bender2019}, reaction prediction \cite{Wei2016reactionprediction, segler2017neural}, and the prediction of docking scores \cite{Gentile2020deepdocking}.
 
@@ -249,85 +302,3 @@ Additionally, neural networks may struggle to generalize to new molecules that a
 Another challenge is the lack of interpretability of neural network models, which makes it difficult to understand the underlying reasons for a model's predictions. Without explanations of model predictions, it becomes difficult to avoid correct predictions for the wrong reasons (the so-called clever Hans effect) \cite{Lapuschkin2019UnmaskingCleverHans}, avert unfair biases, and gain potentially useful insights from the model. This is a challenge in general for deep learning but is particularly difficult in drug discovery due to the domain-specific complication of projecting `explanations' onto molecule representations \cite{Jimenze2020XAI}.
 
 Accounting for these limitations is critical for realizing the full potential of applying both shallow and deep learning models to accelerate the design-make-test cycle in drug discovery.
-
-% In the paper of Nam and Kim \cite{Nam2016LinkingReactions} they formulated the reaction prediction problem as a translation task. The input SMILES corresponding to the reactant and reagent molecules are tokenized, so that each character of SMILES is equivalent to a word and the whole input is equivalent to a sentence. This sentence is then ``translated" by the model to the product SMILES. Neural machine translation models are trained using a large parallel corpus. This is available in the case of organic reactions from patents and publications or can be generated using templates of elementary reactions. The method of Nam and Kim served as an important proof of concept but could not match the accuracy of rule-based and graph-to-graph models. \par
-% %The method was built on a neural network building block called gated recurrent unit (GRU) \cite{Cho2014LearningTranslation}. GRUs are a type of recurrent neural network that process arbitrarily long inputs token by token so that the hidden state representation of each token depends on the previous ones. %The model used in the paper is illustrated in Figure~\ref{fig:gru}. 
-% %This model served as a proof-of-concept but could not match the accuracy of graph-to-graph and template-based approaches. \par
-
-% \iffalse
-% \begin{figure}[htbp!] 
-% \centering 
-% \includegraphics[width=0.9\textwidth]{Chapter2/Figs/Raster/gru.png}
-% \caption[GRU for reaction predictions]{The architecture used by Nam and Kim. The input SMILES string is tokenized into ``words", each token is embedded using a learnt embedding and processed by a three-layer GRU network. The product is generated using an attention mechanism.}
-% \label{fig:gru}
-% \end{figure}
-% \fi
-
-% The large breakthrough of sequence-to-sequence models for reaction prediction came after the introduction of a new and innovative architecture for neural machine translation by Vaswani et. al. \cite{Vaswani2017}. The so-called Transformer model revolutionized the entire industry of machine translation and found use in many other areas of machine learning ever since. In the next section, the Transformer architecture is described in detail followed by a discussion of the Molecular Transformer. 
-
-% \section{The Molecular Transformer}
-
-% \subsection{The Transformer architecture}
-
-% The Transformer architecture was originally developed for machine translation tasks. It has an encoder-decoder structure. Both the encoder and the decoder are made up of so called transformer blocks that process the inputs by applying a multi-head scaled dot-product attention mechanism followed by layer normalization and some fully connected feed forward layers. In the following each part is described in detail. 
-
-% \subsubsection{Encoder}
-% The input to the model is a sentence made up of different words that are contained in a vocabulary. Each word in the vocabulary has a learnt fixed-length vector representation. Passing these vectors to the model would not be enough though as these vectors have no reference to where the given word appears inside the sequence. To encode this information as well another vector of the same length is added to each word-vector that depends on the position inside the sequence: \par
-
-% \begin{equation}
-% PE_{(pos, 2i)}=\sin(pos/10000^{2i/d_{model}})
-% \end{equation}
-% \begin{equation}
-% PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})
-% \end{equation}
-
-% This vector representation of the input text is passed into the transformer blocks. These consist of a multi-head attention layer with residual connection \cite{He2016DeepRecognition} followed by layer normalization \cite{Ba2016LayerNormalization} and a 2-layer fully connected feed forward neural network with ReLU activation. The encoder of the model is made up of $N=6$ transformer blocks as illustrated on Figure~\ref{fig:transformer}
-
-% \begin{figure}[ht]
-% \centering 
-% \includegraphics[width=2.9in]{transformer_diagram.png}
-% \caption{Graphical illustration of the full transformer model \cite{Vaswani2017}}
-% \label{fig:transformer}
-% \end{figure}
-
-% \subsubsection{Multi-head scaled dot-product attention}
-% The multi-head scaled dot-product attention is the heart of the Transformer model. It is a specific version of a general deep learning technique called attention. Given a set of vector \emph{values} and a vector \emph{query} the attention mechanism computes a weighted sum of the \emph{values} dependent on the \emph{query}. The sum represents a selective summary of the \emph{values} and the \emph{query} determines the importance of each vector, i. e. determines how much each \emph{value} vector is attended to.\par 
-% The full attention mechanism operates by performing the following steps. Given some vector values $\bm{h_1}, \bm{h_2},\dots, \bm{h_N} \in \mathbb{R} ^{d_1}$ and a query $\bm{q} \in \mathbb{R} ^{d_2}$ \par
-
-% \begin{enumerate}
-% \item First the attention scores $\bm{e} \in \mathbb{R}^N$ are computed. In the case of the scaled dot-product attention $d_1=d_2$ and $\bm{e}$ is simply defined as the scaled vector of projections $e_i=\frac{\bm{q}^\intercal \bm{h}_i}{\sqrt{d_1}}$
-% \item To generate the attention distribution $\bm{\alpha}$ the softmax of $\bm{e}$ is taken: 
-% \begin{equation}
-% \alpha_i=\frac{\exp{(e_i)}}{\sum_{j=1}^N \exp{(e_j)}} 
-% \label{eqn:softmax}
-% \end{equation}
-% \item Finally the attention distribution is used to take the weighted sum of the values to obtain the final output
-% \begin{equation}
-% \bm{a}=\sum_{i=1}^N \alpha_i \: \bm{h}_i \; \in \mathbb{R}^{d_1}
-% \end{equation}
-% \end{enumerate}
-
-% The scaling factor in the dot product serves the purpose of preventing some of the projection becoming overwhelmingly large which in turn would lead to the softmax function being sharply peaked around those values and being shallow everywhere else. This would result in very small gradients at most places that can substantially slow down the training.\par
-
-% In the Transformer encoder the above described attention mechanism is used such that given a set of input vectors a new vector is calculated for all of them (being the query) from the others (being the keys). This is called self-attention. This way during training the model is able to learn which vectors (that are representing words or atoms) usually interact with each other. This interaction can result in a large value in the attention distribution. \par
-
-% Usually the input, be it a chemical formula or a sentence contains a rich structure with the words affecting each others meanings in multiple ways. The problem with the simple self-attention mechanism is that by defining a single attention distribution for each input vector only one way of interaction can be learnt by the model. To give the model more flexibility to potentially learn more complex interaction structures multi-head attention was introduced. This mechanism maps the vectors to $h=8$ different lower dimensional spaces via a set of learnt linear transformations. The self-attention mechanism is than applied in these lower dimensional spaces simultaneously. The outputs of the different attention heads are finally concatenated and fed into a linear neural network layer. The whole mechanism is illustrated on Figure~\ref{fig:multihead_attention}
-
-% \begin{figure}
-% \centering 
-% \includegraphics[width=2.2in]{mulithead_attention.png}
-% \caption{Graphical illustration of the multi-head attention \cite{Vaswani2017}}
-% \label{fig:multihead_attention}
-% \end{figure}
-
-% \subsubsection{Decoder}
-
-% The outputs of the encoder which are $N$ vectors if the input sequence is $N$ words long are fed into the decoder which has a structure almost identical to the encoder. The first modifications concern the masking in the multi-head self-attention layers to make sure that every token in the output translation can only attend to the preceding ones. The second modification of the attention mechanism is making use of the encoder outputs by using them as keys whilst the queries are the outputs of the previous decoder layer. \par
-% The generation of the translation happens in a sequential manner. First the embedding of the special \texttt{<start>} token is fed into the decoder and passed through the layers. The result is projected to a vector that has the same dimensionality as the size of the vocabulary. Finally the softmax function is applied to obtain the probability of the first word. The second word is generated by passing in the first word (and the \texttt{start} token) to the decoder, the third is generated by passing in the first and the second etc. This is called autoregressive translation. Finally the translation terminates either when the most probable next token is the special \texttt{<end>} token or when the maximum sequence length is reached. By multiplying together the next-token probabilities and normalizing with respect to the length of the output a confidence score of the translation can be obtained. 
-
-
-% \subsubsection{Datasets}
-% The first dataset used in this work is the freely available USPTO dataset \cite{Lowe2012} that was filtered by Jin et. al. \cite{Jin2017}. Further filtering was preformed to remove some remaining duplicates or reactions that were erroneously text mined. These included examples such as reactions whose sole product is nitric acid, sulfuric acid, chloride ion etc. This way the final number of reactions in the dataset was 471 791 of which 377 419 were used for training, 23 589 for validation and 70 765 were used as a hold-out test set. The training set was augmented by an equal number of random equivalent SMILES strings. Augmentation can help the model to learn the underlying molecular graph from the SMILES sequence. \par
-% The model trained in the way described above achieved 88.8\% Top-1 accuracy on the test set. This model was used throughout the interpretability experiments and is referred to as USPTO Transformer. \par
-% The second dataset used was the commercial Pistachio dataset \cite{Mayfield2018Pistachio2.0}. This dataset contains over 9 million reactions text mined from US and EPO patents. This dataset was filtered similarly to USPTO to remove erroneous and duplicate reactions. It turned out that many of the 9 million reactions were duplicates corresponding to different patent IDs. In the end a dataset of 2 375 385 reactions was obtained of which 2 019 078 was used for training, 118 770 for validation and 237 537 for testing. \par
-% The model trained as described above achieved 76.4\% Top-1 accuracy on the test set. Even though this looks like a substantially lower performance in reality the two models perform similarly well on new reactions. The possible reasons for the large difference in the measured performance on the held-out test sets are described in detail in Chapter~\ref{chap:interpr_molt}. This model obtained was also used in the interpretability experiments to test the effect of increased training set size on the models understanding of chemistry and is referred to as Pistachio Transformer in the rest of the thesis. \par
