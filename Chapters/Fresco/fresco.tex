@@ -109,18 +109,35 @@ The Moonshot activity data for the retrospective study was accessed on Mar 22nd,
 
 In addition, molecular docking studies have also been done extensively on molecules from the Moonshot campaign \cite{Morris2021Rank, Saar2021biorxiv}. For our analysis we utilise the same docking protocols as those reported previously for consistency, the details of which can be found in the methods section.
 
-In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data, we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''. This threshold is relatively arbitrary and repeated analysis for both lower and higher IC50 thresholds (1-15\uM) show similar results.
+In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data, we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''.
 
 The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 $<$ 5\uM, is 6.0\%. This represents the hit rate of medicinal chemists using traditional and computational tools at their disposal to design compounds for the Moonshot drug discovery campaign. The hit rate for docking is computed by choosing the top-$N$ molecules with the best score. To calculate the hit rate for FRESCO, we first fit a FRESCO model on 23 publicly reported crystallographic structures of non-covalent fragments bound to the SARS-CoV-2 Mpro protein \cite{Douangamath2020XChem} and score the whole dataset using the fitted FRESCO model.
 
-\begin{figure}[th]
- \centering
- \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
- \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
- \label{fig:moonshot_enrichment_vs_docking}
+% \begin{figure}[th]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
+%  \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
+%  \label{fig:moonshot_enrichment_vs_docking}
+% \end{figure}
+
+\begin{figure}[!th]
+    \centering
+   
+    \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
+    \end{subfigure}
+    \hfill
+   
+    \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=1.0\textwidth]{Chapters/Fresco/Figs/fresco_sensitivity.png}
+    \end{subfigure}
+    \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
+    \label{fig:moonshot_enrichment_vs_docking}
 \end{figure}
 
-Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves higher hit rates compared to both computational docking and medicinal chemists. Looking at the top-5\% of the molecules ($N<50$), FRESCO has a hit rate of 12-30\%, roughly 2-5 times that of the medicinal chemists. Hit rates are also higher than the baseline for both lower and higher IC50 thresholds (Figure S3). This shows that it is possible to correlate bioactivity with unsupervised learning of fragment pharmacophore distributions and that FRESCO could accelerate hit detection in a real-world drug discovery campaign. In this retrospective study, FRESCO is standing on the shoulders of medicinal chemists -- it is used to re-score compounds that are designed by chemists. Therefore, we next turn to interrogate the performance of FRESCO in a real-world context when it is used to score a large unbiased library of compounds via a series of prospective studies. 
+Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves higher hit rates compared to both computational docking and medicinal chemists. Looking at the top-5\% of the molecules ($N<50$), FRESCO has a hit rate of 12-30\%, roughly 2-5 times that of the medicinal chemists. The threshold for defining a hit compound is relatively arbitrary and repeated analysis for both lower and higher IC50 thresholds (1-15\uM) show similar results (Figure \ref{fig:moonshot_enrichment_vs_docking}B). This shows that it is possible to correlate bioactivity with unsupervised learning of fragment pharmacophore distributions and that FRESCO could accelerate hit detection in a real-world drug discovery campaign. In this retrospective study, FRESCO is standing on the shoulders of medicinal chemists -- it is used to re-score compounds that are designed by chemists. Therefore, we next turn to interrogate the performance of FRESCO in a real-world context when it is used to score a large unbiased library of compounds via a series of prospective studies. 
 
 
 \begin{figure}[!h]
