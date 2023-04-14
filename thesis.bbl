@@ -916,6 +916,135 @@ Sebastian Lapuschkin, Stephan W{\"a}ldchen, Alexander Binder, Gr{\'e}goire
   learn.
 \newblock {\em Nature Communications}, 10(1):1096, 2019.
 
+\bibitem{who_dashboard}
+World~Health Organization.
+\newblock Coronavirus (covid-19) dashboard, 2023.
+\newblock \url{https://covid19.who.int}.
+
+\bibitem{chodera2020crowdsourcing}
+John Chodera, Alpha~A Lee, Nir London, and Frank von Delft.
+\newblock Crowdsourcing drug discovery for pandemics.
+\newblock {\em Nature Chemistry}, 12(7):581--581, 2020.
+
+\bibitem{Moonshot2022}
+{The COVID Moonshot Consortium}, Hagit Achdout, Anthony Aimon, Elad Bar-David,
+  Haim Barr, Amir Ben-Shmuel, James Bennett, Vitaliy~A. Bilenko, Vitaliy~A.
+  Bilenko, Melissa~L. Boby, Bruce Borden, Gregory~R. Bowman, Juliane Brun,
+  Sarma BVNBS, Mark Calmiano, Anna Carbery, Daniel Carney, Emma Cattermole,
+  Edcon Chang, Eugene Chernyshenko, John~D. Chodera, Austin Clyde, Joseph~E.
+  Coffland, Galit Cohen, Jason Cole, Alessandro Contini, Lisa Cox, Milan
+  Cvitkovic, Alex Dias, Kim Donckers, David~L. Dotson, Alice Douangamath,
+  Shirly Duberstein, Tim Dudgeon, Louise Dunnett, Peter~K. Eastman, Noam Erez,
+  Charles~J. Eyermann, Mike Fairhead, Gwen Fate, Daren Fearon, Oleg Fedorov,
+  Matteo Ferla, Rafaela~S. Fernandes, Lori Ferrins, Richard Foster, Holly
+  Foster, Ronen Gabizon, Adolfo Garcia-Sastre, Victor~O. Gawriljuk, Paul
+  Gehrtz, Carina Gileadi, Charline Giroud, William~G. Glass, Robert Glen, Itai
+  Glinert, Andre~S. Godoy, Marian Gorichko, Tyler Gorrie-Stone, Ed~J. Griffen,
+  Storm~Hassell Hart, Jag Heer, Michael Henry, Michelle Hill, Sam Horrell,
+  Victor~D. Huliak, Matthew~F.D. Hurley, Tomer Israely, Andrew Jajack, Jitske
+  Jansen, Eric Jnoff, Dirk Jochmans, Tobias John, Steven~De Jonghe,
+  Anastassia~L. Kantsadi, Peter~W. Kenny, J.~L. Kiappes, Serhii~O. Kinakh,
+  Lizbe Koekemoer, Boris Kovar, Tobias Krojer, Alpha Lee, Bruce~A. Lefker, Haim
+  Levy, Ivan~G. Logvinenko, Nir London, Petra Lukacik, Hannah~Bruce Macdonald,
+  Beth MacLean, Tika~R. Malla, Tatiana Matviiuk, Willam McCorkindale, Briana~L.
+  McGovern, Sharon Melamed, Kostiantyn~P. Melnykov, Oleg Michurin, Halina
+  Mikolajek, Bruce~F. Milne, Aaron Morris, Garrett~M. Morris, Melody~Jane
+  Morwitzer, Demetri Moustakas, Aline~M. Nakamura, Jose~Brandao Neto, Johan
+  Neyts, Luong Nguyen, Gabriela~D. Noske, Vladas Oleinikovas, Glaucius Oliva,
+  Gijs~J. Overheul, David Owen, Ruby Pai, Jin Pan, Nir Paran, Benjamin Perry,
+  Maneesh Pingle, Jakir Pinjari, Boaz Politi, Ailsa Powell, Vladimir Psenak,
+  Reut Puni, Victor~L. Rangel, Rambabu~N. Reddi, St~Patrick Reid, Efrat
+  Resnick, Emily~Grace Ripka, Matthew~C. Robinson, Ralph~P. Robinson, Jaime
+  Rodriguez-Guerra, Romel Rosales, Dominic Rufa, Kadi Saar, Kumar~Singh
+  Saikatendu, Chris Schofield, Mikhail Shafeev, Aarif Shaikh, Jiye Shi,
+  Khriesto Shurrush, Sukrit Singh, Assa Sittner, Rachael Skyner, Adam Smalley,
+  Bart Smeets, Mihaela~D. Smilova, Leonardo~J. Solmesky, John Spencer, Claire
+  Strain-Damerell, Vishwanath Swamy, Hadas Tamir, Rachael Tennant, Warren
+  Thompson, Andrew Thompson, Susana Tomasio, Igor~S. Tsurupa, Anthony Tumber,
+  Ioannis Vakonakis, Ronald~P. van Rij, Laura Vangeel, Finny~S. Varghese,
+  Mariana Vaschetto, Einat~B. Vitner, Vincent Voelz, Andrea Volkamer, Frank von
+  Delft, Annette von Delft, Martin Walsh, Walter Ward, Charlie Weatherall, Shay
+  Weiss, Kris~M. White, Conor~Francis Wild, Matthew Wittmann, Nathan Wright,
+  Yfat Yahalom-Ronen, Daniel Zaidmann, Hadeer Zidane, and Nicole Zitzmann.
+\newblock Open science discovery of oral non-covalent sars-cov-2 main protease
+  inhibitor therapeutics.
+\newblock {\em bioRxiv}, 2022.
+
+\bibitem{hilgenfeld2014sars}
+Rolf Hilgenfeld.
+\newblock From sars to mers: crystallographic studies on coronaviral proteases
+  enable antiviral drug design.
+\newblock {\em The FEBS journal}, 281(18):4085--4096, 2014.
+
+\bibitem{jin2020structure}
+Zhenming Jin, Xiaoyu Du, Yechun Xu, Yongqiang Deng, Meiqin Liu, Yao Zhao, Bing
+  Zhang, Xiaofeng Li, Leike Zhang, Chao Peng, et~al.
+\newblock Structure of mpro from sars-cov-2 and discovery of its inhibitors.
+\newblock {\em Nature}, 582(7811):289--293, 2020.
+
+\bibitem{liu2020development}
+Yuzhi Liu, Chengyuan Liang, Liang Xin, Xiaodong Ren, Lei Tian, Xingke Ju, Han
+  Li, Yongbo Wang, Qianqian Zhao, Hong Liu, et~al.
+\newblock The development of coronavirus 3c-like protease (3clpro) inhibitors
+  from 2010 to 2020.
+\newblock {\em European journal of medicinal chemistry}, page 112711, 2020.
+
+\bibitem{ullrich2020sars}
+Sven Ullrich and Christoph Nitsche.
+\newblock The sars-cov-2 main protease as drug target.
+\newblock {\em Bioorganic \& Medicinal Chemistry Letters}, page 127377, 2020.
+
+\bibitem{zhang2020covid}
+Linlin Zhang, Daizong Lin, Xinyuanyuan Sun, Ute Curth, Christian Drosten, Lucie
+  Sauerhering, Stephan Becker, Katharina Rox, and Rolf Hilgenfeld.
+\newblock Crystal structure of sars-cov-2 main protease provides a basis for
+  design of improved $\alpha$-ketoamide inhibitors.
+\newblock {\em Science}, 368(6489):409--412, 2020.
+
+\bibitem{Dafydd2021Paxlovid}
+Dafydd~R. Owen, Charlotte M.~N. Allerton, Annaliesa~S. Anderson, Lisa
+  Aschenbrenner, Melissa Avery, Simon Berritt, Britton Boras, Rhonda~D. Cardin,
+  Anthony Carlo, Karen~J. Coffman, Alyssa Dantonio, Li~Di, Heather Eng, RoseAnn
+  Ferre, Ketan~S. Gajiwala, Scott~A. Gibson, Samantha~E. Greasley, Brett~L.
+  Hurst, Eugene~P. Kadar, Amit~S. Kalgutkar, Jack~C. Lee, Jisun Lee, Wei Liu,
+  Stephen~W. Mason, Stephen Noell, Jonathan~J. Novak, R.~Scott Obach, Kevin
+  Ogilvie, Nandini~C. Patel, Martin Pettersson, Devendra~K. Rai, Matthew~R.
+  Reese, Matthew~F. Sammons, Jean~G. Sathish, Ravi Shankar~P. Singh, Claire~M.
+  Steppan, Al~E. Stewart, Jamison~B. Tuttle, Lawrence Updyke, Patrick~R.
+  Verhoest, Liuqing Wei, Qingyi Yang, and Yuao Zhu.
+\newblock An oral sars-cov-2 m<sup>pro</sup> inhibitor clinical candidate for
+  the treatment of covid-19.
+\newblock {\em Science}, 374(6575):1586--1593, 2021.
+
+\bibitem{Mukae2022Ensitrelvirphase2a}
+Hiroshi Mukae, Hiroshi Yotsuyanagi, Norio Ohmagari, Yohei Doi, Takumi Imamura,
+  Takuhiro Sonoyama, Takahiro Fukuhara, Genki Ichihashi, Takao Sanaki, Keiko
+  Baba, Yosuke Takeda, Yuko Tsuge, and Takeki Uehara.
+\newblock A randomized phase 2/3 study of ensitrelvir, a novel oral sars-cov-2
+  3c-like protease inhibitor, in japanese patients with mild-to-moderate
+  covid-19 or asymptomatic sars-cov-2 infection: Results of the phase 2a part.
+\newblock {\em Antimicrobial Agents and Chemotherapy}, 66(10):e00697--22, 2022.
+
+\bibitem{Mukae2022Ensitrelvirphase2b}
+Hiroshi Mukae, Hiroshi Yotsuyanagi, Norio Ohmagari, Yohei Doi, Hiroki
+  Sakaguchi, Takuhiro Sonoyama, Genki Ichihashi, Takao Sanaki, Keiko Baba, Yuko
+  Tsuge, and Takeki Uehara.
+\newblock {Efficacy and Safety of Ensitrelvir in Patients With Mild-to-Moderate
+  Coronavirus Disease 2019 (COVID-19): The Phase 2b Part of a Randomized,
+  Placebo-Controlled, Phase 2/3 Study}.
+\newblock {\em Clinical Infectious Diseases}, 12 2022.
+
+\bibitem{diamond_xchem}
+Diamond~Light Source.
+\newblock Main protease structure and xchem fragment screen, 2020.
+\newblock
+  \url{https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem.html}.
+
+\bibitem{moonshot2020}
+{PostEra Inc.}
+\newblock {COVID} moonshot.
+\newblock \url{https://postera.ai/covid}, 2022.
+
 \bibitem{David2017FBLD}
 Ben~J. Davis and Stephen~D. Roughley.
 \newblock Chapter eleven - fragment-based lead discovery.
@@ -965,50 +1094,6 @@ Alice Douangamath, Daren Fearon, Paul Gehrtz, Tobias Krojer, Petra Lukacik,
 \newblock Crystallographic and electrophilic fragment screening of the
   sars-cov-2 main protease.
 \newblock {\em Nature Communications}, 11(1):5047, 2020.
-
-\bibitem{Moonshot2022}
-{The COVID Moonshot Consortium}, Hagit Achdout, Anthony Aimon, Elad Bar-David,
-  Haim Barr, Amir Ben-Shmuel, James Bennett, Vitaliy~A. Bilenko, Vitaliy~A.
-  Bilenko, Melissa~L. Boby, Bruce Borden, Gregory~R. Bowman, Juliane Brun,
-  Sarma BVNBS, Mark Calmiano, Anna Carbery, Daniel Carney, Emma Cattermole,
-  Edcon Chang, Eugene Chernyshenko, John~D. Chodera, Austin Clyde, Joseph~E.
-  Coffland, Galit Cohen, Jason Cole, Alessandro Contini, Lisa Cox, Milan
-  Cvitkovic, Alex Dias, Kim Donckers, David~L. Dotson, Alice Douangamath,
-  Shirly Duberstein, Tim Dudgeon, Louise Dunnett, Peter~K. Eastman, Noam Erez,
-  Charles~J. Eyermann, Mike Fairhead, Gwen Fate, Daren Fearon, Oleg Fedorov,
-  Matteo Ferla, Rafaela~S. Fernandes, Lori Ferrins, Richard Foster, Holly
-  Foster, Ronen Gabizon, Adolfo Garcia-Sastre, Victor~O. Gawriljuk, Paul
-  Gehrtz, Carina Gileadi, Charline Giroud, William~G. Glass, Robert Glen, Itai
-  Glinert, Andre~S. Godoy, Marian Gorichko, Tyler Gorrie-Stone, Ed~J. Griffen,
-  Storm~Hassell Hart, Jag Heer, Michael Henry, Michelle Hill, Sam Horrell,
-  Victor~D. Huliak, Matthew~F.D. Hurley, Tomer Israely, Andrew Jajack, Jitske
-  Jansen, Eric Jnoff, Dirk Jochmans, Tobias John, Steven~De Jonghe,
-  Anastassia~L. Kantsadi, Peter~W. Kenny, J.~L. Kiappes, Serhii~O. Kinakh,
-  Lizbe Koekemoer, Boris Kovar, Tobias Krojer, Alpha Lee, Bruce~A. Lefker, Haim
-  Levy, Ivan~G. Logvinenko, Nir London, Petra Lukacik, Hannah~Bruce Macdonald,
-  Beth MacLean, Tika~R. Malla, Tatiana Matviiuk, Willam McCorkindale, Briana~L.
-  McGovern, Sharon Melamed, Kostiantyn~P. Melnykov, Oleg Michurin, Halina
-  Mikolajek, Bruce~F. Milne, Aaron Morris, Garrett~M. Morris, Melody~Jane
-  Morwitzer, Demetri Moustakas, Aline~M. Nakamura, Jose~Brandao Neto, Johan
-  Neyts, Luong Nguyen, Gabriela~D. Noske, Vladas Oleinikovas, Glaucius Oliva,
-  Gijs~J. Overheul, David Owen, Ruby Pai, Jin Pan, Nir Paran, Benjamin Perry,
-  Maneesh Pingle, Jakir Pinjari, Boaz Politi, Ailsa Powell, Vladimir Psenak,
-  Reut Puni, Victor~L. Rangel, Rambabu~N. Reddi, St~Patrick Reid, Efrat
-  Resnick, Emily~Grace Ripka, Matthew~C. Robinson, Ralph~P. Robinson, Jaime
-  Rodriguez-Guerra, Romel Rosales, Dominic Rufa, Kadi Saar, Kumar~Singh
-  Saikatendu, Chris Schofield, Mikhail Shafeev, Aarif Shaikh, Jiye Shi,
-  Khriesto Shurrush, Sukrit Singh, Assa Sittner, Rachael Skyner, Adam Smalley,
-  Bart Smeets, Mihaela~D. Smilova, Leonardo~J. Solmesky, John Spencer, Claire
-  Strain-Damerell, Vishwanath Swamy, Hadas Tamir, Rachael Tennant, Warren
-  Thompson, Andrew Thompson, Susana Tomasio, Igor~S. Tsurupa, Anthony Tumber,
-  Ioannis Vakonakis, Ronald~P. van Rij, Laura Vangeel, Finny~S. Varghese,
-  Mariana Vaschetto, Einat~B. Vitner, Vincent Voelz, Andrea Volkamer, Frank von
-  Delft, Annette von Delft, Martin Walsh, Walter Ward, Charlie Weatherall, Shay
-  Weiss, Kris~M. White, Conor~Francis Wild, Matthew Wittmann, Nathan Wright,
-  Yfat Yahalom-Ronen, Daniel Zaidmann, Hadeer Zidane, and Nicole Zitzmann.
-\newblock Open science discovery of oral non-covalent sars-cov-2 main protease
-  inhibitor therapeutics.
-\newblock {\em bioRxiv}, 2022.
 
 \bibitem{Parzen1962KDE}
 Emanuel Parzen.
@@ -1075,29 +1160,6 @@ Z.~I. Botev, J.~F. Grotowski, and D.~P. Kroese.
 \newblock {Kernel density estimation via diffusion}.
 \newblock {\em The Annals of Statistics}, 38(5):2916 -- 2957, 2010.
 
-\bibitem{Dafydd2021Paxlovid}
-Dafydd~R. Owen, Charlotte M.~N. Allerton, Annaliesa~S. Anderson, Lisa
-  Aschenbrenner, Melissa Avery, Simon Berritt, Britton Boras, Rhonda~D. Cardin,
-  Anthony Carlo, Karen~J. Coffman, Alyssa Dantonio, Li~Di, Heather Eng, RoseAnn
-  Ferre, Ketan~S. Gajiwala, Scott~A. Gibson, Samantha~E. Greasley, Brett~L.
-  Hurst, Eugene~P. Kadar, Amit~S. Kalgutkar, Jack~C. Lee, Jisun Lee, Wei Liu,
-  Stephen~W. Mason, Stephen Noell, Jonathan~J. Novak, R.~Scott Obach, Kevin
-  Ogilvie, Nandini~C. Patel, Martin Pettersson, Devendra~K. Rai, Matthew~R.
-  Reese, Matthew~F. Sammons, Jean~G. Sathish, Ravi Shankar~P. Singh, Claire~M.
-  Steppan, Al~E. Stewart, Jamison~B. Tuttle, Lawrence Updyke, Patrick~R.
-  Verhoest, Liuqing Wei, Qingyi Yang, and Yuao Zhu.
-\newblock An oral sars-cov-2 m<sup>pro</sup> inhibitor clinical candidate for
-  the treatment of covid-19.
-\newblock {\em Science}, 374(6575):1586--1593, 2021.
-
-\bibitem{unoh2022discovery}
-Yuto Unoh, Shota Uehara, Kenji Nakahara, Haruaki Nobori, Yukiko Yamatsu, Shiho
-  Yamamoto, Yuki Maruyama, Yoshiyuki Taoda, Koji Kasamatsu, Takahiro Suto,
-  et~al.
-\newblock Discovery of s-217622, a noncovalent oral sars-cov-2 3cl protease
-  inhibitor clinical candidate for treating covid-19.
-\newblock {\em Journal of Medicinal Chemistry}, 65(9):6499--6512, 2022.
-
 \bibitem{Morris2021Rank}
 Aaron Morris, William McCorkindale, The COVID~Moonshot Consortium, Nir Drayman,
   John~D. Chodera, Sava{\c s} Tay, Nir London, and Alpha~A. Lee.
@@ -1140,39 +1202,6 @@ Francesca~E. Morreale, Andrea Testa, Viduth~K. Chaugule, Alessio Bortoluzzi,
 \newblock Mind the metal: A fragment library-derived zinc impurity binds the e2
   ubiquitin-conjugating enzyme ube2t and induces structural rearrangements.
 \newblock {\em Journal of Medicinal Chemistry}, 60(19):8183--8191, 10 2017.
-
-\bibitem{pillaiyar2016overview}
-Thanigaimalai Pillaiyar, Manoj Manickam, Vigneshwaran Namasivayam, Yoshio
-  Hayashi, and Sang-Hun Jung.
-\newblock An overview of severe acute respiratory syndrome--coronavirus
-  (sars-cov) 3cl protease inhibitors: peptidomimetics and small molecule
-  chemotherapy.
-\newblock {\em Journal of medicinal chemistry}, 59(14):6595--6628, 2016.
-
-\bibitem{cannalire2020targeting}
-Rolando Cannalire, Carmen Cerchia, Andrea~R Beccari, Francesco~Saverio Di~Leva,
-  and Vincenzo Summa.
-\newblock Targeting sars-cov-2 proteases and polymerase for covid-19 treatment:
-  State of the art and future opportunities.
-\newblock {\em Journal of medicinal chemistry}, 2020.
-
-\bibitem{jin2020structure}
-Zhenming Jin, Xiaoyu Du, Yechun Xu, Yongqiang Deng, Meiqin Liu, Yao Zhao, Bing
-  Zhang, Xiaofeng Li, Leike Zhang, Chao Peng, et~al.
-\newblock Structure of mpro from sars-cov-2 and discovery of its inhibitors.
-\newblock {\em Nature}, 582(7811):289--293, 2020.
-
-\bibitem{liu2020development}
-Yuzhi Liu, Chengyuan Liang, Liang Xin, Xiaodong Ren, Lei Tian, Xingke Ju, Han
-  Li, Yongbo Wang, Qianqian Zhao, Hong Liu, et~al.
-\newblock The development of coronavirus 3c-like protease (3clpro) inhibitors
-  from 2010 to 2020.
-\newblock {\em European journal of medicinal chemistry}, page 112711, 2020.
-
-\bibitem{ullrich2020sars}
-Sven Ullrich and Christoph Nitsche.
-\newblock The sars-cov-2 main protease as drug target.
-\newblock {\em Bioorganic \& Medicinal Chemistry Letters}, page 127377, 2020.
 
 \bibitem{duffy2010molecular}
 Nigel~P Duffy.

@@ -1498,12 +1498,12 @@ INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/transformer.pdf
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/transformer.pdf
@@ -1518,6 +1518,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/mpro_fragments.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/mpro_fragments.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/mpro_fragments.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/mpro_fragments.png
+INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/mpro_fragments.png
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex
 INPUT /Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex
