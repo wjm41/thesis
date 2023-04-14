@@ -109,17 +109,6 @@ The Moonshot activity data for the retrospective study was accessed on Mar 22nd,
 
 In addition, molecular docking studies have also been done extensively on molecules from the Moonshot campaign \cite{Morris2021Rank, Saar2021biorxiv}. For our analysis we utilise the same docking protocols as those reported previously for consistency, the details of which can be found in the methods section.
 
-In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data, we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''.
-
-The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 $<$ 5\uM, is 6.0\%. This represents the hit rate of medicinal chemists using traditional and computational tools at their disposal to design compounds for the Moonshot drug discovery campaign. The hit rate for docking is computed by choosing the top-$N$ molecules with the best score. To calculate the hit rate for FRESCO, we first fit a FRESCO model on 23 publicly reported crystallographic structures of non-covalent fragments bound to the SARS-CoV-2 Mpro protein \cite{Douangamath2020XChem} and score the whole dataset using the fitted FRESCO model.
-
-% \begin{figure}[th]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
-%  \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
-%  \label{fig:moonshot_enrichment_vs_docking}
-% \end{figure}
-
 \begin{figure}[!th]
     \centering
    
@@ -137,12 +126,23 @@ The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 
     \label{fig:moonshot_enrichment_vs_docking}
 \end{figure}
 
+In the hit identification phase of drug discovery, relatively little is known about what ligand-protein interactions are feasible, thus most proposed molecules are unlikely to be active. A meaningful metric for comparing methods in this regime is the top-$N$ ``hit rate'', which measures the percentage of the top-$N$ predictions which are active. We expect the curve from plotting the hit rate against $N$ of an informative method to be consistently higher than that of a less informative method. For the Moonshot data, we set an IC50 (concentration of inhibitor required to inhibit 50\% of protein activity) threshold of 5\uM for defining a ``hit''.
+
+The baseline hit rate in the dataset i.e. the percentage of compounds with IC50 $<$ 5\uM, is 6.0\%. This represents the hit rate of medicinal chemists using traditional and computational tools at their disposal to design compounds for the Moonshot drug discovery campaign. The hit rate for docking is computed by choosing the top-$N$ molecules with the best score. To calculate the hit rate for FRESCO, we first fit a FRESCO model on 23 publicly reported crystallographic structures of non-covalent fragments bound to the SARS-CoV-2 Mpro protein \cite{Douangamath2020XChem} and score the whole dataset using the fitted FRESCO model.
+
+% \begin{figure}[th]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf}
+%  \caption{\textbf{FRESCO is able to retrospectively perform hit detection.} High hit rates are achieved relative to docking and the human expert baseline when ranking molecules from the fragment-to-lead phase of COVID Moonshot.}
+%  \label{fig:moonshot_enrichment_vs_docking}
+% \end{figure}
+
 Figure \ref{fig:moonshot_enrichment_vs_docking} shows that FRESCO achieves higher hit rates compared to both computational docking and medicinal chemists. Looking at the top-5\% of the molecules ($N<50$), FRESCO has a hit rate of 12-30\%, roughly 2-5 times that of the medicinal chemists. The threshold for defining a hit compound is relatively arbitrary and repeated analysis for both lower and higher IC50 thresholds (1-15\uM) show similar results (Figure \ref{fig:moonshot_enrichment_vs_docking}B). This shows that it is possible to correlate bioactivity with unsupervised learning of fragment pharmacophore distributions and that FRESCO could accelerate hit detection in a real-world drug discovery campaign. In this retrospective study, FRESCO is standing on the shoulders of medicinal chemists -- it is used to re-score compounds that are designed by chemists. Therefore, we next turn to interrogate the performance of FRESCO in a real-world context when it is used to score a large unbiased library of compounds via a series of prospective studies. 
 
 
 \begin{figure}[!h]
  \centering
- \includegraphics[width=\linewidth]{Chapters/Fresco/Figs/flowchart_details.pdf}
+ \includegraphics[width=0.8\linewidth]{Chapters/Fresco/Figs/flowchart_details.pdf}
  \caption{\textbf{A schematic of the FRESCO screening workflow.} Target-specific FRESCO models are applied on pre-processed conformers of compounds from EnamineREAL to score them. The top-ranked compounds are then filtered by their physical properties, and clustered by structural similarity. Diverse compounds are chosen for synthesis by picking centroids of the most populous clusters.}
  \label{fig:screening_workflow}
 \end{figure}
@@ -196,26 +196,26 @@ The top-50k molecules remaining from the filtering were then clustered via Butin
 
 Inspecting the cluster centroids favored by FRESCO, we observe typically 2 aromatic moieties connected via an amide or amide isostere. This scaffold is exhibited by three of the initial fragment hits (x0434, x0678, x1093), with most of the other fragment hits possessing an aromatic group bound at similar locations (Figure \ref{fig:mpro_results}a). The most promising compound, WIL-UNI-d4749f31-37, has an IC50 of 25.8\uM measured via fluorescence assay while the remaining compounds were found to be weak-to-negligible activity.
 
-To validate compound activity, the COVID Moonshot Consoritium synthesized synthesized 8 close analogues to demonstrate the existence of responsive Structure-Activity Relationship \cite{Hermann2013ZincImpurity, Morreale2017ZincImpurity} (Figure \ref{fig:mpro_results}b). 3 of those compounds, which contained modifications to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37, retained relatively high potency of IC50 $<$ 100\uM with one of them (ALP-UNI-ed5cdfd2-1) exhibiting a lower IC50 of 19.4\uM. The remaining 5 compounds which perturbed the benzimidazole functional group of WIL-UNI-d4749f31-3 exhibit decreased potency, with only 20-50\% inhibition at a concentration of 99.5\uM.
+To validate compound activity, the COVID Moonshot Consoritium synthesized 8 close analogues to demonstrate the existence of responsive Structure-Activity Relationship \cite{Hermann2013ZincImpurity, Morreale2017ZincImpurity} (Figure \ref{fig:mpro_results}b). 3 of those compounds, which contained modifications to the 2-hydroxyquinoline substructure of WIL-UNI-d4749f31-37, retained relatively high potency of IC50 $<$ 100\uM with one of them (ALP-UNI-ed5cdfd2-1) exhibiting a lower IC50 of 19.4\uM. The remaining 5 compounds which perturbed the benzimidazole functional group of WIL-UNI-d4749f31-3 exhibit decreased potency, with only 20-50\% inhibition at a concentration of 99.5\uM.
 
+\begin{figure}[!b]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
+    \caption{\textbf{Top-ranked compounds from FRESCO mimic the natural substrate of nsp3-Mac1.} The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a heterocyclic motif. This mimics adenosine, a core in the natural substrate. This motif is also shared in many of the initial fragment hits, with example structures shown in the figure.}
+    \label{fig:mac1_ligands}
+   \end{figure}
+   
 
 We then turn to SARS-CoV-2 nsp3-Mac1, a structurally unrelated protein target, to demonstrate the generalisability of FRESCO in performing hit detection. nsp3-Mac1 is a viral ADP-ribosylhydrolase that counteracts host immune response by cleaving ADP-ribose that is transferred to viral proteins by host ADP-ribosyltransferases. Unlike Mpro, there is no potent chemical matter against nsp3-Mac1. As such, this is a novel first-in-class biological target. 
 
 \begin{figure}[!b]
- \centering
- \includegraphics[width=0.8\linewidth]{Chapters/Fresco/Figs/mac1_ligands.png}
- \caption{\textbf{Top-ranked compounds from FRESCO mimic the natural substrate of nsp3-Mac1.} The molecules favoured by FRESCO tend to contain an acceptor-donor pair spatially proximal to a heterocyclic motif. This mimics adenosine, a core in the natural substrate. This motif is also shared in many of the initial fragment hits, with some example structures shown in the figure.}
- \label{fig:mac1_ligands}
-\end{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_fig.pdf}
+    \caption{\textbf{FRESCO identifies a hit against nsp3-Mac1 with structural confirmation.} (\textbf{a}) Compound Z5551425673 is identified as a hit against Mac1 via HTRF assay, with (\textbf{b}) hit confirmation via resolution of a crystal structure of Z5551425673 (colored in cyan) bound to the Mac1 active site. (\textbf{c}) The pharmacophores of Z5551425673 match those exhibited by the fragment hits as highlighted by overlaying the bound structure of Z5551425673 (PDB 7FR2) on the distribution of pharmacophores from the fragment ensemble. Note that some functional groups can be regarded as both hydrogen-bond acceptor (blue) and hydrogen-bond donor (red) pharmacophores and hence they are illustrated as purple.}
+    \label{fig:mac1_hit}
+   \end{figure}
 
 Repeating the FRESCO workflow on a fragment screen against Mac1 \cite{Schuller2021Mac1Frag}, we obtained 22358 clusters of top-ranked compounds and successfully made 52 molecules. We find that the molecules favored by FRESCO tend to contain a HBA-HBD pair that is spatially proximal within a heterocyclic motif. This mimics adenosine, a core in the natural substrate, and this motif is shared in many of the initial fragment hits (Figure \ref{fig:mac1_ligands}). We successfully ordered and assayed 52 of the compounds identified by FRESCO (see SI for the whole library). Two of the compounds show non-negligible activity at high concentration - at 250\uM, compound Z5551425673 (as a racemic mixture) has an inhibition of 30.1\%, while compound Z1102995175 has 24.8\%.
-
-\begin{figure}[!t]
- \centering
- \includegraphics[width=0.75\linewidth]{Chapters/Fresco/Figs/mac1_fig.pdf}
- \caption{\textbf{FRESCO identifies a hit against nsp3-Mac1 with structural confirmation.} (\textbf{a}) Compound Z5551425673 is identified as a hit against Mac1 via HTRF assay, with (\textbf{b}) hit confirmation via resolution of a crystal structure of Z5551425673 (colored in cyan) bound to the Mac1 active site. (\textbf{c}) The pharmacophores of Z5551425673 match those exhibited by the fragment hits as highlighted by overlaying the bound structure of Z5551425673 (PDB 7FR2) on the distribution of pharmacophores from the fragment ensemble. Note that some functional groups can be regarded as both hydrogen-bond acceptor (blue) and hydrogen-bond donor (red) pharmacophores and hence they are illustrated as purple.}
- \label{fig:mac1_hit}
-\end{figure}
 
 In addition, an X-ray crystallographic screen was also run on the compounds revealing the structure of Z5551425673 (as the S-stereoisomer) bound to the active site (Figure \ref{fig:mac1_hit}). Crystal structures of 9 other compounds chosen via the FRESCO workflow were also obtained though they did not show notable inhibition via HTRF assay. The orthogonal experimental assay and crystal structure results confirm that Z5551425673 is a hit. 
 
