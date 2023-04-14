@@ -1,4 +1,4 @@
-\chapter{Molecular Representations and Computational Methods in Drug Discovery} \label{ch:background}
+\chapter{Background} \label{ch:background}
 
 \section{Molecular Representation}
 
@@ -297,3 +297,35 @@ Additionally, neural networks may struggle to generalize to new molecules that a
 Another challenge is the lack of interpretability of neural network models, which makes it difficult to understand the underlying reasons for a model's predictions. Without explanations of model predictions, it becomes difficult to avoid correct predictions for the wrong reasons (the so-called clever Hans effect) \cite{Lapuschkin2019UnmaskingCleverHans}, avert unfair biases, and gain potentially useful insights from the model. This is a challenge in general for deep learning but is particularly difficult in drug discovery due to the domain-specific complication of projecting `explanations' onto molecule representations \cite{Jimenze2020XAI}.
 
 Accounting for these limitations is critical for realizing the full potential of applying both shallow and deep learning models to accelerate the design-make-test cycle in drug discovery.
+
+\section{COVID Moonshot}
+
+This thesis was written during the COVID-19 pandemic, with more than 689 million confirmed cases \& 6.8 million deaths worldwide up to Apr 2023 \cite{who_dashboard}. In parallel to the rapid development of vaccines against severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), the cause of COVID-19, was the development of antiviral therapeutics to treat those who are infected.
+
+The COVID Moonshot consortium was launched in March 2020, aiming to find oral antivirals against COVID-19 in an open-science, patent-free manner \cite{chodera2020crowdsourcing, Moonshot2022}. The consortium focussed on developing inhibitors against the SARS-CoV-2 main viral protease (Mpro), an attractive target for antivirals for several reasons:
+
+Firstly, Mpro is essential in the viral life cycle of SARS-CoV-2. The virus replicates itself after infecting a host cell by generating a long polyprotein that gets cleaved into individual proteins by multiple viral proteases. Mpro is one of these proteases, and it is responsible for cutting the viral polyprotein into smaller non-structural proteins (nsps) that are essential for replicating the viral RNA genome. By developing drugs to inhibit Mpro, the cleavage of the polyprotein into nsps and hence viral replication can be blocked \cite{hilgenfeld2014sars}.
+
+Secondly, the binding site of Mpro is distinct from known human proteases, thus inhibitors of SARS-CoV-2 Mpro are unlikely to be toxic by interacting with human proteases and causing side effects \cite{jin2020structure,liu2020development}. In addition, Mpro is highly conserved across different coronaviruses so a potent inhibitor of SARS-CoV-2 Mpro could be fruitful for future development of pan-coronavirus antivirals \cite{ullrich2020sars}. 
+
+In vitro and in vivo studies for SARS-CoV-2 clearly show that Mpro inhibition leads to antiviral activity in cell culture \cite{zhang2020covid, jin2020structure}, which is corroborated by the recent clinical success of nirmatrelvir (the Mpro inhibitor component of Paxlovid) \cite{Dafydd2021Paxlovid} and ensitrevir (Xocova) \cite{Mukae2022Ensitrelvirphase2a, Mukae2022Ensitrelvirphase2b}.
+
+\begin{figure}[ht]
+    \centering 
+    \includegraphics[width=0.9\textwidth]{Chapters/Background/Figs/mpro_fragments.png}
+    \caption{\textbf{Crystallographic fragment screen against Mpro.} Overlaid X-ray crystal structures from a fragment screen against Mpro that formed the starting point of COVID Moonshot (PDB ID: 5R8T). Each fragment is shown in a different colour, with the majority of them bound in the active site of Mpro on the right side of the figure. Reproduced from \cite{diamond_xchem}.}
+    \label{fig:frag_screen}
+\end{figure}
+
+COVID Moonshot embarked on a structure-based drug discovery campaign against Mpro, building on a crystallographic fragment screen that revealed potential binding interactions in the active site of Mpro. Leveraging crowdsourcing, high-throughput structural biology, machine learning, and exascale molecular simulations, the COVID Moonshot campaign was able to discover many potent non-covalent Mpro inhibitors, and the lead candidate from the campaign is currently undergoing preclinical studies.
+
+Throughout the campaign from the hit discovery to lead optimisation stages, all compound designs (>18,000 designs), crystallographic data (>840 ligand-bound X-ray structures), assay data (>10,000 measurements), and synthesized molecules (>2,400 compounds) were shared publicly \cite{moonshot2020}.
+
+Participation in COVID Moonshot forms the backdrop of many chapters of this thesis, exploring ways to apply the computational tools described above to accelerate the design-make-test cycle for Mpro inhibitor discovery and by extension drug discovery more broadly. 
+
+% Despite rapid progress in vaccine development, the SARS-CoV-2 is likely to remain endemic (1), and continue to cause a significant number of deaths especially in the Global South unless there is accessible treatment (2). Antiviral therapeutics are a necessary and complementary strategy to vaccination in order to control COVID-19(3).
+
+
+
+
+
