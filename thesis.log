@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  14 APR 2023 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  14 APR 2023 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -13,9 +13,6 @@ LaTeX Warning: You have requested document class `Classes/PhDThesisPSnPDF',
 
 Document Class: PhDThesisPSnPDF 2016/04/23 A PhD thesis class file by Krishna Kumar (v2.3.1)
 https://github.com/kks32/phd-thesis-template/
-
-Class PhDThesisPSnPDF Warning: Draft is ON. Don't forget to turn it off in your final version. This enhanced `draft' mode adds watermark with timestamp, line numbering, and version number. Use `draftclassic' if you prefer the \cite {} lassic draft mode. To tweak options see `preamble.tex' on input line 238.
-
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/bk12.clo
@@ -180,64 +177,12 @@ LaTeX Info: Redefining \today on input line 736.
 )
 \PHD@hour=\count287
 \PHD@minute=\count288
- (/usr/local/texlive/2021/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count289
-\output=\toks21
-\linenoprevgraf=\count290
-\linenumbersep=\dimen144
-\linenumberwidth=\dimen145
-\c@linenumber=\count291
-\c@pagewiselinenumber=\count292
-\c@LN@truepage=\count293
-\c@internallinenumber=\count294
-\c@internallinenumbers=\count295
-\quotelinenumbersep=\dimen146
-\bframerule=\dimen147
-\bframesep=\dimen148
-\bframebox=\box47
-LaTeX Info: Redefining \\ on input line 3056.
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/everypage/everypage.sty
-Package: everypage 2020/10/17 R2.0b Hooks to run on every page
-
-
-Package everypage Warning: Functionality similar to this package has recently
-(everypage)                been implemented in LaTeX. This package is now in
-(everypage)                legacy status.
-(everypage)                Please, don't use it in new documents and packages.
-
-
-Package everypage Warning: You appear to be running a version of LaTeX
-(everypage)                providing the new functionality.
-(everypage)                Doing the best to deliver the original `everypage`
-(everypage)                interface on top of it. Strict equivalence is
-(everypage)                not possible, breakage may occur.
-(everypage)                If truly needed, Use `everypage-1x` to force the
-(everypage)                loading of an older code base.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/textpos/textpos.sty
-Package: textpos 2020/09/26 v1.10
-
-Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
-Package textpos Info: choosing support for LaTeX3 on input line 61.
-\TP@textbox=\box48
-\TP@holdbox=\box49
-\TPHorizModule=\dimen149
-\TPVertModule=\dimen150
-\TP@margin=\dimen151
-\TP@absmargin=\dimen152
-Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen153
-\TP@ox=\dimen154
-\TP@oy=\dimen155
-\TP@tbargs=\toks22
-TextBlockOrigin set to 0pt x 0pt
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count296
+\c@NAT@ctr=\count289
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/mathptmx.sty
@@ -277,8 +222,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Info: Redefining \hbar on input line 50.
 ) PhDThesisPSnPDF: Using Times Roman font (/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks23
-\inpenc@posthook=\toks24
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 112.
@@ -286,12 +231,12 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 112
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
-\MT@toks=\toks25
-\MT@count=\count297
+\MT@toks=\toks23
+\MT@count=\count290
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen156
+\MT@outer@kern=\dimen144
 LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
-\MT@listname@count=\count298
+\MT@listname@count=\count291
  (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 915.
@@ -316,45 +261,45 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen157
+\pmbraise@=\dimen145
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count299
+\inf@bad=\count292
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count300
-\leftroot@=\count301
+\uproot@=\count293
+\leftroot@=\count294
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count302
-\DOTSCASE@=\count303
+\classnum@=\count295
+\DOTSCASE@=\count296
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen158
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen146
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count304
-\c@MaxMatrixCols=\count305
+\macc@depth=\count297
+\c@MaxMatrixCols=\count298
 \dotsspace@=\muskip16
-\c@parentequation=\count306
-\dspbrk@lvl=\count307
-\tag@help=\toks26
-\row@=\count308
-\column@=\count309
-\maxfields@=\count310
-\andhelp@=\toks27
-\eqnshift@=\dimen159
-\alignsep@=\dimen160
-\tagshift@=\dimen161
-\tagwidth@=\dimen162
-\totwidth@=\dimen163
-\lineht@=\dimen164
-\@envbody=\toks28
+\c@parentequation=\count299
+\dspbrk@lvl=\count300
+\tag@help=\toks24
+\row@=\count301
+\column@=\count302
+\maxfields@=\count303
+\andhelp@=\toks25
+\eqnshift@=\dimen147
+\alignsep@=\dimen148
+\tagshift@=\dimen149
+\tagwidth@=\dimen150
+\totwidth@=\dimen151
+\lineht@=\dimen152
+\@envbody=\toks26
 \multlinegap=\skip56
 \multlinetaggap=\skip57
-\mathdisplay@stack=\toks29
+\mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -370,9 +315,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen165
-\Hy@linkcounter=\count311
-\Hy@pagecounter=\count312
+\@linkdim=\dimen153
+\Hy@linkcounter=\count304
+\Hy@pagecounter=\count305
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -384,13 +329,12 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count313
+\Hy@SavedSpaceFactor=\count306
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `draft' set `true' on input line 4073.
 Package hyperref Info: Option `unicode' set `true' on input line 4073.
 Package hyperref Info: Hyper figures OFF on input line 4192.
 Package hyperref Info: Link nesting OFF on input line 4197.
@@ -399,21 +343,21 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count314
+\c@Hy@tempcnt=\count307
  (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen166
+\XeTeXLinkMargin=\dimen154
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count315
-\Field@Width=\dimen167
-\Fld@charsize=\dimen168
+\Fld@menulength=\count308
+\Field@Width=\dimen155
+\Fld@charsize=\dimen156
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -427,9 +371,9 @@ LaTeX Info: Redefining \pageref on input line 6149.
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
 with kernel methods
 )
-\Hy@abspage=\count316
-\c@Item=\count317
-\c@Hfootnote=\count318
+\Hy@abspage=\count309
+\c@Item=\count310
+\c@Hfootnote=\count311
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -438,8 +382,8 @@ File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
 with kernel methods
 )
-\Fld@listcount=\count319
-\c@bookmark@seq@number=\count320
+\Fld@listcount=\count312
+\c@bookmark@seq@number=\count313
  (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -463,18 +407,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count321
-\Gm@cntv=\count322
-\c@Gm@tempcnt=\count323
-\Gm@bindingoffset=\dimen169
-\Gm@wd@mp=\dimen170
-\Gm@odd@mp=\dimen171
-\Gm@even@mp=\dimen172
-\Gm@layoutwidth=\dimen173
-\Gm@layoutheight=\dimen174
-\Gm@layouthoffset=\dimen175
-\Gm@layoutvoffset=\dimen176
-\Gm@dimlist=\toks30
+\Gm@cnth=\count314
+\Gm@cntv=\count315
+\c@Gm@tempcnt=\count316
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
+\Gm@dimlist=\toks28
 ) PhDThesisPSnPDF: The University identity guidelines recommend using left aligned text. Please use `flushleft' in the documentclass option, if you wish to left align your text (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip59
@@ -581,14 +525,14 @@ Skipping: [2021/05/01] Usage of raw option list on input line 252.
 Applying: [0000/00/00] compatibility for LaTeX before 2021/05/01 on input line 337.
 )
 \scr@dte@tocline@numberwidth=\skip68
-\scr@dte@tocline@numbox=\box52
+\scr@dte@tocline@numbox=\box49
 )
 Package tocbasic Info: babel extension for `nlo' omitted
 (tocbasic)             because of missing \bbl@set@language on input line 187.
 Package tocbasic Info: babel extension for `nls' omitted
 (tocbasic)             because of missing \bbl@set@language on input line 188.
-\nomlabelwidth=\dimen177
-\nom@tempdim=\dimen178
+\nomlabelwidth=\dimen165
+\nom@tempdim=\dimen166
 \nomitemsep=\skip69
 )
 \@nomenclaturefile=\write3
@@ -599,47 +543,47 @@ Package nomencl Info: Writing nomenclature file thesis.nlo on input line 1023.
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen179
-\captionmargin@=\dimen180
-\captionwidth=\dimen181
-\caption@tempdima=\dimen182
-\caption@indent=\dimen183
-\caption@parindent=\dimen184
-\caption@hangindent=\dimen185
+\captionmargin=\dimen167
+\captionmargin@=\dimen168
+\captionwidth=\dimen169
+\caption@tempdima=\dimen170
+\caption@indent=\dimen171
+\caption@parindent=\dimen172
+\caption@hangindent=\dimen173
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count324
-\c@continuedfloat=\count325
+\c@caption@flags=\count317
+\c@continuedfloat=\count318
 Package caption Info: hyperref package is loaded.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count326
-\c@subtable=\count327
+\c@subfigure=\count319
+\c@subtable=\count320
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen186
-\lightrulewidth=\dimen187
-\cmidrulewidth=\dimen188
-\belowrulesep=\dimen189
-\belowbottomsep=\dimen190
-\aboverulesep=\dimen191
-\abovetopsep=\dimen192
-\cmidrulesep=\dimen193
-\cmidrulekern=\dimen194
-\defaultaddspace=\dimen195
-\@cmidla=\count328
-\@cmidlb=\count329
-\@aboverulesep=\dimen196
-\@belowrulesep=\dimen197
-\@thisruleclass=\count330
-\@lastruleclass=\count331
-\@thisrulewidth=\dimen198
+\heavyrulewidth=\dimen174
+\lightrulewidth=\dimen175
+\cmidrulewidth=\dimen176
+\belowrulesep=\dimen177
+\belowbottomsep=\dimen178
+\aboverulesep=\dimen179
+\abovetopsep=\dimen180
+\cmidrulesep=\dimen181
+\cmidrulekern=\dimen182
+\defaultaddspace=\dimen183
+\@cmidla=\count321
+\@cmidlb=\count322
+\@aboverulesep=\dimen184
+\@belowrulesep=\dimen185
+\@thisruleclass=\count323
+\@lastruleclass=\count324
+\@thisrulewidth=\dimen186
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip70
-\multirow@cntb=\count332
+\multirow@cntb=\count325
 \multirow@dima=\skip71
-\bigstrutjot=\dimen199
+\bigstrutjot=\dimen187
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Info: Redefining \bm on input line 209.
@@ -647,60 +591,60 @@ LaTeX Info: Redefining \bm on input line 209.
 Package: expl3 2021-02-18 L3 programming layer (loader) 
  (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count326
+\l__pdf_internal_box=\box50
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex)))
 Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
  (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen256
-\ar@mcellbox=\box54
-\extrarowheight=\dimen257
-\NC@list=\toks31
+\col@sep=\dimen188
+\ar@mcellbox=\box51
+\extrarowheight=\dimen189
+\NC@list=\toks29
 \extratabsurround=\skip72
 \backup@length=\skip73
-\ar@cellbox=\box55
+\ar@cellbox=\box52
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 )
-\l__siunitx_tmp_box=\box56
-\l__siunitx_tmp_dim=\dimen258
-\l__siunitx_tmp_int=\count334
-\l__siunitx_number_mantissa_length_int=\count335
-\l__siunitx_number_uncert_length_int=\count336
-\l__siunitx_round_int=\count337
-\l__siunitx_process_decimal_int=\count338
-\l__siunitx_process_uncertainty_int=\count339
-\l__siunitx_process_fixed_int=\count340
-\l__siunitx_process_integer_min_int=\count341
-\l__siunitx_process_precision_int=\count342
-\l__siunitx_group_min_int=\count343
-\l__siunitx_angle_marker_box=\box57
-\l__siunitx_angle_unit_box=\box58
-\l__siunitx_angle_marker_dim=\dimen259
-\l__siunitx_angle_unit_dim=\dimen260
-\l__siunitx_unit_int=\count344
-\l__siunitx_unit_denominator_int=\count345
-\l__siunitx_unit_numerator_int=\count346
-\l__siunitx_unit_prefix_int=\count347
-\l__siunitx_unit_prefix_base_int=\count348
-\l__siunitx_unit_prefix_gram_int=\count349
-\l__siunitx_number_product_int=\count350
+\l__siunitx_tmp_box=\box53
+\l__siunitx_tmp_dim=\dimen190
+\l__siunitx_tmp_int=\count327
+\l__siunitx_number_mantissa_length_int=\count328
+\l__siunitx_number_uncert_length_int=\count329
+\l__siunitx_round_int=\count330
+\l__siunitx_process_decimal_int=\count331
+\l__siunitx_process_uncertainty_int=\count332
+\l__siunitx_process_fixed_int=\count333
+\l__siunitx_process_integer_min_int=\count334
+\l__siunitx_process_precision_int=\count335
+\l__siunitx_group_min_int=\count336
+\l__siunitx_angle_marker_box=\box54
+\l__siunitx_angle_unit_box=\box55
+\l__siunitx_angle_marker_dim=\dimen191
+\l__siunitx_angle_unit_dim=\dimen192
+\l__siunitx_unit_int=\count337
+\l__siunitx_unit_denominator_int=\count338
+\l__siunitx_unit_numerator_int=\count339
+\l__siunitx_unit_prefix_int=\count340
+\l__siunitx_unit_prefix_base_int=\count341
+\l__siunitx_unit_prefix_gram_int=\count342
+\l__siunitx_number_product_int=\count343
 \c__siunitx_one_fill_skip=\skip74
 \l__siunitx_table_unit_align_skip=\skip75
-\l__siunitx_table_exponent_dim=\dimen261
-\l__siunitx_table_integer_dim=\dimen262
-\l__siunitx_table_mantissa_dim=\dimen263
-\l__siunitx_table_marker_dim=\dimen264
-\l__siunitx_table_result_dim=\dimen265
-\l__siunitx_table_uncert_dim=\dimen266
-\l__siunitx_table_fill_pre_dim=\dimen267
-\l__siunitx_table_fill_post_dim=\dimen268
-\l__siunitx_table_fill_mid_dim=\dimen269
-\l__siunitx_table_pre_box=\box59
-\l__siunitx_table_post_box=\box60
-\l__siunitx_table_mantissa_box=\box61
-\l__siunitx_table_result_box=\box62
+\l__siunitx_table_exponent_dim=\dimen193
+\l__siunitx_table_integer_dim=\dimen194
+\l__siunitx_table_mantissa_dim=\dimen195
+\l__siunitx_table_marker_dim=\dimen196
+\l__siunitx_table_result_dim=\dimen197
+\l__siunitx_table_uncert_dim=\dimen198
+\l__siunitx_table_fill_pre_dim=\dimen199
+\l__siunitx_table_fill_post_dim=\dimen256
+\l__siunitx_table_fill_mid_dim=\dimen257
+\l__siunitx_table_pre_box=\box56
+\l__siunitx_table_post_box=\box57
+\l__siunitx_table_mantissa_box=\box58
+\l__siunitx_table_result_box=\box59
 \l__siunitx_table_number_align_skip=\skip76
 \l__siunitx_table_text_align_skip=\skip77
  (/usr/local/texlive/2021/texmf-dist/tex/latex/translator/translator.sty
@@ -728,17 +672,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
 LaTeX Font Info:    ... okay on input line 118.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
-\scratchdimen=\dimen270
-\scratchbox=\box63
-\nofMPsegments=\count352
-\nofMParguments=\count353
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count354
-\MPscratchDim=\dimen271
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count344
+\scratchdimen=\dimen258
+\scratchbox=\box60
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen259
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
@@ -764,7 +708,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count357
+\c@section@level=\count350
 )
 LaTeX Info: Redefining \ref on input line 118.
 LaTeX Info: Redefining \pageref on input line 118.
@@ -860,25 +804,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\PHD@Title=\box64
-\PHD@crest=\box65
+\PHD@Title=\box61
+\PHD@crest=\box62
 <Figs//University_Crest.pdf, id=265, 59.22125pt x 69.25874pt>
 File: Figs//University_Crest.pdf Graphic file (type pdf)
 <use Figs//University_Crest.pdf>
 Package pdftex.def Info: Figs//University_Crest.pdf  used on input line 122.
 (pdftex.def)             Requested size: 89.6248pt x 104.81888pt.
-\PHD@collegecrest=\box66
-\PHD@author=\box67
-\PHD@supervisor=\box68
-\PHD@advisor=\box69
-\PHD@dept=\box70
-\PHD@submission=\box71
-\PHD@collegedate=\box72
+\PHD@collegecrest=\box63
+\PHD@author=\box64
+\PHD@supervisor=\box65
+\PHD@advisor=\box66
+\PHD@dept=\box67
+\PHD@submission=\box68
+\PHD@collegedate=\box69
 \PHD@titlepagespacing=\skip78
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
  [1
 
 
@@ -924,16 +864,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 ]
 \openout2 = `Chapters/Preface/preface.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.tex
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [1
+ (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.tex [1
 
 
 ] [2]) [3]
@@ -946,7 +877,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 Chapter 1.
-<Chapters/Intro/Figs/design-make-test.png, id=414, 710.655pt x 586.19pt>
+<Chapters/Intro/Figs/design-make-test.png, id=413, 710.655pt x 586.19pt>
 File: Chapters/Intro/Figs/design-make-test.png Graphic file (type png)
 <use Chapters/Intro/Figs/design-make-test.png>
 Package pdftex.def Info: Chapters/Intro/Figs/design-make-test.png  used on input line 13.
@@ -967,12 +898,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<Chapters/Background/Figs/triethyl_amine.png, id=497, 109.24535pt x 66.2675pt>
+<Chapters/Background/Figs/triethyl_amine.png, id=496, 109.24535pt x 66.2675pt>
 File: Chapters/Background/Figs/triethyl_amine.png Graphic file (type png)
 <use Chapters/Background/Figs/triethyl_amine.png>
 Package pdftex.def Info: Chapters/Background/Figs/triethyl_amine.png  used on input line 21.
 (pdftex.def)             Requested size: 54.2025pt x 32.87885pt.
-<Chapters/Background/Figs/cyclic.png, id=498, 92.19827pt x 98.3542pt>
+<Chapters/Background/Figs/cyclic.png, id=497, 92.19827pt x 98.3542pt>
 File: Chapters/Background/Figs/cyclic.png Graphic file (type png)
 <use Chapters/Background/Figs/cyclic.png>
 Package pdftex.def Info: Chapters/Background/Figs/cyclic.png  used on input line 22.
@@ -987,48 +918,48 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ]
-<Chapters/Background/Figs/smiles.pdf, id=511, 398.40724pt x 273.22989pt>
+<Chapters/Background/Figs/smiles.pdf, id=510, 398.40724pt x 273.22989pt>
 File: Chapters/Background/Figs/smiles.pdf Graphic file (type pdf)
 <use Chapters/Background/Figs/smiles.pdf>
 Package pdftex.def Info: Chapters/Background/Figs/smiles.pdf  used on input line 36.
 (pdftex.def)             Requested size: 336.09818pt x 230.49544pt.
  [12 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/triethyl_amine.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/cyclic.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.pdf>]
 Overfull \hbox (4.08554pt too wide) in paragraph at lines 49--59
- [] |
+ [] 
  []
 
 [13]
-<Chapters/Background/Figs/rx_template_new.png, id=560, 849.1725pt x 206.7725pt>
+<Chapters/Background/Figs/rx_template_new.png, id=559, 849.1725pt x 206.7725pt>
 File: Chapters/Background/Figs/rx_template_new.png Graphic file (type png)
 <use Chapters/Background/Figs/rx_template_new.png>
 Package pdftex.def Info: Chapters/Background/Figs/rx_template_new.png  used on input line 74.
 (pdftex.def)             Requested size: 336.09818pt x 81.83987pt.
  [14 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template_new.png>]
-<Chapters/Background/Figs/pharmacophore_models.png, id=576, 89.3739pt x 67.33154pt>
+<Chapters/Background/Figs/pharmacophore_models.png, id=575, 89.3739pt x 67.33154pt>
 File: Chapters/Background/Figs/pharmacophore_models.png Graphic file (type png)
 <use Chapters/Background/Figs/pharmacophore_models.png>
 Package pdftex.def Info: Chapters/Background/Figs/pharmacophore_models.png  used on input line 85.
 (pdftex.def)             Requested size: 336.09818pt x 253.28986pt.
  [15 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/pharmacophore_models.png>] [16] [17]
-<Chapters/Background/Figs/docked_6a93.png, id=641, 818.05624pt x 511.9125pt>
+<Chapters/Background/Figs/docked_6a93.png, id=640, 818.05624pt x 511.9125pt>
 File: Chapters/Background/Figs/docked_6a93.png Graphic file (type png)
 <use Chapters/Background/Figs/docked_6a93.png>
 Package pdftex.def Info: Chapters/Background/Figs/docked_6a93.png  used on input line 130.
 (pdftex.def)             Requested size: 358.50609pt x 224.34392pt.
  [18 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/docked_6a93.png>] [19] [20] [21]
-<Chapters/Background/Figs/roc_curve.pdf, id=726, 367.52719pt x 368.63472pt>
+<Chapters/Background/Figs/roc_curve.pdf, id=725, 367.52719pt x 368.63472pt>
 File: Chapters/Background/Figs/roc_curve.pdf Graphic file (type pdf)
 <use Chapters/Background/Figs/roc_curve.pdf>
 Package pdftex.def Info: Chapters/Background/Figs/roc_curve.pdf  used on input line 186.
 (pdftex.def)             Requested size: 336.09818pt x 337.13432pt.
  [22 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf>] [23] [24]
-<Chapters/Background/Figs/transformer.pdf, id=804, 682.62106pt x 383.94081pt>
+<Chapters/Background/Figs/transformer.pdf, id=803, 682.62106pt x 383.94081pt>
 File: Chapters/Background/Figs/transformer.pdf Graphic file (type pdf)
 <use Chapters/Background/Figs/transformer.pdf>
 Package pdftex.def Info: Chapters/Background/Figs/transformer.pdf  used on input line 247.
 (pdftex.def)             Requested size: 403.31508pt x 226.85118pt.
  [25] [26 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/transformer.pdf>] [27] [28] [29]
-<Chapters/Background/Figs/mpro_fragments.png, id=925, 963.6pt x 481.8pt>
+<Chapters/Background/Figs/mpro_fragments.png, id=924, 963.6pt x 481.8pt>
 File: Chapters/Background/Figs/mpro_fragments.png Graphic file (type png)
 <use Chapters/Background/Figs/mpro_fragments.png>
 Package pdftex.def Info: Chapters/Background/Figs/mpro_fragments.png  used on input line 315.
@@ -1044,34 +975,34 @@ Chapter 3.
 
 
 ]
-<Chapters/Fresco/Figs/fresco_vs_linking_a.pdf, id=962, 445.27907pt x 299.55132pt>
+<Chapters/Fresco/Figs/fresco_vs_linking_a.pdf, id=961, 445.27907pt x 299.55132pt>
 File: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_vs_linking_a.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf  used on input line 53.
 (pdftex.def)             Requested size: 336.09818pt x 226.11642pt.
-<Chapters/Fresco/Figs/fresco_details.pdf, id=963, 443.94627pt x 320.97525pt>
+<Chapters/Fresco/Figs/fresco_details.pdf, id=962, 443.94627pt x 320.97525pt>
 File: Chapters/Fresco/Figs/fresco_details.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_details.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_details.pdf  used on input line 59.
 (pdftex.def)             Requested size: 336.09818pt x 243.00336pt.
-<Chapters/Fresco/Figs/pharmacophores.png, id=964, 1131.22626pt x 430.60875pt>
+<Chapters/Fresco/Figs/pharmacophores.png, id=963, 1131.22626pt x 430.60875pt>
 File: Chapters/Fresco/Figs/pharmacophores.png Graphic file (type png)
 <use Chapters/Fresco/Figs/pharmacophores.png>
 Package pdftex.def Info: Chapters/Fresco/Figs/pharmacophores.png  used on input line 70.
 (pdftex.def)             Requested size: 358.50609pt x 136.46378pt.
  [32] [33 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_linking_a.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_details.pdf>] [34 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/pharmacophores.png>] [35]
-<Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf, id=1087, 433.62pt x 289.08pt>
+<Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf, id=1086, 433.62pt x 289.08pt>
 File: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf  used on input line 117.
 (pdftex.def)             Requested size: 358.50609pt x 239.01443pt.
-<Chapters/Fresco/Figs/fresco_sensitivity.png, id=1088, 1736.4875pt x 568.1225pt>
+<Chapters/Fresco/Figs/fresco_sensitivity.png, id=1087, 1736.4875pt x 568.1225pt>
 File: Chapters/Fresco/Figs/fresco_sensitivity.png Graphic file (type png)
 <use Chapters/Fresco/Figs/fresco_sensitivity.png>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_sensitivity.png  used on input line 123.
 (pdftex.def)             Requested size: 448.1309pt x 146.6074pt.
  [36] [37 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_sensitivity.png>]
-<Chapters/Fresco/Figs/flowchart_details.pdf, id=1157, 499.705pt x 568.67075pt>
+<Chapters/Fresco/Figs/flowchart_details.pdf, id=1156, 499.705pt x 568.67075pt>
 File: Chapters/Fresco/Figs/flowchart_details.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/flowchart_details.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/flowchart_details.pdf  used on input line 145.
@@ -1081,12 +1012,12 @@ Package pdftex.def Info: Chapters/Fresco/Figs/flowchart_details.pdf  used on inp
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [38]
-<Chapters/Fresco/Figs/mpro_ligands.png, id=1170, 1177.39874pt x 795.97375pt>
+<Chapters/Fresco/Figs/mpro_ligands.png, id=1169, 1177.39874pt x 795.97375pt>
 File: Chapters/Fresco/Figs/mpro_ligands.png Graphic file (type png)
 <use Chapters/Fresco/Figs/mpro_ligands.png>
 Package pdftex.def Info: Chapters/Fresco/Figs/mpro_ligands.png  used on input line 167.
 (pdftex.def)             Requested size: 336.09818pt x 227.21924pt.
-<Chapters/Fresco/Figs/mpro_hit_IC50.pdf, id=1171, 441.39284pt x 411.68153pt>
+<Chapters/Fresco/Figs/mpro_hit_IC50.pdf, id=1170, 441.39284pt x 411.68153pt>
 File: Chapters/Fresco/Figs/mpro_hit_IC50.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mpro_hit_IC50.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/mpro_hit_IC50.pdf  used on input line 175.
@@ -1096,19 +1027,18 @@ Package pdftex.def Info: Chapters/Fresco/Figs/mpro_hit_IC50.pdf  used on input l
 LaTeX Warning: Float too large for page by 34.91837pt on input line 181.
 
 [39 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/flowchart_details.pdf>] [40 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_ligands.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_hit_IC50.pdf>]
-<Chapters/Fresco/Figs/mac1_ligands.png, id=1277, 1177.39874pt x 795.97375pt>
+<Chapters/Fresco/Figs/mac1_ligands.png, id=1276, 1177.39874pt x 795.97375pt>
 File: Chapters/Fresco/Figs/mac1_ligands.png Graphic file (type png)
 <use Chapters/Fresco/Figs/mac1_ligands.png>
 Package pdftex.def Info: Chapters/Fresco/Figs/mac1_ligands.png  used on input line 203.
 (pdftex.def)             Requested size: 358.50609pt x 242.36476pt.
- [41 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_ligands.png>]
-<Chapters/Fresco/Figs/mac1_fig.pdf, id=1286, 316.30803pt x 357.04955pt>
+<Chapters/Fresco/Figs/mac1_fig.pdf, id=1277, 316.30803pt x 357.04955pt>
 File: Chapters/Fresco/Figs/mac1_fig.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mac1_fig.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/mac1_fig.pdf  used on input line 213.
 (pdftex.def)             Requested size: 336.09818pt x 379.41867pt.
- [42 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_fig.pdf>]
-<Chapters/Fresco/Figs/mac1_rounds.pdf, id=1330, 429.70085pt x 472.26958pt>
+ [41 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_ligands.png>] [42 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_fig.pdf>]
+<Chapters/Fresco/Figs/mac1_rounds.pdf, id=1329, 429.70085pt x 472.26958pt>
 File: Chapters/Fresco/Figs/mac1_rounds.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mac1_rounds.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/mac1_rounds.pdf  used on input line 226.
@@ -1124,35 +1054,35 @@ Chapter 4.
 
 
 ]
-<Chapters/Ranking/Figs/schematic.png, id=1409, 1141.26375pt x 613.29124pt>
+<Chapters/Ranking/Figs/schematic.png, id=1408, 1141.26375pt x 613.29124pt>
 File: Chapters/Ranking/Figs/schematic.png Graphic file (type png)
 <use Chapters/Ranking/Figs/schematic.png>
 Package pdftex.def Info: Chapters/Ranking/Figs/schematic.png  used on input line 16.
 (pdftex.def)             Requested size: 380.914pt x 204.68881pt.
  [46 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/schematic.png>]
-<Chapters/Ranking/Figs/roc_curve.png, id=1422, 512.91624pt x 547.04375pt>
+<Chapters/Ranking/Figs/roc_curve.png, id=1421, 512.91624pt x 547.04375pt>
 File: Chapters/Ranking/Figs/roc_curve.png Graphic file (type png)
 <use Chapters/Ranking/Figs/roc_curve.png>
 Package pdftex.def Info: Chapters/Ranking/Figs/roc_curve.png  used on input line 27.
 (pdftex.def)             Requested size: 291.28235pt x 310.66626pt.
  [47 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/roc_curve.png>] [48]
-<Chapters/Ranking/Figs/library.png, id=1441, 1101.11375pt x 541.02126pt>
+<Chapters/Ranking/Figs/library.png, id=1440, 1101.11375pt x 541.02126pt>
 File: Chapters/Ranking/Figs/library.png Graphic file (type png)
 <use Chapters/Ranking/Figs/library.png>
 Package pdftex.def Info: Chapters/Ranking/Figs/library.png  used on input line 93.
 (pdftex.def)             Requested size: 336.09818pt x 165.13919pt.
-<Chapters/Ranking/Figs/fig2.pdf, id=1443, 1228.59pt x 794.97pt>
+<Chapters/Ranking/Figs/fig2.pdf, id=1442, 1228.59pt x 794.97pt>
 File: Chapters/Ranking/Figs/fig2.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/fig2.pdf>
 Package pdftex.def Info: Chapters/Ranking/Figs/fig2.pdf  used on input line 104.
 (pdftex.def)             Requested size: 336.09818pt x 217.47112pt.
  [49 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/library.png>]
-<Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf, id=1458, 817.18979pt x 1107.42578pt>
+<Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf, id=1457, 817.18979pt x 1107.42578pt>
 File: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>
 Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf  used on input line 113.
 (pdftex.def)             Requested size: 291.28235pt x 394.71886pt.
-<Chapters/Ranking/Figs/data_curve.pdf, id=1462, 729.72626pt x 293.095pt>
+<Chapters/Ranking/Figs/data_curve.pdf, id=1461, 729.72626pt x 293.095pt>
 File: Chapters/Ranking/Figs/data_curve.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/data_curve.pdf>
 Package pdftex.def Info: Chapters/Ranking/Figs/data_curve.pdf  used on input line 122.
@@ -1168,55 +1098,55 @@ Package pdftex.def Info: Chapters/Ranking/Figs/data_curve.pdf  used on input lin
 ]
 Chapter 5.
 [55] [56]
-<Chapters/Transformer/Figs/mol_transformer.png, id=1595, 1192.455pt x 290.08376pt>
+<Chapters/Transformer/Figs/mol_transformer.png, id=1594, 1192.455pt x 290.08376pt>
 File: Chapters/Transformer/Figs/mol_transformer.png Graphic file (type png)
 <use Chapters/Transformer/Figs/mol_transformer.png>
 Package pdftex.def Info: Chapters/Transformer/Figs/mol_transformer.png  used on input line 30.
 (pdftex.def)             Requested size: 358.50609pt x 87.2117pt.
  [57 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/mol_transformer.png>]
-<Chapters/Transformer/Figs/workflow.pdf, id=1613, 626.80904pt x 466.41406pt>
+<Chapters/Transformer/Figs/workflow.pdf, id=1612, 626.80904pt x 466.41406pt>
 File: Chapters/Transformer/Figs/workflow.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/workflow.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/workflow.pdf  used on input line 56.
 (pdftex.def)             Requested size: 358.50609pt x 266.77686pt.
  [58] [59 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/workflow.pdf>] [60] [61] [62]
-<Chapters/Transformer/Figs/epoxidation.pdf, id=1729, 445.90399pt x 459.18379pt>
+<Chapters/Transformer/Figs/epoxidation.pdf, id=1728, 445.90399pt x 459.18379pt>
 File: Chapters/Transformer/Figs/epoxidation.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/epoxidation.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/epoxidation.pdf  used on input line 119.
 (pdftex.def)             Requested size: 268.88127pt x 276.89969pt.
  [63] [64 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/epoxidation.pdf>]
-<Chapters/Transformer/Figs/diels_alder.pdf, id=1793, 456.04297pt x 572.224pt>
+<Chapters/Transformer/Figs/diels_alder.pdf, id=1792, 456.04297pt x 572.224pt>
 File: Chapters/Transformer/Figs/diels_alder.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/diels_alder.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/diels_alder.pdf  used on input line 137.
 (pdftex.def)             Requested size: 268.88127pt x 337.38222pt.
  [65 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/diels_alder.pdf>]
-<Chapters/Transformer/Figs/sear.pdf, id=1846, 443.26955pt x 519.08676pt>
+<Chapters/Transformer/Figs/sear.pdf, id=1845, 443.26955pt x 519.08676pt>
 File: Chapters/Transformer/Figs/sear.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/sear.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/sear.pdf  used on input line 153.
 (pdftex.def)             Requested size: 268.88127pt x 314.87616pt.
  [66] [67 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/sear.pdf>]
-<Chapters/Transformer/Figs/venn.pdf, id=1912, 488.6309pt x 457.57526pt>
+<Chapters/Transformer/Figs/venn.pdf, id=1911, 488.6309pt x 457.57526pt>
 File: Chapters/Transformer/Figs/venn.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/venn.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/venn.pdf  used on input line 166.
 (pdftex.def)             Requested size: 224.06544pt x 209.82388pt.
  [68 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/venn.pdf>] [69]
-<Chapters/Transformer/Figs/synth_conv.png, id=1936, 1084.05pt x 650.43pt>
+<Chapters/Transformer/Figs/synth_conv.png, id=1935, 1084.05pt x 650.43pt>
 File: Chapters/Transformer/Figs/synth_conv.png Graphic file (type png)
 <use Chapters/Transformer/Figs/synth_conv.png>
 Package pdftex.def Info: Chapters/Transformer/Figs/synth_conv.png  used on input line 207.
 (pdftex.def)             Requested size: 358.50609pt x 215.09909pt.
  [70 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/synth_conv.png>]
-<Chapters/Transformer/Figs/siblings_alt.pdf, id=1947, 725.00279pt x 423.96194pt>
+<Chapters/Transformer/Figs/siblings_alt.pdf, id=1946, 725.00279pt x 423.96194pt>
 File: Chapters/Transformer/Figs/siblings_alt.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/siblings_alt.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/siblings_alt.pdf  used on input line 225.
 (pdftex.def)             Requested size: 448.1309pt x 262.05151pt.
  [71] [72 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/siblings_alt.pdf>]
-<Chapters/Transformer/Figs/rxn_distribution.pdf, id=2011, 644.98615pt x 448.6769pt>
+<Chapters/Transformer/Figs/rxn_distribution.pdf, id=2010, 644.98615pt x 448.6769pt>
 File: Chapters/Transformer/Figs/rxn_distribution.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/rxn_distribution.pdf>
 Package pdftex.def Info: Chapters/Transformer/Figs/rxn_distribution.pdf  used on input line 243.
@@ -1236,11 +1166,16 @@ Chapter 6.
 
 
 ]
-<Chapters/Crude/Figs/schematic.pdf, id=2066, 764.87453pt x 396.66884pt>
+<Chapters/Crude/Figs/schematic.pdf, id=2065, 764.87453pt x 396.66884pt>
 File: Chapters/Crude/Figs/schematic.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/schematic.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/schematic.pdf  used on input line 20.
 (pdftex.def)             Requested size: 448.1309pt x 232.41046pt.
+<Chapters/Crude/Figs/yield_vs_activity.pdf, id=2066, 752.8125pt x 602.25pt>
+File: Chapters/Crude/Figs/yield_vs_activity.pdf Graphic file (type pdf)
+<use Chapters/Crude/Figs/yield_vs_activity.pdf>
+Package pdftex.def Info: Chapters/Crude/Figs/yield_vs_activity.pdf  used on input line 29.
+(pdftex.def)             Requested size: 380.914pt x 304.73576pt.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -1249,14 +1184,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[78 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf>]
-<Chapters/Crude/Figs/yield_vs_activity.pdf, id=2097, 752.8125pt x 602.25pt>
-File: Chapters/Crude/Figs/yield_vs_activity.pdf Graphic file (type pdf)
-<use Chapters/Crude/Figs/yield_vs_activity.pdf>
-Package pdftex.def Info: Chapters/Crude/Figs/yield_vs_activity.pdf  used on input line 29.
-(pdftex.def)             Requested size: 380.914pt x 304.73576pt.
- [79 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/yield_vs_activity.pdf>]
-<Chapters/Crude/Figs/rf_loo_flat.pdf, id=2130, 845.1575pt x 597.23125pt>
+[78 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf>] [79 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/yield_vs_activity.pdf>]
+<Chapters/Crude/Figs/rf_loo_flat.pdf, id=2129, 845.1575pt x 597.23125pt>
 File: Chapters/Crude/Figs/rf_loo_flat.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/rf_loo_flat.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/rf_loo_flat.pdf  used on input line 44.
@@ -1270,7 +1199,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
 [80 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/rf_loo_flat.pdf>]
-<Chapters/Crude/Figs/false_negative.pdf, id=2167, 420.90599pt x 194.55786pt>
+<Chapters/Crude/Figs/false_negative.pdf, id=2166, 420.90599pt x 194.55786pt>
 File: Chapters/Crude/Figs/false_negative.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/false_negative.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/false_negative.pdf  used on input line 57.
@@ -1280,12 +1209,12 @@ Package pdftex.def Info: Chapters/Crude/Figs/false_negative.pdf  used on input l
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 72.
 
-<Chapters/Crude/Figs/strip_plot.pdf, id=2207, 752.8125pt x 376.52669pt>
+<Chapters/Crude/Figs/strip_plot.pdf, id=2206, 752.8125pt x 376.52669pt>
 File: Chapters/Crude/Figs/strip_plot.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/strip_plot.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/strip_plot.pdf  used on input line 74.
 (pdftex.def)             Requested size: 448.1309pt x 224.14244pt.
-<Chapters/Crude/Figs/ml_vs_crude.pdf, id=2208, 822.93991pt x 336.70734pt>
+<Chapters/Crude/Figs/ml_vs_crude.pdf, id=2207, 822.93991pt x 336.70734pt>
 File: Chapters/Crude/Figs/ml_vs_crude.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/ml_vs_crude.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/ml_vs_crude.pdf  used on input line 81.
@@ -1322,7 +1251,7 @@ Chapter 7.
 
 ] [92] [93]
 Overfull \hbox (1.17387pt too wide) in paragraph at lines 273--279
-\T1/ptm/m/n/12 (-20) topoisomerase i inhibitors.  \T1/ptm/m/it/12 (-20) Computational and Structural Biotechnology Journal\T1/ptm/m/n/12 (-20) , 17:291--|
+\T1/ptm/m/n/12 (-20) topoisomerase i inhibitors.  \T1/ptm/m/it/12 (-20) Computational and Structural Biotechnology Journal\T1/ptm/m/n/12 (-20) , 17:291--
  []
 
 [94] [95] [96] [97] [98] [99] [100] [101] [102]
@@ -1359,31 +1288,28 @@ Appendix A.
 ]
 Appendix B.
 [121]
-<Chapters/Ranking/Figs/rxn_schemes_full.pdf, id=2627, 867.80914pt x 1877.88171pt>
+<Chapters/Ranking/Figs/rxn_schemes_full.pdf, id=2620, 867.80914pt x 1877.88171pt>
 File: Chapters/Ranking/Figs/rxn_schemes_full.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/rxn_schemes_full.pdf>
 Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_full.pdf  used on input line 19.
 (pdftex.def)             Requested size: 268.88127pt x 581.85078pt.
- [122] [123 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_full.pdf>]) [124] [125
-
-
-] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
+ [122] [123 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_full.pdf>]) [124] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 3D154D541550B2A56C08F678DBBCD739;14347.
  ) 
 Here is how much of TeX's memory you used:
- 21487 strings out of 478994
- 384049 string characters out of 5858184
- 746166 words of memory out of 5000000
- 37391 multiletter control sequences out of 15000+600000
- 489646 words of font info for 420 fonts, out of 8000000 for 9000
+ 20796 strings out of 478994
+ 374879 string characters out of 5858184
+ 728738 words of memory out of 5000000
+ 36757 multiletter control sequences out of 15000+600000
+ 477716 words of font info for 379 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,12n,130p,1860b,2017s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (137 pages, 19217486 bytes).
+ 128i,12n,130p,1860b,1999s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (136 pages, 19169845 bytes).
 PDF statistics:
- 2856 PDF objects out of 2984 (max. 8388607)
- 2242 compressed objects within 23 object streams
- 549 named destinations out of 1000 (max. 500000)
- 91365 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2841 PDF objects out of 2984 (max. 8388607)
+ 2230 compressed objects within 23 object streams
+ 548 named destinations out of 1000 (max. 500000)
+ 70885 words of extra memory for PDF output out of 74296 (max. 10000000)
 
