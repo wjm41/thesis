@@ -2,176 +2,176 @@
 \providecommand\hyper@newdestlabel[2]{}
 \citation{Santarilla2015MerckNanomolar,Perera2018PfizerNanomolar,Gehrtz2022nanomolar}
 \citation{Gesmundo2018nanosar,Gehrtz2022nanomolar}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Augmenting Nanomolar High-Throughput Screening with Machine Learning for Compound Optimisation}{71}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Augmenting Nanomolar High-Throughput Screening with Machine Learning for Compound Optimisation}{77}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@LN{1595}{82}
-\@LN{1596}{82}
-\@LN{1597}{82}
-\@LN{1598}{82}
-\newlabel{ch:testing}{{6}{71}{Augmenting Nanomolar High-Throughput Screening with Machine Learning for Compound Optimisation}{chapter.6}{}}
-\@LN{1599}{82}
-\@LN{1600}{82}
-\@LN{1601}{82}
-\@LN{1602}{82}
-\@LN{1603}{82}
-\@LN{1604}{82}
-\@LN{1605}{82}
-\@LN{1606}{82}
-\@LN{1607}{82}
-\@LN{1608}{82}
-\@LN{1609}{82}
-\@LN{1610}{82}
-\@LN{1611}{82}
-\@LN{1612}{82}
-\@LN{1613}{82}
-\@LN{1614}{82}
-\@LN{1615}{82}
-\@LN{1616}{82}
-\@LN{1617}{82}
-\@LN{1618}{82}
-\@LN{1619}{82}
+\@LN{1663}{88}
+\@LN{1664}{88}
+\@LN{1665}{88}
+\@LN{1666}{88}
+\newlabel{ch:testing}{{6}{77}{Augmenting Nanomolar High-Throughput Screening with Machine Learning for Compound Optimisation}{chapter.6}{}}
+\@LN{1667}{88}
+\@LN{1668}{88}
+\@LN{1669}{88}
+\@LN{1670}{88}
+\@LN{1671}{88}
+\@LN{1672}{88}
+\@LN{1673}{88}
+\@LN{1674}{88}
+\@LN{1675}{88}
+\@LN{1676}{88}
+\@LN{1677}{88}
+\@LN{1678}{88}
+\@LN{1679}{88}
+\@LN{1680}{88}
+\@LN{1681}{88}
+\@LN{1682}{88}
+\@LN{1683}{88}
+\@LN{1684}{88}
+\@LN{1685}{88}
+\@LN{1686}{88}
+\@LN{1687}{88}
 \citation{GirondaMartinez2021DNALibrary}
 \citation{McCloskey2020DNALibrary,Lim2022DELCountML}
 \citation{Blay20221DELTox}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces \textbf  {A schematic of the screening workflow.} Nanomolar-scale crude reaction mixtures are assayed for activity against Mpro, and a machine learning model is trained to predict the bioactivity measurements from the chemical structure of the compounds. The trained model is used to identify false negatives in the dataset and to identify novel hits in a prospective virtual screen.\relax }}{72}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:schematic}{{6.1}{72}{\textbf {A schematic of the screening workflow.} Nanomolar-scale crude reaction mixtures are assayed for activity against Mpro, and a machine learning model is trained to predict the bioactivity measurements from the chemical structure of the compounds. The trained model is used to identify false negatives in the dataset and to identify novel hits in a prospective virtual screen.\relax }{figure.caption.46}{}}
-\@LN{1620}{83}
-\@LN{1621}{83}
-\@LN{1622}{83}
-\@LN{1623}{83}
-\@LN{1624}{83}
-\@LN{1625}{83}
-\@LN{1626}{83}
-\@LN{1627}{83}
-\@LN{1628}{83}
-\@LN{1629}{83}
-\@LN{1630}{83}
-\@LN{1631}{83}
-\@LN{1632}{83}
-\@LN{1633}{83}
-\@LN{1634}{83}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces \textbf  {The bioactivity of the crude reaction mixtures is influenced by reaction yield.} High-yielding compounds are much likelier to exhibit high activity (strongly inhibiting Mpro) while low-yielding compounds tend to have low activity.\relax }}{73}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:yield_activity}{{6.2}{73}{\textbf {The bioactivity of the crude reaction mixtures is influenced by reaction yield.} High-yielding compounds are much likelier to exhibit high activity (strongly inhibiting Mpro) while low-yielding compounds tend to have low activity.\relax }{figure.caption.47}{}}
-\@LN{1635}{84}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Modelling high-throughput crude screening data}{73}{section.6.1}\protected@file@percent }
-\@LN{1636}{84}
-\@LN{1637}{84}
-\@LN{1638}{84}
-\@LN{1639}{84}
-\@LN{1640}{84}
-\@LN{1641}{84}
-\@LN{1642}{84}
-\@LN{1643}{84}
-\@LN{1644}{84}
-\@LN{1645}{84}
-\@LN{1646}{84}
-\@LN{1647}{84}
-\@LN{1648}{84}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces \textbf  {Machine learning is able to model crude bioactivity data.} The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref  {fig:false_negative}).\relax }}{74}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:leave-one-out}{{6.3}{74}{\textbf {Machine learning is able to model crude bioactivity data.} The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref {fig:false_negative}).\relax }{figure.caption.48}{}}
-\@LN{1649}{85}
-\@LN{1650}{85}
-\@LN{1651}{85}
-\@LN{1652}{85}
-\@LN{1653}{85}
-\@LN{1654}{85}
-\@LN{1655}{85}
-\@LN{1656}{85}
-\@LN{1657}{85}
-\@LN{1658}{85}
-\@LN{1659}{85}
-\@LN{1660}{85}
-\@LN{1661}{85}
-\@LN{1662}{85}
-\@LN{1663}{85}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces \textbf  {Experimental validation of ML identified false negative.} A compound with a large positive difference between predicted and measured activity (Figure \ref  {fig:leave-one-out}) was re-synthesized and assayed to obtain full dose-response curves. Two sets of curves were obtained with one set demonstrating significantly higher potency than the other, suggesting that solubility issues were interfering with the assay measurements. Examining the higher potency dose-response curves show that the compound has IC50 = $0.113\pm 0.046$$\mu $M , which would place it among the top 20 potent compounds in the original dataset.\relax }}{75}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:false_negative}{{6.4}{75}{\textbf {Experimental validation of ML identified false negative.} A compound with a large positive difference between predicted and measured activity (Figure \ref {fig:leave-one-out}) was re-synthesized and assayed to obtain full dose-response curves. Two sets of curves were obtained with one set demonstrating significantly higher potency than the other, suggesting that solubility issues were interfering with the assay measurements. Examining the higher potency dose-response curves show that the compound has IC50 = $0.113\pm 0.046$\uM , which would place it among the top 20 potent compounds in the original dataset.\relax }{figure.caption.49}{}}
-\@LN{1664}{86}
-\@LN{1665}{86}
-\@LN{1666}{86}
-\@LN{1667}{86}
-\@LN{1668}{86}
-\@LN{1669}{86}
-\@LN{1670}{86}
-\@LN{1671}{86}
-\@LN{1672}{86}
-\@LN{1673}{86}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Prospective Virtual Screening}{75}{section.6.2}\protected@file@percent }
-\@LN{1674}{86}
-\@LN{1675}{86}
-\@LN{1676}{86}
-\@LN{1677}{86}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces \textbf  {A schematic of the screening workflow.} Nanomolar-scale crude reaction mixtures are assayed for activity against Mpro, and a machine learning model is trained to predict the bioactivity measurements from the chemical structure of the compounds. The trained model is used to identify false negatives in the dataset and to identify novel hits in a prospective virtual screen.\relax }}{78}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:schematic}{{6.1}{78}{\textbf {A schematic of the screening workflow.} Nanomolar-scale crude reaction mixtures are assayed for activity against Mpro, and a machine learning model is trained to predict the bioactivity measurements from the chemical structure of the compounds. The trained model is used to identify false negatives in the dataset and to identify novel hits in a prospective virtual screen.\relax }{figure.caption.49}{}}
+\@LN{1688}{89}
+\@LN{1689}{89}
+\@LN{1690}{89}
+\@LN{1691}{89}
+\@LN{1692}{89}
+\@LN{1693}{89}
+\@LN{1694}{89}
+\@LN{1695}{89}
+\@LN{1696}{89}
+\@LN{1697}{89}
+\@LN{1698}{89}
+\@LN{1699}{89}
+\@LN{1700}{89}
+\@LN{1701}{89}
+\@LN{1702}{89}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces \textbf  {The bioactivity of the crude reaction mixtures is influenced by reaction yield.} High-yielding compounds are likelier to exhibit high activity (strongly inhibiting Mpro) while low-yielding compounds tend to have low activity, though the overall correlation is not strong (Spearman correlation $\rho = 0.54$).\relax }}{79}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:yield_activity}{{6.2}{79}{\textbf {The bioactivity of the crude reaction mixtures is influenced by reaction yield.} High-yielding compounds are likelier to exhibit high activity (strongly inhibiting Mpro) while low-yielding compounds tend to have low activity, though the overall correlation is not strong (Spearman correlation $\rho = 0.54$).\relax }{figure.caption.50}{}}
+\@LN{1703}{90}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Modelling high-throughput crude screening data}{79}{section.6.1}\protected@file@percent }
+\@LN{1704}{90}
+\@LN{1705}{90}
+\@LN{1706}{90}
+\@LN{1707}{90}
+\@LN{1708}{90}
+\@LN{1709}{90}
+\@LN{1710}{90}
+\@LN{1711}{90}
+\@LN{1712}{90}
+\@LN{1713}{90}
+\@LN{1714}{90}
+\@LN{1715}{90}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces \textbf  {Machine learning is able to model crude bioactivity data.} The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref  {fig:false_negative}).\relax }}{80}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:leave-one-out}{{6.3}{80}{\textbf {Machine learning is able to model crude bioactivity data.} The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref {fig:false_negative}).\relax }{figure.caption.51}{}}
+\@LN{1716}{91}
+\@LN{1717}{91}
+\@LN{1718}{91}
+\@LN{1719}{91}
+\@LN{1720}{91}
+\@LN{1721}{91}
+\@LN{1722}{91}
+\@LN{1723}{91}
+\@LN{1724}{91}
+\@LN{1725}{91}
+\@LN{1726}{91}
+\@LN{1727}{91}
+\@LN{1728}{91}
+\@LN{1729}{91}
+\@LN{1730}{91}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces \textbf  {Experimental validation of ML identified false negative.} A compound with a large positive difference between predicted and measured activity (Figure \ref  {fig:leave-one-out}) was re-synthesized and assayed to obtain full dose-response curves. Two sets of curves were obtained with one set demonstrating significantly higher potency than the other, suggesting that solubility issues were interfering with the assay measurements. Examining the higher potency dose-response curves show that the compound has IC50 = $0.113\pm 0.046$$\mu $M , which would place it among the top 20 potent compounds in the original dataset.\relax }}{81}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:false_negative}{{6.4}{81}{\textbf {Experimental validation of ML identified false negative.} A compound with a large positive difference between predicted and measured activity (Figure \ref {fig:leave-one-out}) was re-synthesized and assayed to obtain full dose-response curves. Two sets of curves were obtained with one set demonstrating significantly higher potency than the other, suggesting that solubility issues were interfering with the assay measurements. Examining the higher potency dose-response curves show that the compound has IC50 = $0.113\pm 0.046$\uM , which would place it among the top 20 potent compounds in the original dataset.\relax }{figure.caption.52}{}}
+\@LN{1731}{92}
+\@LN{1732}{92}
+\@LN{1733}{92}
+\@LN{1734}{92}
+\@LN{1735}{92}
+\@LN{1736}{92}
+\@LN{1737}{92}
+\@LN{1738}{92}
+\@LN{1739}{92}
+\@LN{1740}{92}
+\@LN{1741}{92}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Prospective Virtual Screening}{81}{section.6.2}\protected@file@percent }
+\@LN{1742}{92}
+\@LN{1743}{92}
+\@LN{1744}{92}
+\@LN{1745}{92}
 \citation{Stepan2011aniline}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces \textbf  {The bioactivity distribution of ML-identified compounds from virtual screening is similar to those from the most potent crude compounds.} The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.\relax }}{76}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:strip}{{6.5}{76}{\textbf {The bioactivity distribution of ML-identified compounds from virtual screening is similar to those from the most potent crude compounds.} The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.\relax }{figure.caption.50}{}}
-\@LN{1678}{87}
-\@LN{1679}{87}
-\@LN{1680}{87}
-\@LN{1681}{87}
-\@LN{1682}{87}
-\@LN{1683}{87}
-\@LN{1684}{87}
-\@LN{1685}{87}
-\@LN{1686}{87}
-\@LN{1687}{87}
-\@LN{1688}{87}
-\@LN{1689}{87}
-\@LN{1690}{87}
-\@LN{1691}{87}
-\@LN{1692}{87}
-\@LN{1693}{87}
-\@LN{1694}{87}
-\@LN{1695}{87}
-\@LN{1696}{87}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces \textbf  {The bioactivity distribution of ML-identified compounds from virtual screening is similar to those from the most potent crude compounds.} The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.\relax }}{82}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:strip}{{6.5}{82}{\textbf {The bioactivity distribution of ML-identified compounds from virtual screening is similar to those from the most potent crude compounds.} The top 20 ML compounds are shown in blue, and the top 20 crude compounds are shown in orange.\relax }{figure.caption.53}{}}
+\@LN{1746}{93}
+\@LN{1747}{93}
+\@LN{1748}{93}
+\@LN{1749}{93}
+\@LN{1750}{93}
+\@LN{1751}{93}
+\@LN{1752}{93}
+\@LN{1753}{93}
+\@LN{1754}{93}
+\@LN{1755}{93}
+\@LN{1756}{93}
+\@LN{1757}{93}
+\@LN{1758}{93}
+\@LN{1759}{93}
+\@LN{1760}{93}
+\@LN{1761}{93}
+\@LN{1762}{93}
+\@LN{1763}{93}
+\@LN{1764}{93}
 \citation{Gesmundo2018nanosar,Gehrtz2022nanomolar}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces \textbf  {Comparison of top ML compounds vs top crude compounds.} The top compounds from the crude screening are more potent but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.\relax }}{77}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:ml_vs_crude}{{6.6}{77}{\textbf {Comparison of top ML compounds vs top crude compounds.} The top compounds from the crude screening are more potent but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.\relax }{figure.caption.51}{}}
-\@LN{1697}{88}
-\@LN{1698}{88}
-\@LN{1699}{88}
-\@LN{1700}{88}
-\@LN{1701}{88}
-\@LN{1702}{88}
-\@LN{1703}{88}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Discussion}{77}{section.6.3}\protected@file@percent }
-\@LN{1704}{88}
-\@LN{1705}{88}
-\@LN{1706}{88}
-\@LN{1707}{88}
-\@LN{1708}{88}
-\@LN{1709}{88}
-\@LN{1710}{88}
-\@LN{1711}{88}
-\@LN{1712}{88}
-\@LN{1713}{88}
-\@LN{1714}{88}
-\@LN{1715}{88}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces \textbf  {Comparison of top ML compounds vs top crude compounds.} The top compounds from the crude screening are more potent but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.\relax }}{83}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:ml_vs_crude}{{6.6}{83}{\textbf {Comparison of top ML compounds vs top crude compounds.} The top compounds from the crude screening are more potent but contain aniline motifs (highlighted in red) that are undesirable due to toxicity concerns.\relax }{figure.caption.54}{}}
+\@LN{1765}{94}
+\@LN{1766}{94}
+\@LN{1767}{94}
+\@LN{1768}{94}
+\@LN{1769}{94}
+\@LN{1770}{94}
+\@LN{1771}{94}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Discussion}{83}{section.6.3}\protected@file@percent }
+\@LN{1772}{94}
+\@LN{1773}{94}
+\@LN{1774}{94}
+\@LN{1775}{94}
+\@LN{1776}{94}
+\@LN{1777}{94}
+\@LN{1778}{94}
+\@LN{1779}{94}
+\@LN{1780}{94}
+\@LN{1781}{94}
+\@LN{1782}{94}
+\@LN{1783}{94}
 \citation{Schneider2018AutomatingDrugDiscovery,Coley2020Outlook,Goldman2022ChemicalDesignLevels}
 \citation{korovina2019chembo}
 \citation{Baker2020FragementsFromCrude}
-\@LN{1716}{89}
-\@LN{1717}{89}
-\@LN{1718}{89}
-\@LN{1719}{89}
-\@LN{1720}{89}
-\@LN{1721}{89}
-\@LN{1722}{89}
-\@LN{1723}{89}
-\@LN{1724}{89}
-\@LN{1725}{89}
-\@LN{1726}{89}
-\@LN{1727}{89}
-\@LN{1728}{89}
-\@LN{1729}{89}
-\@LN{1730}{89}
-\@LN{1731}{89}
-\@LN{1732}{89}
-\@LN{1733}{89}
+\@LN{1784}{95}
+\@LN{1785}{95}
+\@LN{1786}{95}
+\@LN{1787}{95}
+\@LN{1788}{95}
+\@LN{1789}{95}
+\@LN{1790}{95}
+\@LN{1791}{95}
+\@LN{1792}{95}
+\@LN{1793}{95}
+\@LN{1794}{95}
+\@LN{1795}{95}
+\@LN{1796}{95}
+\@LN{1797}{95}
+\@LN{1798}{95}
+\@LN{1799}{95}
+\@LN{1800}{95}
+\@LN{1801}{95}
 \@setckpt{Chapters/Crude/test}{
-\setcounter{page}{79}
+\setcounter{page}{85}
 \setcounter{equation}{0}
-\setcounter{enumi}{0}
+\setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -189,11 +189,11 @@
 \setcounter{@pps}{0}
 \setcounter{@ppsavesec}{0}
 \setcounter{@ppsaveapp}{0}
-\setcounter{linenumber}{1734}
-\setcounter{LN@truepage}{90}
+\setcounter{linenumber}{1802}
+\setcounter{LN@truepage}{96}
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{0}
+\setcounter{Item}{3}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{44}
 \setcounter{caption@flags}{0}

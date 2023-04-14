@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  4 APR 2023 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.3.13)  14 APR 2023 14:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -640,6 +640,9 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@cntb=\count332
 \multirow@dima=\skip71
 \bigstrutjot=\dimen199
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+LaTeX Info: Redefining \bm on input line 209.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/siunitx/siunitx.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
  (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -941,7 +944,7 @@ Chapter 1.
 <Chapters/Intro/Figs/design-make-test.png, id=401, 710.655pt x 586.19pt>
 File: Chapters/Intro/Figs/design-make-test.png Graphic file (type png)
 <use Chapters/Intro/Figs/design-make-test.png>
-Package pdftex.def Info: Chapters/Intro/Figs/design-make-test.png  used on input line 11.
+Package pdftex.def Info: Chapters/Intro/Figs/design-make-test.png  used on input line 13.
 (pdftex.def)             Requested size: 224.06544pt x 184.82077pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -964,12 +967,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<Chapters/Background/Figs/triethyl_amine.png, id=481, 109.24535pt x 66.2675pt>
+<Chapters/Background/Figs/triethyl_amine.png, id=483, 109.24535pt x 66.2675pt>
 File: Chapters/Background/Figs/triethyl_amine.png Graphic file (type png)
 <use Chapters/Background/Figs/triethyl_amine.png>
 Package pdftex.def Info: Chapters/Background/Figs/triethyl_amine.png  used on input line 21.
 (pdftex.def)             Requested size: 54.2025pt x 32.87885pt.
-<Chapters/Background/Figs/cyclic.png, id=482, 92.19827pt x 98.3542pt>
+<Chapters/Background/Figs/cyclic.png, id=484, 92.19827pt x 98.3542pt>
 File: Chapters/Background/Figs/cyclic.png Graphic file (type png)
 <use Chapters/Background/Figs/cyclic.png>
 Package pdftex.def Info: Chapters/Background/Figs/cyclic.png  used on input line 22.
@@ -984,7 +987,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ]
-<Chapters/Background/Figs/smiles.pdf, id=496, 398.40724pt x 273.22989pt>
+<Chapters/Background/Figs/smiles.pdf, id=498, 398.40724pt x 273.22989pt>
 File: Chapters/Background/Figs/smiles.pdf Graphic file (type pdf)
 <use Chapters/Background/Figs/smiles.pdf>
 Package pdftex.def Info: Chapters/Background/Figs/smiles.pdf  used on input line 36.
@@ -1002,25 +1005,25 @@ Overfull \hbox (4.08554pt too wide) in paragraph at lines 49--59
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/smiles.pdf>]
-<Chapters/Background/Figs/rx_template_new.png, id=543, 795.97375pt x 265.99374pt>
+<Chapters/Background/Figs/rx_template_new.png, id=545, 849.1725pt x 206.7725pt>
 File: Chapters/Background/Figs/rx_template_new.png Graphic file (type png)
 <use Chapters/Background/Figs/rx_template_new.png>
 Package pdftex.def Info: Chapters/Background/Figs/rx_template_new.png  used on input line 74.
-(pdftex.def)             Requested size: 336.09818pt x 112.31323pt.
- [12]
-<Chapters/Background/Figs/pharmacophore_models.png, id=559, 89.3739pt x 67.33154pt>
+(pdftex.def)             Requested size: 336.09818pt x 81.83987pt.
+ [12 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template_new.png>]
+<Chapters/Background/Figs/pharmacophore_models.png, id=561, 89.3739pt x 67.33154pt>
 File: Chapters/Background/Figs/pharmacophore_models.png Graphic file (type png)
 <use Chapters/Background/Figs/pharmacophore_models.png>
 Package pdftex.def Info: Chapters/Background/Figs/pharmacophore_models.png  used on input line 85.
 (pdftex.def)             Requested size: 336.09818pt x 253.28986pt.
- [13 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/rx_template_new.png>] [14 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/pharmacophore_models.png>] [15]
-<Chapters/Background/Figs/docked_6a93.png, id=626, 818.05624pt x 511.9125pt>
+ [13 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/pharmacophore_models.png>] [14] [15]
+<Chapters/Background/Figs/docked_6a93.png, id=628, 818.05624pt x 511.9125pt>
 File: Chapters/Background/Figs/docked_6a93.png Graphic file (type png)
 <use Chapters/Background/Figs/docked_6a93.png>
 Package pdftex.def Info: Chapters/Background/Figs/docked_6a93.png  used on input line 130.
 (pdftex.def)             Requested size: 358.50609pt x 224.34392pt.
  [16 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/docked_6a93.png>] [17] [18] [19]
-<Chapters/Background/Figs/roc_curve.pdf, id=711, 367.52719pt x 368.63472pt>
+<Chapters/Background/Figs/roc_curve.pdf, id=713, 367.52719pt x 368.63472pt>
 File: Chapters/Background/Figs/roc_curve.pdf Graphic file (type pdf)
 <use Chapters/Background/Figs/roc_curve.pdf>
 Package pdftex.def Info: Chapters/Background/Figs/roc_curve.pdf  used on input line 186.
@@ -1029,202 +1032,217 @@ Package pdftex.def Info: Chapters/Background/Figs/roc_curve.pdf  used on input l
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20] [21 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf>] [22] [23]) [24]
+[20] [21 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/roc_curve.pdf>] [22] [23]
+<Chapters/Background/Figs/transformer.pdf, id=807, 682.62106pt x 383.94081pt>
+File: Chapters/Background/Figs/transformer.pdf Graphic file (type pdf)
+<use Chapters/Background/Figs/transformer.pdf>
+Package pdftex.def Info: Chapters/Background/Figs/transformer.pdf  used on input line 247.
+(pdftex.def)             Requested size: 403.31508pt x 226.85118pt.
+ [24 </Users/williammccorkindale/ml_physics/thesis/Chapters/Background/Figs/transformer.pdf>] [25] [26]) [27]
 \openout2 = `Chapters/Fresco/fresco.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex
-Chapter 3.
-[25
+ (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.tex [28
 
 
 
 
 ]
-<Chapters/Fresco/Figs/fresco_vs_linking_a.pdf, id=852, 445.27907pt x 299.55132pt>
+Chapter 3.
+[29]
+<Chapters/Fresco/Figs/fresco_vs_linking_a.pdf, id=916, 445.27907pt x 299.55132pt>
 File: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_vs_linking_a.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_linking_a.pdf  used on input line 53.
 (pdftex.def)             Requested size: 336.09818pt x 226.11642pt.
-<Chapters/Fresco/Figs/fresco_details.pdf, id=853, 443.94627pt x 320.97525pt>
+<Chapters/Fresco/Figs/fresco_details.pdf, id=917, 443.94627pt x 320.97525pt>
 File: Chapters/Fresco/Figs/fresco_details.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_details.pdf>
 Package pdftex.def Info: Chapters/Fresco/Figs/fresco_details.pdf  used on input line 59.
 (pdftex.def)             Requested size: 336.09818pt x 243.00336pt.
-<Chapters/Fresco/Figs/pharmacophores.png, id=854, 1131.22626pt x 430.60875pt>
+<Chapters/Fresco/Figs/pharmacophores.png, id=918, 1131.22626pt x 430.60875pt>
 File: Chapters/Fresco/Figs/pharmacophores.png Graphic file (type png)
 <use Chapters/Fresco/Figs/pharmacophores.png>
 Package pdftex.def Info: Chapters/Fresco/Figs/pharmacophores.png  used on input line 70.
 (pdftex.def)             Requested size: 358.50609pt x 136.46378pt.
- [26] [27 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_linking_a.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_details.pdf>] [28 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/pharmacophores.png>] [29] [30]
-<Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf, id=987, 433.62pt x 289.08pt>
+ [30] [31 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_linking_a.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_details.pdf>] [32 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/pharmacophores.png>] [33] [34]
+<Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf, id=1053, 433.62pt x 289.08pt>
 File: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf  used on input line 118.
+Package pdftex.def Info: Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf  used on input line 128.
 (pdftex.def)             Requested size: 358.50609pt x 239.01443pt.
- [31 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf>]
-<Chapters/Fresco/Figs/flowchart_screening.pdf, id=1048, 845.1575pt x 597.23125pt>
-File: Chapters/Fresco/Figs/flowchart_screening.pdf Graphic file (type pdf)
-<use Chapters/Fresco/Figs/flowchart_screening.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/flowchart_screening.pdf  used on input line 128.
-(pdftex.def)             Requested size: 448.1309pt x 316.67685pt.
- [32 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/flowchart_screening.pdf>]
-<Chapters/Fresco/Figs/mpro_ligands.png, id=1096, 1177.39874pt x 795.97375pt>
+<Chapters/Fresco/Figs/fresco_sensitivity.png, id=1054, 1736.4875pt x 568.1225pt>
+File: Chapters/Fresco/Figs/fresco_sensitivity.png Graphic file (type png)
+<use Chapters/Fresco/Figs/fresco_sensitivity.png>
+Package pdftex.def Info: Chapters/Fresco/Figs/fresco_sensitivity.png  used on input line 134.
+(pdftex.def)             Requested size: 448.1309pt x 146.6074pt.
+<Chapters/Fresco/Figs/flowchart_details.pdf, id=1057, 499.705pt x 568.67075pt>
+File: Chapters/Fresco/Figs/flowchart_details.pdf Graphic file (type pdf)
+<use Chapters/Fresco/Figs/flowchart_details.pdf>
+Package pdftex.def Info: Chapters/Fresco/Figs/flowchart_details.pdf  used on input line 145.
+(pdftex.def)             Requested size: 448.1309pt x 509.99408pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_vs_moonshot_break_5uM.pdf> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/fresco_sensitivity.png>]
+
+LaTeX Warning: Text page 37 contains only floats.
+
+[37 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/flowchart_details.pdf>]
+<Chapters/Fresco/Figs/mpro_ligands.png, id=1176, 1177.39874pt x 795.97375pt>
 File: Chapters/Fresco/Figs/mpro_ligands.png Graphic file (type png)
 <use Chapters/Fresco/Figs/mpro_ligands.png>
-Package pdftex.def Info: Chapters/Fresco/Figs/mpro_ligands.png  used on input line 150.
+Package pdftex.def Info: Chapters/Fresco/Figs/mpro_ligands.png  used on input line 167.
 (pdftex.def)             Requested size: 336.09818pt x 227.21924pt.
-<Chapters/Fresco/Figs/mpro_hit_IC50.pdf, id=1097, 441.39284pt x 411.68153pt>
+<Chapters/Fresco/Figs/mpro_hit_IC50.pdf, id=1177, 441.39284pt x 411.68153pt>
 File: Chapters/Fresco/Figs/mpro_hit_IC50.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mpro_hit_IC50.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mpro_hit_IC50.pdf  used on input line 158.
+Package pdftex.def Info: Chapters/Fresco/Figs/mpro_hit_IC50.pdf  used on input line 175.
 (pdftex.def)             Requested size: 336.09818pt x 313.48427pt.
 
 
-LaTeX Warning: Float too large for page by 34.91837pt on input line 164.
+LaTeX Warning: Float too large for page by 34.91837pt on input line 181.
 
-[33] [34 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_ligands.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_hit_IC50.pdf>]
-<Chapters/Fresco/Figs/mac1_ligands.png, id=1162, 1177.39874pt x 795.97375pt>
+<Chapters/Fresco/Figs/mac1_ligands.png, id=1182, 1177.39874pt x 795.97375pt>
 File: Chapters/Fresco/Figs/mac1_ligands.png Graphic file (type png)
 <use Chapters/Fresco/Figs/mac1_ligands.png>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_ligands.png  used on input line 189.
+Package pdftex.def Info: Chapters/Fresco/Figs/mac1_ligands.png  used on input line 206.
 (pdftex.def)             Requested size: 358.50609pt x 242.36476pt.
- [35 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_ligands.png>]
-<Chapters/Fresco/Figs/mac1_fig.pdf, id=1171, 316.30803pt x 357.04955pt>
+[38] [39 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_ligands.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mpro_hit_IC50.pdf>]
+<Chapters/Fresco/Figs/mac1_fig.pdf, id=1246, 316.30803pt x 357.04955pt>
 File: Chapters/Fresco/Figs/mac1_fig.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mac1_fig.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_fig.pdf  used on input line 198.
+Package pdftex.def Info: Chapters/Fresco/Figs/mac1_fig.pdf  used on input line 215.
 (pdftex.def)             Requested size: 336.09818pt x 379.41867pt.
- [36 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_fig.pdf>]
-<Chapters/Fresco/Figs/mac1_rounds.pdf, id=1213, 429.70085pt x 472.26958pt>
+<Chapters/Fresco/Figs/mac1_rounds.pdf, id=1249, 429.70085pt x 472.26958pt>
 File: Chapters/Fresco/Figs/mac1_rounds.pdf Graphic file (type pdf)
 <use Chapters/Fresco/Figs/mac1_rounds.pdf>
-Package pdftex.def Info: Chapters/Fresco/Figs/mac1_rounds.pdf  used on input line 209.
+Package pdftex.def Info: Chapters/Fresco/Figs/mac1_rounds.pdf  used on input line 226.
 (pdftex.def)             Requested size: 336.09818pt x 369.39928pt.
- [37 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_rounds.pdf>]) [38]
+ [40 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_ligands.png>] [41 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_fig.pdf>] [42 </Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/Figs/mac1_rounds.pdf>]) [43]
 \openout2 = `Chapters/Ranking/ranking.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.tex
-Chapter 4.
-[39
+ (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.tex [44
 
 
 
 
 ]
-<Chapters/Ranking/Figs/schematic.png, id=1305, 981.6675pt x 612.2875pt>
+Chapter 4.
+[45]
+<Chapters/Ranking/Figs/schematic.png, id=1386, 1141.26375pt x 613.29124pt>
 File: Chapters/Ranking/Figs/schematic.png Graphic file (type png)
 <use Chapters/Ranking/Figs/schematic.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/schematic.png  used on input line 27.
-(pdftex.def)             Requested size: 380.914pt x 237.58595pt.
- [40]
-<Chapters/Ranking/Figs/roc_curve.png, id=1317, 512.91624pt x 547.04375pt>
+Package pdftex.def Info: Chapters/Ranking/Figs/schematic.png  used on input line 29.
+(pdftex.def)             Requested size: 380.914pt x 204.68881pt.
+<Chapters/Ranking/Figs/roc_curve.png, id=1390, 512.91624pt x 547.04375pt>
 File: Chapters/Ranking/Figs/roc_curve.png Graphic file (type png)
 <use Chapters/Ranking/Figs/roc_curve.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/roc_curve.png  used on input line 38.
+Package pdftex.def Info: Chapters/Ranking/Figs/roc_curve.png  used on input line 40.
 (pdftex.def)             Requested size: 291.28235pt x 310.66626pt.
- [41 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/schematic.png>] [42 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/roc_curve.png>]
-<Chapters/Ranking/Figs/library.png, id=1336, 1101.11375pt x 541.02126pt>
+ [46] [47 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/schematic.png>] [48 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/roc_curve.png>]
+<Chapters/Ranking/Figs/library.png, id=1418, 1101.11375pt x 541.02126pt>
 File: Chapters/Ranking/Figs/library.png Graphic file (type png)
 <use Chapters/Ranking/Figs/library.png>
-Package pdftex.def Info: Chapters/Ranking/Figs/library.png  used on input line 106.
+Package pdftex.def Info: Chapters/Ranking/Figs/library.png  used on input line 108.
 (pdftex.def)             Requested size: 336.09818pt x 165.13919pt.
-<Chapters/Ranking/Figs/fig2.pdf, id=1338, 1228.59pt x 794.97pt>
+ [49 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/library.png>]
+<Chapters/Ranking/Figs/fig2.pdf, id=1429, 1228.59pt x 794.97pt>
 File: Chapters/Ranking/Figs/fig2.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/fig2.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/fig2.pdf  used on input line 117.
+Package pdftex.def Info: Chapters/Ranking/Figs/fig2.pdf  used on input line 119.
 (pdftex.def)             Requested size: 336.09818pt x 217.47112pt.
- [43] [44 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/library.png> </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/fig2.pdf>]
-<Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf, id=1384, 817.18979pt x 1107.42578pt>
+<Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf, id=1435, 817.18979pt x 1107.42578pt>
 File: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf  used on input line 126.
+Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf  used on input line 128.
 (pdftex.def)             Requested size: 291.28235pt x 394.71886pt.
- [45 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>]
-<Chapters/Ranking/Figs/data_curve.pdf, id=1413, 729.72626pt x 293.095pt>
+ [50 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/fig2.pdf>]
+<Chapters/Ranking/Figs/data_curve.pdf, id=1469, 729.72626pt x 293.095pt>
 File: Chapters/Ranking/Figs/data_curve.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/data_curve.pdf>
-Package pdftex.def Info: Chapters/Ranking/Figs/data_curve.pdf  used on input line 135.
+Package pdftex.def Info: Chapters/Ranking/Figs/data_curve.pdf  used on input line 137.
 (pdftex.def)             Requested size: 380.914pt x 152.99165pt.
- [46 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/data_curve.pdf>]) [47]
+ [51 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_1_to_3.pdf>] [52 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/data_curve.pdf>]) [53]
 \openout2 = `Chapters/Transformer/transformer.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.tex [48
+ (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.tex [54
 
 
 
 
 ]
 Chapter 5.
-[49] [50]
-<Chapters/Transformer/Figs/mol_transformer.png, id=1491, 1192.455pt x 290.08376pt>
+[55] [56]
+<Chapters/Transformer/Figs/mol_transformer.png, id=1572, 1192.455pt x 290.08376pt>
 File: Chapters/Transformer/Figs/mol_transformer.png Graphic file (type png)
 <use Chapters/Transformer/Figs/mol_transformer.png>
-Package pdftex.def Info: Chapters/Transformer/Figs/mol_transformer.png  used on input line 37.
+Package pdftex.def Info: Chapters/Transformer/Figs/mol_transformer.png  used on input line 30.
 (pdftex.def)             Requested size: 358.50609pt x 87.2117pt.
- [51] [52 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/mol_transformer.png>]
-<Chapters/Transformer/Figs/workflow.pdf, id=1513, 626.80904pt x 466.41406pt>
+ [57 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/mol_transformer.png>]
+<Chapters/Transformer/Figs/workflow.pdf, id=1590, 626.80904pt x 466.41406pt>
 File: Chapters/Transformer/Figs/workflow.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/workflow.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/workflow.pdf  used on input line 52.
+Package pdftex.def Info: Chapters/Transformer/Figs/workflow.pdf  used on input line 56.
 (pdftex.def)             Requested size: 358.50609pt x 266.77686pt.
- [53 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/workflow.pdf>] [54] [55] [56]
-<Chapters/Transformer/Figs/epoxidation.pdf, id=1625, 445.90399pt x 459.18379pt>
+ [58] [59 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/workflow.pdf>] [60] [61] [62]
+<Chapters/Transformer/Figs/epoxidation.pdf, id=1706, 445.90399pt x 459.18379pt>
 File: Chapters/Transformer/Figs/epoxidation.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/epoxidation.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/epoxidation.pdf  used on input line 115.
+Package pdftex.def Info: Chapters/Transformer/Figs/epoxidation.pdf  used on input line 119.
 (pdftex.def)             Requested size: 268.88127pt x 276.89969pt.
- [57] [58 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/epoxidation.pdf>]
-<Chapters/Transformer/Figs/diels_alder.pdf, id=1690, 456.04297pt x 572.224pt>
+ [63] [64 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/epoxidation.pdf>]
+<Chapters/Transformer/Figs/diels_alder.pdf, id=1770, 456.04297pt x 572.224pt>
 File: Chapters/Transformer/Figs/diels_alder.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/diels_alder.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/diels_alder.pdf  used on input line 133.
+Package pdftex.def Info: Chapters/Transformer/Figs/diels_alder.pdf  used on input line 137.
 (pdftex.def)             Requested size: 268.88127pt x 337.38222pt.
- [59]
-<Chapters/Transformer/Figs/sear.pdf, id=1702, 443.26955pt x 519.08676pt>
+ [65 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/diels_alder.pdf>]
+<Chapters/Transformer/Figs/sear.pdf, id=1823, 443.26955pt x 519.08676pt>
 File: Chapters/Transformer/Figs/sear.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/sear.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/sear.pdf  used on input line 149.
+Package pdftex.def Info: Chapters/Transformer/Figs/sear.pdf  used on input line 153.
 (pdftex.def)             Requested size: 268.88127pt x 314.87616pt.
- [60 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/diels_alder.pdf>] [61 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/sear.pdf>]
-<Chapters/Transformer/Figs/venn.pdf, id=1808, 488.6309pt x 457.57526pt>
+ [66] [67 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/sear.pdf>]
+<Chapters/Transformer/Figs/venn.pdf, id=1889, 488.6309pt x 457.57526pt>
 File: Chapters/Transformer/Figs/venn.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/venn.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/venn.pdf  used on input line 162.
+Package pdftex.def Info: Chapters/Transformer/Figs/venn.pdf  used on input line 166.
 (pdftex.def)             Requested size: 224.06544pt x 209.82388pt.
- [62 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/venn.pdf>] [63]
-<Chapters/Transformer/Figs/synth_conv.png, id=1831, 1084.05pt x 650.43pt>
+ [68 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/venn.pdf>] [69]
+<Chapters/Transformer/Figs/synth_conv.png, id=1913, 1084.05pt x 650.43pt>
 File: Chapters/Transformer/Figs/synth_conv.png Graphic file (type png)
 <use Chapters/Transformer/Figs/synth_conv.png>
-Package pdftex.def Info: Chapters/Transformer/Figs/synth_conv.png  used on input line 203.
+Package pdftex.def Info: Chapters/Transformer/Figs/synth_conv.png  used on input line 207.
 (pdftex.def)             Requested size: 358.50609pt x 215.09909pt.
- [64 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/synth_conv.png>]
-<Chapters/Transformer/Figs/siblings_alt.pdf, id=1841, 725.00279pt x 423.96194pt>
+ [70 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/synth_conv.png>]
+<Chapters/Transformer/Figs/siblings_alt.pdf, id=1923, 725.00279pt x 423.96194pt>
 File: Chapters/Transformer/Figs/siblings_alt.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/siblings_alt.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/siblings_alt.pdf  used on input line 221.
+Package pdftex.def Info: Chapters/Transformer/Figs/siblings_alt.pdf  used on input line 225.
 (pdftex.def)             Requested size: 448.1309pt x 262.05151pt.
- [65] [66 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/siblings_alt.pdf>]
-<Chapters/Transformer/Figs/rxn_distribution.pdf, id=1905, 644.98615pt x 448.6769pt>
+ [71] [72 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/siblings_alt.pdf>]
+<Chapters/Transformer/Figs/rxn_distribution.pdf, id=1988, 644.98615pt x 448.6769pt>
 File: Chapters/Transformer/Figs/rxn_distribution.pdf Graphic file (type pdf)
 <use Chapters/Transformer/Figs/rxn_distribution.pdf>
-Package pdftex.def Info: Chapters/Transformer/Figs/rxn_distribution.pdf  used on input line 239.
+Package pdftex.def Info: Chapters/Transformer/Figs/rxn_distribution.pdf  used on input line 243.
 (pdftex.def)             Requested size: 448.1309pt x 311.74396pt.
- [67 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/rxn_distribution.pdf>]
+ [73 </Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/Figs/rxn_distribution.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[68] [69]) [70]
+[74] [75]) [76]
 \openout2 = `Chapters/Crude/test.aux'.
 
  (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.tex
 Chapter 6.
-[71
+[77
 
 
 
 
 ]
-<Chapters/Crude/Figs/schematic.pdf, id=1961, 764.87453pt x 396.66884pt>
+<Chapters/Crude/Figs/schematic.pdf, id=2043, 764.87453pt x 396.66884pt>
 File: Chapters/Crude/Figs/schematic.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/schematic.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/schematic.pdf  used on input line 20.
@@ -1237,14 +1255,14 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[72 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf>]
-<Chapters/Crude/Figs/yield_vs_activity.pdf, id=1991, 752.8125pt x 602.25pt>
+[78 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/schematic.pdf>]
+<Chapters/Crude/Figs/yield_vs_activity.pdf, id=2073, 752.8125pt x 602.25pt>
 File: Chapters/Crude/Figs/yield_vs_activity.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/yield_vs_activity.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/yield_vs_activity.pdf  used on input line 29.
 (pdftex.def)             Requested size: 380.914pt x 304.73576pt.
- [73 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/yield_vs_activity.pdf>]
-<Chapters/Crude/Figs/rf_loo_flat.pdf, id=2023, 845.1575pt x 597.23125pt>
+ [79 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/yield_vs_activity.pdf>]
+<Chapters/Crude/Figs/rf_loo_flat.pdf, id=2106, 845.1575pt x 597.23125pt>
 File: Chapters/Crude/Figs/rf_loo_flat.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/rf_loo_flat.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/rf_loo_flat.pdf  used on input line 42.
@@ -1257,23 +1275,23 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[74 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/rf_loo_flat.pdf>]
-<Chapters/Crude/Figs/false_negative.pdf, id=2060, 420.90599pt x 194.55786pt>
+[80 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/rf_loo_flat.pdf>]
+<Chapters/Crude/Figs/false_negative.pdf, id=2143, 420.90599pt x 194.55786pt>
 File: Chapters/Crude/Figs/false_negative.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/false_negative.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/false_negative.pdf  used on input line 56.
 (pdftex.def)             Requested size: 448.1309pt x 207.15657pt.
- [75 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/false_negative.pdf>]
+ [81 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/false_negative.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 71.
 
-<Chapters/Crude/Figs/strip_plot.pdf, id=2101, 752.8125pt x 376.52669pt>
+<Chapters/Crude/Figs/strip_plot.pdf, id=2183, 752.8125pt x 376.52669pt>
 File: Chapters/Crude/Figs/strip_plot.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/strip_plot.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/strip_plot.pdf  used on input line 73.
 (pdftex.def)             Requested size: 448.1309pt x 224.14244pt.
-<Chapters/Crude/Figs/ml_vs_crude.pdf, id=2102, 822.93991pt x 336.70734pt>
+<Chapters/Crude/Figs/ml_vs_crude.pdf, id=2184, 822.93991pt x 336.70734pt>
 File: Chapters/Crude/Figs/ml_vs_crude.pdf Graphic file (type pdf)
 <use Chapters/Crude/Figs/ml_vs_crude.pdf>
 Package pdftex.def Info: Chapters/Crude/Figs/ml_vs_crude.pdf  used on input line 80.
@@ -1285,7 +1303,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[76 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/strip_plot.pdf>] [77 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/ml_vs_crude.pdf>])
+[82 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/strip_plot.pdf>] [83 </Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/Figs/ml_vs_crude.pdf>])
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 26.98592pt, for example:
@@ -1293,80 +1311,80 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[78]
+[84]
 \openout2 = `Chapters/Outlook/outlook.aux'.
 
  (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.tex
 Chapter 7.
-[79
+[85
 
 
 
 
-] [80] [81] [82] [83]) [84] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [85
+] [86] [87] [88] [89]) [90] (/Users/williammccorkindale/ml_physics/thesis/thesis.bbl [91
 
 
 
 
-] [86] [87]
-Overfull \hbox (1.17387pt too wide) in paragraph at lines 261--267
+] [92] [93]
+Overfull \hbox (1.17387pt too wide) in paragraph at lines 273--279
 \T1/ptm/m/n/12 (-20) topoisomerase i inhibitors.  \T1/ptm/m/it/12 (-20) Computational and Structural Biotechnology Journal\T1/ptm/m/n/12 (-20) , 17:291--|
  []
 
-[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98]
-Underfull \hbox (badness 1297) in paragraph at lines 1138--1143
+[94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104]
+Underfull \hbox (badness 1297) in paragraph at lines 1195--1200
 []\T1/ptm/m/n/12 (+20) The COVID Moon-shot Con-sor-tium.  Covid moon-shot: open sci-ence dis-cov-
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 1138--1143
+Underfull \hbox (badness 1052) in paragraph at lines 1195--1200
 \T1/ptm/m/n/12 (+20) ery of sars-cov-2 main pro-tease in-hibitors by com-bin-ing crowd-sourc-ing, high-
  []
 
-[99] [100] [101] [102] [103] [104] [105] [106] [107] [108]) [109]
+[105] [106] [107] [108] [109] [110] [111] [112] [113] [114]) [115]
 \openout2 = `Appendix/Appendix1/appendix1.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.tex [110
+ (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.tex [116
 
 
 ]
 Appendix A.
-[111]) [112] [113]
+[117]) [118] [119]
 \openout2 = `Appendix/Appendix2/appendix2.aux'.
 
- (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex [114
+ (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.tex [120
 
 
 
 
 ]
 Appendix B.
-[115]
-<Chapters/Ranking/Figs/rxn_schemes_full.pdf, id=2511, 867.80914pt x 1877.88171pt>
+[121]
+<Chapters/Ranking/Figs/rxn_schemes_full.pdf, id=2594, 867.80914pt x 1877.88171pt>
 File: Chapters/Ranking/Figs/rxn_schemes_full.pdf Graphic file (type pdf)
 <use Chapters/Ranking/Figs/rxn_schemes_full.pdf>
 Package pdftex.def Info: Chapters/Ranking/Figs/rxn_schemes_full.pdf  used on input line 19.
 (pdftex.def)             Requested size: 268.88127pt x 581.85078pt.
- [116] [117 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_full.pdf>]) [118] [119
+ [122] [123 </Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/Figs/rxn_schemes_full.pdf>]) [124] [125
 
 
 ] (/Users/williammccorkindale/ml_physics/thesis/thesis.aux (/Users/williammccorkindale/ml_physics/thesis/Declaration/declaration.aux) (/Users/williammccorkindale/ml_physics/thesis/Acknowledgement/acknowledgement.aux) (/Users/williammccorkindale/ml_physics/thesis/Abstract/abstract.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Preface/preface.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Intro/intro.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Background/background.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Fresco/fresco.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Ranking/ranking.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Transformer/transformer.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Crude/test.aux) (/Users/williammccorkindale/ml_physics/thesis/Chapters/Outlook/outlook.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix1/appendix1.aux) (/Users/williammccorkindale/ml_physics/thesis/Appendix/Appendix2/appendix2.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F65E83B31DDEE020B0E738CE7E804432;14513.
+(rerunfilecheck)             Checksum: DB0A88EF47162073F2E00E7B946458E3;14513.
  ) 
 Here is how much of TeX's memory you used:
- 21310 strings out of 478994
- 380788 string characters out of 5858184
- 743349 words of memory out of 5000000
- 37258 multiletter control sequences out of 15000+600000
- 486863 words of font info for 412 fonts, out of 8000000 for 9000
+ 21445 strings out of 478994
+ 383128 string characters out of 5858184
+ 744553 words of memory out of 5000000
+ 37362 multiletter control sequences out of 15000+600000
+ 489357 words of font info for 417 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,12n,130p,1860b,1961s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (131 pages, 16244648 bytes).
+ 128i,12n,130p,1860b,1973s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/williammccorkindale/ml_physics/thesis/thesis.pdf (137 pages, 16597207 bytes).
 PDF statistics:
- 2730 PDF objects out of 2984 (max. 8388607)
- 2141 compressed objects within 22 object streams
- 520 named destinations out of 1000 (max. 500000)
- 91342 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2822 PDF objects out of 2984 (max. 8388607)
+ 2211 compressed objects within 23 object streams
+ 542 named destinations out of 1000 (max. 500000)
+ 91352 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -84,6 +84,18 @@ Connor~W. Coley, Wengong Jin, Luke Rogers, Timothy~F. Jamison, Tommi~S.
   chemical reactivity.
 \newblock {\em Chem. Sci.}, 10:370--377, 2019.
 
+\bibitem{Struble2020synthesis}
+Thomas~J. Struble, Juan~C. Alvarez, Scott~P. Brown, Milan Chytil, Justin Cisar,
+  Renee~L. DesJarlais, Ola Engkvist, Scott~A. Frank, Daniel~R. Greve, Daniel~J.
+  Griffin, Xinjun Hou, Jeffrey~W. Johannes, Constantine Kreatsoulas, Brian
+  Lahue, Miriam Mathea, Georg Mogk, Christos~A. Nicolaou, Andrew~D. Palmer,
+  Daniel~J. Price, Richard~I. Robinson, Sebastian Salentin, Li~Xing, Tommi
+  Jaakkola, William.~H. Green, Regina Barzilay, Connor~W. Coley, and Klavs~F.
+  Jensen.
+\newblock Current and future roles of artificial intelligence in medicinal
+  chemistry synthesis.
+\newblock {\em Journal of Medicinal Chemistry}, 63(16):8667--8682, 2020.
+
 \bibitem{Jimenze2020XAI}
 Jos{\'e} Jim{\'e}nez-Luna, Francesca Grisoni, and Gisbert Schneider.
 \newblock Drug discovery with explainable artificial intelligence.
@@ -767,6 +779,56 @@ Sepp Hochreiter and J\"{u}rgen Schmidhuber.
 \newblock Long short-term memory.
 \newblock {\em Neural Comput.}, 9(8):1735--1780, nov 1997.
 
+\bibitem{Vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock {Attention is all you need}.
+\newblock {\em Advances in Neural Information Processing Systems},
+  2017-Decem(Nips):5999--6009, 2017.
+
+\bibitem{dufter2021position}
+Philipp Dufter, Martin Schmitt, and Hinrich Schütze.
+\newblock Position information in transformers: An overview, 2021.
+
+\bibitem{Niu2021AttnReview}
+Zhaoyang Niu, Guoqiang Zhong, and Hui Yu.
+\newblock A review on the attention mechanism of deep learning.
+\newblock {\em Neurocomputing}, 452:48--62, 2021.
+
+\bibitem{choromanski2022rethinking}
+Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song,
+  Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin,
+  Lukasz Kaiser, David Belanger, Lucy Colwell, and Adrian Weller.
+\newblock Rethinking attention with performers, 2022.
+
+\bibitem{child2019generating}
+Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever.
+\newblock Generating long sequences with sparse transformers, 2019.
+
+\bibitem{kaplan2020scaling}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models, 2020.
+
+\bibitem{chithrananda2020chemberta}
+Seyone Chithrananda, Gabriel Grand, and Bharath Ramsundar.
+\newblock Chemberta: Large-scale self-supervised pretraining for molecular
+  property prediction, 2020.
+
+\bibitem{Schwaller2019MolecularPrediction}
+Philippe Schwaller, Teodoro Laino, Théophile Gaudin, Peter Bolgar, Costas
+  Bekas, and Alpha~A. Lee.
+\newblock {Molecular Transformer - A Model for Uncertainty-Calibrated Chemical
+  Reaction Prediction}.
+\newblock {\em ACS Central Science}, 5(9):1572--1583, 11 2019.
+
+\bibitem{Schwaller2021rxnmapper}
+Philippe Schwaller, Benjamin Hoover, Jean-Louis Reymond, Hendrik Strobelt, and
+  Teodoro Laino.
+\newblock Extraction of organic chemistry grammar from unsupervised learning of
+  chemical reactions.
+\newblock {\em Science Advances}, 7(15):eabe4166, 2021.
+
 \bibitem{Gilmer17mpnn}
 Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
   George~E. Dahl.
@@ -1112,11 +1174,6 @@ Sven Ullrich and Christoph Nitsche.
 \newblock The sars-cov-2 main protease as drug target.
 \newblock {\em Bioorganic \& Medicinal Chemistry Letters}, page 127377, 2020.
 
-\bibitem{chodera2020crowdsourcing}
-John Chodera, Alpha~A Lee, Nir London, and Frank von Delft.
-\newblock Crowdsourcing drug discovery for pandemics.
-\newblock {\em Nature Chemistry}, 12(7):581--581, 2020.
-
 \bibitem{duffy2010molecular}
 Nigel~P Duffy.
 \newblock Molecular property modeling using ranking, April~20 2010.
@@ -1311,13 +1368,6 @@ Philippe Schwaller, Teodoro Laino, Théophile Gaudin, Peter Bolgar, Costas
   Reaction Prediction}.
 \newblock {\em ACS Central Science}, 5(9):1572--1583, 11 2019.
 
-\bibitem{Vaswani2017}
-Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
-  Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
-\newblock {Attention is all you need}.
-\newblock {\em Advances in Neural Information Processing Systems},
-  2017-Decem(Nips):5999--6009, 2017.
-
 \bibitem{Jin2017}
 Wengong Jin, Connor~W. Coley, Regina Barzilay, and Tommi Jaakkola.
 \newblock {Predicting organic reaction outcomes with weisfeiler-lehman
@@ -1331,17 +1381,12 @@ Igor~V Tetko, Pavel Karpov, Ruud Van~Deursen, and Guillaume Godin.
   single-step retrosynthesis.
 \newblock {\em Nature communications}, 11(1):1--11, 2020.
 
-\bibitem{Schwaller2019MolecularPrediction}
-Philippe Schwaller, Teodoro Laino, Théophile Gaudin, Peter Bolgar, Costas
-  Bekas, and Alpha~A. Lee.
-\newblock {Molecular Transformer - A Model for Uncertainty-Calibrated Chemical
-  Reaction Prediction}.
-\newblock {\em ACS Central Science}, 5(9):1572--1583, 11 2019.
-
-\bibitem{Niu2021AttnReview}
-Zhaoyang Niu, Guoqiang Zhong, and Hui Yu.
-\newblock A review on the attention mechanism of deep learning.
-\newblock {\em Neurocomputing}, 452:48--62, 2021.
+\bibitem{Schwaller2018token}
+Philippe Schwaller, Th{\'e}ophile Gaudin, D{\'a}vid L{\'a}nyi, Costas Bekas,
+  and Teodoro Laino.
+\newblock ``found in translation'': predicting outcomes of complex organic
+  chemistry reactions using neural sequence-to-sequence models.
+\newblock {\em Chem. Sci.}, 9:6091--6098, 2018.
 
 \bibitem{Bjerrum2017SMILESaugmentation}
 Esben~Jannik Bjerrum.
@@ -1452,6 +1497,11 @@ J.~Vandenberk, L.~E.~J. Kennis, A.~H. M.~Th. Van~Heertum, and M.~J. M.~C.
   Van~der Aa.
 \newblock 1,3-dihydro-1-[(1-piperidinyl)alkyl]-2h-benzimidazol-2-one
   derivatives, 1981.
+
+\bibitem{Topliss1977scheme}
+John~G. Topliss.
+\newblock A manual method for applying the hansch approach to drug design.
+\newblock {\em Journal of Medicinal Chemistry}, 20(4):463--469, 1977.
 
 \bibitem{Stanovsky2019GenderBias}
 Gabriel Stanovsky, Noah~A. Smith, and Luke Zettlemoyer.
