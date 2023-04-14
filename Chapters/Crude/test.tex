@@ -31,7 +31,9 @@ In this chapter, we investigate the application of ML models on bioactivity data
  \label{fig:yield_activity}
 \end{figure}
 
-As the COVID Moonshot initiative for designing SARS-CoV-2 Mpro inhibitors progressed, multiple chemically diverse molecular series were investigated simultaneously in order to minimise the risk of failure. One of the series explored was MAT-POS-4223bc15-21, whose molecular structure had the potential for optimisation towards targeting the P4 pocket of Mpro. To rapidly evaluate the SAR of this series, nanomolar high-throughput chemistry was used to enumerate a library of 300 amine building blocks via amide coupling. Yield estimation via integration of UV spectra showed 151 of the library yielded >30\% of the desired product, and the crude reaction mixtures were then assayed against Mpro (Experimental details can be found in Appendix \ref{appendix:mpro_assay} \& \ref{appendix:amide_coupling}).
+The COVID Moonshot campaign \cite{Moonshot2022} against SARS-CoV-2 main protease (Mpro) investigated multiple chemically diverse molecular series simultaneously in order to minimise the risk of failure. One of the series explored was MAT-POS-4223bc15-21, whose molecular structure had the potential for optimisation towards targeting the P4 pocket of Mpro \cite{Moonshot2022}. 
+
+To rapidly evaluate the SAR of this series, nanomolar high-throughput chemistry was used to enumerate a library of 300 amine building blocks via amide coupling. Yield estimation via integration of UV spectra showed 151 of the library yielded >30\% of the desired product, and the crude reaction mixtures were then assayed against Mpro (Experimental details can be found in Appendix \ref{appendix:mpro_assay} \& \ref{appendix:amide_coupling}).
 
 Although the bioactivity measured in crude is a strong indicator of the potency of compounds, it is also influenced by the yield of the crude reaction mixture. Inspection of the crude activity data reveals a clear relationship (Spearman correlation $\rho = 0.54$) between the measured activity and the yield of the crude reaction mixture (Figure \ref{fig:yield_activity}). Compounds with high yields tend to have strong inhibition, while many compounds with low measured yields have no activity. This means that potentially potent inhibitors may be missed due to low yield from the amide coupling reaction, and this confounding variable adds additional difficulty to the already challenging task of modelling bioactivity with machine learning. 
 
@@ -43,7 +45,6 @@ We model the bioactivity data using two different ML models, taking the mean of 
  \caption{\textbf{Machine learning is able to model crude bioactivity data.} The model predictions ($y$-axis) are generated in a leave-one-out fashion, where the model is trained on all but one datapoint, and then evaluated on the remaining datapoint which is then repeated for each datapoint in the dataset. The datapoint circled in red is a false negative identified by the model and subsequently experimentally validated (Figure \ref{fig:false_negative}).}
  \label{fig:leave-one-out}
 \end{figure}
-
 
 Due to the small size of this dataset, we also choose to use a leave-one-out cross-validation approach to train the models. This means that the model is trained on all but one datapoint, and then evaluated on the remaining datapoint. This is repeated for each datapoint in the dataset (Figure \ref{fig:leave-one-out}). Overall, the model predictions moderately correlate with the experimental measurements (Spearman correlation $\rho =0.64$) and identify distinct clusters of high and low-activity compounds. 
 
